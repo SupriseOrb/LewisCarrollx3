@@ -24,7 +24,7 @@ label start:
 
     # These display lines of dialogue.
 
-    e "Yeeet."
+    e "Change."
 
     e "Now get out of here."
 
