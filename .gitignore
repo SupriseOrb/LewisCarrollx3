@@ -7,7 +7,7 @@
 *~
 *.bak
 
-saves/**
+**/saves/**
 tmp
 cache
 env
