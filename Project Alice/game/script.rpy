@@ -1,33 +1,51 @@
-﻿# The script of the game goes in this file.
+screen pac():
+    imagemap:
+        ground "Test pac.png"
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+        # shift + D, then choose "Image Location Picker" while playing to figure out pixel positions
+        # choose the appropriate image that is being mapped, then click and drag to copy and past rectangles to use for the hotspots
+        # note that when hotspots are overlayed, the topmost declared hotspot is the bottom most layer
+        hotspot (1, 5, 799, 595) action Jump("exit")
+        hotspot (106, 131, 100, 99) action Jump("red")
+        hotspot (315, 247, 239, 175) action Jump("yellow")
+        hotspot (648, 103, 62, 80) action Jump("blue")
 
-define e = Character("Whiteley")
-
-
-# The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    "Welcome to the point and click demo."
 
-    scene bg room
+    "Click on rectangles to produce dialogue."
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    jump screenCall
 
-    show eileen happy
+label red:
+    hide screen pac
 
-    # These display lines of dialogue.
+    "You clicked on the red rectangle."
 
-    e "Change."
+    jump screenCall
 
-    e "Now get out of here."
+label yellow:
+    hide screen pac
 
-    # This ends the game.
+    "You clicked on the yellow rectangle."
+
+    jump screenCall
+
+label blue:
+    hide screen pac
+
+    "You clicked on the blue rectangle."
+
+    jump screenCall
+
+label screenCall:
+
+    call screen pac
+
+label exit:
+
+    "You clicked on something empty, so the game will exit."
 
     return
