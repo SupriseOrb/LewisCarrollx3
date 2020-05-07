@@ -56,8 +56,9 @@ init python:
 
 label start:
     # Call screen shakes using keywords "at" or "with".
-    # Use None for first argument since it is the relative position of the screen shake.
-    # There are likely no situations where you would want the object to shake somewhere else other than its original position.
+    # Use None for first argument since it is the relative position of the screen shake if you are using it for backgrounds.
+    # Otherwise use (x-position, y-position, x-anchor, y-anchor).
+    # Position is calculated relative to the top left.
 
     # The second argument is the time span of the shaking.
     # The third argument is the intensity of the screen shake.
@@ -70,9 +71,14 @@ label start:
 
     e "Change."
 
-    # In order to have the screen shake again, you must call the scene again (This seems lame and memory inefficient).
+    # In order to have the screen shake again, you must call the scene again.
     scene bg room at Shake(None, 5.0, dist=20)
 
+    # You can shake almost everything, even characters.
+    # (0.5, 1.0, 0.5, 1.0) puts the character at the center.
+    show eileen happy at Shake((0.5, 1.0, 0.5, 1.0), 1.0, dist=20)
+
     e "Now get out of here."
+
 
     return
