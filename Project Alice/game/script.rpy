@@ -54,6 +54,16 @@ init python:
 
     Shake = renpy.curry(_Shake)
 
+screen room:
+    key "i" action Show('inventory')
+    key "e" action Jump('exit')
+
+screen inventory:
+    key "i" action Hide('inventory')
+    imagemap:
+        ground "Inventory Bar.png"
+
+
 label start:
     # Call screen shakes using keywords "at" or "with".
     # Use None for first argument since it is the relative position of the screen shake if you are using it for backgrounds.
@@ -80,5 +90,12 @@ label start:
 
     e "Now get out of here."
 
+    hide eileen
+
+    "Press 'I' for inventory."
+
+    call screen room
+
+label exit:
 
     return
