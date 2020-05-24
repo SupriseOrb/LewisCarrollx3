@@ -1,5 +1,5 @@
 label day2:
-    #(Scene: Bedroom)
+    scene bg bedroom
 
     "The warm sunlight greeted me for the new day."
 
@@ -9,7 +9,7 @@ label day2:
 
     "I rolled off the side of the bed and onto my feet. Time for another day of caretaking and mystery."
 
-    #(Scene: Hallway)
+    scene bg hallway
 
     "\"Hi Whitley!\""
 
@@ -19,8 +19,6 @@ label day2:
 
     a "How was your sleep last night? You didn’t get any nightmares did you?"
 
-    #(Alice smiles)
-
     "I‒"
 
     a "Come with me, Whitley! We’re going to play again!"
@@ -29,7 +27,7 @@ label day2:
 
     "She dragged me by the hand through the hallway, down the stairs, and outside into the mansion’s backyard."
 
-    #(Scene: Backyard)
+    scene bg backyard
 
     a "Here we go!"
 
@@ -100,13 +98,13 @@ label day2c1a2:
 
     #(Transition to dream world)
 
-    #(Scene: Darkness)
+    scene black
 
     a "We’re here!"
 
     "I opened my eyes."
 
-    #(Scene: Dream World Hopscotch)
+    scene bg floating_islands
 
     "This time, we stood upon a wide concrete square surrounded by complete black."
 
@@ -158,6 +156,8 @@ menu:
 
     "Stand your ground":
 
+        jump day2stand
+
 label day2jump1:
 
     "I got off the ground and steadied my breath."
@@ -165,6 +165,8 @@ label day2jump1:
     "\"Here goes nothing.\""
 
     "I ran as fast as I could and leaped to the next square."
+
+    scene bg floating_islands with Shake(None, 1.0, dist=20)
 
     "I couldn’t make the jump. Instead, my stomach crashed into the concrete platform and I immediately started falling."
 
@@ -196,13 +198,15 @@ label day2jump1:
 
     "There was another platform in front of us. Oh, not again."
 
-menu
+menu:
 
     "Make the jump again":
 
         jump day2jump2
 
     "Stand your ground":
+
+        jump day2stand
 
 label day2jump2:
 
@@ -217,6 +221,8 @@ label day2jump2:
     hide alice
 
     "I braced myself and made the jump again."
+
+    scene bg floating_islands with Shake(None, 1.0, dist=20)
 
     "(Thud.)"
 
@@ -239,6 +245,8 @@ menu:
         jump day2jump3
 
     "Stand your ground":
+
+        jump day2stand
 
 label day2jump3:
 
@@ -270,6 +278,8 @@ label day2jump3:
 
     a "We’re in my world. I have the say on whether or not it will."
 
+    scene bg floating_islands with Shake(None, 5.0, dist=20)
+
     "And just like that, the meteor landed, shattering the entire platform. And just as she said, there was no effect of the impact on us."
 
     a "See?"
@@ -284,9 +294,13 @@ menu:
 
     "Stand your ground":
 
+        jump day2stand
+
 label day2jump4:
 
     hide alice
+
+    scene bg floating_islands with Shake(None, 1.0, dist=20)
 
     "Another round of me struggling and Alice making it cleanly to the other side."
 
@@ -304,11 +318,11 @@ label day2jump4:
 
     "I looked around again and saw nothing."
 
-    #(Scene: Darkness)
+    scene black
 
     "But when I blinked, the gray concrete and black sky had changed."
 
-    #(Scene: Field)
+    scene bg field
 
     "Replacing it was a clear summer sky and a flowing grass field. Towers upon towers of books lay upon this field, many clearly read through and torn apart, but many more unscathed and unopened."
 
@@ -370,7 +384,7 @@ label day2jump4:
 
     "I blacked out."
 
-    #(Transition to next day)
+    jump day2end
 
 label day2stand:
 
@@ -379,6 +393,8 @@ label day2stand:
     "I yelled at her while beckoning her back. She glared at me."
 
     a "You’re no fun. This game is over."
+
+    scene bg floating_islands with Shake(None, 30.0, dist=20)
 
     "All of a sudden the realm started rumbling. The ground I was on began shaking and cracking apart."
 
@@ -390,9 +406,9 @@ label day2stand:
 
     hide alice
 
-    "I looked at her for answers, but I received nothing but the same glare as I fell into the pit of despair."
+    scene black
 
-    #(Scene: Darkness)
+    "I looked at her for answers, but I received nothing but the same glare as I fell into the pit of despair."
 
 label day2end:
 

@@ -1,8 +1,8 @@
 # Here we can initialize all of our resources.
 
 # character definitions
-﻿define a = Character("Alice")
 define w = Character("Whitley")
+define a = Character("Alice")
 
 # The game starts here.
 
@@ -79,7 +79,7 @@ init python:
 
 label start:
 
-    scene bg room
+    jump day2
 
 label ending:
 
