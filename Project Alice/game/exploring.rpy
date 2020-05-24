@@ -1,0 +1,2 @@
+label exploring:
+    jump ending
