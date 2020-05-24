@@ -378,7 +378,7 @@ label day2stand:
 
     "I yelled at her while beckoning her back. She glared at me."
 
-    a "ou’re no fun. This game is over."
+    a "You’re no fun. This game is over."
 
     "All of a sudden the realm started rumbling. The ground I was on began shaking and cracking apart."
 
@@ -394,4 +394,6 @@ label day2stand:
 
     #(Scene: Darkness)
 
-    #(Transition to next day)
+label day2end:
+
+    jump day3

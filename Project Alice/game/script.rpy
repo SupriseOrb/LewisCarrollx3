@@ -2,6 +2,17 @@
 
 # character definitions
 ﻿define a = Character("Alice")
+define w = Character("Whitley")
+
+# The game starts here.
+
+# Day 3 variables
+default Alice_affinity = 10
+default beatqueen = False
+default time = 5
+default watchbook = False
+default watchdiary = False
+
 
 # image definitions
 image alice happy = "Alice.png"
