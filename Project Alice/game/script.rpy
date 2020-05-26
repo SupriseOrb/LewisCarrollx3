@@ -21,8 +21,6 @@ image bunny = "bunny.png"
 # bg definitions
 image black = "#000"
 
-
-
 init python:
 
     import math
@@ -79,7 +77,7 @@ init python:
 
 label start:
 
-    jump day2
+    jump day6
 
 label ending:
 
