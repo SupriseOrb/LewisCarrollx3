@@ -3,6 +3,7 @@
 # character definitions
 define w = Character("Whitley")
 define a = Character("Alice")
+define r = Character("Mr. Rabbit")
 
 # The game starts here.
 
