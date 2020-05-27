@@ -16,6 +16,18 @@ label day6:
 
     default scenechange = False
 
+    default firstfirstforkleft = True
+
+    default firstfirstforkright = True
+
+    default firstsecondforkleft = True
+
+    default firstsecondforkright = True
+
+    default firstthirdforkleft = True
+
+    default firstthirdforkright = True
+
     default win = False
 
     default hr = 6
@@ -150,7 +162,11 @@ label day6:
 
         w "Wait… What do you mean? Alice? Alice!"
 
+        play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 2.0
+
         "Alice left as soon as she finished speaking, and her rapid footsteps faded away."
+
+        stop sound fadeout 2.5
 
         jump day6_option2
 
@@ -334,7 +350,7 @@ label day6:
 
             play sound "audio/soundeffects/page_turn.wav"
 
-            centered "{size=+2}{font=fonts/PenStory.ttf}{b}{size=+8}Playing Hide and Seek with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}SEEKER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}WIN{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}RIGHT{/size}{/b}\n\n4. There {b}{size=+3}isn't{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}FOLLOW{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
+            centered "{size=+2}{font=fonts/PenStory.ttf}{b}{size=+8}Playing Hide and Seek with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}SEEKER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}WIN{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}RIGHT{/size}{/b}\n\n4. There {b}{size=+3}ISN'T{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}FOLLOW{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
 
             hide image "note.jpg"
            
@@ -346,7 +362,7 @@ label day6:
 
             play sound "audio/soundeffects/page_turn.wav"
 
-            centered "{size=+2}{font=fonts/PenStory.ttf}{b}{size=+8}Playing Lie and Truth with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}HIDER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}LOSE{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}LEFT{/size}{/b}\n\n4. There {b}{size=+3}is{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}BREAK{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
+            centered "{size=+2}{font=fonts/PenStory.ttf}{b}{size=+8}Playing Lie and Truth with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}HIDER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}LOSE{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}LEFT{/size}{/b}\n\n4. There {b}{size=+3}IS{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}BREAK{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
 
             hide image "note.jpg"
            
@@ -388,7 +404,11 @@ label day6:
 
             "There have been more and more delusions recently. I'd better persuade Alice to leave, but right now, I need to find Mr. Rabbit first."
 
+            play sound "audio/soundeffects/whitley_walk.wav"
+
             "I went to the end of the hallway, and it split off into two different directions."
+
+            stop sound fadeout 1.8
 
             "On my detective’s honor, I swear I never saw this fork here before."
 
@@ -396,16 +416,22 @@ label day6:
 
         else:
 
+            play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+
             scene bg hallway
 
             "I pushed the door open and went to the end of the hallway again."
 
+            play sound "audio/soundeffects/whitley_walk.wav"
+
             "The way split off into two different directions."
 
-            "There was a sign on each of the two roads. The left sign had a \"LEFT\" written on it, and the right sign had a \"RIGHT\" written on it."
+            stop sound fadeout 1.8
 
 
     label day6_option3:
+
+        "There was a sign on each of the two roads. The left sign had a \"LEFT\" written on it, and the right sign had a \"RIGHT\" written on it."
 
         menu:
 
@@ -417,11 +443,33 @@ label day6:
 
                 play sound "audio/soundeffects/whitley_walk.wav"
 
+                if firstfirstforkright == False:
+
+                    "The right road lead to a dead end. I could only go this way."
+
+                elif translated == False and firstfirstforkleft == True:
+
+                    "I don't have any clue about where Mr. Rabbit is, but I think my intuition will lead me to the place."
+
+                if firstfirstforkleft == False and translated == False and firstfirstforkright == True:
+
+                    "Fortunately, my intuition gave me the correct answer."
+
+                if firstfirstforkleft == True and translated == True and firstfirstforkright == True:
+
+                    "The clues on the mirrors were strange... I didn't think follow them might be the right choice."
+
+                    "I decided to turn left."
+
                 "I went to the road chosen and soon came to another fork in the road."
 
-                "The sign \"RIGHT\" was placed in the left way, and the sign \"LEFT\" was placed in the right way."
-
                 stop sound fadeout 2.0
+
+                if firstfirstforkleft == True and translated == True and firstfirstforkright == True:
+
+                    "Seemed like I was right."
+
+                $ firstfirstforkleft = False
 
                 jump day6_option4
 
@@ -431,9 +479,19 @@ label day6:
 
                 play sound "audio/soundeffects/whitley_walk.wav"
 
-                "I went to the road chosen and soon came to a dead end."
+                if translated == False:
 
-                stop sound fadeout 1.8
+                    "I don't have any clue about where Mr. Rabbit is, so I decide to trust my intuition."
+
+                elif firstfirstforkright == True:
+
+                    "Every choice Mr. Rabbit made was right, so this must be the right choice."
+
+                    $ firstfirstforkright = False
+
+                "I went to the road chosen, but soon came to a dead end."
+
+                stop sound fadeout 2
 
                 "I could only go back to the last fork."
 
@@ -455,6 +513,18 @@ label day6:
 
     label day6_option4:
 
+        "The sign \"RIGHT\" was placed in the left way, and the sign \"LEFT\" was placed in the right way."
+
+        if firstsecondforkright == True and firstsecondforkleft == True:
+
+            if translated == True:
+                
+                "It's strange. Shall I trust what the mirror say this time?"
+
+            else:
+
+                "It's strange. Shall I trust my intuition this time?"
+
         menu:
 
             "Which way should I go?"
@@ -463,9 +533,23 @@ label day6:
 
                 $ addmin(5)
 
+                play sound "audio/soundeffects/whitley_walk.wav"
+
                 "I went to the road chosen and soon came to a dead end."
 
+                if firstfirstforkright == False and firstsecondforkright == True:
+
+                    "I was confused by the clues I translated from the mirror."
+
+                    "I had made wrong decisions twice."
+
+                    "It told me every choice Mr. Rabbit made was right... Did I understand it wrong?"
+
+                    $ firstsecondforkright = False
+
                 "I could only go back to the last fork."
+
+                stop sound fadeout 2
 
                 jump day6_option4
 
@@ -473,7 +557,27 @@ label day6:
 
                 $ addmin(5)
 
+                play sound "audio/soundeffects/whitley_walk.wav"
+
                 "I went to the road chosen and soon came to another fork in the road."
+
+                stop sound fadeout 2
+
+                if firstfirstforkright == True and firstsecondforkright == True and firstsecondforkleft == True:
+
+                    if translated == False:
+
+                        "Ah, my intuition led me to the right way for twice!"
+
+                        "There should be a god stand by me."
+
+                    else:
+
+                        "Obviously, I shouldn't trust what the mirror told me."
+
+                        "Opposite to what mirror said, Mr. Rabbit never make a \"right\" choice"
+
+                $ firstsecondforkleft = False
 
                 jump day6_option5
 
@@ -507,9 +611,25 @@ label day6:
 
                 $ addmin(5)
 
-                "I went to the road chosen and soon came to a dead end."
+                if firstfirstforkright == False and firstsecondforkright == False and translated == False:
+
+                    "This was a mirrored text for word \"LEFT.\" I'd chosen right way for twice, but they both led me to the dead end."
+
+                    "There's no much time left. I decided to turn left first."
+
+                if translated == True and firstthirdforkleft == True:
+
+                    "I choose not to trust the clues in the mirror. Every choice Mr. Rabbit did should be \"left.\""
+
+                    $ firstthirdforkleft = False
+
+                play sound "audio/soundeffects/whitley_walk.wav"
+
+                "I went to the road chosen, but soon came to a dead end."
 
                 "I could only go back to the last fork."
+
+                stop sound fadeout 2
 
                 jump day6_option5
 
@@ -517,7 +637,43 @@ label day6:
 
                 $ addmin(5)
 
+                if firstfirstforkright == True and firstsecondforkright == True and firstthirdforkleft == True:
+
+                    if translated == True:
+
+                        "If every word in the mirror was opposed to their original meaning, I should understand the \"THӘIЯ\" in a opposed way too when it's \"a mirrored text\" also."
+
+                        "Therefore, the \"THӘIЯ\" sign meaned \"LEFT,\" and the \"TꟻƎ⅃\" sign meaned \"RIGHT.\""
+
+                        "When every choice Mr. Rabbit was actually left, this was the only way I need to choose."
+
+                        "A professional detective never make a wrong inference, especially on this simple mirror trick."
+
+                    else:
+
+                        "A professional detective never hesitate. I always follow my heart."
+
+                        "A different one after two continuous same answers. This's so old fashioned."
+
+                        "Ms. Detective never made a wrong choice."
+
+                if firstfirstforkright == False and firstsecondforkright == False and firstthirdforkleft == False:
+
+                    "I finally found the correct way to go. I had made wrong decisions for three times."
+
+                    if minute < 10:
+
+                        "It's [hr]:0[minute] right now. No much time left."
+
+                    else:
+
+                        "It's [hr]:[minute] right now. No much time left."
+
+                play sound "audio/soundeffects/whitley_walk.wav"
+
                 "I went to the road chosen and soon came to the end of the hallway."
+
+                stop sound fadeout 2
 
                 jump day6_option5_over
 
@@ -609,7 +765,7 @@ label day6:
 
                 "I have so many questions last in my mind. I just want to talk with Alice as soon as possible."
 
-                "I pass the wand and go touch motionless Mr. Rabbit immediately."
+                "I pass the wand and walked to Mr. Rabbit. It's motionless, so I could easily touch it."
 
                 jump lose
 
@@ -679,6 +835,16 @@ label day6:
 
                 jump lose
 
+            "Catch Mr. Rabbit":
+
+                "I shouldn't waste time on waving the wand. I thought."
+
+                "I have so many questions last in my mind. I just want to talk with Alice as soon as possible."
+
+                "I walked to Mr. Rabbit. It's motionless, so I could easily touch it."
+
+                jump lose
+
             "Read the clues" if translated == True:
 
                 call clues
@@ -716,7 +882,11 @@ label day6:
 
         r "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
 
-        r "*purrrrr* Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret!"
+        r "Mr. Rabbit is suprised how you reach this room without noitcing it!"
+
+        r "Did you find the clues? Did you? Didn't you?"
+
+        r "*purrrrr* Whatever! Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret now!"
 
         hide bunny
 
@@ -779,17 +949,27 @@ label day6:
             
             if timetakentowin == 65:
 
-                r "1 hour and 5 minutes! You only used 1 hour and 5 minutes to find out Mr. Rabbit's biggest secret?!"
+                r "1 hour and 5 minutes! That's so close! Mr. Rabbit almost won the game!"
 
             elif timetakentowin == 60:
 
-                r "1 hour! You only used 1 hour to find out Mr. Rabbit's biggest secret?!"
+                r "1 hour! That's so close! Mr. Rabbit almost won the game!"
 
             elif timetakentowin < 60:
 
-                r "[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!"          
+                r "[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!"
+
+                if timetakentowin == 35:
+
+                    r "Noone can find Mr. Rabbit's secret shorter than you! Noone! Did you play a trick with the time?"
 
             r "Don’t tell Alice, please! Let it be the secret only for you and Mr. Rabbit."
+
+            hide bunny
+            
+            w "Hey Mr. Rabbit, calm down. We should go for breakfast, right?"
+
+            show bunny
 
             r "Oh dear! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!"
 
@@ -797,7 +977,11 @@ label day6:
 
             "Mr. Rabbit bounced away nervously."
 
+        play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+
         "I went to the dinning room."
+
+        stop sound fadeout 2
 
         "While having breakfast, my head became more and more groggy and my vision blurred."
 
@@ -805,6 +989,12 @@ label day6:
 
         "Alice noticed my discomfort and advised me to have a rest. This was a good idea, I really need a rest before I find a suitable way to convince her tomorrow."
 
+        play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+
         "I went back to bedroom and fell asleep fast."
+
+        stop sound fadeout 2
+
+        play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
         "I had a deep sleep today."

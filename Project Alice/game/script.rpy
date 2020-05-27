@@ -78,7 +78,7 @@ init python:
 
 label start:
 
-    jump day2
+    jump day6
 
 label ending:
 
