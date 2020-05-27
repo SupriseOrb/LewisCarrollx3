@@ -22,6 +22,10 @@ label day6:
 
     default minute = 20
 
+    default timetakentowin = 0
+
+    default winningstring = ""
+
     screen Time:
         if minute < 10:
 
@@ -85,6 +89,8 @@ label day6:
     hide alice
 
     menu:
+
+        "What should I say?"
 
         "What can I do for you?":
             jump day6_option1a
@@ -196,7 +202,7 @@ label day6:
 
                 jump day6_option2
 
-            "Get out of the room" if gohallway == True:
+            "Get out of the room":
 
                 jump day6_option2_over
 
@@ -224,9 +230,13 @@ label day6:
 
             "What should I do with the mirror?"
 
-            "Avada Kedavra!":
+            "Avada Kedavra! (+5min)":
+
+                $ addmin(5)
 
                 if wandfound == False:
+
+                    w "Avada Kedavra!"
 
                     "Nothing happened, as was expected."
 
@@ -234,23 +244,45 @@ label day6:
 
                     "I waved the wand and pointed it to the mirror."
 
+                    w "Avada Kedavra!"
+
                     "Nothing happened. Seems like a wand doesn't make me more like a wizard."
 
                 jump day6_option2b
 
             "ɿoɿɿimɘʜɈʜƨɒmƨ! (+5min)" if wandfound == True:
 
+                $ addmin(5)
+
                 "I waved the wand and pointed it to the mirror."
+
+                w "ɿoɿɿimɘʜɈʜƨɒmƨ!"
 
                 "*Crack*"
 
                 "The mirror broke! I dodged the pieces of the flying mirror and found out a piece of paper inside the mirror."
 
-                "The rules written on this piece of paper were totally different from the one on the mirror"
+                if translated == True:
+
+                    "The rules written on this piece of paper were totally different from the one on the mirror"
+
+                else:
+
+                    "This might be the rule of the game. Mr. Rabbit hided it inside the mirror."
+
+                    "Alice is right, it's a cunning rabbit.'"
 
                 call real_clues
 
-                "I remembered what Alice told me at the very beginning... Every word was reversed in the mirror, that's true."
+                if translated == True:
+
+                    "I remembered what Alice told me at the very beginning... Every word was reversed in the mirror, that's true."
+
+                else:
+
+                    "If I found this piece of paper at the beginning, it might be very useful."
+
+                    "Mr. Rabbit is always right, that's a joke."
 
                 "I saw something else in the mirror, so I reached out and took it."
 
@@ -259,7 +291,11 @@ label day6:
 
             "FREIGABE! (+5min)" if wandfound == True:
 
+                $ addmin(5)
+
                 "I waved the wand and pointed it to the mirror."
+
+                w "FREIGABE!"
 
                 "Nothing happened. Maybe this's not the correct spell."
 
@@ -318,13 +354,25 @@ label day6:
 
         label day6_clue:
 
+            "This should be the \"candy\" for winning the game with Mr. Rabbit."
+
+            if hr < 7 or hr ==7 and minute <=10:
+
+                "I still have some time before the breakfast. Now I could have a rest and waited for the breakfast."
+
+            else:
+
+                "It's almost 7:30 a.m., so I stayed in the bedroom and waited for the breakfast."
+
+            $ win = True
+
             jump breakfast
 
     label day6_option2_over:
 
         if firstgoout == True:
 
-            if translated == False:
+            if translated == False and gohallway == True:
 
                 "I couldn't translate the text in a short time. Maybe it's not wise to do it right now."
 
@@ -501,7 +549,7 @@ label day6:
 
         show bunny
 
-        r "Hey! I saw you! I saw you!"
+        r "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
 
         r "Help! Mr. Rabbit accidentally used a wrong spell, please help this poor bunny!"
 
@@ -513,7 +561,7 @@ label day6:
 
         show bunny
 
-        r "Game doesn't matter! Mr. Rabbit won't lose any thing while losing! Take the wand!"
+        r "Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!"
 
         hide bunny
 
@@ -619,7 +667,7 @@ label day6:
 
                 show bunny
 
-                r "Oh! Oh! How kind you are, Ms. Whitley! Mr. Rabbit almost thought I could not complete the game today."
+                r "Oh! Oh! How kind you are, Ms. Whitley! Mr. Rabbit almost thought it could not complete the game today."
 
                 hide bunny
 
@@ -643,6 +691,12 @@ label day6:
 
                 play sound "audio/soundeffects/whitley_walk.wav"
 
+                show bunny
+
+                r "Where do you go! Ms. Whitley! Come back! There's no time left!"
+
+                hide bunny
+
                 "I went back to the bedroom."
 
                 jump day6_option2
@@ -652,7 +706,7 @@ label day6:
 
         show bunny
 
-        r "Mr. Rabbit catches you!"
+        r "Mr. Rabbit catches ya!"
 
         hide bunny
 
@@ -660,7 +714,7 @@ label day6:
 
         show bunny
 
-        r "You’ve never been the seeker. Poor Whitley, I thought everyone should know things are opposite in the mirror."
+        r "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
 
         r "*purrrrr* Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret!"
 
@@ -670,9 +724,24 @@ label day6:
 
         "I had to go back and waited for breakfast in my room."
 
+
         jump breakfast
 
     label breakfast:
+
+        if win == True:
+
+            if hr == 6:
+
+                $ timetakentowin = minute - 20
+
+            else:
+
+                $ timetakentowin = minute + 40
+
+        $ hr = 7
+
+        $ minute = 30
     
         show alice
 
@@ -684,7 +753,7 @@ label day6:
 
             show bunny
 
-            r "Whitley is smart! But Mr. Rabbit is smarter than her! Than you! Than everyone!"
+            r "Ms. Whitley is smart! But Mr. Rabbit is smarter than her! Than you! Than everyone!"
 
             hide bunny
 
@@ -704,11 +773,25 @@ label day6:
 
             show bunny
 
-            r "No, no, no! My mirror! Mr. Rabbit’s biggest secret has been discovered!"
+            r "No, no, no! Mr. Rabbit's mirror! Mr. Rabbit’s biggest secret has been discovered!"
 
-            r "“Don’t tell Alice, please! Let it be the secret only for you and me."
+            r "Ms. Whitley, how could you possibly do that?"
+            
+            if timetakentowin == 65:
 
-            r "Oh dear! It's time for breakfast. I shall leave! I shall leave!"
+                r "1 hour and 5 minutes! You only used 1 hour and 5 minutes to find out Mr. Rabbit's biggest secret?!"
+
+            elif timetakentowin == 60:
+
+                r "1 hour! You only used 1 hour to find out Mr. Rabbit's biggest secret?!"
+
+            elif timetakentowin < 60:
+
+                r "[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!"          
+
+            r "Don’t tell Alice, please! Let it be the secret only for you and Mr. Rabbit."
+
+            r "Oh dear! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!"
 
             hide bunny
 
