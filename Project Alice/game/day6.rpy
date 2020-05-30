@@ -1,3 +1,24 @@
+default yalign_var = 0.6
+
+transform alpha_dissolve:
+    alpha 0.0
+    linear 0.5 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0
+
+screen countdown:
+    timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
+    bar value time range timer_range xalign 0.5 yalign yalign_var xmaximum 300 at alpha_dissolve
+
+screen Time:
+    if minute < 10:
+
+        text "Time: [hr]:0[minute]" xpos 0.1 ypos 0.1
+
+    else:
+
+        text "Time: [hr]:[minute]" xpos 0.1 ypos 0.1
+
 label day6:
 
     default pillowchecked = False
@@ -28,6 +49,8 @@ label day6:
 
     default firstthirdforkright = True
 
+    default option7readingclue = True
+
     default win = False
 
     default hr = 6
@@ -37,15 +60,6 @@ label day6:
     default timetakentowin = 0
 
     default winningstring = ""
-
-    screen Time:
-        if minute < 10:
-
-            text "Time: [hr]:0[minute]" xpos 0.1 ypos 0.1
-
-        else:
-
-            text "Time: [hr]:[minute]" xpos 0.1 ypos 0.1
 
     init python:
         def addmin(value):
@@ -320,7 +334,7 @@ label day6:
 
             "Translate the text (+20min)" if translated == False:
 
-                $ minute += 20
+                $ addmin(20)
 
                 "I took a while to translate the text and got a couple lines of clues."
 
@@ -370,7 +384,13 @@ label day6:
 
         label day6_clue:
 
+            "This was a muisc box, seemed a little bit old."
+
+            "I remembered it's Alice's favorite \"treasure,\" but she forgot to take it after moving."
+
             "This should be the \"candy\" for winning the game with Mr. Rabbit."
+
+            "I put the music box into my bedside table."
 
             if hr < 7 or hr ==7 and minute <=10:
 
@@ -785,7 +805,40 @@ label day6:
 
                 jump day6_option2
 
+    label day6_option7a:
+
+            hide screen countdown
+       
+            $ addmin(5)
+
+            "I waved the magic wand and pointed the winding thorns."
+
+            w "ɿoɿɿimɘʜɈʜƨɒmƨ!"
+
+            "Nothing happened."
+
+            show bunny
+
+            r "Nonono! What're you doing!"
+
+            hide bunny
+
+            jump day6_option7
+
     label day6_option7:
+
+        if translated == True:
+            $ yalign_var = 0.65
+
+        if option7readingclue == True:
+
+            $ time = 7
+            $ timer_range = 7
+            $ timer_jump = 'day6_option7a'
+
+            show screen countdown
+
+            $ option7readingclue = False
 
         menu:
 
@@ -793,23 +846,13 @@ label day6:
 
             "ɿoɿɿimɘʜɈʜƨɒmƨ! (+5min)":
 
-                $ addmin(5)
+                $ option7readingclue = True
 
-                "I waved the magic wand and pointed the winding thorns."
-
-                w "ɿoɿɿimɘʜɈʜƨɒmƨ!"
-
-                "Nothing happened."
-
-                show bunny
-
-                r "Nonono! What're you doing!"
-
-                hide bunny
-
-                jump day6_option7
+                jump day6_option7a
 
             "FREIGABE! (+5min)":
+
+                hide screen countdown
 
                 $ addmin(5)
 
@@ -837,6 +880,8 @@ label day6:
 
             "Catch Mr. Rabbit":
 
+                hide screen countdown
+
                 "I shouldn't waste time on waving the wand. I thought."
 
                 "I have so many questions last in my mind. I just want to talk with Alice as soon as possible."
@@ -847,11 +892,17 @@ label day6:
 
             "Read the clues" if translated == True:
 
+                $ yalign_var = 0.85
+
                 call clues
 
                 jump day6_option7
 
             "Back to bedroom (+15min)":
+
+                hide screen countdown
+
+                $ option7readingclue = True
 
                 $ addmin(15)
 
