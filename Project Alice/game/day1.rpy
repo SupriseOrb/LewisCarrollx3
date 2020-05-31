@@ -17,6 +17,9 @@ label day1:
     "The Hearts were a prosperous family, with two loving parents and an adorable child."
     "However, in this time of civil unrest, the parents disappeared without a trace. Some said it was because they dabbled in black magic, others said they were killed in the protests at night."
     "My job was to go through these rumours and find which one is true."
+    #Adding day 4 memory content
+    "The police had already declared the case cold. It happened back in May, but something about it just didn't feel right."
+    
     "That is why, on October 7th, 1968, I was on my way to the heart of this mess: to the Hearts' Paris Mansion."
 
     "I was almost there, but before I arrived, I decided to review the details of the case first."
@@ -89,7 +92,7 @@ label day1c2a2:
 
 label day1playr1:
     a "\"Okay, you can open your eyes now!\""
-    "I opened my eyes fully and was shocked! Everything was just so… so… big! I thought there was a wall beside me, but it's only my luggage. The stuffed white rabbit Alice was carrying was now the size of a small skyscraper."
+    "I opened my eyes fully and was shocked! Everything was just so... so big! I thought there was a wall beside me, but it was only my luggage. The stuffed white rabbit Alice was carrying was now the size of a small skyscraper."
     "I scanned for the metal pieces Alice laid down earlier, and noticed there were about our size now. Instead of everything becoming larger...maybe we shrunk."
     a "\"Hehe, is Ms. Whitley surprised?\""
     w "\"I'm very surprised. Is this part of play time?\""
@@ -173,12 +176,12 @@ label day1playr2cont:
     "Alice puffed up her cheeks and crossed her arms."
 
 label day1playr3:
-    "I was so absorbed in the game that I forgot I was here to recover the truth. Curse my competitive streak...or was it something about Alice's nature that enticed me to play? Well, she did force me to play."
+    "I was so absorbed in the game that I forgot I was here to recover the truth. Curse my competitive streak...or was it something about Alice's nature that enticed me to play? Well, she did {i}force{/i} me to play."
     "But let's see if I can get some information out of her."
-    w "Since you asked me a question, why don't you answer a question of mine?"
-    a "Hmm, I don't know~ After all, Whitley didn't answer my question properly."
+    w "\"Since you asked me a question, why don't you answer a question of mine?\""
+    a "\"Hmm, I don't know~ After all, Whitley didn't answer my question properly.\""
     "Alice tried to appear casual, but her eyes were trained on the now three metal pieces on the floor as well as the red piece that was about to be thrown upwards."
-    "She's distracted from me. Time to ask a crucial question now while her emotional guard is down."
+    "She was distracted from me. Time to ask a crucial question now while her emotional guard is down."
     menu:
         "What's your favorite game?":
             jump day1c5a1
@@ -189,56 +192,56 @@ label day1playr3:
 
 label day1c5a1:
     "She really likes to play, so maybe I should ask what's her favorite game. It might give me insight to what she's like or how life was like with her parents."
-    w "You seem to like to play, do you have a favorite game?"
+    w "\"You seem to like to play, do you have a favorite game?\""
     "Alice turned eerily and smiled at me."
-    a "It's a surprise for the seventh day."
+    a "\"It's a surprise for the seventh day.\""
     "The seventh day? That's the day I leave and her godparents arrive. But that doesn't give me much else. Maybe it has something to do with food?"
     jump day1playr3cont
 
 label day1c5a2:
     "Let's turn the same question on to her. After all, maybe she already has an answer and was hoping I would ask her too."
-    w "Hmm, do you have a favorite food?"
+    w "\"Hmm, do you have a favorite food?\""
     "Alice looked at me with hungry eyes."
-    a "Lapin a La Cocotte! My parents' rabbit stew was the best."
+    a "\"Lapin a La Cocotte! My parents' rabbit stew was the best.\""
     "Well, I didn't expect that. A big white rabbit plushie, rabbit stew... I wonder if she has some sort of affection for rabbits."
     jump day1playr3cont
 
 label day1c5a3:
     "I wonder if there's deeper meaning to everything Alice has done today."
-    w "What are you up to?"
+    w "\"What are you up to?\""
     "For just a second, Alice froze up and her smile dropped."
-    a "What do you mean Ms. Whitley? I'm just trying to win this game."
-    "I should drop the subject, it looks like she won't talk more."
+    a "\"What do you mean Ms. Whitley? I'm just trying to win this game.\""
+    "I should drop the subject. It looked like she wouldn't want to talk more."
     jump day1playr3cont
 
 label day1playr3cont:
-    a "Whitleeeey~ Are you even trying? You didn't even pay attention in the last round!"
+    a "\"Whitleeeey~ Are you even trying? You didn't even pay attention in the last round!\""
     "Alice dropped all three metal pieces in front of me."
-    w "Oh, is the round over with. Sorry about that, I wanted to learn more about you."
+    w "\"Oh, is the round over with. Sorry about that, I wanted to learn more about you.\""
     "Which is technically not a lie even if I have ulterior motives."
-    w "To make it up to you, let's play another round. I bet I'll win."
-    "Alice nods her head side to side."
-    a "We can't play another round. I only have three metal pieces. I lost the other ones."
+    w "\"To make it up to you, let's play another round. I bet I'll win.\""
+    "Alice nodded her head side to side."
+    a "\"We can't play another round. I only have three metal pieces. I lost the other ones.\""
     if day1has_bone:
         "I clutched the broken metal bone in my pocket. For some reason, it feels like a bad idea to say I have another one in my hand."
-        w "That's too bad."
-        "Alice sadly smiles at Whitley."
-        a "Yeah...if only there was another one."
+        w "\"That's too bad.\""
+        "Alice sadly smiled at Whitley."
+        a "\"Yeah...if only there was another one.\""
         jump day1end
-    w "Don't worry about it. It was a fun three rounds! And you're the winner of the day because you won the most important last round!"
-    a "Hehe, I'm the winner!"
+    w "\"Don't worry about it. It was a fun three rounds! And you're the winner of the day because you won the most important last round!\""
+    a "\"Hehe, I'm the winner!\""
 
 label day1end:
-    "Well, all in all, I'm glad we're done with the game. I don't think I could have handled it any more."
-    a "Whitley, I'm tired, carry me to bed!"
-    w "Okay, okay. Whatever you wish for your highness."
-    a "Hehe~"
+    "Well, all in all, I was glad we were done with the game. I don't think I could have handled it any more."
+    a "\"Whitley, I'm tired, carry me to bed!\""
+    w "\"Okay, okay. Whatever you wish for your highness.\""
+    a "\"Hehe~\""
     "I picked up Alice and froze. There were two uncertainties: 1)  I didn't know where Alice's bedroom was and 2) how were we going to move around if we were still tiny compared to the house."
     "I panicked internally, thinking about all the stairs I had to scale and the tall bed that would be impossible to climb. Alice pulled at my shirt, trying to get my attention."
-    a "Why aren't you moving. My bedroom is that way."
+    a "\"Why aren't you moving. My bedroom is that way.\""
     "I looked in the direction Alice was pointing towards and to my amazement, everything looked normal size. I didn't know when we returned to normal human size, but I'm glad that's one question answered."
     "I followed Alice's pointing figure and we soon arrived at her bedroom where I tucked her in for bed. I got up and tried to leave the room, but Alice tugged on my shirt again."
-    a "Won't you stay? I don't want to sleep by myself."
+    a "\"Won't you stay? I don't want to sleep by myself.\""
     menu:
         "Stay and sleep with Alice":
             jump day1c6a1
@@ -247,28 +250,28 @@ label day1end:
 
 label day1c6a1:
     "Now that someone's here, she probably doesn't want to be alone for a single moment."
-    w "Just for tonight, okay? You're a big girl, so you should be able to sleep by yourself."
-    a "Yay!"
+    w "\"Just for tonight, okay? You're a big girl, so you should be able to sleep by yourself.\""
+    a "\"Yay!\""
     "Alice scooted and gave me space where I tucked in. The bed was nice and cozy, the right environment for the tired Alice to fall asleep instantly."
     "I couldn't fall asleep as easily because the protests from outside were still going strong. Seems like the police and college students are clashing again."
-    a "...Whitley don't go…"
-    w "Huh?"
-    w "I guess Alice is sleeping talking."
-    a "...stay...meet my parents…zzz"
+    a "\"...Whitley don't go...\""
+    w "\"Huh?\""
+    w "\"I guess Alice is sleeping talking.\""
+    a "\"...stay...meet my parents...zzz.\""
     "Well that doesn't make sense. Alice's parents are gone, so there's no way I can meet them. Poor kid, she probably misses them very much."
     "Mhmm, seems like I'm tuckered out from the day. I hope the next few days will be just as peaceful and playful as today."
     jump day2
 
 label day1c6a2:
-    w "I'm sorry Alice. I still have to unpack. Besides, you're a big kid now, you should be able to sleep by yourself."
-    a "...okay."
-    "Alice retracts her hand and slumps back into her bed. I'm sorry Alice, but I need some time to myself...to figure out what's going on."
-    a "Before you go, take that with you."
+    w "\"I'm sorry Alice. I still have to unpack. Besides, you're a big kid now, you should be able to sleep by yourself.\""
+    a "\"...okay.\""
+    "Alice retracted her hand and slumped back into her bed. I'm sorry Alice, but I need some time to myself...to figure out what's going on."
+    a "\"Before you go, take that with you.\""
     "Alice points to a red envelope on the dresser."
-    a "A thank you for playing with me today. I hope you like it...zzz"
+    a "\"A thank-you for playing with me today. I hope you like it...zzz\""
     "I took the red envelope, investigating it to make sure there was nothing harmful."
-    w "Thank you Ali-- Oh, it looks like you're asleep already. Well, good night Alice. Sweet dreams."
+    w "\"Thank you Ali-- Oh, it looks like you're asleep already. Well, good night Alice. Sweet dreams.\""
     "I closed the door behind me and opened up the envelope. Inside was a drawing of Alice...me and to other figures who appear to be her parents."
-    "A cute drawing if only it wasn't for the red string. Alice was holding onto it while it  wrapped all around her parents and me. I crumpled the drawing and placed it back into my pocket."
+    "A cute drawing if only it wasn't for the red string. Alice was holding onto it while it wrapped all around her parents and me. I folded the drawing and placed it into my coat pocket."
     "Hopefully the next six days will be less eventful so I can do some actual work."
     jump day2
