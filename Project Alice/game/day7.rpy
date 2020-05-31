@@ -465,7 +465,7 @@ label day7scavengerStart:
     
     "[Whitley opens the door to show the little boy from day 4 memory.]"
     
-    "[Alice hides behind Whitley instantly and gives the boy a sour look. The boy gulps and steps back.] 
+    "[Alice hides behind Whitley instantly and gives the boy a sour look. The boy gulps and steps back.]"
     
     "[She realizes she's scared him and looks at his arm, where she burned him. She looks away.]"
     

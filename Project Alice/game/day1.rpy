@@ -160,8 +160,8 @@ label day1c4a2:
     jump day1playr2cont
 
 label day1c4a3:
-    w "\"Food\""
-    "One of the worst answers, but I have to keep my focus on the red piece."
+    w "\"Food.\""
+    "One of the worst answers, but I had to keep my focus on the red piece."
     jump day1playr2cont
 
 label day1playr2cont:
