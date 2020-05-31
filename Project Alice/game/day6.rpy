@@ -94,25 +94,17 @@ label day6:
 
     "The room was dark and the curtains were drawn."
 
-    " My head was paining... Did I draw the curtains last night?"
+    "My head was paining... Did I draw the curtains last night?"
 
     play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
     "The door of my room was opened by someone."
 
-    show alice
-
-    a "Hi Whitley! Glad to see you sleeping so well last night. Have you seen Mr. Rabbit?"
-
-    hide alice
+    a happy "Hi Whitley! Glad to see you sleeping so well last night. Have you seen Mr. Rabbit?"
 
     w "No... I just wake up. What happened?"
 
-    show alice
-
     a "It said it wanted to play with you and sneaked away in the early morning. How cunning!"
-
-    hide alice
 
     menu:
 
@@ -126,17 +118,11 @@ label day6:
 
     label day6_option1a:
 
-        show alice
-
         "Alice stamped her feet, she looked anxious."
 
         a "I have something to do, so I cannot play with you this time. Can you help me find Mr. Rabbit? It might hide somewhere in the house."
 
-        hide alice
-
         w "Of course. May I have some tips? I’m afraid that I cannot find it."
-
-        show alice
 
         a "It often leaves hints in the mirror, and important information will be marked out."
 
@@ -148,17 +134,11 @@ label day6:
 
     label day6_option1b:
 
-        show alice
-
         "Alice stamped her feet, she looked unhappy."
 
         a "It can only play some simple tricks with the mirror. Everyone should know mirrors could reverse the words!"
 
-        hide alice
-
         w "Yes, yes. Of course you play games better than it."
-
-        show alice
 
         a "Obviously. It’ll even mark the important clues for the player, I’m fairer than it too!"
 
@@ -723,41 +703,25 @@ label day6:
 
         "It was prisoned by some... winding thorns? On the floor? Is this a delusion too?"
 
-        show bunny
-
-        r "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
+        r happy "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
 
         r "Help! Mr. Rabbit accidentally used a wrong spell, please help this poor bunny!"
-
-        hide bunny
 
         w "Don't move! Thorns might hurt you."
 
         w "Mr. Rabbit, you should know I could just win the game by touching you. How can I help you?"
 
-        show bunny
-
         r "Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!"
 
-        hide bunny
-
         w "The wand?"
-
-        show bunny
 
         r "It's right there! Next to you! On the floor!"
 
         r "Then wave it and say the spell ɿoɿɿimɘʜɈʜƨɒmƨ!"
 
-        hide bunny
-
         w "Say...what?"
 
-        show bunny
-
         r "Nononono. Say the spell FREIGABE! Mr. Rabbit almost made a mistake again!"
-
-        hide bunny
 
     label day6_option6:
 
@@ -771,11 +735,7 @@ label day6:
 
                 "The wand was left near the door, so I soon found and picked up it."
 
-                show bunny
-
                 r "Say the spell!"
-
-                hide bunny
 
                 jump day6_option7
 
@@ -817,11 +777,7 @@ label day6:
 
             "Nothing happened."
 
-            show bunny
-
             r "Nonono! What're you doing!"
-
-            hide bunny
 
             jump day6_option7
 
@@ -864,11 +820,7 @@ label day6:
 
                 w "You are freed. What should we do next?"
 
-                show bunny
-
                 r "Oh! Oh! How kind you are, Ms. Whitley! Mr. Rabbit almost thought it could not complete the game today."
-
-                hide bunny
 
                 "Mr. Rabbit cried and bounced to me."
 
@@ -908,11 +860,7 @@ label day6:
 
                 play sound "audio/soundeffects/whitley_walk.wav"
 
-                show bunny
-
                 r "Where do you go! Ms. Whitley! Come back! There's no time left!"
-
-                hide bunny
 
                 "I went back to the bedroom."
 
@@ -921,15 +869,9 @@ label day6:
 
     label lose:
 
-        show bunny
-
         r "Mr. Rabbit catches ya!"
 
-        hide bunny
-
         w "What do you mean? I should be the seeker..."
-
-        show bunny
 
         r "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
 
@@ -938,8 +880,6 @@ label day6:
         r "Did you find the clues? Did you? Didn't you?"
 
         r "*purrrrr* Whatever! Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret now!"
-
-        hide bunny
 
         "I tried to talk to Mr. Rabbit, but it seemed to be in a state of madness and refused to respond."
 
@@ -963,36 +903,18 @@ label day6:
         $ hr = 7
 
         $ minute = 30
-    
-        show alice
 
         a "It's time! Everyone should have breakfast right now!"
 
-        hide alice
-
         if win == False:
-
-            show bunny
 
             r "Ms. Whitley is smart! But Mr. Rabbit is smarter than her! Than you! Than everyone!"
 
-            hide bunny
-
-            show alice
-
             a "You cunning bunny. Every single clue you left in the mirror was a lie."
-
-            hide alice
-            
-            show bunny
 
             r "Mr. Rabbit only wants to keep its big secret!"
 
-            hide bunny
-
         else:
-
-            show bunny
 
             r "No, no, no! Mr. Rabbit's mirror! Mr. Rabbit’s biggest secret has been discovered!"
 
@@ -1015,16 +937,10 @@ label day6:
                     r "Noone can find Mr. Rabbit's secret shorter than you! Noone! Did you play a trick with the time?"
 
             r "Don’t tell Alice, please! Let it be the secret only for you and Mr. Rabbit."
-
-            hide bunny
             
             w "Hey Mr. Rabbit, calm down. We should go for breakfast, right?"
 
-            show bunny
-
             r "Oh dear! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!"
-
-            hide bunny
 
             "Mr. Rabbit bounced away nervously."
 
@@ -1049,3 +965,5 @@ label day6:
         play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
         "I had a deep sleep today."
+
+        jump day7
