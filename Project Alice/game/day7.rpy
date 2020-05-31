@@ -55,19 +55,21 @@ label day7:
 
     "\"...\""
 
-    "\"Good point.\""
+    "\"That's fair.\""
 
     "Alice pulled on my arm."
 
     a "\"C'mon! We don't have any time to waste!\""
 
-    "Alice skipped away, back into the main hall."
+    #hide Alice
+
+    "I finally started to get up and Alice skipped away, back into the main hall."
 
     "Once I'd gotten dressed, I left my room and found her sitting at the kitchen table."
 
-    #(Scene: Kitchen)
+    scene kitchen
     
-    "Alice's Mr. Rabbit was at her side, as usual, but another object accompanied her as well."
+    "Alice's Mr. Rabbit was seated next to her, but another object accompanied her as well."
 
     "A leather bag, placed primly at her side."
 
@@ -242,7 +244,7 @@ label day7scavengerStart:
     
     "\"Alice?\""
     
-    a "\"My family spell! It's missing!\""
+    a "\"My family spell! It's torn, it's missing pieces!\""
 
     "She looked to me with wide, desperate eyes."
 
@@ -326,7 +328,7 @@ label day7scavengerStart:
 
     a "\"I do too!\""
 
-    "In a blink, the little girl was in my face, eyebrows scrunched and lips pressed tight. 
+    "In a blink, the little girl was in my face, eyebrows scrunched and lips pressed tight."
     
     a "\"I DO know what I'm doing, I promise! I'll show you!\""
     
@@ -380,7 +382,7 @@ label day7scavengerStart:
     
     "[Magic flares up]"
     
-    a "\"You don't know anything about them!\"
+    a "\"You don't know anything about them!\""
 
     "\"I know about []\""
     
@@ -459,7 +461,7 @@ label day7scavengerStart:
 
     "[Alice looks at her quizzically. Whitley winks at her and looks through the window.]"
 
-    "\"It looks like someone wants to see you!\"
+    "\"It looks like someone wants to see you!\""
     
     "[Whitley opens the door to show the little boy from day 4 memory.]"
     
