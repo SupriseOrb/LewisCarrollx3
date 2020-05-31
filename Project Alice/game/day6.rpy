@@ -100,11 +100,11 @@ label day6:
 
     "The door of my room was opened by someone."
 
-    a happy "Hi Whitley! Glad to see you sleeping so well last night. Have you seen Mr. Rabbit?"
+    a "Hi Whitley! Glad to see you sleeping so well last night. Have you seen Mr. Rabbit?"
 
     w "No... I just wake up. What happened?"
 
-    a "It said it wanted to play with you and sneaked away in the early morning. How cunning!"
+    a annoyed "It said it wanted to play with you and sneaked away in the early morning. How cunning!"
 
     menu:
 
@@ -120,15 +120,15 @@ label day6:
 
         "Alice stamped her feet, she looked anxious."
 
-        a "I have something to do, so I cannot play with you this time. Can you help me find Mr. Rabbit? It might hide somewhere in the house."
+        a annoyed "I have something to do, so I cannot play with you this time. Can you help me find Mr. Rabbit? It might hide somewhere in the house."
 
         w "Of course. May I have some tips? I’m afraid that I cannot find it."
 
-        a "It often leaves hints in the mirror, and important information will be marked out."
+        a normal "It often leaves hints in the mirror, and important information will be marked out."
 
-        a "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
+        a happy strange "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
 
-        a "Don't worry. Enjoy the game, and everything will be over after tomorrow..."
+        a happy "Don't worry. Enjoy the game, and everything will be over after tomorrow..."
 
         jump day6_option1_over
 
@@ -136,17 +136,17 @@ label day6:
 
         "Alice stamped her feet, she looked unhappy."
 
-        a "It can only play some simple tricks with the mirror. Everyone should know mirrors could reverse the words!"
+        a annoyed "It can only play some simple tricks with the mirror. Everyone should know mirrors could reverse the words!"
 
         w "Yes, yes. Of course you play games better than it."
 
-        a "Obviously. It’ll even mark the important clues for the player, I’m fairer than it too!"
+        a annoyed "Obviously. It’ll even mark the important clues for the player, I’m fairer than it too!"
 
-        a "But right now, I have other things to do. I allow you to go play with Mr. Rabbit today."
+        a normal "But right now, I have other things to do. I allow you to go play with Mr. Rabbit today."
 
-        a "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
+        a happy strange "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
 
-        a "Don’t worry, enjoy the game, and everything will be over after tomorrow..."
+        a happy strange "Don’t worry, enjoy the game, and everything will be over after tomorrow..."
 
         jump day6_option1_over
 
@@ -280,7 +280,7 @@ label day6:
 
                     "This might be the rule of the game. Mr. Rabbit hided it inside the mirror."
 
-                    "Alice is right, it's a cunning rabbit.'"
+                    "Alice is right, it's a cunning rabbit."
 
                 call real_clues
 
@@ -291,8 +291,6 @@ label day6:
                 else:
 
                     "If I found this piece of paper at the beginning, it might be very useful."
-
-                    "Mr. Rabbit is always right, that's a joke."
 
                 "I saw something else in the mirror, so I reached out and took it."
 
@@ -381,6 +379,8 @@ label day6:
                 "It's almost 7:30 a.m., so I stayed in the bedroom and waited for the breakfast."
 
             $ win = True
+
+            "..."
 
             jump breakfast
 
@@ -703,25 +703,25 @@ label day6:
 
         "It was prisoned by some... winding thorns? On the floor? Is this a delusion too?"
 
-        r happy "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
+        r "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
 
-        r "Help! Mr. Rabbit accidentally used a wrong spell, please help this poor bunny!"
+        r depressed "Help! Mr. Rabbit accidentally used a wrong spell, please help this poor bunny!"
 
         w "Don't move! Thorns might hurt you."
 
         w "Mr. Rabbit, you should know I could just win the game by touching you. How can I help you?"
 
-        r "Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!"
+        r angry "Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!"
 
         w "The wand?"
 
         r "It's right there! Next to you! On the floor!"
 
-        r "Then wave it and say the spell ɿoɿɿimɘʜɈʜƨɒmƨ!"
+        r normal "Then wave it and say the spell ɿoɿɿimɘʜɈʜƨɒmƨ!"
 
         w "Say...what?"
 
-        r "Nononono. Say the spell FREIGABE! Mr. Rabbit almost made a mistake again!"
+        r confused "Nononono. Say the spell FREIGABE! Mr. Rabbit almost made a mistake again!"
 
     label day6_option6:
 
@@ -735,7 +735,7 @@ label day6:
 
                 "The wand was left near the door, so I soon found and picked up it."
 
-                r "Say the spell!"
+                r angry "Say the spell!"
 
                 jump day6_option7
 
@@ -777,7 +777,7 @@ label day6:
 
             "Nothing happened."
 
-            r "Nonono! What're you doing!"
+            r angry "Nonono! What're you doing!"
 
             jump day6_option7
 
@@ -820,7 +820,7 @@ label day6:
 
                 w "You are freed. What should we do next?"
 
-                r "Oh! Oh! How kind you are, Ms. Whitley! Mr. Rabbit almost thought it could not complete the game today."
+                r satisfied "Oh! Oh! How kind you are, Ms. Whitley! Mr. Rabbit almost thought it could not complete the game today."
 
                 "Mr. Rabbit cried and bounced to me."
 
@@ -860,7 +860,7 @@ label day6:
 
                 play sound "audio/soundeffects/whitley_walk.wav"
 
-                r "Where do you go! Ms. Whitley! Come back! There's no time left!"
+                r angry "Where do you go! Ms. Whitley! Come back! There's no time left!"
 
                 "I went back to the bedroom."
 
@@ -869,22 +869,21 @@ label day6:
 
     label lose:
 
-        r "Mr. Rabbit catches ya!"
+        r winning "Mr. Rabbit catches ya!"
 
         w "What do you mean? I should be the seeker..."
 
-        r "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
+        r depressed "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
 
-        r "Mr. Rabbit is suprised how you reach this room without noitcing it!"
+        r depressed "Mr. Rabbit is suprised how you reach this room without noitcing it!"
 
-        r "Did you find the clues? Did you? Didn't you?"
+        r confused "Did you find the clues? Did you? Didn't you?"
 
-        r "*purrrrr* Whatever! Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret now!"
+        r happy "*purrrrr* Whatever! Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret now!"
 
         "I tried to talk to Mr. Rabbit, but it seemed to be in a state of madness and refused to respond."
 
         "I had to go back and waited for breakfast in my room."
-
 
         jump breakfast
 
@@ -904,43 +903,43 @@ label day6:
 
         $ minute = 30
 
-        a "It's time! Everyone should have breakfast right now!"
+        a happy "It's time! Everyone should have breakfast right now!"
 
         if win == False:
 
-            r "Ms. Whitley is smart! But Mr. Rabbit is smarter than her! Than you! Than everyone!"
+            r winning "Ms. Whitley is smart! But Mr. Rabbit is smarter than her! Than you! Than everyone!"
 
-            a "You cunning bunny. Every single clue you left in the mirror was a lie."
+            a happy strange "You cunning bunny. Every single clue you left in the mirror was a lie."
 
-            r "Mr. Rabbit only wants to keep its big secret!"
+            r satisfied "Mr. Rabbit only wants to keep its big secret!"
 
         else:
 
-            r "No, no, no! Mr. Rabbit's mirror! Mr. Rabbit’s biggest secret has been discovered!"
+            r confused "No, no, no! Mr. Rabbit's mirror! Mr. Rabbit’s biggest secret has been discovered!"
 
-            r "Ms. Whitley, how could you possibly do that?"
+            r sad "Ms. Whitley, how could you possibly do that?"
             
             if timetakentowin == 65:
 
-                r "1 hour and 5 minutes! That's so close! Mr. Rabbit almost won the game!"
+                r depressed "1 hour and 5 minutes! That's so close! Mr. Rabbit almost won the game!"
 
             elif timetakentowin == 60:
 
-                r "1 hour! That's so close! Mr. Rabbit almost won the game!"
+                r depressed "1 hour! That's so close! Mr. Rabbit almost won the game!"
 
             elif timetakentowin < 60:
 
-                r "[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!"
+                r depressed "[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!"
 
                 if timetakentowin == 35:
 
-                    r "Noone can find Mr. Rabbit's secret shorter than you! Noone! Did you play a trick with the time?"
+                    r depressed "Noone can find Mr. Rabbit's secret shorter than you! Noone! Did you play a trick with the time?"
 
-            r "Don’t tell Alice, please! Let it be the secret only for you and Mr. Rabbit."
+            r depressed "Don’t tell Alice, please! Let it be the secret only for you and Mr. Rabbit."
             
             w "Hey Mr. Rabbit, calm down. We should go for breakfast, right?"
 
-            r "Oh dear! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!"
+            r confused "Oh dear! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!"
 
             "Mr. Rabbit bounced away nervously."
 

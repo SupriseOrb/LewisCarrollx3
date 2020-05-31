@@ -17,6 +17,7 @@ default watchdiary = False
 
 # image definition
 image side alice = Image(im.FactorScale("/alice/alice_happy_closemouth.png",0.8,0.8))
+image side alice normal = Image(im.FactorScale("/alice/alice_happy_closemouth.png",0.8,0.8))
 image side alice happy = Image(im.FactorScale("/alice/alice_happy_openmouth.png",0.8,0.8))
 image side alice happy strange= Image(im.FactorScale("/alice/alice_happy_strange.png",0.8,0.8))
 image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed.png",0.8,0.8))
@@ -24,6 +25,7 @@ image side alice asleep = Image(im.FactorScale("/alice/alice_asleep.png",0.8,0.8
 image side alice confused = Image(im.FactorScale("/alice/alice_confused.png",0.8,0.8))
 image side alice sad = Image(im.FactorScale("/alice/alice_sad.png",0.8,0.8))
 image side bunny = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
+image side bunny normal = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
 image side bunny angry = Image(im.FactorScale("/bunny/bunny_angry.png",1.2,1.2))
 image side bunny confused = Image(im.FactorScale("/bunny/bunny_confused.png",1.2,1.2))
 image side bunny depressed = Image(im.FactorScale("/bunny/bunny_depressed.png",1.2,1.2))
@@ -91,7 +93,7 @@ init python:
 
 label start:
 
-    jump day6
+    jump day1
 
 label ending:
 
