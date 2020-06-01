@@ -283,6 +283,8 @@ label day6:
 
                 w "ɿoɿɿimɘʜɈʜƨɒmƨ!"
 
+                play sound "audio/soundeffects/mirror_crash.wav"
+
                 "*Crack*"
 
                 "The mirror broke! I dodged the pieces of the flying mirror and found out a piece of paper inside the mirror."
@@ -357,7 +359,7 @@ label day6:
 
             play sound "audio/soundeffects/page_turn.wav"
 
-            centered "{size=+2}{font=fonts/PenStory.ttf}{b}{size=+8}Playing Hide and Seek with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}SEEKER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}WIN{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}RIGHT{/size}{/b}\n\n4. There {b}{size=+3}ISN'T{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}FOLLOW{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
+            centered "{size=+5}{font=fonts/PenStory.ttf}{b}{size=+12}Playing Hide and Seek with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}SEEKER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}WIN{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}RIGHT{/size}{/b}\n\n4. There {b}{size=+3}ISN'T{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}FOLLOW{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
 
             hide image "note.jpg"
            
@@ -369,7 +371,7 @@ label day6:
 
             play sound "audio/soundeffects/page_turn.wav"
 
-            centered "{size=+2}{font=fonts/PenStory.ttf}{b}{size=+8}Playing Lie and Truth with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}HIDER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}LOSE{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}LEFT{/size}{/b}\n\n4. There {b}{size=+3}IS{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}BREAK{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
+            centered "{size=+5}{font=fonts/PenStory.ttf}{b}{size=+12}Playing Lie and Truth with Mr. Rabbit!{/size}{/b}\n\n\n1. You are the {b}{size=+3}HIDER{/size}{/b}\n\n2. If you find the hidden Mr. Rabbit, you {b}{size=+3}LOSE{/size}{/b}\n\n3. Every choice Mr. Rabbit does is {b}{size=+3}LEFT{/size}{/b}\n\n4. There {b}{size=+3}IS{/size}{/b} a candy for the winner, just have fun!\n\n5. {b}{size=+3}BREAK{/size}{/b} the rules\n\n\n\n{space=500}-- Mr. Rabbit{/font}{/size}"
 
             hide image "note.jpg"
            
@@ -793,6 +795,8 @@ label day6:
     label day6_option7a:
 
             hide screen countdown
+
+            hide image "note.jpg"
        
             $ addmin(5)
 
@@ -970,7 +974,7 @@ label day6:
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
-        scene bg dinning_table
+        scene bg dining room
 
         "I went to the dinning room."
 
