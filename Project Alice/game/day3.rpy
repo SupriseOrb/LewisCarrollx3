@@ -376,10 +376,13 @@ label d3_wonderland:
         a "\"Oh, really? Fine. I'm hungry now. Can you make dinner for me?\""
 
         scene black
-        "{i}Alice walks to the second floor. You look at her thin back. Can't speak out anything.{/i}"
+        "{i}After dinner, Alice retreated up to the second floor as usual. As I watched her go, I couldn't help but think of what I found in the study room.{/i}"
+        "{i}I wanted to say something to her, but the way she used magic made her dangerous. Making senseless comments wasn't the way to go.{/i}"
+        "{i}Still...this was bad. She's keeping things bottled up. I wonder if I'll ever be able to get through to her.{/i}"
 
         "{i}What a tough day.{/i}"
-
+        
+        jump day4 
 
 
 
