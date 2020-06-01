@@ -1,4 +1,5 @@
 default yalign_var = 0.6
+image timebox = "timebox.png"
 
 transform alpha_dissolve:
     alpha 0.0
@@ -11,13 +12,23 @@ screen countdown:
     bar value time range timer_range xalign 0.5 yalign yalign_var xmaximum 300 at alpha_dissolve
 
 screen Time:
-    if minute < 10:
 
-        text "Time: [hr]:0[minute]" xpos 0.1 ypos 0.1
+    frame at alpha_dissolve:
 
-    else:
+        xmaximum 340
+        ymaximum 300
+        xalign 0
+        yalign 0
+        background "timebox"
 
-        text "Time: [hr]:[minute]" xpos 0.1 ypos 0.1
+        if minute < 10:
+
+            text "{size=+30}{font=fonts/Paris 1920 Script.ttf}[hr] : 0[minute]{/font}{/size}" xpos 0.3 ypos 0.8
+
+        else:
+
+            text "{size=+30}{font=fonts/Paris 1920 Script.ttf}[hr] : [minute]{/font}{/size}" xpos 0.3 ypos 0.8
+
 
 label day6:
 
@@ -84,7 +95,9 @@ label day6:
 
             return
 
-    scene bg bedroom
+    scene bg whitley_bedroom
+
+    show black
 
     play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 2.0
 
@@ -93,6 +106,8 @@ label day6:
     stop sound fadeout 1.0
 
     "The room was dark and the curtains were drawn."
+
+    hide black with Dissolve(2)
 
     "My head was paining... Did I draw the curtains last night?"
 
@@ -126,9 +141,9 @@ label day6:
 
         a normal "It often leaves hints in the mirror, and important information will be marked out."
 
-        a happy strange "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
+        a "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
 
-        a happy "Don't worry. Enjoy the game, and everything will be over after tomorrow..."
+        a happy strange "Don't worry. Enjoy the game, and everything will be over after tomorrow..."
 
         jump day6_option1_over
 
@@ -144,7 +159,7 @@ label day6:
 
         a normal "But right now, I have other things to do. I allow you to go play with Mr. Rabbit today."
 
-        a happy strange "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
+        a "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
 
         a happy strange "Don’t worry, enjoy the game, and everything will be over after tomorrow..."
 
@@ -168,7 +183,7 @@ label day6:
 
         if scenechange == True:
         
-            scene bg bedroom
+            scene bg whitley_bedroom
 
             stop sound fadeout 1.8
 
@@ -362,7 +377,7 @@ label day6:
 
         label day6_clue:
 
-            "This was a muisc box, seemed a little bit old."
+            "This was a music box, seemed a little bit old."
 
             "I remembered it's Alice's favorite \"treasure,\" but she forgot to take it after moving."
 
@@ -396,11 +411,19 @@ label day6:
 
             scene bg hallway
 
+            show black
+
             play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
             "I pushed the door open, but the hallway looked as dark as night."
 
-            "I blinked, the morning sunshine sprinkled on the ground through the window, and everything seemed normal again."
+            "I blinked, the light of lamps sprinkled on the ground, and everything seemed normal again."
+
+            hide black with Dissolve(2)
+
+            show black with Dissolve(1)
+
+            hide black with Dissolve(1.5)
 
             "There have been more and more delusions recently. I'd better persuade Alice to leave, but right now, I need to find Mr. Rabbit first."
 
@@ -697,13 +720,15 @@ label day6:
 
         play sound "audio/soundeffects/open_bedroom_door.wav"
 
+        scene bg empty room
+
         "There was only one room there, so I opened the door and walked in."
 
         "After entering the room, I immediately saw Mr. Rabbit."
 
         "It was prisoned by some... winding thorns? On the floor? Is this a delusion too?"
 
-        r "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
+        r ok "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
 
         r depressed "Help! Mr. Rabbit accidentally used a wrong spell, please help this poor bunny!"
 
@@ -711,11 +736,11 @@ label day6:
 
         w "Mr. Rabbit, you should know I could just win the game by touching you. How can I help you?"
 
-        r angry "Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!"
+        r sad "Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!"
 
         w "The wand?"
 
-        r "It's right there! Next to you! On the floor!"
+        r ok "It's right there! Next to you! On the floor!"
 
         r normal "Then wave it and say the spell ɿoɿɿimɘʜɈʜƨɒmƨ!"
 
@@ -735,7 +760,7 @@ label day6:
 
                 "The wand was left near the door, so I soon found and picked up it."
 
-                r angry "Say the spell!"
+                r ok "Say the spell!"
 
                 jump day6_option7
 
@@ -945,6 +970,8 @@ label day6:
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
+        scene bg dinning_table
+
         "I went to the dinning room."
 
         stop sound fadeout 2
@@ -957,12 +984,20 @@ label day6:
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
-        "I went back to bedroom and fell asleep fast."
+        "I went back to my bedroom."
 
         stop sound fadeout 2
 
+        scene bg whitley_bedroom
+
         play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
-        "I had a deep sleep today."
+        "I fell asleep soon."
+
+        hide screen Time
+
+        show black with Dissolve(3.0)
+
+        hide black with Dissolve(2.0)
 
         jump day7

@@ -33,6 +33,7 @@ image side bunny happy = Image(im.FactorScale("/bunny/bunny_happy.png",1.2,1.2))
 image side bunny sad = Image(im.FactorScale("/bunny/bunny_sad.png",1.2,1.2))
 image side bunny satisfied = Image(im.FactorScale("/bunny/bunny_satisfied.png",1.2,1.2))
 image side bunny winning = Image(im.FactorScale("/bunny/bunny_winning.png",1.2,1.2))
+image side bunny ok = Image(im.FactorScale("/bunny/bunny_ok.png",1.2,1.2))
 
 # bg definitions
 image black = "#000"
