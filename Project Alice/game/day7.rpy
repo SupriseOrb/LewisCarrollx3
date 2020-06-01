@@ -47,11 +47,11 @@ label day7:
 
     a "\"So I'll be Daughter and you get to be Mama!\""
 
-    "\"Me? Don't you want to play as a grown-up?\""
+    "\"Me? Don't you want to play as a real grown-up?\""
 
     "Alice gave me a quizzical look."
 
-    a "\"Being a grown-up? What's the point of that?\""
+    a "\"Being a real grown-up? What's the point of that?\""
 
     "\"...\""
 
