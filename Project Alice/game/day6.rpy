@@ -401,7 +401,13 @@ label day6:
 
             $ win = True
 
-            "..."
+            "Time is passing..."
+
+            while hr!=7 or minute!=30:
+
+                $ addmin(1)
+                
+                $ renpy.pause(0.1)
 
             jump breakfast
 
@@ -811,6 +817,8 @@ label day6:
             "Nothing happened."
 
             r angry "Nonono! What're you doing!"
+
+            $ option7readingclue = True
 
             jump day6_option7
 
