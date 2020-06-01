@@ -5,6 +5,9 @@ define w = Character("Whitley")
 define a = Character("Alice", image="alice",window_left_padding=150)
 define r = Character("Mr. Rabbit", image="bunny",window_left_padding=150)
 
+define A = Character("Alice", image="alice",window_left_padding=150)
+define W = Character("Whitley")
+
 # The game starts here.
 
 # Day 3 variables
@@ -13,6 +16,18 @@ default beatqueen = False
 default time = 5
 default watchbook = False
 default watchdiary = False
+
+# Day4 variables
+default AliceAngry=0    #for the part1 Conversation
+default AliceUnhappy=0  # for the part1 conversation
+default HelpAlice=False #for the part2 Conversation
+default finishedMission = False # for the part3 exploration
+default ResponceAlice = False   # For the part3 Conversation
+default AliceInPain = 0 # for the part3 conversation
+default AliceHateU = False  # There is a for emotional
+default AliceFeltSad = False    # for the emotional
+default AliceFeltPain = False   # for the emotional
+default FinishThisBoringDay = False # for the ending
 
 
 # image definition
