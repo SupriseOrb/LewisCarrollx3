@@ -357,6 +357,8 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
+    $ renpy.sound.stop(channel="sound")
+
     style_prefix "main_menu"
 
     add gui.main_menu_background

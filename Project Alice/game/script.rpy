@@ -35,6 +35,10 @@ image side bunny satisfied = Image(im.FactorScale("/bunny/bunny_satisfied.png",1
 image side bunny winning = Image(im.FactorScale("/bunny/bunny_winning.png",1.2,1.2))
 image side bunny ok = Image(im.FactorScale("/bunny/bunny_ok.png",1.2,1.2))
 
+# BGM definition
+
+$ renpy.music.set_volume(2, delay=0, channel='music')
+
 # bg definitions
 image black = "#000"
 

@@ -283,11 +283,15 @@ label day6:
 
                 w "ɿoɿɿimɘʜɈʜƨɒmƨ!"
 
+                $renpy.sound.set_volume(0.1, 0, channel = 'sound')
+
                 play sound "audio/soundeffects/mirror_crash.wav"
 
                 "*Crack*"
 
                 "The mirror broke! I dodged the pieces of the flying mirror and found out a piece of paper inside the mirror."
+
+                $renpy.sound.set_volume(1, 1, channel = 'sound')
 
                 if translated == True:
 
