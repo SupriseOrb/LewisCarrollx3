@@ -403,6 +403,8 @@ label day6:
 
             "Time is passing..."
 
+            play sound "audio/soundeffects/clock_ticking.wav" fadein 1.0
+
             while hr!=7 or minute!=30:
 
                 $ addmin(1)
@@ -912,9 +914,15 @@ label day6:
 
         r winning "Mr. Rabbit catches ya!"
 
-        w "What do you mean? I should be the seeker..."
+        if translated == True:
 
-        r depressed "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
+            w "What do you mean? I should be the seeker..."
+
+            r depressed "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
+
+        else:
+
+            r normal "Wow, you didn't read the rules I left on the mirror?"
 
         r depressed "Mr. Rabbit is suprised how you reach this room without noitcing it!"
 
@@ -924,11 +932,35 @@ label day6:
 
         "I tried to talk to Mr. Rabbit, but it seemed to be in a state of madness and refused to respond."
 
+        play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+
         "I had to go back and waited for breakfast in my room."
+
+        stop sound fadeout 2
+
+        scene bg whitley_bedroom
+
+        play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+
+        "I sat in front of the mirror and started to stare at my pocket watch."
+
+        "Time is passing..."
+
+        play sound "audio/soundeffects/clock_ticking.wav" fadein 1.0
+
+        while hr!=7 or minute!=30:
+
+            $ addmin(1)
+                
+            $ renpy.pause(0.05)
 
         jump breakfast
 
     label breakfast:
+
+        stop sound
+
+        play sound "audio/soundeffects/clock_gong.wav" fadein 10.0
 
         if win == True:
 
@@ -984,6 +1016,10 @@ label day6:
 
             "Mr. Rabbit bounced away nervously."
 
+            play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+
+            "I pushed the door open and went out."
+
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
         scene bg dining room
@@ -1008,7 +1044,7 @@ label day6:
 
         play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
-        "I fell asleep soon."
+        "I lay down and fell asleep soon."
 
         hide screen Time
 
