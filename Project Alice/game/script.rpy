@@ -27,6 +27,17 @@ image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed.png",0.8,0
 image side alice asleep = Image(im.FactorScale("/alice/alice_asleep.png",0.8,0.8))
 image side alice confused = Image(im.FactorScale("/alice/alice_confused.png",0.8,0.8))
 image side alice sad = Image(im.FactorScale("/alice/alice_sad.png",0.8,0.8))
+image side alice awkward = Image(im.FactorScale("/alice/alice_awkward.png",0.8,0.8))
+image side alice nervous = Image(im.FactorScale("/alice/alice_nervous.png",0.8,0.8))
+image side alice smile = Image(im.FactorScale("/alice/alice_smile.png",0.8,0.8))
+image side alice sorrow = Image(im.FactorScale("/alice/alice_sorrow.png",0.8,0.8))
+image side alice sorrow openmouth = Image(im.FactorScale("/alice/alice_sorrow_openmouth.png",0.8,0.8))
+image side alice unhappy = Image(im.FactorScale("/alice/alice_unhappy.png",0.8,0.8))
+image side alice sad closeeyes = Image(im.FactorScale("/alice/alice_sad_closeeyes.png",0.8,0.8))
+image side alice sorrow closeeyes = Image(im.FactorScale("/alice/alice_sorrow_closeeyes.png",0.8,0.8))
+image side alice guilty = Image(im.FactorScale("/alice/alice_guilty.png",0.8,0.8))
+image side alice angry = Image(im.FactorScale("/alice/alice_angry.png",0.8,0.8))
+
 image side bunny = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
 image side bunny normal = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
 image side bunny angry = Image(im.FactorScale("/bunny/bunny_angry.png",1.2,1.2))
@@ -103,7 +114,7 @@ label start:
 
     stop music
 
-    jump day1
+    jump day7
 
 label ending:
 

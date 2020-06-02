@@ -17,7 +17,7 @@ label day7:
     
     "To be perfectly honest, I wasn't ready for whatever new game awaited me for today."
 
-    a normal "\"Today's the big surprise!\""
+    a smile "\"Today's the big surprise!\""
 
     "Oh boy. What did THAT mean?"
 
@@ -41,25 +41,25 @@ label day7:
 
     "Alice hopped off my bed and twirled around."
     
-    a "\"Today I want to try a new game with you!\""
+    a happy "\"Today I want to try a new game with you!\""
 
-    a "\"We're gonna play House! I've never played it before, but it looks fun!\""
+    a normal "\"We're gonna play House! I've never played it before, but it looks fun!\""
 
-    a "\"So I'll be Daughter and you get to be Mama!\""
+    a smile "\"So I'll be Daughter and you get to be Mama!\""
 
-    "\"Me? Don't you want to play as a real grown-up?\""
+    w "\"Me? Don't you want to play as a real grown-up?\""
 
     "Alice gave me a quizzical look."
 
-    a "\"Being a real grown-up? What's the point of that?\""
+    a sorrow "\"Being a real grown-up? What's the point of that?\""
 
-    "\"...\""
+    w "\"...\""
 
-    "\"That's fair.\""
+    w "\"That's fair.\""
 
     "Alice pulled on my arm."
 
-    a "\"C'mon! We don't have any time to waste!\""
+    a smile "\"C'mon! We don't have any time to waste!\""
 
     #hide Alice
 
@@ -73,9 +73,9 @@ label day7:
 
     "A leather bag, placed primly at her side."
 
-    a "\"It's my first day of school! And you gotta make me my favorite food for lunchtime!\""
+    a normal "\"It's my first day of school! And you gotta make me my favorite food for lunchtime!\""
 
-    "\"O-Oh okay-\""
+    w "\"O-Oh okay-\""
 
 menu:
 
@@ -91,9 +91,9 @@ menu:
 
 label day7pancakes:
 
-    a "\"Mama, stop being silly, that's not my favorite food!\""
+    a awkward "\"Mama, stop being silly, that's not my favorite food!\""
 
-    a "\"Maybe you should try again.\""
+    a confused "\"Maybe you should try again.\""
 
 menu:
 
@@ -105,9 +105,9 @@ menu:
 
 label day7chicken:
 
-    a "\"Mama, stop being silly, that's not my favorite food!\""
+    a awkward "\"Mama, stop being silly, that's not my favorite food!\""
 
-    a "\"Maybe you should try again.\""
+    a confused "\"Maybe you should try again.\""
 
 menu:
 
@@ -119,11 +119,11 @@ menu:
 
 label day7wrong:
 
-    a "\"No, Mama. Now you're just being mean.\""
+    a annoyed "\"No, Mama. Now you're just being mean.\""
     
-    a "\"Make my favorite food!\""
+    a confused "\"Make my favorite food!\""
 
-    a "\"Now, please.\""
+    a unhappy "\"Now, please.\""
 
 menu:
 
@@ -132,7 +132,7 @@ menu:
 
 label day7lunch:
 
-    a "\"Oooo, that smells sooo good! I can't wait for lunch!\""
+    a happy "\"Oooo, that smells sooo good! I can't wait for lunch!\""
 
     "As I packed the stew into her thermis, I noticed my hands quivering against the cold metal."
 
@@ -165,21 +165,21 @@ label day7leaveAttempt:
 
     "Then-"
 
-    a "\"Mama? What are you doing?\""
+    a confused "\"Mama? What are you doing?\""
 
     "I froze, nails barely brushing the door frame."
 
-    "\"I thought I'd take a look outside.\""
+    w "\"I thought I'd take a look outside.\""
 
     "Alice just shook her head."
 
-    a "\"You know...Auntie said something like that too.\""
+    a unhappy "\"You know...Auntie said something like that too.\""
 
     "I didn't turn to look at her, but there was a tenderness in her voice I hadn't heard before."
 
     "Something raw. Something she was...embarrassed of?"
-
-    "\"I'm going to make things different this time.\""
+    
+    w "\"I'm going to make things different this time.\""
 
     "With a pop of her familiar magic, the doorknob vanished, swallowed away into the wood."
 
@@ -191,7 +191,7 @@ label day7leaveAttempt:
 
     "She was standing now, looking maybe a little too satisfied with herself."
 
-    a "\"There! Now we have more time together! Which is just perfect because-\""
+    a happy strange "\"There! Now we have more time together! Which is just perfect because-\""
 
     jump day7scavengerStart
 
@@ -212,9 +212,9 @@ label day7stay:
 
     "I walked over to one of the chairs and sat opposite to Alice."
 
-    "\"So...Alice, this has been...fun, but I'm going to have to go soon, whether I like it or not. But your godparents will be here! And they'll take care of you-\""
+    w "\"So...Alice, this has been...fun, but I'm going to have to go soon, whether I like it or not. But your godparents will be here! And they'll take care of you-\""
     
-    a "\"You want to leave?\""
+    a sorrow "\"You want to leave?\""
 
     "Alice looked at me with a kind of sorrow in her eyes I hadn't seen before."
 
@@ -222,17 +222,17 @@ label day7stay:
 
     "She must've noticed my surprise because her face quickly returned to that innocent mask again."
 
-    a "\"You...really want to leave, Mama?\""
+    a sad "\"You...really want to leave, Mama?\""
 
     "\"...I...\""
 
     "Alice's lips split into an eerie smile."
 
-    a "\"That's okay!\""
+    a smile "\"That's okay!\""
     
-    a "\"You won't want to, in a moment!\""
+    a happy strange "\"You won't want to, in a moment!\""
 
-    "\"What do you-?\""
+    w "\"What do you-?\""
 
     jump day7scavengerStart
 
@@ -242,13 +242,13 @@ label day7scavengerStart:
 
     "She fished through her pockets, but whatever she was looking for was nowhere to be found."
     
-    "\"Alice?\""
+    w "\"Alice?\""
     
-    a "\"My family spell! It's torn, it's missing pieces!\""
+    a sorrow "\"My family spell! It's torn, it's missing pieces!\""
 
     "She looked to me with wide, desperate eyes."
 
-    a "\"Help me find it, Mama!\""
+    a sad "\"Help me find it, Mama!\""
     
     a "\"Help me find it, and I promise this will be our last game!\"" 
 
@@ -258,9 +258,9 @@ label day7scavengerStart:
 
     "I took a deep breath."
     
-    "\"Okay, I'll help you.\"" 
+    w "\"Okay, I'll help you.\"" 
 
-    a "\"Yay! You look in the parlor and I'll look in the kitchen!\""
+    a happy "\"Yay! You look in the parlor and I'll look in the kitchen!\""
 
     #(Scene: Parlor)
 
@@ -272,39 +272,39 @@ label day7scavengerStart:
 
     "Then I read the words. And my wonder turned to dread."
 
-    "\"It's a resurrection spell! This...this is...\""
+    w "\"It's a resurrection spell! This...this is...\""
 
-    a "\"You found it?\""
+    a normal "\"You found it?\""
     
     "Alice's soft voice descended from the entryway."
 
     "I spun to her in a panic, and took two reflexive, albeit clumsy steps back."
     
-    "\"Alice, no. You can't use this, i-it isn't right-!\""
+    w "\"Alice, no. You can't use this, i-it isn't right-!\""
 
-    a "\"YOU FOUND IT!!!\""
+    a happy "\"YOU FOUND IT!!!\""
 
     "She rushed up to me, and while I tried to conceal the paper quickly, Alice's magic was quicker."
 
     "My hands were frozen to the spot as Alice happily plucked the spell from my fingers."
 
-    a "\"I'm so happy you found this, Mama! This'll be so much fun!\""
+    a happy strange "\"I'm so happy you found this, Mama! This'll be so much fun!\""
     
     "She gave me a huge grin."
 
-    a "\"Now we can have some real playtime!\""
+    a smile "\"Now we can have some real playtime!\""
 
-    "\"Alice, wait!\""
+    w "\"Alice, wait!\""
 
     "With another \"pop\", Alice was gone."
 
-    "\"No, no, no, no- Resurrection spells are dangerous! Alice are you listening!?\""
+    w "\"No, no, no, no- Resurrection spells are dangerous! Alice are you listening!?\""
 
-    "\"They're impossible without a....!\""
+    w "\"They're impossible without a....!\""
 
     "A realization hammered my heart down to my stomach. I felt the hairs on the back of my neck spring up as a looked at my now free hands."
 
-    "\"...without a sacrifice.\""
+    w "\"...without a sacrifice.\""
 
     "Suddenly, my hands were bound once more."
 
@@ -314,113 +314,113 @@ label day7scavengerStart:
 
     "As I gasped for air, Alice came skipping up to me."
 
-    a "\"Look, Mama! Mr. Rabbit's got all the ingredients!\""
+    a happy "\"Look, Mama! Mr. Rabbit's got all the ingredients!\""
 
     "She had scooped up all the ingredients for the spell in her bunny's arms"
 
-    a "\"Bunnies are quick quick quick~!\""
+    a smile "\"Bunnies are quick quick quick~!\""
 
     "Alice carefully placed the ingredients down then summoned a cauldron before her."
 
-    a "\"I had everything already ready! Just like you always taught me.\""
+    a happy strange "\"I had everything already ready! Just like you always taught me.\""
 
-    "\"Don't do this! You don't understand what will happen!\""
+    w "\"Don't do this! You don't understand what will happen!\""
 
-    a "\"I do too!\""
+    a confused "\"I do too!\""
 
     "In a blink, the little girl was in my face, eyebrows scrunched and lips pressed tight."
     
-    a "\"I DO know what I'm doing, I promise! I'll show you!\""
+    a unhappy "\"I DO know what I'm doing, I promise! I'll show you!\""
     
     "She returned to the cauldron, and that's when I noticed her feet weren't touching the ground."
     
     "The spell was already underway."
     
-    a "\"I'll SHOW you!\""
+    a sorrow openmouth "\"I'll SHOW you!\""
 
-    "\"Alice, stop! I know you want to hurt your parents, but you can't-!\""
+    w "\"Alice, stop! I know you want to hurt your parents, but you can't-!\""
 
-    "\"THEY hurt ME!\""
+    a sorrow closeeyes "\"THEY hurt ME!\""
     
     "[The magic grew stronger around her.]"
     
-    "\"I'll make them come back and then they'll see. Then they'll be sorry they ever left.\""
+    a sorrow openmouth "\"I'll make them come back and then they'll see. Then they'll be sorry they ever left.\""
 
     "[Alice's expression, Whitley's pity]"
     
-    "\"...Oh...Alice...you don't want to hurt them, do you?\""
+    w "\"...Oh...Alice...you don't want to hurt them, do you?\""
 
-    a "\"Yes I do!\""
+    a sorrow "\"Yes I do!\""
 
-    "\"No you don't.\""
+    w "\"No you don't.\""
     
-    a "\"They need to know what they did! They need to know I'm-!\""
+    a sorrow openmouth "\"They need to know what they did! They need to know I'm-!\""
 
-    a "\"I'm...\""
+    a sorrow "\"I'm...\""
     
-    "\"You just...want answers. Right?\""
+    w "\"You just...want answers. Right?\""
 
     "[the magic dims around her slightly]" 
     
     "[Alice sniffs, clenches her fists]" 
     
-    a "\"Why? Why did they lock me away? Why...did they have to go?\""
+    a sad "\"Why? Why did they lock me away? Why...did they have to go?\""
     
     "[The magic dissipates, and it's just Alice, tears streaming down.]" 
     
-    a "\"I wanted to be a good girl. I wanted to make them happy. So why did they treat me that way? They never trusted me with anything!\"" 
+    a sad closeeyes "\"I wanted to be a good girl. I wanted to make them happy. So why did they treat me that way? They never trusted me with anything!\"" 
     
-    a "\"I just want them to tell me WHY!?\""
+    a sorrow openmouth "\"I just want them to tell me WHY!?\""
 
-    "\"Alice, I'm sorry, I don't have the answers you're looking for.\"" 
+    w "\"Alice, I'm sorry, I don't have the answers you're looking for.\"" 
     
     "[Alice looks away and the magic starts building again]" 
     
-    "\"But, I know they were trying their best! They were your parents! And they love you-\""
+    w "\"But, I know they were trying their best! They were your parents! And they love you-\""
 
-    a "\"YOU DON'T KNOW THAT!\"" 
+    a sorrow closeeyes "\"YOU DON'T KNOW THAT!\"" 
     
     "[Magic flares up]"
     
-    a "\"You don't know anything about them!\""
+    a sorrow openmouth "\"You don't know anything about them!\""
 
-    "\"I know about []\""
+    w "\"I know about []\""
     
     "[Alice pauses and stares at Whitley]" 
     
-    "\"I know...you were friends with him. And you felt like he turned on you.\""
+    w "\"I know...you were friends with him. And you felt like he turned on you.\""
 
-    a "\"He LEFT ME! He was only friends with me because of his-his stupid FAMILY!\""
+    a sorrow closeeyes "\"He LEFT ME! He was only friends with me because of his-his stupid FAMILY!\""
 
-    "\"-because of his PARENTS.\""
+    a angry "\"-because of his PARENTS.\""
     
-    "\"Alice, sometimes parents...don't really know what's best. Sometimes they're bad, and they hurt their family.\"" 
+    w "\"Alice, sometimes parents...don't really know what's best. Sometimes they're bad, and they hurt their family.\"" 
     
-    "\"And sometimes...they're good but...just a little lost. They do what they think is best for their family, but it's wrong.\""
+    w "\"And sometimes...they're good but...just a little lost. They do what they think is best for their family, but it's wrong.\""
     
-    "\"Like...they tell you you have to become friends with a stranger...or...\""
+    w "\"Like...they tell you you have to become friends with a stranger...or...\""
     
-    a "\"They hide you away.\""
+    a unhappy "\"They hide you away.\""
 
     "[Alice expression]"
 
-    "\"Alice, your parents wanted you to be better than them! They wouldn't want you to do this!\""
+    w "\"Alice, your parents wanted you to be better than them! They wouldn't want you to do this!\""
     
-    "\"Even if they aren't here. Even if they won't get to watch you, they love you so much.\""
+    w "\"Even if they aren't here. Even if they won't get to watch you, they love you so much.\""
     
-    "\"And I know it's scary, but they wanted you to have this choice! To make the decision...to be - better.\""
+    w "\"And I know it's scary, but they wanted you to have this choice! To make the decision...to be - better.\""
 
     "[Alice looks at Whitley. Whitley can feel the magic starting to drain them. Alice stares.]"
     
-    a "\"I just want them back.\""
+    a guilty "\"I just want them back.\""
 
-    "\"Oh, Alice, I know you do.\" [weakly]"
+    w "\"Oh, Alice, I know you do.\" [weakly]"
 
-    a "\"Then how come that can't happen!?\"" 
+    a sorrow openmouth "\"Then how come that can't happen!?\"" 
 
     "[magic flaring up]"
 
-    a "\"HOW COME YOU GET TO LIVE AND THEY DON'T!? WHY DO I HAVE TO CHOOSE!?\""
+    a sorrow openmouth "\"HOW COME YOU GET TO LIVE AND THEY DON'T!? WHY DO I HAVE TO CHOOSE!?\""
 
     "[Alice looks at Whitley, but Whitley has lost her energy to speak. She simply stares.]"
     "[Alice sees her bunny burning up in all the magic she's using. She finally squeezes her eyes shut and lets out a cry and all the magic dissipates]" 
@@ -429,7 +429,7 @@ label day7scavengerStart:
     "[Whitley walks over to Alice and kneels beside her.]"
     "[Alice doesn't look up from her bunny.]"
 
-    a "\"I want to be a good girl, Mom.\""
+    a awkward "\"I want to be a good girl, Mom.\""
 
     "[Whitley puts her hand on Alice's shoulder and leans her head against hers]"
 
@@ -441,27 +441,27 @@ label day7scavengerStart:
 
     "[Alice tugs on her coat]"
     
-    a "\"You really can't stay?\""
+    a sorrow "\"You really can't stay?\""
 
     "[Whitley smiles weakly and hugs her]"
 
-    "\"I'm sorry, I really can't. But it's going to be okay. Know why?\"" 
+    w "\"I'm sorry, I really can't. But it's going to be okay. Know why?\"" 
     
     "[Whitley pulls back and looks at her front-on.]"
     
-    "\"Because you are a smart and talented little girl who's going to do amazing things.\""
+    w "\"Because you are a smart and talented little girl who's going to do amazing things.\""
     
-    "\"You don't have to be scared anymore. You can do this. You are good enough. All you have to do is remember the people who are here for you.\""
+    w "\"You don't have to be scared anymore. You can do this. You are good enough. All you have to do is remember the people who are here for you.\""
     
-    "\"You'll always have a family from now on.\"" 
+    w "\"You'll always have a family from now on.\"" 
     
     "[Alice smiles at her. There's a knock at the door. Whitley gets up.]" 
     
-    "\"I wonder who that could be?\""
+    w "\"I wonder who that could be?\""
 
     "[Alice looks at her quizzically. Whitley winks at her and looks through the window.]"
 
-    "\"It looks like someone wants to see you!\""
+    w "\"It looks like someone wants to see you!\""
     
     "[Whitley opens the door to show the little boy from day 4 memory.]"
     
@@ -471,11 +471,11 @@ label day7scavengerStart:
     
     "[Whitley rubs Alice's head.]"
     
-    "\"It's okay.\""
+    w "\"It's okay.\""
     
     "[Whitley looks at the boy]"
 
-    "\"Don't you have something to say?\""
+    w "\"Don't you have something to say?\""
 
     "[The boy pauses and looks down, shuffling his feet.]" 
     
@@ -485,6 +485,6 @@ label day7scavengerStart:
 
     "[Alice expression]"
 
-    a "\"I'm sorry too. I shouldn't have hurt you.\""
+    a guilty "\"I'm sorry too. I shouldn't have hurt you.\""
 
     "[Alice's godparents arrive, Whitley bids farewell, Alice plays a game with the boy]"
