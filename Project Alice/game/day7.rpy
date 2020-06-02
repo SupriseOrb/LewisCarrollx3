@@ -27,7 +27,7 @@ label day7:
 
     "Today is Sunday! I'm supposed to be leaving today!"
 
-    "\"Oh, today is my last day here...\""
+    w "\"Oh, today is my last day here...\""
 
     "The prospect of leaving made my heart feel light, but I knew my work wasn't quite done."
 
@@ -35,7 +35,7 @@ label day7:
 
     "Even after everything she's done, it just didn't feel right."
 
-    a "\"Last day here? Oh, you're funny!\""
+    a confused "\"Last day here? Oh, you're funny!\""
 
     "Funny...right. As if she would ever just let me waltz out the door anyhow."
 
