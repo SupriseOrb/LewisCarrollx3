@@ -18,7 +18,7 @@ label day5:
 
     ##show alice_happy_closemouth
 
-    w "\"So, Alice what do you want to do today?\""
+    w "\"So Alice, what do you want to do today?\""
 
     ##hide alice_happy_closemouth
 
@@ -70,15 +70,11 @@ label day5:
 
         w "\"It's ok, I'm not going anywhere. Let's play your game after you finish eating.\""
 
-<<<<<<< HEAD
-        a happy "\"Yayyy! I can't wait.\""
-=======
         hide alice_sad
         show alice_happy_openmouth
 
-        a "\"Yayyy! I can't wait.\""
+        a happy "\"Yayyy! I can't wait.\""
         hide alice_happy_openmouth
->>>>>>> b59b28c0e6b392268875a100a93a6fe3b85f3f3c
 
         scene black
         with Dissolve(.5)
@@ -708,13 +704,9 @@ label wolf_ending:
     hide bunny_satisfied
     "Poof!"
     "We both returned to our human states."
-<<<<<<< HEAD
-    a happy strange "What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time."
-=======
     show alice_happy_openmouth
     a "\"What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time.\""
     hide alice_happy_openmouth
->>>>>>> b59b28c0e6b392268875a100a93a6fe3b85f3f3c
 
     jump tag_end
 
@@ -729,13 +721,9 @@ label wolf_tag_ending:
     "I felt my body return to normal, much less painful this time."
     "I saw Alice standing in front of me."
 
-<<<<<<< HEAD
-    a happy "Shoot! Now I'm it. You ready?"
-=======
     show alice_happy_openmouth
 
     a "\"Shoot! Now I'm it. You ready?\""
->>>>>>> b59b28c0e6b392268875a100a93a6fe3b85f3f3c
 
     ##show alice_happy_closemouth
 
