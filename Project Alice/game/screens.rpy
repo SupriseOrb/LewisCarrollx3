@@ -352,6 +352,59 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+image menubg:
+    "gui/menu/01.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 0 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 36
+    "gui/menu/02.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 36 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 72
+    "gui/menu/03.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 72 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 108
+    "gui/menu/04.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 108 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 144
+    "gui/menu/05.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 144 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 180
+    "gui/menu/06.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 180 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 216
+    "gui/menu/07.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 216 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 252
+    "gui/menu/08.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 252 xanchor 0.26 yanchor 0.356
+    linear 10 rotate 288
+    "gui/menu/09.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 288 xanchor 0.26 yanchor 0.365
+    linear 10 rotate 324
+    "gui/menu/10.png" with Dissolve(2.5)
+    zoom 1.2
+    subpixel True
+    rotate 324 xanchor 0.26 yanchor 0.365
+    linear 10 rotate 360
+    repeat
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
@@ -361,7 +414,8 @@ screen main_menu():
 
     style_prefix "main_menu"
 
-    add gui.main_menu_background
+    add "menubg"
+
 
     ## This empty frame darkens the main menu.
     frame:
@@ -377,8 +431,8 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            ##text "[config.version]":
+                ##style "main_menu_version"
 
 
 style main_menu_frame is empty

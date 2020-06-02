@@ -1,9 +1,12 @@
 # Here we can initialize all of our resources.
 
 # character definitions
-define w = Character("Whitley")
-define a = Character("Alice", image="alice",window_left_padding=150)
-define r = Character("Mr. Rabbit", image="bunny",window_left_padding=150)
+define w = Character("Whitley", color="#2399A8")
+define a = Character("Alice", color="#C25926", image="alice",window_left_padding=150)
+define r = Character("Mr. Rabbit",color="#32A85D", image="bunny",window_left_padding=150)
+define q = Character("???",color="#C2A60A")
+define l = Character("Luke",color="#90A81A")
+define b = Character("Boy",color="#3B3E6B")
 
 # The game starts here.
 
@@ -17,6 +20,17 @@ default time = 5
 default watchbook = False
 default watchdiary = False
 
+# Day 4 variables
+default AliceAngry=0    #for the part1 Conversation
+default AliceUnhappy=0  # for the part1 conversation
+default HelpAlice=False #for the part2 Conversation
+default finishedMission = False # for the part3 exploration
+default ResponceAlice = False   # For the part3 Conversation
+default AliceInPain = 0 # for the part3 conversation
+default AliceHateU = False  # There is a for emotional
+default AliceFeltSad = False    # for the emotional
+default AliceFeltPain = False   # for the emotional
+default FinishThisBoringDay = False # for the ending
 
 # image definition
 image side alice = Image(im.FactorScale("/alice/alice_happy_closemouth.png",0.8,0.8))
@@ -24,6 +38,7 @@ image side alice normal = Image(im.FactorScale("/alice/alice_happy_closemouth.pn
 image side alice happy = Image(im.FactorScale("/alice/alice_happy_openmouth.png",0.8,0.8))
 image side alice happy strange= Image(im.FactorScale("/alice/alice_happy_strange.png",0.8,0.8))
 image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed.png",0.8,0.8))
+image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed_openeyes.png",0.8,0.8))
 image side alice asleep = Image(im.FactorScale("/alice/alice_asleep.png",0.8,0.8))
 image side alice confused = Image(im.FactorScale("/alice/alice_confused.png",0.8,0.8))
 image side alice sad = Image(im.FactorScale("/alice/alice_sad.png",0.8,0.8))
@@ -33,10 +48,15 @@ image side alice smile = Image(im.FactorScale("/alice/alice_smile.png",0.8,0.8))
 image side alice sorrow = Image(im.FactorScale("/alice/alice_sorrow.png",0.8,0.8))
 image side alice sorrow openmouth = Image(im.FactorScale("/alice/alice_sorrow_openmouth.png",0.8,0.8))
 image side alice unhappy = Image(im.FactorScale("/alice/alice_unhappy.png",0.8,0.8))
+image side alice unhappy closemouth = Image(im.FactorScale("/alice/alice_unhappy_closemouth.png",0.8,0.8))
 image side alice sad closeeyes = Image(im.FactorScale("/alice/alice_sad_closeeyes.png",0.8,0.8))
 image side alice sorrow closeeyes = Image(im.FactorScale("/alice/alice_sorrow_closeeyes.png",0.8,0.8))
 image side alice guilty = Image(im.FactorScale("/alice/alice_guilty.png",0.8,0.8))
 image side alice angry = Image(im.FactorScale("/alice/alice_angry.png",0.8,0.8))
+image side alice little angry = Image(im.FactorScale("/alice/alice_little_angry.png",0.8,0.8))
+image side alice angry closeeyes = Image(im.FactorScale("/alice/alice_angry_closeeyes.png",0.8,0.8))
+image side alice happy closeyes = Image(im.FactorScale("/alice/alice_happy_closeeyes.png",0.8,0.8))
+image side alice happy closeopen = Image(im.FactorScale("/alice/alice_happy_closeopen.png",0.8,0.8))
 
 image side bunny = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
 image side bunny normal = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
@@ -114,7 +134,7 @@ label start:
 
     stop music
 
-    jump day7
+    jump day4
 
 label ending:
 

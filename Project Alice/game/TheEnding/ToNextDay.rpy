@@ -1,12 +1,12 @@
 label ToTheDay5:
     if AliceFeltPain:
-        A "Sorry honey, I really felt tried now"
+        a awkward "Sorry honey, I really felt tried now"
         "Alice's eyes were full of exhaustion."
-        A "I'm afraid we have to stop our conversation today now"
+        a guilty "I'm afraid we have to stop our conversation today now"
         "Alice stood up slowly"
         "She looked up at the sky in the night, a bright moon hung in the air, accompanied by twinkling stars, radiating holy light."
         "Alice looks at you again"
-        A "Good night Honey, have a nice dream"
+        a smile "Good night Honey, have a nice dream"
         "After Alice finished with a smile, she left the dining table and went up the stairs"
         "..."
         scene playerroom night
@@ -19,7 +19,7 @@ label ToTheDay5:
         "You quickly finished dinner and returned to your room"
         scene playerroom night
         with fade
-        W "What a terrible day"
+        w "What a terrible day"
         "You lay in bed and fell asleep quickly"
         scene black
         jump day5

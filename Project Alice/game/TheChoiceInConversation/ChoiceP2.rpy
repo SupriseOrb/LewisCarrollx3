@@ -6,7 +6,7 @@ label TheChoiceInPart2(numberp2):
                 "Was this some sort of dream?"
                 return
             "Try to call out to her with cool kid talk":
-                W "\"What's up, player!\""
+                w "\"What's up, player!\""
                 "Still no response."
                 "I feel very uncool."
                 return
@@ -17,7 +17,7 @@ label TheChoiceInPart2(numberp2):
         menu:
             "Rush out":
                 "I couldn't take it anymore. I slammed open the wardrobe."
-                W "\"Now that's enough, you two!\""
+                w "\"Now that's enough, you two!\""
                 "Upon opening the wardrobe door, an intense light from outside came in."
                 "At that moment, I saw Alice with tears in her eyes, curled up in the closet, and the surprised faces of the two boys outside."
                 "But in the next second, everything went white."
@@ -38,11 +38,11 @@ label TheChoiceInPart2(numberp2):
         menu:
             "Yes. I'm so sorry, Alice.":
                 "Alice gave me a strangely bright smile."
-                A "\"It's okay. I'm just happy you were there with me.\""
+                a happy strange "\"It's okay. I'm just happy you were there with me.\""
                 return
             "No, what are you talking about.":
                 "Alice gave me an eerie grin. There was no lying to her."
-                A "\"Why would you lie to me, Ms. Whitley? Didn't I already tell you? What I say in this house, goes.\""
+                a happy strange "\"Why would you lie to me, Ms. Whitley? Didn't I already tell you? What I say in this house, goes.\""
                 $ AliceUnhappy += 1
                 call checkTheFeeling
                 return
@@ -50,10 +50,10 @@ label TheChoiceInPart2(numberp2):
     if numberp2==4:
         menu:
             "So, what happened after that?":
-                A "\"They left.\""
+                a happy strange "\"They left.\""
                 return
             "I think you should think about what Luke was saying.":
-                A "\"Think about his words!? The harshest words in the world? You really don't understand, do you, Ms. Whitley?\""
+                a angry "\"Think about his words!? The harshest words in the world? You really don't understand, do you, Ms. Whitley?\""
                 $ AliceUnhappy += 1
                 call checkTheFeeling
                 return
@@ -61,35 +61,35 @@ label TheChoiceInPart2(numberp2):
         menu:
             "You're not telling the truth.":
                 if HelpAlice:
-                    W "\"Wait...that doesn't sound right. You were really angry about that, Alice.\""
-                    W "\"That house is rubble now. What really happened?\""
+                    w "\"Wait...that doesn't sound right. You were really angry about that, Alice.\""
+                    w "\"That house is rubble now. What really happened?\""
                     "Alice stared at me, then suddenly split a cheshire cat grin."
-                    A "You really know me, Ms. Whitley! And so smart too!"
+                    a smile "You really know me, Ms. Whitley! And so smart too!"
                     "I waited for an answer, but she said nothing, only stared. She looked like she was calculating something."
                     "Then, she just raised her head slowly and let out a deep sigh."
                     "Finally, her gaze returned to you, and she matter-of-factly said-"
-                    A "\"I burned it.\""
+                    a happy strange "\"I burned it.\""
                     "Alice looked back out at the ruin of the charred house."
-                    A "\"I cursed Luke with the magic I have. The magic Mom and Dad had too.\""
-                    A "\"And their house burned that night in accident.\""
-                    W "\"Did...they...?\""
+                    a unhappy "\"I cursed Luke with the magic I have. The magic Mom and Dad had too.\""
+                    a "\"And their house burned that night in accident.\""
+                    w "\"Did...they...?\""
                     "She shrugged her shoulders."
-                    A "\"Oh, they got out. Just like in those fairy tales! Very exciting.\""
-                    A "\"But one things for sure-\""
+                    a happy closeeyes "\"Oh, they got out. Just like in those fairy tales! Very exciting.\""
+                    a smile "\"But one things for sure-\""
                     "Alice suddenly smiled at me."
-                    A "\"They're out of my life for good!\""
+                    a happy strange "\"They're out of my life for good!\""
                     "She cocked her head and looked me up and down with that eerie smile."
-                    A "\"Are you starting to regret coming here?\""
+                    a "\"Are you starting to regret coming here?\""
                     "I just stared back at her. Here was this sweet, innocent-looking child. And I was absolutely terrified."
                     "She brushed off my lack of response."
                     return
                 else:
-                    A "\"I'm sorry you don't believe me.\""
+                    a confused "\"I'm sorry you don't believe me.\""
                     $ AliceUnhappy += 1
                     call checkTheFeeling
                     return
             "I'm glad they left.":
-                A "\"But {i}you{/i} won't! You don't want to leave, do you?\""
+                a angry "\"But {i}you{/i} won't! You don't want to leave, do you?\""
                 $ AliceUnhappy += 1
                 call checkTheFeeling
                 return
@@ -97,10 +97,10 @@ label TheChoiceInPart2(numberp2):
     if numberp2==6:
         menu:
             "I'd rather you do it yourself":
-                A "Oh, I wish I could too! But I have to get dinner all set!"
+                a angry "Oh, I wish I could too! But I have to get dinner all set!"
                 $ AliceUnhappy += 1
                 call checkTheFeeling
                 return
             "Okay, I'll do it":
-                A "Oh, thank you Ms. Whitley! You are so kind!"
+                a smile "Oh, thank you Ms. Whitley! You are so kind!"
                 return

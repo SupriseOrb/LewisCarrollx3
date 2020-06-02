@@ -5,15 +5,15 @@ label setTheIngre:
     $ SelectIngre = renpy. random. randint(0,3)
     $ AnswerIngre1 = SelectIngre
     $ SecltedIngre1 = TheVeg [SelectIngre]
-    A "First is [SecltedIngre1]"
+    a happy "First is [SecltedIngre1]"
     $ SelectIngre = renpy. random. randint(0,3)
     $ AnswerIngre2 = SelectIngre
     $ SecltedIngre2 = TheMeat [SelectIngre]
-    A "and next is [SecltedIngre2]"
+    a smile "and next is [SecltedIngre2]"
     $ SelectIngre = renpy. random. randint(0,3)
     $ AnswerIngre3 = SelectIngre
     $ SecltedIngre3 = TheSauce [SelectIngre]
-    A "the last is [SecltedIngre3]"
+    a normal "the last is [SecltedIngre3]"
     return
 
 
