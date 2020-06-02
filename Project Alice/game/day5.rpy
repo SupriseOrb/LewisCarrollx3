@@ -1,30 +1,36 @@
+define w = Character("Whitney")
+define a = Character("Alice")
 define c = Character("Cheshire Cat")
 
 
+
 label day5:
+    default ending_points = 0
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene bg whitley_bedroom
+    with Dissolve(.5)
 
-    scene bedroom
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show alice_stock
-
-    # These display lines of dialogue.
 
     "Well, Alice is certainly acting strange. Maybe today I can learn more about her or that rabbit of hers. Better get ready then."
 
-    #visual indication of getting ready.
-    #visual idinication of making breakfast.
+    scene bg dining room
+
+    show alice_happy_closemouth
 
     w "Alice what do you want to do today?"
+
+    hide alice_happy_closemouth
+    show alice_happy_openmouth
+
     a "Let's play a game of tag."
+
+    hide alice_happy_openmouth
+    show alice_happy_closemouth
+
     w "I don’t know Alice, I was hoping we could take a break today."
+
+    hide alice_happy_closemouth
+    show alice_sad
     a "You don’t want to play with me?"
 
     default tag_choice = False
@@ -45,7 +51,15 @@ label day5:
 
         w "Ok, if you insist. Tag sounds like it could be fun..."
 
+        hide alice_sad
+        show alice_happy_openmouth
+
         a "I'm so happy you think so. Let's go now, I can't wait! It's been so long since I've had a good game of tag."
+
+        hide alice_happy_openmouth
+
+        scene black
+        with Dissolve(.5)
 
         jump done_tag_intro
 
@@ -55,9 +69,6 @@ label day5:
 
         a "NO, I WANT TO PLAY TAG!"
 
-        #visual of angery alice, stood up
-        #visual of whitney worried
-
         w "I'm sorry, we can play. Please don't get upset with me. I don't want you to be upset."
 
         "Who knows what she's capable of when she is upset"
@@ -66,7 +77,14 @@ label day5:
 
         w "It's ok, I'm not going anywhere. Let's play your game after you finish eating."
 
+        hide alice_sad
+        show alice_happy_openmouth
+
         a "Yeaaaa, I can't wait."
+        hide alice_happy_openmouth
+
+        scene black
+        with Dissolve(.5)
 
         jump done_tag_intro
 
@@ -76,11 +94,20 @@ label day5:
 
         #visual of rabbit moving
 
-        a "No, i think I want to play tag. My parents used to play with me before… Well, anyways we should get going. I can’t wait to play again."
+        a "No, i think I want to play tag. My parents used to play with me before…"
+
+        hide alice_sad
+        show alice_happy_openmouth
+
+        a "Well, anyways we should get going. I can’t wait to play again."
 
         w "Ok...?"
 
-        "what does she mean 'before'?"
+        scene black
+        with Dissolve(.5)
+
+        "What does she mean 'before'?"
+        hide alice__happy_openmouth
 
         jump done_tag_intro
 
@@ -88,16 +115,27 @@ label day5:
 
         "Well this should be interesting."
 
-        #black screen
-
         jump wonderland_tag
 
     label wonderland_tag:
-        #visual of characters in wonderland
+
+        scene wonderland
+        show  alice_happy_closemouth
+
         w "This place amazes me everytime."
 
+        hide alice_happy_closemouth
+        show alice_happy_openmouth
+
         a "I know it's the coolest. So are you ready to play?"
+
+        hide alice_happy_openmouth
+        show alice_happy_closemouth
+
         w "Uhh… sure."
+
+        hide alice_happy_closemouth
+        show alice_happy_openmouth
         a "The rules are simple: Whoever’s it gets turned into a wolf, and whoevers not it, gets turned into a little rabbit."
 
         a "You have to catch the rabbit before you turn white. With each minute you don’t find the rabbit, you will become more white."
@@ -106,7 +144,13 @@ label day5:
 
         a "But if you turn full white, you’ll stay a wolf and not be able to leave wonderland. So you ready?"
 
+        hide alice_happy_openmouth
+        show alice_happy_closemouth
+
         w "What do you mean stay a wolf and never leave wonderland?"
+
+        hide alice_happy_closemouth
+        show alice_happy_openmouth
 
         a "Its just a game silly, people just say that. I’ve never seen anyone stay it long enough to become a wolf. It’ll be fun. You ready?"
 
@@ -118,6 +162,9 @@ label day5:
 
         if tag_choice:
             a "So, do you want to be the wolf or the rabbit?"
+
+            hide alice_happy_openmouth
+            show alice_happy_closemouth
 
             w "Ummm..."
 
@@ -133,17 +180,26 @@ label day5:
         else:
             "You go to speak, but before the words can come out."
 
+            hide alice_happy_closemouth
+            show alice_happy_openmouth
+
             a "Let’s play. You’ll be it first"
+
+            hide alice_happy_openmouth
+            show alice_happy_closemouth
 
             jump wolf
 
     label wolf_choice:
         w "I'll be the wolf first."
+        hide alice_happy_closemouth
 
         jump wolf
 
     label rabbit_choice:
         w "I'll be the rabbit first."
+
+        hide alice_happy_closemouth
 
         $ rabbit_first = True
         $ is_rabbit = True
@@ -151,28 +207,42 @@ label day5:
         jump rabbit
 
 label wolf:
+    scene black
     "Alice tags you and you feel your body shifting, bones breaking, morphing. The pain is excruciating, the worst you’ve felt in your life."
     "You go to scream, but your voice is muffled. You try again and hear a loud growl. You look around, everything seems taller than it was. You try to find Alice, but turn to only see the trail of a rabbit hoping away."
     "The game has started."
-    #wolf appears on screen for whitney, rabbit for alice
+
+    scene wonderland
+    with Dissolve(.5)
+
+    w "Alice?"
+    a "Catch me if you can!"
+    "Alice's voice fades off into the distance"
     jump game_instructions
 
 label rabbit:
+    scene black
     "Alice tags you and you feel your body shifting, bones breaking, morphing. The pain is excruciating, the worst you’ve felt in your life."
     "You feel yourself getting smaller, shrinking. You feel a strong urge to hop around and eat carrots. The urge grows stronger the smaller you get."
     "Finally, the pain eases and you look up to see a ferocious wolf staring at you. Your intstincts tell you to run."
 
+    scene wonderland
+    with Dissolve(.5)
+
+    show wolf
     a "Hello Whitney, how was that?"
 
     w "Why did it hurt so much? Why are your teeth so big?"
 
     a "The game's started. You better start hoping away now little rabbit."
-    #wolf appears on screen for whitney, rabbit for alice
+
+    hide wolf
 
     jump game_instructions
 
 label game_instructions:
-    "As the rabbit your goal is to runnaway from the wolf. As the wolf your goal is to catch the rabbit before you turn full wolf. Choose paths to achieve your goal. As the wolf, you have 10 turns before you turn full wolf. So as the rabbit hop away for as long as you can and you just might survive."
+    "As the rabbit your goal is to runnaway from the wolf. As the wolf your goal is to catch the rabbit before you turn full wolf."
+    "Choose paths to achieve your goal. As the wolf, you have 10 turns before you turn full wolf. So as the rabbit hop away for as long as you can and you just might survive."
     #implement a smell feature
 
     default turns_left = 10
@@ -184,7 +254,7 @@ label game_start:
     if is_rabbit:
         "You have 1 turn before the wolf comes chasing you, better go fast."
         $ turns_left = 10
-        $ turn_find = renpy.random.randint(4,10)
+        $ turn_find = renpy.random.randint(4,7)
 
     $ rand_path = renpy.random.randint(1,7)
 
@@ -204,6 +274,9 @@ label game_start:
 
 
 label woods:
+    scene woods
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -226,6 +299,9 @@ label woods:
             jump path
 
 label woods1:
+    scene woods
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -233,6 +309,9 @@ label woods1:
 
     if is_rabbit:
         call wolf_dist
+
+    if is_rabbit and (turn_find == turns_left):
+        jump rabbit_ending
 
     if is_rabbit:
         "Turns left: [turns_left] \nAt this point your surrounded by trees. You can still make out a small path to yout left, but see a clearing coming up on your right. Choose:"
@@ -254,6 +333,9 @@ label woods1:
             jump cat
 
 label woods2:
+    scene woods
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -289,6 +371,9 @@ label woods2:
 
 
 label woods3:
+    scene woods
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -311,6 +396,9 @@ label woods3:
             jump path2
 
 label path:
+    scene path
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if is_rabbit:
@@ -330,6 +418,9 @@ label path:
             jump creek
 
 label path1:
+    scene path
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -352,6 +443,9 @@ label path1:
             jump woods1
 
 label path2:
+    scene path
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -376,6 +470,9 @@ label path2:
             jump woods2
 
 label path3:
+    scene path
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -402,6 +499,9 @@ label path3:
             jump river2
 
 label path4:
+    scene path
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -426,6 +526,9 @@ label path4:
             jump path3
 
 label creek:
+    scene creek
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if is_rabbit:
@@ -445,6 +548,9 @@ label creek:
 
 
 label creek1:
+    scene creek
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -468,6 +574,9 @@ label creek1:
 
 
 label house:
+    scene house
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -499,6 +608,9 @@ label house:
             jump river
 
 label house2:
+    scene inside house
+    with Dissolve(.5)
+
     "You approach the house. You walk up and try to get through the door, but lack the facilites to open it. The window is open near the front door you hop in. Inside you see a broken table, the house looks ransacked."
     "In the far corner you see what looks to be a small piece of paper. You approach it. It has ancient text written all over it. Instantly you feel something come over you. The ancient text inscribes itself in your mind."
 
@@ -506,6 +618,9 @@ label house2:
     jump house
 
 label river:
+    scene river
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -523,6 +638,9 @@ label river:
             jump river2
 
 label river2:
+    scene river
+    with Dissolve(.5)
+
     $ turns_left -= 1
 
     if turns_left <= 0 and is_rabbit == False:
@@ -545,6 +663,9 @@ label river2:
             jump path3
 
 label cat:
+    scene cat
+    with Dissolve(.5)
+
     if visit_cat:
         menu:
             "Go further towards the ends of the woods":
@@ -569,6 +690,8 @@ label cat:
             jump woods3
 
 label cat1:
+    scene cat
+    with Dissolve(.5)
     $ visit_cat = True
 
     c "Hello there wolf."
@@ -587,26 +710,46 @@ label cat1:
 label wolf_ending:
     "Time is up."
     "Alice pops up in front of you."
+    show rabbit1
     a "Wow, you really stink at tag don't ya. You do realize the point is to tag me. Well luckly, Mr. Rabbit can stop the curse."
     w "Curse?!"
     a "Yeah, I didn't want to scare you off, but the game is cursed. However, thanks to Mr. Rabbit here all is well."
     "Alice grabs Mr. Rabbit and touches the both of you."
     "Poof."
     "You both return into your human state."
+    show alice_happy_openmouth
     a "Well if you had tagged me you could've been the rabbit to, but I guess you will have to wait until next time."
-
+    hide alice_happy_openmouth
 
     jump tag_end
 
 label wolf_tag_ending:
+    $ ending_points += 1
+    show rabbit1
     "You see a small white rabbit. You run up and grab it in your mouth."
+    scene black
     "Poof."
+    scene wonderland
     "You feel your body return to normal, much less painful this time."
     "You see Alice in front of you."
+
+    show alice_happy_openmouth
+
     a "Dang, it now I'm it. You ready?"
+
+    hide alice_happy_openmouth
+    show alice_happy_closemouth
+
     w "Gimmie a minute, I am still recovering from being a wolf."
+
+    hide alice_happy_closemouth
+    show alice_happy_openmouth
+
     a "Well now you're a rabbit."
     "Alice grabs Mr. rabbit and touches you."
+    scene black
+    "Can I please get a break..."
+    scene wonderland
 
     $ wolf_side_won = True
 
@@ -624,32 +767,86 @@ label wolf_dist:
 
 label rabbit_ending:
     "You feel a fear creep over your shoulder. You do a slight hop to the side to see the drool of a ferocious wolf pooling up beside you. You feel a drop on your head."
-    "Darkness."
+    scene black
+    with Dissolve(.3)
     "You feel your body morphing back to normal. Your limbs growing, stretching out."
+    scene wonderland
+    show alice_happy_openmouth
     a "I caught ya."
 
     if rabbit_first:
         a "So you wanna be the wolf now. That was fun. I do like being the wolf though."
+        hide alice_happy_openmouth
         $ is_rabbit = False
         jump wolf
 
     if wolf_side_won:
         a "Dang, we both won as the wolf. It is a lot more fun being the predator right?"
+        hide alice_happy_openmouth
+        show alice_happy_closemouth
         w "Uh yeah sure. I don't like the deep cravings I feel. I think I'm going vegaterian now."
+        hide alice_happy_closemouth
+        show alice_happy_openmouth
         a "Wolves are so cute. Murderous intent and all. I do love the power I feel as a wolf."
         a "Mr. Rabbit makes me so strong, don't ya think?"
+        hide alice_happy_openmouth
+        show alice_happy_closemouth
         w "Uh yeah sure..."
+        hide alice_happy_closemouth
         jump tag_end
 
+    hide alice_happy_openmouth
+    show alice_happy_closemouth
+
     w "Dang it. You are much better than me at this game."
+
+    hide alice_happy_closemouth
+    show alice_happy_openmouth
+
     a "Well, I have played it more and this was your first time. I am sure you will do better next time."
+    hide alice_happy_openmouth
+    show alice_happy_closemouth
+
     w "Yeah, next time."
+
     jump tag_end
 
+label write_texts:
+    "You write down the texts. The symbols are foreign to you, but something about it feels dark. Very dark. The words begin to shape the paper."
+    "You watch in horror. Something bad is happening."
+    "You run and grab a lgihter. Igniting the fire and throwing it in the trash."
+    "Why was something so demonic in wonderland?"
+    return
 
 label tag_end:
-    "end"
+    w "Well, that was something wasn't it."
+    a "Yeah, I'm tired."
+    w "Let's go back. I will make you dinner."
+    a "Ok, I have strange craving for meat, probably just a side effect of the game."
+    w "There are side effects?!"
+    a "Home we go."
+    scene black
+    with Dissolve(.5)
+
+    scene bg dinning room
+    a "Wow, thanks for dinner. That steak was yummy."
+    w "I'm glad you liked it. It's been a long day we should get some rest."
+
+    if visit house:
+        menu:
+            "Write down texts.":
+                call write_texts
+
+    scene bg whitley_bedroom
+    with Dissolve(.5)
+
+    if wolf_side_won:
+        "Well today was certainly interesting. All this magic and chaos is taking it's toll, but I think I can manage."
+    else:
+        "Oh god, Alice is scaring me. I need to find a way... out? I can't leave her all alone. Right?"
+
     jump day6
+
 
 
 
