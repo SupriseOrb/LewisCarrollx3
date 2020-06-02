@@ -119,49 +119,60 @@ label day6:
 
     play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 2.0
 
-    "I was awakened from the sleep by the noise of rapid footsteps."
+    "The next morning, I was awakened by the noise of rapid footsteps."
 
     stop sound fadeout 1.0
 
-    "The room was dark and the curtains were drawn."
+    "I sat up to see the room was dark and the curtains were drawn."
 
     hide black with Dissolve(2)
 
-    "My head was paining... Did I draw the curtains last night?"
+    "My head was hurting... Did I draw the curtains last night?"
 
     play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
-    "The door of my room was opened by someone."
+    "Someone opened the bedroom door."
 
-    a "Hi Whitley! Glad to see you sleeping so well last night. Have you seen Mr. Rabbit?"
+    a "\"Hi Ms. Whitley! Glad to see you slept well last night. Have you seen Mr. Rabbit?\""
 
-    w "No... I just wake up. What happened?"
+    w "\"No... I just wake up. Is he missing?\""
 
-    a annoyed "It said it wanted to play with you and sneaked away in the early morning. How cunning!"
+    a annoyed "\"He said he wanted to play with you and snuck away in the early morning. That tricky rabbit!\""
+
+    "She didn't look as worried as she did a few days earlier. Was this part of her game?"
+
+    "What should I say?"
 
     menu:
-
-        "What should I say?"
-
-        "What can I do for you?":
+        "Do you want to play today?":
             jump day6_option1a
 
-        "It must be very good at playing games":
+        "He must be very good at playing games.":
             jump day6_option1b
 
     label day6_option1a:
 
-        "Alice stamped her feet, she looked anxious."
+        "An idea popped in my head. I wondered if Alice would play without her rabbit."
 
-        a annoyed "I have something to do, so I cannot play with you this time. Can you help me find Mr. Rabbit? It might hide somewhere in the house."
+        w "\"Why don't we play instead? Take your mind off it.\""
 
-        w "Of course. May I have some tips? I’m afraid that I cannot find it."
+        "Alice stamped her feet. She looked anxious. She was hiding something for sure."
 
-        a normal "It often leaves hints in the mirror, and important information will be marked out."
+        a annoyed "\"I don't want to play with you this time. Can you help me find Mr. Rabbit? He's got to be hiding somewhere in the house!\""
 
-        a "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
+        "The stress in her voice wasn't nearly as earnest as last time. Looks like this would be the game today."
 
-        a happy strange "Don't worry. Enjoy the game, and everything will be over after tomorrow..."
+        w "\"Of course. May I have some tips? I'm afraid I'm not sure where to start.\""
+
+        a normal "\"He often leaves hints in the mirror, with important information.\""
+
+        a "\"Remember, Mr. Rabbit never misses his breakfast, so you'd better find him before that!\""
+
+        w "\"Alright, I'll start then!\""
+
+        a happy strange "\"Hehe have fun! Everything will be different after tomorrow...\""
+
+        "The words at the end lilted in an ominous way. That doesn't sound good."
 
         jump day6_option1_over
 
@@ -169,17 +180,25 @@ label day6:
 
         "Alice stamped her feet, she looked unhappy."
 
-        a annoyed "It can only play some simple tricks with the mirror. Everyone should know mirrors could reverse the words!"
+        a annoyed "\"Not as good as me! He can only play some simple tricks with the mirror.\""
+        
+        a "\"But they aren't REALLY tricks. Everyone knows mirrors can reverse the words!\""
 
-        w "Yes, yes. Of course you play games better than it."
+        "I laughed to myself. She really loves playing games, doesn't she?"
 
-        a annoyed "Obviously. It’ll even mark the important clues for the player, I’m fairer than it too!"
+        w "\"Okay, okay. You're right, of course you play games better than him, Alice.\""
 
-        a normal "But right now, I have other things to do. I allow you to go play with Mr. Rabbit today."
+        "Alice crossed her arms and nodded self-righteously."
 
-        a "Remember, Mr. Rabbit never misses its breakfast, so you'd better find it before that."
+        a annoyed "\"Obviously. He even marks important clues for the player, I'm fairer than him too!\""
 
-        a happy strange "Don’t worry, enjoy the game, and everything will be over after tomorrow..."
+        a normal "\"Anyway, I've got some important things to work on! Why don't you go play with Mr. Rabbit today?\""
+
+        a "\"Remember, Mr. Rabbit never misses his breakfast, so you'd better find him before that!\""
+
+        a happy strange "\"Hehe have fun! Everything will be different after tomorrow...\""
+
+        "The words at the end lilted in an ominous way. That doesn't sound good."
 
         jump day6_option1_over
 
@@ -187,7 +206,7 @@ label day6:
 
         hide alice
 
-        w "Wait… What do you mean? Alice? Alice!"
+        w "\"Wait, what do you mean? Alice? Alice!\""
 
         play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 2.0
 
@@ -213,7 +232,7 @@ label day6:
 
             show screen Time
 
-            "I picked up the pocket watch I put on the bedside table - it's just 6:20 a.m."
+            "I picked up my pocket from the bedside table - It was 6:20 a.m."
 
             $ firstoption2 = False
 
@@ -225,13 +244,13 @@ label day6:
 
                 $ pillowchecked = True
 
-                "Nothing found here... Oh God, did I drool last night? I haven't got a deep sleep like this for a while."
+                w "\"Nothing here... Oh God, did I drool last night? Wow, Alice was right, guess I did sleep well. It's definitely been a while.\""
 
                 $ scenechange = False
 
                 jump day6_option2
 
-            "Check the dressing mirror":
+            "Check the vanity mirror":
 
                 $ gohallway = True
 
@@ -245,7 +264,7 @@ label day6:
 
                 jump day6_option2
 
-            "Get out of the room":
+            "Leave the room":
 
                 jump day6_option2_over
 
@@ -253,21 +272,23 @@ label day6:
 
         if mirrorchecked == False:
 
-            "There were some strange symbols on the mirror. Pretty familiar... They might be mirrored texts."
+            "Alice had mentioned the mirror before. And sure enough, there were some strange symbols on the mirror. But it looked familiar...almost like letters, but not quite."
             
-            "They were more like floating in the mirror instead of being written on it."
+            "The symbols seemed to be floating in the mirror rather than being written on it."
 
-            "Is that Alice's magic, too?"
+            "Is this more of Alice's magic?"
 
-            "This reminds me an old gentlemen I met when I was a child. He called himself wizard and taught me a spell."
+            "Maybe if I try saying the letters backwards, something will happen."
+            
+            "Although.... There was an old gentlemen I met when I was a child. He called himself wizard and taught me a spell. The lettering here holds some resemblence to it, if you look at it from a certain angle, anyway."
 
-            "I don't know what this spell does, but maybe I can try it here."
+            "It was just a silly spell he made up to have fun with the kids, I don't even remember what it was supposed to do. But maybe I can try it here?"
 
             $ mirrorchecked = True
 
         elif translated == False:
 
-            "There were some mirrored texts recorded on the mirror."
+            "There was some mirrored text recorded in the mirror."
 
         menu:
 
@@ -279,7 +300,7 @@ label day6:
 
                 if wandfound == False:
 
-                    w "Avada Kedavra!"
+                    w "\"Avada Kedavra!\""
 
                     "Nothing happened, as was expected."
 
@@ -287,7 +308,7 @@ label day6:
 
                     "I waved the wand and pointed it to the mirror."
 
-                    w "Avada Kedavra!"
+                    w "\"Avada Kedavra!\""
 
                     "Nothing happened. Seems like a wand doesn't make me more like a wizard."
 
@@ -299,7 +320,7 @@ label day6:
 
                 "I waved the wand and pointed it to the mirror."
 
-                w "ɿoɿɿimɘʜɈʜƨɒmƨ!"
+                w "\"ɿoɿɿimɘʜɈʜƨɒmƨ!\""
 
                 $renpy.sound.set_volume(0.1, 0, channel = 'sound')
 
@@ -307,31 +328,31 @@ label day6:
 
                 "*Crack*"
 
-                "The mirror broke! I dodged the pieces of the flying mirror and found out a piece of paper inside the mirror."
+                "The mirror broke! I dodged the pieces that flew out of the shattered mirror and found a piece of paper in the debris."
 
                 $renpy.sound.set_volume(1, 1, channel = 'sound')
 
                 if translated == True:
 
-                    "The rules written on this piece of paper were totally different from the one on the mirror"
+                    "The rules written on this piece of paper were totally different from the one on the mirror."
 
                 else:
 
-                    "This might be the rule of the game. Mr. Rabbit hided it inside the mirror."
+                    "This might be the rules to Mr. Rabbit's little game. He hid them inside the mirror."
 
-                    "Alice is right, it's a cunning rabbit."
+                    "Alice was right, this is a tricky rabbit for sure."
 
                 call real_clues
 
                 if translated == True:
 
-                    "I remembered what Alice told me at the very beginning... Every word was reversed in the mirror, that's true."
+                    "I remembered what Alice told me at the very beginning... It was true, every word was reversed in the mirror."
 
                 else:
 
-                    "If I found this piece of paper at the beginning, it might be very useful."
+                    "I sighed. If I had found this piece of paper at the beginning, it could've been very useful."
 
-                "I saw something else in the mirror, so I reached out and took it."
+                "I noticed something else in the mirror, so I reached out and took it."
 
                 jump day6_clue
 
@@ -342,7 +363,7 @@ label day6:
 
                 "I waved the wand and pointed it to the mirror."
 
-                w "FREIGABE!"
+                w "\"FREIGABE!\""
 
                 "Nothing happened. Maybe this's not the correct spell."
 
@@ -353,9 +374,9 @@ label day6:
 
                 $ addmin(20)
 
-                "I took a while to translate the text and got a couple lines of clues."
+                "It took a while to translate the text, but I got a couple lines of clues."
 
-                "I wrote the clues down, so I could always check it before making choices."
+                "I wrote the clues down, so I could check them again if I needed to before making choices."
 
                 $ translated = True
 
@@ -401,21 +422,21 @@ label day6:
 
         label day6_clue:
 
-            "This was a music box, seemed a little bit old."
+            "It was a music box, seemed a little old."
 
-            "I remembered it's Alice's favorite \"treasure,\" but she forgot to take it after moving."
+            "I remembered Alice mentioned it once as her favorite \"treasure,\" but she forgot to take it with her after moving here."
 
-            "This should be the \"candy\" for winning the game with Mr. Rabbit."
+            "This must be the \"candy\" for winning the game with Mr. Rabbit."
 
-            "I put the music box into my bedside table."
+            "I put the music box on my bedside table."
 
             if hr < 7 or hr ==7 and minute <=10:
 
-                "I still have some time before the breakfast. Now I could have a rest and waited for the breakfast."
+                "I still had some time before the breakfast. At least I could take a little rest. God knows I needed it."
 
             else:
 
-                "It's almost 7:30 a.m., so I stayed in the bedroom and waited for the breakfast."
+                "It was almost 7:30 a.m., so I stayed in the bedroom and waited for the breakfast."
 
             $ win = True
 
@@ -445,9 +466,9 @@ label day6:
 
             if translated == False and gohallway == True:
 
-                "I couldn't translate the text in a short time. Maybe it's not wise to do it right now."
+                "I can't translate the text that quickly. Maybe it's not wise to do it right now."
 
-            "Breakfast time normally started at 7:30 a.m. I hope I can find Mr. Rabbit before that."
+            "Breakfast normally started at 7:30 a.m. I hope I'd better find Mr. Rabbit before that."
 
             scene bg hallway
 
@@ -457,7 +478,7 @@ label day6:
 
             "I pushed the door open, but the hallway looked as dark as night."
 
-            "I blinked, the light of lamps sprinkled on the ground, and everything seemed normal again."
+            "But then I blinked and saw that the light of the lamps were sprinkled on the ground. Everything seemed normal again."
 
             hide black with Dissolve(2)
 
@@ -465,15 +486,16 @@ label day6:
 
             hide black with Dissolve(1.5)
 
-            "There have been more and more delusions recently. I'd better persuade Alice to leave, but right now, I need to find Mr. Rabbit first."
+            "Lately, I've learned I just can't trust my eyes. I think Alice's delusion magic might be getting stronger."
+            "I briefly hoped I'll be able to convince Alice to let me leave. But right now, I need to find Mr. Rabbit."
 
             play sound "audio/soundeffects/whitley_walk.wav"
 
-            "I went to the end of the hallway, and it split off into two different directions."
+            "I went to the end of the hallway, where it split into two different directions."
 
             stop sound fadeout 1.8
 
-            "On my detective’s honor, I swear I never saw this fork here before."
+            "Okay... On my detective's honor, I swear I never saw this fork here before."
 
             $ firstgoout = False
 
@@ -483,11 +505,11 @@ label day6:
 
             scene bg hallway
 
-            "I pushed the door open and went to the end of the hallway again."
+            "I pushed the door open and went to the end of the hallway."
 
             play sound "audio/soundeffects/whitley_walk.wav"
 
-            "The way split off into two different directions."
+            "The way split off into two different directions. Was this fork here before?"
 
             stop sound fadeout 1.8
 
@@ -495,6 +517,7 @@ label day6:
     label day6_option3:
 
         "There was a sign on each of the two roads. The left sign had a \"LEFT\" written on it, and the right sign had a \"RIGHT\" written on it."
+        "That seems a little....unnecessary?"
 
         menu:
 
@@ -524,11 +547,11 @@ label day6:
 
                 if firstfirstforkright == False:
 
-                    "The right road lead to a dead end. I could only go this way."
+                    "The right road led me to a dead end. Looks like I have no choice but to go this way."
 
                 elif translated == False and firstfirstforkleft == True:
 
-                    "I don't have any clue about where Mr. Rabbit is, but I think my intuition will lead me to the place."
+                    "I don't have any clue where Mr. Rabbit is, but I think my intuition will lead me to the place."
 
                 if firstfirstforkleft == False and translated == False and firstfirstforkright == True:
 
@@ -536,7 +559,7 @@ label day6:
 
                 if firstfirstforkleft == True and translated == True and firstfirstforkright == True:
 
-                    "The clues on the mirrors were strange... I didn't think follow them might be the right choice."
+                    "The clues on the mirrors were strange... I didn't think following them would be the right choice."
 
                     "I decided to turn left."
 
@@ -546,7 +569,7 @@ label day6:
 
                 if firstfirstforkleft == True and translated == True and firstfirstforkright == True:
 
-                    "Seemed like this was not a bad choice."
+                    "Seems like that wasn't a bad choice."
 
                 $ firstfirstforkleft = False
 
@@ -576,7 +599,7 @@ label day6:
 
                 if translated == False:
 
-                    "I don't have any clue about where Mr. Rabbit is, so I decide to trust my intuition."
+                    "I didn't have a clue where Mr. Rabbit could be, so I decided to trust my intuition."
 
                 elif firstfirstforkright == True:
 
@@ -614,11 +637,11 @@ label day6:
 
             if translated == True:
                 
-                "It's strange. Shall I trust what the mirror say this time?"
+                "That's strange. Shall I trust what the mirror said this time?"
 
             else:
 
-                "It's strange. Shall I trust my intuition this time?"
+                "That's strange. Shall I trust my intuition this time?"
 
         menu:
 
@@ -652,7 +675,7 @@ label day6:
 
                     "I was confused by the clues I translated from the mirror."
 
-                    "I had made wrong decisions twice."
+                    "I had made the wrong decision twice now."
 
                     "It told me every choice Mr. Rabbit made was right... Did I understand it wrong?"
 
@@ -694,15 +717,15 @@ label day6:
 
                     if translated == False:
 
-                        "Ah, my intuition led me to the right way for twice!"
+                        "Ah, my intuition led me the right way twice now!"
 
-                        "There should be a god stand by me."
+                        "Looks like there is a god looking out for me."
 
                     else:
 
                         "Obviously, I shouldn't trust what the mirror told me."
 
-                        "Opposite to what mirror said, Mr. Rabbit never make a \"right\" choice"
+                        "Opposite to what mirror said, it must be that Mr. Rabbit never makes a \"right\" choice."
 
                 $ firstsecondforkleft = False
 
@@ -728,7 +751,7 @@ label day6:
 
         "There was one sign on each road, but each sign was written with strange letters."
 
-        "They might be mirrored."
+        "They looked like the text on the mirror. Backward words again?"
 
         menu:
 
@@ -738,13 +761,13 @@ label day6:
 
                 if firstfirstforkright == False and firstsecondforkright == False and translated == False:
 
-                    "This was a mirrored text for word \"LEFT.\" I'd chosen right way for twice, but they both led me to the dead end."
+                    "That looks like the mirrored text for the word \"LEFT.\" I'd chosen right way for twice, but they both led me to a dead end."
 
-                    "There's no much time left. I decided to turn left first."
+                    "There's not much time left. I decided to turn left first."
 
                 if translated == True and firstthirdforkleft == True:
 
-                    "I choose not to trust the clues in the mirror. Every choice Mr. Rabbit did should be \"left.\""
+                    "I chose not to trust the clues in the mirror. Every choice Mr. Rabbit did should be \"left.\""
 
                     $ firstthirdforkleft = False
 
@@ -782,25 +805,25 @@ label day6:
 
                     if translated == True:
 
-                        "If every word in the mirror was opposed to their original meaning, I should understand the \"THӘIЯ\" in a opposed way too when it's \"a mirrored text\" also."
+                        "If every word in the mirror meant the opposite of their original meaning, that means the backward text here must be opposite too."
 
-                        "Therefore, the \"THӘIЯ\" sign meaned \"LEFT,\" and the \"TꟻƎ⅃\" sign meaned \"RIGHT.\""
+                        "Therefore, the \"THӘIЯ\" sign must mean \"LEFT,\" and the \"TꟻƎ⅃\" sign means \"RIGHT.\""
 
-                        "When every choice Mr. Rabbit was actually left, this was the only way I need to choose."
+                        "So every choice Mr. Rabbit makes is \"LEFT\"!"
 
-                        "A professional detective never make a wrong inference, especially on this simple mirror trick."
+                        "I couldn't help but smile at myself. A professional detective never make a wrong inference, especially on a simple mirror trick!"
 
                     else:
 
-                        "A professional detective never hesitate. I always follow my heart."
+                        "A professional detective never hesitates. I always follow my heart."
 
-                        "A different one after two continuous same answers. This's so old fashioned."
-
-                        "Ms. Detective never made a wrong choice."
+                        "I'll go with a different one after two continuous same answers. Never trust a test that's \"B's\" all the way down."
 
                 if firstfirstforkright == False and firstsecondforkright == False and firstthirdforkleft == False:
 
-                    "I finally found the correct way to go. I had made wrong decisions for three times."
+                    "I finally found the correct way to go, after making the wrong decisions thrice now."
+
+                    "Gee, am I detective or not? Why didn't I figure this out sooner."
 
                     if minute < 10:
 
@@ -850,7 +873,7 @@ label day6:
 
     label day6_option5_over:
 
-        "There was only one room there, so I opened the door and walked in."
+        "There was only one room here, so I opened the door and walked in."
 
         play sound "audio/soundeffects/open_bedroom_door.wav"
 
@@ -860,51 +883,57 @@ label day6:
 
         "After entering the room, I immediately saw Mr. Rabbit."
 
-        "It was prisoned by some... winding thorns? On the floor? Is this a delusion too?"
+        "But he was imprisoned by some... winding thorns? On the floor? Is this a delusion too?"
 
-        r ok "Hey! Mr. Rabbit saw you! Mr. Rabbit saw you!"
+        "Suddenly, I heard a voice pipe up from the plush toy!"
 
-        r depressed "Help! Mr. Rabbit accidentally used a wrong spell, please help this poor bunny!"
+        r ok "\"Hey! Mr. Rabbit sees you! Mr. Rabbit sees you!\""
 
-        w "Don't move! Thorns might hurt you."
+        r depressed "\"Help! Mr. Rabbit accidentally used a wrong spell, please help this poor bunny!\""
 
-        w "Mr. Rabbit, you should know I could just win the game by touching you. How can I help you?"
+        w "\"O-Okay! Don't move! Thorns might hurt you! Or...not? I'm not exactly sure how this would work for a stuffed rabbit.\""
 
-        r sad "Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!"
+        w "\"Mr. Rabbit, you should know I could just win the game by touching you. How do I get you out?\""
 
-        w "The wand?"
+        r sad "\"Game doesn't matter! Mr. Rabbit never fears failure! Take the wand!\""
 
-        r ok "It's right there! Next to you! On the floor!"
+        w "\"The wand?\""
 
-        r normal "Then wave it and say the spell ɿoɿɿimɘʜɈʜƨɒmƨ!"
+        r ok "\"It's right there! Next to you! On the floor!\""
 
-        w "Say...what?"
+        r normal "\"Then wave it and say the spell ɿoɿɿimɘʜɈʜƨɒmƨ!\""
 
-        r confused "Nononono. Say the spell FREIGABE! Mr. Rabbit almost made a mistake again!"
+        w "\"Say...what?\""
+
+        r confused "\"Nononono, say ɿoɿɿimɘʜɈʜƨɒmƨ!\"
+        
+        w "\"Uh, I guess I'll try?\""
+        
+        r confused "\"Oh nononono waitwaitwait, wrong spell! Say the spell FREIGABE! That was close, Mr. Rabbit almost made a mistake again!\""
 
     label day6_option6:
 
         menu:
 
-            "What should I do right now?"
+            "What should I do?"
 
             "Take the wand" if not wandfound:
 
                 $ wandfound = True
 
-                "The wand was left near the door, so I soon found and picked up it."
+                "I picked up the wand left near the door."
 
-                r ok "Say the spell!"
+                r ok "\"Say the spell!\""
 
                 jump day6_option7
 
             "Catch Mr. Rabbit":
 
-                "This maybe the best timing to finish the game. I thought."
+                "This might be the quickest way to finish the game. I could step over these thorns no problem."
 
-                "I have so many questions last in my mind. I just want to talk with Alice as soon as possible."
+                "I had so many questions, I just wanted to talk with Alice as soon as possible."
 
-                "I pass the wand and walked to Mr. Rabbit. It's motionless, so I could easily touch it."
+                "I left the wand and walked to Mr. Rabbit, where I could easily touch him past the thorns."
 
                 jump lose
 
@@ -934,11 +963,11 @@ label day6:
 
             "I waved the magic wand and pointed the winding thorns."
 
-            w "ɿoɿɿimɘʜɈʜƨɒmƨ!"
+            w "\"ɿoɿɿimɘʜɈʜƨɒmƨ!\""
 
             "Nothing happened."
 
-            r angry "Nonono! What're you doing!"
+            r angry "\"Nonono! What're you doing!? Wrong spell, wrong spell!\""
 
             $ option7readingclue = True
 
@@ -975,21 +1004,21 @@ label day6:
 
                 $ addmin(5)
 
-                "I waved the magic wand and pointed the winding thorns."
+                "I waved the magic wand and pointed it at the winding thorns."
 
-                w "FREIGABE!"
+                w "\"FREIGABE!\""
 
                 "With a flash of blue light, the thorns disappeared."
 
-                w "You are freed. What should we do next?"
+                w "\"You're free now!\""
 
-                r satisfied "Oh! Oh! How kind you are, Ms. Whitley! Mr. Rabbit almost thought it could not complete the game today."
+                r satisfied "\"Oh! Oh! How kind you are, Ms. Whitley! Mr. Rabbit almost thought he would not complete the game today.\""
 
                 "Mr. Rabbit cried and bounced to me."
 
-                w "Mr. Rabbit?"
+                w "\"Mr. Rabbit?\""
 
-                "Mr. Rabbit bounced on my shoe and gave me a weird smile."
+                "Mr. Rabbit bounced on my shoe. He looked up and I watched his plush twist and turn to give me a weird smile."
 
                 jump lose
 
@@ -997,11 +1026,11 @@ label day6:
 
                 hide screen countdown
 
-                "I shouldn't waste time on waving the wand. I thought."
+                "I shouldn't waste time on waving the wand."
 
-                "I have so many questions last in my mind. I just want to talk with Alice as soon as possible."
+                "I had so many questions, I just wanted to talk with Alice as soon as possible."
 
-                "I walked to Mr. Rabbit. It's motionless, so I could easily touch it."
+                "I left the wand and walked to Mr. Rabbit, where I could easily touch him past the thorns."
 
                 jump lose
 
@@ -1021,7 +1050,7 @@ label day6:
 
                 play sound "audio/soundeffects/whitley_walk.wav"
 
-                r angry "Where do you go! Ms. Whitley! Come back! There's no time left!"
+                r angry "\"Where are you going!? Ms. Whitley! Come back! There's no time left!\""
 
                 "I went back to the bedroom."
 
@@ -1032,29 +1061,27 @@ label day6:
 
     label lose:
 
-        r winning "Mr. Rabbit catches ya!"
+        r winning "\"Mr. Rabbit caught ya!\""
 
         if translated == True:
 
-            w "What do you mean? I should be the seeker..."
+            w "\"What do you mean? I was the one looking for you!\""
 
-            r depressed "You’ve never been the seeker. Poor Ms. Whitley, Mr. Rabbit thought everyone should know things are opposite in the mirror."
+            r depressed "\"Oh, you've never been the seeker! Poor Ms. Whitley, Mr. Rabbit thought everyone knew things are opposite in the mirror.\""
 
         else:
 
-            r normal "Wow, you didn't read the rules I left on the mirror?"
+            r normal "\"Oh Ms. Whitley, didn't you read the rules I left in the mirror?\""
 
-        r depressed "Mr. Rabbit is suprised how you reach this room without noitcing it!"
+        r depressed "\"Mr. Rabbit is suprised you reached this room without noticing it!\""
 
-        r confused "Did you find the clues? Did you? Didn't you?"
+        r happy "\"Oh well! Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret now!\""
 
-        r happy "*purrrrr* Whatever! Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret now!"
-
-        "I tried to talk to Mr. Rabbit, but it seemed to be in a state of madness and refused to respond."
+        "I tried to talk to Mr. Rabbit, but it seemed to be in a state of madness and refused to respond. It was like I wasn't even there."
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
-        "I had to go back and waited for breakfast in my room."
+        "I left Mr. Rabbit and waited for breakfast in my room."
 
         stop sound fadeout 2
 
@@ -1062,7 +1089,7 @@ label day6:
 
         play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
-        "I sat in front of the mirror and started to stare at my pocket watch."
+        "I sat in front of the mirror, staring at my pocket watch."
 
         "Time is passing..."
 
@@ -1086,63 +1113,63 @@ label day6:
 
         $ minute = 30
 
-        a happy "It's time! Everyone should have breakfast right now!"
+        a happy "\"It's time! Let's have breakfast, everyone!\""
 
         if win == False:
 
-            r winning "Ms. Whitley is smart! But Mr. Rabbit is smarter than her! Than you! Than everyone!"
+            r winning "\"Ms. Whitley is smart! But Mr. Rabbit is smarter!\""
 
-            a happy strange "You cunning bunny. Every single clue you left in the mirror was a lie."
+            a happy strange "\"You cunning bunny. Every single clue you left in that mirror was a lie, wasn't it!\""
 
-            r satisfied "Mr. Rabbit only wants to keep its big secret!"
+            r satisfied "\"Mr. Rabbit only wants to keep its big secret!\""
 
         else:
 
-            r confused "No, no, no! Mr. Rabbit's mirror! Mr. Rabbit’s biggest secret has been discovered!"
+            r confused "\"No, no, no! Mr. Rabbit's mirror! Mr. Rabbit's biggest secret has been discovered!\""
 
-            r sad "Ms. Whitley, how could you possibly do that?"
+            r sad "\"Ms. Whitley, how could you possibly do that?\""
             
             if timetakentowin == 65:
 
-                r depressed "1 hour and 5 minutes! That's so close! Mr. Rabbit almost won the game!"
+                r depressed "\"1 hour and 5 minutes! So close, so close! Mr. Rabbit almost won the game!\""
 
             elif timetakentowin == 60:
 
-                r depressed "1 hour! That's so close! Mr. Rabbit almost won the game!"
+                r depressed "\"1 hour! So close, so close! Mr. Rabbit almost won the game!\""
 
             elif timetakentowin < 60:
 
-                r depressed "[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!"
+                r depressed "\"[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!\""
 
                 if timetakentowin == 35:
 
-                    r depressed "Noone can find Mr. Rabbit's secret shorter than you! Noone! Did you play a trick with the time?"
+                    r depressed "\"No one can find Mr. Rabbit's secret faster than you! No one! Did you play a trick with the time?\""
 
-            r depressed "Don’t tell Alice, please! Let it be the secret only for you and Mr. Rabbit."
+            r depressed "\"Don't tell Alice, please! Let it be the secret only for you and Mr. Rabbit.\""
             
-            w "Hey Mr. Rabbit, calm down. We should go for breakfast, right?"
+            w "\"Hey Mr. Rabbit, calm down. Let's go for breakfast, alright?\""
 
-            r confused "Oh dear! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!"
+            r confused "\"Oh dear! Ms. Whitley is right! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!\""
 
-            "Mr. Rabbit bounced away nervously."
+            "\"Mr. Rabbit bounced away nervously.\""
 
             play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
-            "I pushed the door open and went out."
+            "\"I pushed the door open and went out.\""
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
         scene bg dining room
 
-        "I went to the dinning room."
+        "\"I went to the dinning room.\""
 
         stop sound fadeout 2
 
         "While having breakfast, my head became more and more groggy and my vision blurred."
 
-        "I had lots of questions to ask and lots of words to say, but everytime I tried to talk with Alice, I would suddenly forget what to say."
+        "I had lots of questions to ask and lots of words to say, but every time I tried to talk with Alice, I would suddenly forget what to say."
 
-        "Alice noticed my discomfort and advised me to have a rest. This was a good idea, I really need a rest before I find a suitable way to convince her tomorrow."
+        "Alice noticed my discomfort and advised me to rest. That sounded like a good idea, I really needed a rest...especially if I was going to be ready for whatever awaited me tomorrow."
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
@@ -1154,7 +1181,7 @@ label day6:
 
         play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
-        "I lay down and fell asleep soon."
+        "I laid down and soon fell asleep."
 
         hide screen Time
 
