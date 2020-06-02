@@ -90,7 +90,7 @@ label day5:
         hide alice_sad
         show alice_happy_openmouth
 
-        a "Yayyy! I can't wait."
+        a "\"Yayyy! I can't wait.\""
         hide alice_happy_openmouth
 
         scene black
@@ -734,9 +734,9 @@ label wolf_ending:
     a "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
     "\"Alice grabbed Mr. Rabbit and touched the both of us."
     "Poof!"
-    "\"We both returned to our human states.\""
+    "We both returned to our human states."
     show alice_happy_openmouth
-    a "What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time."
+    a "\"What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time.\""
     hide alice_happy_openmouth
 
     jump tag_end
@@ -753,7 +753,7 @@ label wolf_tag_ending:
 
     show alice_happy_openmouth
 
-    a "Shoot! Now I'm it. You ready?"
+    a "\"Shoot! Now I'm it. You ready?\""
 
     hide alice_happy_openmouth
     show alice_happy_closemouth
