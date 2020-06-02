@@ -1,6 +1,7 @@
 label badEndingSilence:
-    A "Looks like you are really not interested in my story"
-    A "Maybe I have to say Goodnight to you, my dear."
+    A "\"It seems like you really don't care about my story, do you?\""
+    w "\"I -\""
+    A "\"It's okay! We'll just have to say goodnight early, Ms. Whitley.\""
     hide Alice
     scene blcak
     with hpunch
@@ -8,11 +9,11 @@ label badEndingSilence:
     return
 
 label badEndingUnhappy:
-    "Alice sighed heavily"
-    A "Your reaction really disappointed me"
-    A "I feel so sad now"
-    A "And I think my friend, which is you should share this sad feeling with me"
-    A "COME OVER HERE"
+    "Alice sighed heavily."
+    A "\"That's not what I wanted to hear.\""
+    A "\"I...I feel so sad now...\""
+    A "\"I think, Ms. Whitley, you ought to feel this sadness too....\""
+    A "\"COME AND SHARE IT WITH ME.\""
     hide Alice
     scene blcak
     with hpunch
