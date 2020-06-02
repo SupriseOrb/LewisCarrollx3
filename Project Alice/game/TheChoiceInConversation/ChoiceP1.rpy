@@ -3,65 +3,65 @@
 label TheChoiceInPart1(numberP1):
     if numberP1==1:
         menu:
-            "Yes,I do":
-                A "Oh, you are so kind Sweetheart!"
+            "Yes, I would like to hear your story.":
+                A "\"Oh, you are so kind, Ms. Whitley!\""
                 return
-            "No, screw you!":
+            "Maybe you can tell me some other time?":
                 show alice sad
-                A  "Don't be so mean Honey. My story was not that terrible "
+                A  "\"Don't be so mean! I want to tell it now. It's not that bad, I promise.\""
                 $ AliceAngry +=1
                 return
     elif numberP1==2:
         menu:
             "Wait, who is Aiden?":
                 return
-            "I don't care about your silly childhood":
+            "This seems painful for you to talk about, maybe you shouldn't...":
                 $ AliceAngry +=1
                 call checkTheSilenceP1
                 return
     elif numberP1==3:
         menu:
-            "Are you okey?":
+            "Are you okay?":
                 show Alice happy
-                A "Yes, my sweetyy, thanks for your concern. I feel better now."
+                "Alice sniffed and rubbed her eyes."
+                A "Yes. I'm okay. Thank you."
                 return
-            "Looks someone is almost crying haha":
+            "Oh, Alice. I told you, crying won't solve anything.":
                 $ AliceAngry +=1
                 call checkTheSilenceP1
                 return
     elif numberP1==4:
         menu:
-            "What is it ?":
-                A "I named it Mr.Voice, I haven't seen it physically, but I can hear it's a voice in my head."
+            "It sounds like it was love at first sight!":
+                A "\"Probably.\""
+                "Alice giggled. It was nice to see her smile for once, but it didn't last long."
+                A "\"...I wish you were there to meet that boy with me, Ms. Whitley. I bet you could've told me what I was feeling then.\""
                 return
-            "You mean you fell in love with a boy in the first sight?":
-                A "Probably, I wish you would have a chance to meet that boy, sweetheart. I bet you would have the feeling with me, which makes you want to own that boy."
-                return
-            "Who care about your lonely soul?":
+            "It sounds like you were really lonely, even before your parents passed.":
                 $ AliceAngry +=1
                 call checkTheSilenceP1
                 return
     elif numberP1==5:
         menu:
-            "But why that house was burnt down?":
-                A sad "umm..... That's because... some accident happened."
+            "How did that house burn down?":
+                A sad "\"Umm..... That's because... an accident happened.\""
                 return
-            "Sorry for the Miffy, Alice":
-                A normal "Thank you, sweetyy"
+            "I'm sorry about Miffy, Alice":
+                A normal "Thank you, Ms. Whitley."
                 return
-            "I wonder the taste of rabbit, haha":
+            "You can't do anything about now.":
                 $ AliceAngry +=1
                 call checkTheSilenceP1
                 return
     else:
         menu:
             "So did you obey your parents?":
-                A "I hope I did."
+                A "\"...I wish I did.\""
                 return
-            "Your parents was right":
-                A "I get it now."
+            "Were your parents right?":
+                A "\"I think they were.\""
                 return
-            "Finally, someone came to wake up the ugly duckling's dream.":
+            "You shouldn't trust strangers.":
                 $ AliceAngry +=1
                 call checkTheSilenceP1
                 return

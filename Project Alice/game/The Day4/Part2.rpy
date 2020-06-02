@@ -1,49 +1,54 @@
 label Part2Start:
-
-    "When you opened the door and took the first step outward, your feet did not step on the floor."
-    "This unexpected situation makes you lose your balance and you feel you are falling."
+    "When I opened the door and took my first step outside it, to my horror, my feet didn't find ground!"
+    "I tried to regain my balance, but quickly found myself reeling back and falling into an abyss."
     with vpunch
     scene black
     show Whitley
-    W "Where am I"
-    W "Why here is so dark"
-    "Suddenly you found a girl squatting in front of me."
-    "You couldn't see her face clearly, but she had been listening to something as if expecting something"
-    W "Hey there, what are you doning?"
-    "She didn't respond to me, as if she didn't hear me"
+    W "\"Ugh... Where am I?\""
+    W "\"Why is it so dark?\""
+    "Suddenly my eyes caught a girl in the darkness, squatting right in front of me. But she was focused on something else..."
+    "I couldn't see her face clearly, but she looked as though she was expecting something"
+    W "\"Uhh hello, what are we doing down here? What is this place?\""
+    "She didn't respond to me. She didn't even seem to care that I spoke."
 
     call TheChoiceInPart2(1)
 
     hide Whitley
-    "As your eyes slowly adapt to the dark environment, you find that you are in a closet"
-    "The little girl in front of you is watching outside through a small gap"
-    "Suddenly, there was a voice from outside, two people talking with their feet on the wooden floor"
-    "As the sound gets closer, you can feel the emotion of the little girl excited"
+    "As my eyes slowly adapted to the dark environment, I realized I was in a closet."
+    "The little girl in front of me was peeking outside through a small gap between the closet doors."
+    "Suddenly, there was a voice from outside, two people talking with their feet shuffling over the wooden floor"
+    "As the sound got closer, I could sense excitement rising in the girl. She pushed herself closer to the gap, desperate to see."
 
-    "UnknownMan" "Don't you need to go to Alice today, Luke?"
+    "???" "\"Aren't you supposed to be with Alice today, Luke?\""
 
-    W "Luke? The boy Alice mentioned before?"
-    W "So this girl is..... Alice ?"
-    " You try to see the face of the little girl in front of you, but you can’t see clearly"
+    W "\"Luke? The boy Alice mentioned before?\""
+    W "\"So this girl.....\""
+    "I looked at the girl hiding in the closet." 
+    W "\"Alice?\""
+    "I tried to get a closer look, but this closet was pitch black."
 
-    "Luke" "No, it's her nap time now, thank God."
-    "UnknownMan" "I thougt you enjoy to play with that little princess."
-    "Luke" "Are you kidding me, if it were not for our parents' request, how could I talk to that freak?"
-    "UnknowMan" "But I think you always talk and laugh when you are with her."
-    "Luke" "Please, I'm tired of making me smirk at her every day, don't make fun of me anymore."
+    "Luke" "\"Not right now. It's her nap time, thank God.\""
+    "???" "\"I thought you enjoyed playing with the Hearts' little princess.\""
+    "Luke" "\"Are you kidding me? If it weren't for Dad, I wouldn't even be talking to that freak.\""
+    "The other, older boy let out a hearty laugh."
+    "???" "\"But I thought you {i}liked{/i} her! You're always talking and laughing when you're with her.\""
+    "Luke wasn't amused by the boy's mocking tone."
+    "Luke" "\"Leave me alone! I'm already tired of Dad making me smile at her every day, I don't need you making fun of me.\""
 
-    "You can feel the mood of the little girl becomes very low"
+    "I watched the little girl sink down, shoulders slackened, head bowed."
 
-    "Luke" "You may not imagine how stupid that girl is, and she always keeps asking the silliest questions."
-    "Luke" "And she often gets angry for some inexplicable reason and then yells at you."
-    "UnknowMan" "Oh my god, I thought you are her friend."
-    "Luke" "Friend? Are you insulting me? I'm like her babysitter."
-    "Luke" "To be honest, I don't think she needs a friend, all she needs is a babysitter."
-    "Luke" "Everyone can be her friend, as long as they can tell some amazing story."
+    "Luke" "\"You wouldn't believe how stupid she is. She always asks the silliest questions.\""
+    "Luke" "\"There are better things to talk about than dumb tea parties and rabbits.\""
+    "Luke" "\"And she'll get angry at you for no reason, just because you aren't playing her game right or something ridiculous like that.\""
+    "???" "\"Hey, Dad said you have to be friends with her, be careful how much you badmouth her.\""
+    "Luke" "\"Friends? I'm like her {i}babysitter.{/i}\""
+    "Luke" "\"All she wants is attention.\""
+    "Luke" "\"Anyone could be her \'friend\', as long as you can put up with her stupid stories.\""
 
-    "You heard sobbing from the girl who in front of you."
-    "Her shoulders trembled slightly, trying to cover her mouth with her hands without making a sound, but tears overflowed from her eyes and then ran across her cheeks and dripped to the ground."
-    "The two people outside were still talking loudly, laughing loudly from time to time."
+    "I heard the girl begin to softly cry."
+    "Her shoulders trembled slightly as she tried to cover her mouth to stifle the sobs."
+    "But the tears soon overflowed, streaking over her cupped hands before dripping to the floor."
+    "The two people outside continued on their chat, laughing loudly from time to time."
 
     call TheChoiceInPart2(2)
 
@@ -51,28 +56,33 @@ label Part2Start:
     scene playerroom night
     with fade
     show Alice normal
-    A "It looks like you have already seen the story I will tell you next."
+    "I looked up to see Alice standing in front of me. It was nighttime already? When did it get so late?"
+    A "\"...I guess you already saw the part of the story that's next, hm Ms. Whitley?\""
     call TheChoiceInPart2(3)
 
-    A "Luke deceived me, I regarded him as my only friend, but he only regarded me as a burden."
-    A "I'm sorry to show you my story in this special way."
-    A "But these sad memories are always hard to say."
+    A "\"Luke was tricking me. The whole time. I thought he was my only real friend, but this whole time..."
+    A "\"He thought I was annoying. I never really mattered to him.\""
+    A "\"I'm sorry for showing you the story like that...\""
+    A "\"But these memories are always hard to say.\""
     call TheChoiceInPart2(4)
 
-    A "I ran back crying and my parents comforted me tenderly."
-    A "It was then that I suddenly realized that they are the people who care about me most in the world"
-    A "and I don’t need other people to be my friends."
-    A "Luke and his family seemed to be asking for help from my parents, you know, financial support."
-    A "But my parents have been rejecting them, so they want to get some opportunities from me."
-    A "Simply put, they were kicked out that night"
+    A "\"After that, I ran back to my parents crying. They took care of me that day.\""
+    A "\"After that...I knew Mom and Dad were the only people who cared about.\""
+    "Alice gave me a vacant grin."
+    A "\"and I don't need anyone else to be my friends.\""
+    "She said it so casually, as if it was the only truth in the world."
+    "Alice..."
+    A "\"The Adams family were asking my parents for money, you know.\""
+    A "\"But my parents kept turning them away, so they thought maybe they could get through to them...from me.\""
+    "Alice giggled to herself."
+    A "\"Sillies. They got kicked out that night.\""
     call TheChoiceInPart2(5)
 
-    A "Anyway, let's prepare dinner, honey."
-    A "But you may need to prepare something for me"
-    A "There are something in the basement I need for cooking"
+    A "\"Anyway, let's get dinner started!\""
+    A "\"There are some things in the basement we need first, though.\""
     call setTheIngre
-    A "But there may be some small things in the basement, such as mice"
-    A "I hope you don’t mind helping me to do some clean work, if you want."
+    A "\"But there are some critters down there, like mice.\""
+    A "\"I hope it's okay that I stay up here and you go get those things for me! Oh and you could do some cleaning while you're at it!\""
     call TheChoiceInPart2(6)
 
     jump Part3Start

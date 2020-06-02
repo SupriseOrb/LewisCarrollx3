@@ -1,5 +1,5 @@
 label checkTheSilenceP1:
-    $ AliceReaction = ["Don't be so mean, honey", "Why your words so harsh word, honey", "Hey.Stop saying those sarcasm", "You brock my heart"]
+    $ AliceReaction = ["\"Don't be so mean!\"", "\"I don't want to hear that.\"", "\"I don't like that.\"", "\"That's not very nice.\""]
     $ EmotionLevel =  AliceAngry-2
     $ output = AliceReaction[EmotionLevel]
     show Alice angry

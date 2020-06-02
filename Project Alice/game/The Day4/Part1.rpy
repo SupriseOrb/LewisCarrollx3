@@ -1,17 +1,17 @@
 label day4:
-    scene playerroom morning
+    scene playerroom noon
     with fade
 
     show alice happy
     with dissolve
 
-    "Someone is kocking my door"
+    "The next day, I was in the playroom. Alice had instructed me to wait here for her. She seemed off today. Even more off than usual."
     "..."
-    "The door of my room was opened"
+    "The door to the playroom opened."
 
-    A "Good Morning, Sweetheart"
-    A "I hope you enjoy your life here"
-    A "Tell me, Honey, are you a theist ?"
+    A "\"Good Morning, Ms. Whitley.\""
+    A "\"I hope you're enjoying your life here.\""
+    A "\"I have a question for you. Are you a theist?\""
 
     menu:
         "Yes":
@@ -21,8 +21,11 @@ label day4:
 
     label firstTheistDone:
     A "Interesting, I like your answer."
-    A "Hey Sweetyy, do you want to hear my story?"
-
+    A "Hey Ms. Whitley, do you want to hear my story?"
+    
+    "I looked at her wide-eyed. Just like that? She was going to tell me what's going on?"
+    "Maybe she feels lonely...it must be getting to her."
+    "I should get what I can from her, and be careful not to make her mad."
 
     call TheChoiceInPart1(1)
     if AliceHateU:
@@ -30,15 +33,19 @@ label day4:
 
     show Alice normal
     with dissolve
-    A "My family used to be the richest in this town. Other families didn't like us much."
-    A " Maybe because my parents don't want to socialize with others, and that's the reason why this house build in this remote place."
-    A "And I have no friend in that time and apperently my parents never allowed me to hang out."
-    "Alice lowered her head"
-    "But she smiled and looked up at you soon"
-    A "But my parents usually stay and play with me, they were so kind"
-    A "They even sent me a rabbit as a gift, I called her Miffy and she is my best friend."
+    A "\"My family used to be the richest in this town. Other families didn't like us much.\""
+    A "\"Maybe because my parents didn't really like talking with other people. Why else build a house in a neighborhood it doesn't belong in?"
+    A "\"Because of that...I didn't really make any friends. My parents never allowed me to outside.\""
+    "Alice lowered her head."
+    "But she smiled to herself and looked up at me fairly quickly."
+    A "\"But my parents always stayed and played with me. They were so kind.\""
+    A "\"They even gave me Miffy, my pet rabbit! Before I met Mr. Rabbit here.\""
+    A "\"And she was my best friend.\""
     "..."
-    A "The daily life was so boring at that time, I played with Miffy all day, and sometime Aiden would tell me some crazy story."
+    "Alice seemed caught up in her own world now. I was afraid even the smallest word from me would bring her out of this trance."
+    "I let her sit beside me and continue."
+    A "\"Even so... my life was so boring. It was the same thing everytime! Good things! But...same things...\""
+    A "\"I would play with Mr. Rabbit all day, and sometimes Aiden would tell me a good crazy story.\""
 
     call TheChoiceInPart1(2)
     if AliceHateU:
@@ -46,24 +53,25 @@ label day4:
 
     show Alice normal
     with dissolve
-    A "Aiden is the housekeeper in our family at that time."
-    A "and Aiden could do many things, like driving, cooking, and pipe repairing."
-    A "And the most important thing was, he is the only one who would tell me the story of the outside world. I love his story so much."
-    "Alice's expression became sad because something"
-    "Maybe something happened on Aiden"
-    A "My parents like Aiden and they paid high salary to Aiden, maybe because my parents like his patient."
-    A "So do I."
-    "Alice suddenly stopped talking"
+    A "\"Aiden is...was our housekeeper.\""
+    A "\"He could do everything! Like driving, cooking, and even pipe repairing! The bathroom got completely FLOODED one time! But Aiden was there to fix it.\""
+    A "\"And the most important thing was...he's only one who told me stories about the outside world.\""
+    A "\"I loved those stories so much...\""
+    "Alice trailed off as an abrupt, palpable melancholy seemed to wash over her."
+    "I wondered....maybe something happened to Aiden."
+    A "\"My parents liked Aiden a lot. They paid him really well! Maybe because my parents liked how we got along so well.\""
+    A "\"...I liked that too.\""
+    "Alice suddenly stopped talking."
     "..."
-    A "I was thinking that my rest whole life will stay in this way, but one family showed over in our house and they changed my life."
+    A "\"I thought my whole life would stay that way...but then, one family showed up at our house and they changed my life.\""
     hide Alice
     with dissolve
     show Alice sad
     with dissolve
 
-    A " That was a terrible memory for me."
+    A "\"But now, it's a terrible memory.\""
 
-    "Alice looks very sad"
+    "Alice brought her knees up to her chest and buried her face behind them."
 
     call TheChoiceInPart1(3)
 
@@ -72,13 +80,14 @@ label day4:
 
     show Alice normal
     with dissolve
-    A "Adams family visited our family at that time. They were relative to my mother."
-    A "That was the first time I met Luck, who was the youngest son in the Addams family."
-    A "He was excellent, and the way he smiled was fascinating. "
-    "Alice was praising the boy, but Alice didn’t look very happy"
-    A "But I have never had a chance to talk to him, he always stands behind his parents, just like me."
-    "Alice shook her head, as if regretting"
-    A "And that was also the first time it shows over in my head."
+    "Alice continued her story."
+    A "\"The Adams family visited our family. They were important people. Rich like my parents.\""
+    A "\"That was the first time I met Luke. He's the youngest son of the Adams.\""
+    A "\"He was talented. His parents called him brilliant and handsome. And the way he smiled just lit up the room.\""
+    "Alice was praising the boy, but she didn't seem very happy about it."
+    A "\"But I have never had a chance to talk to him. He always stood behind his parents, just like me.\""
+    "Alice shook her head. There was a regretful tone in her voice."
+    A "\"And that was the first time... I wanted to be friends with someone other than Miffy.\""
     "..."
 
     call TheChoiceInPart1(4)
@@ -88,17 +97,23 @@ label day4:
 
     show Alice normal
     with dissolve
-    A "It tells me that I could become friend with Luke if I were willing to pay the sacrifice."
-    A "Of course I said yes"
+    A "\"So I snuck into my parents study and found spell that would help make him be friends with me.\""
+    A "\"The spell said I could become friends with Luke. But it needed something in return.\""
+    A "\"I didn't know what, but I...would give up anything to try being friends with Luke.\""
+    A "\"So I performed the spell. It was really simple. It wasn't hard at all.\""
     "Alice lowered her head again and sighed slightly."
-    A "After that, I found that I can't find my Miffy that night"
-    A "I looked for her everywhere, I asked almost everyone, but they all said they did not see her"
-    A "The next day, Luke came to see me with Miffy's body. He said it was found at his door in the morning. "
-    A "Oh, I forgot to tell you that, Luke and their family weren't live in this house."
-    "Alice points to a ruin outside the window"
+    A "\"After that, I couldn't find my Miffy that night.\""
+    A "\"I looked for her everywhere, I asked everyone I could, but nobody had seen her.\""
+    A "\"The next day, Luke came to see me. He was holding Miffy in his arms.\""
+    "Alice covered her mouth and sobbed quietly."
+    A "\"She was so still...\""
+    A "\"He said he found her at his door that morning.\""
+    A "\"Oh, I forgot to tell you, the Adams family were staying at a residence away from our house.\""
+    "She pointed to a ruin outside the window. A once-beautiful home reduced to debris."
+    "In this neighborhood, I hadn't paid it any heed. But looking at it now..."
     "..."
-    A "They lived in that house, which is for the guest. My parents didn't want others to live in this house."
-    A "So I was curious why she ran so far that night"
+    A "\"It was a guest house. My parents didn't want anyone else staying in our home.\""
+    A "\"No matter how many times I think about it...I don't understand how she got all the way over there.\""
     "..."
 
     call TheChoiceInPart1(5)
@@ -108,12 +123,15 @@ label day4:
 
     show Alice happy
     with dissolve
-    A "Anyway, Miffy became an opportunity for me and Luke to meet, and we buried Miffy together. "
-    A "And Luck is as polite and gentile as I thought, and he knows a lot of things, I have never felt so happy talking to a person in that time"
-    A "We soon became good friends, you know, the inseparable kind. "
-    "Although she is talking some happy memory, she looks angry which is so strange."
-    A "But when my parents noticed my relationship with Luke, they told me to stay away from Luke because he approached me with bad intentions."
-    "Alice smiled and raised her head slightly, as if trying to remember something"
+    A "\"But you know, Ms. Whitley...Miffy actually helped me and Luke actually meet. We buried Miffy together.\""
+    A "\"It was sad, but Luke was really nice. He was kind and gentle, just like I thought! He knew about lots of things, like animals and flowers and sorts of rocks.\""
+    A "\"It sounds boring...but the way he talked it about it made it so fun!\""
+    A "\"I never felt so happy talking to someone.\""
+    A "\"We became really good friends, you know, the inseparable kind.\""
+    "It seemed like a happy memory, but there was something behind Alice's eyes. It was something sad...but it was something angry too."
+    A "\"One day I was telling my parents about a time I played with Luke, and they got really upset.\""
+    A "\"They told me to stay away from Luke. They told me he was bad.\""
+    "Alice smiled and raised her head slightly, as if trying to remember something."
     "..."
     call TheChoiceInPart1(6)
 
@@ -122,12 +140,12 @@ label day4:
 
     show Alice normal
     with dissolve
-    A "If you give me another chance, I will listen to my parents' advice."
-    A "But then something happened and Luke and his family left here"
-    A "He..."
+    A "\"If I had another chance, I would've listened to my parents'.\""
+    w "What do you-"
     with vpunch
-    "There was a loud voice from the upstairs."
-    A "Give me a couple of minutes, Honey. I have to solve the noise problem"
+    "Suddenly, there was a loud bang from upstairs. I jumped to my feet."
+    "Alice was only slightly irritated."
+    A "\"Can you stay here? Give me a couple of minutes, I'll be right back. It's just a noise problem.\""
     hide Alice
     with dissolve
 

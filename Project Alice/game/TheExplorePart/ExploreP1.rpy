@@ -1,7 +1,8 @@
 label ExploreRoom:
     scene playerroom noon
     show Whitley
-    W "Finally, let see what I can do now"
+    "I was worried about what that bang was, but this gave me a chance to explore more of the house."
+    W "\"Let's see what I can find.\""
     hide Whitley
     with dissolve
 
@@ -19,7 +20,7 @@ label FirstCheck:
                 $ CheckTheDoor = True
                 "The door is locked."
                 show Whitley
-                W "The door is locked, maybe can find the key somewhere"
+                W "\"The door is locked, maybe I can find a key somewhere.\""
                 hide Whitley
                 with dissolve
                 jump FirstCheck
@@ -27,13 +28,13 @@ label FirstCheck:
                 $ CheckTheWindow = True
                 "The window is locked."
                 show Whitley
-                W "No way out."
+                W "\"No way out.\""
                 hide Whitley
                 with dissolve
                 jump FirstCheck
 
     show Whitley
-    W "All the ways out are locked, maybe I can find something from this room to get me out this room"
+    W "\"All the ways out are locked, maybe I can find something from this room to get me out this room.\""
     hide Whitley
     with dissolve
 
@@ -45,55 +46,55 @@ label SecondCheck:
     while ExploreNotDone:
         menu:
             "Check the desk":
-                "There is a name carved on the table, Aiden"
-                "Maybe the room used to be Aiden's room"
+                "There is a name carved on the table, \"Aiden\"."
+                "Maybe Aiden used this room."
                 jump SecondCheck
             "Check under the bed":
-                "Can't see clearly under the bed"
+                "I can't see clearly under the bed."
                 label check3:
                 while CheckUnderBed:
                     menu:
                         "Try to find something by hand":
                             $ getsomething=renpy.random.randint(0,1)
                             if getsomething==1:
-                                W "I find something!"
-                                "You find a paper, it seems like a note"
-                                "The REMINDER"
-                                "I put the false key in the WARDROBE"
-                                "Try to check a couple of times"
-                                "Aiden"
-                                W "Oh, I love you so much, Aiden"
+                                W "\"I found something!\""
+                                "A piece of paper, it looks like a note. It reads:"
+                                "*REMINDER*"
+                                "I put the false key in the WARDROBE."
+                                "Try checking there if you can't find it. Check it again if you have to."
+                                "- Aiden"
+                                W "\"Oh Aiden, you're a lifesaver.\""
                                 $ CheckUnderBed = False
                                 jump check2
                             else:
-                                "Find nothing"
+                                "I didn't find anything."
                                 jump check3
-                        "I don't think I can find things here":
+                        "I don't think I can find anything here.":
                             jump check2
                 if CheckUnderBed:
                     jump SecondCheck
                 else:
-                    "There is nothing here, maybe I should check the Wardrobe more than once"
+                    "There's nothing here, maybe I should try checking the wardrobe again."
                     jump SecondCheck
             "Check the Wardrobe":
                 $ TheTimesCheckWardrobe += 1
                 if TheTimesCheckWardrobe == 3:
-                    W "I find something!"
+                    W "\"I found something!\""
                     $ ExploreNotDone = False
-                    "You find a secret grid in the Wardrobe"
-                    "There is a key inside"
+                    "There's a secret grid inside the wardrobe!"
+                    "There's a key inside the grid."
                     jump leaveTheRoom
                 else:
-                    "It's empty here"
+                    "It's empty here."
                     jump SecondCheck
             "Check the Bedstand":
-                "There is a notebook on the bedstand"
-                "It seems belong to the last room user"
-                "There is one page was torn off"
-                W "Maybe I can check the bed to find that page"
+                "There's a notebook on the end table."
+                "It doesn't look like Alice's...maybe someone else?"
+                "Upon inspection, I found one page had been torn off."
+                W "\"I bet the missing page is still in this room somewhere.\""
                 jump SecondCheck
 
 label leaveTheRoom:
-    W "Okey, I got the key"
-    W "I can leave this room now."
+    W "\"Okay, I got the key!\""
+    W "\"I can leave this room and explore more.\""
     jump Part2Start

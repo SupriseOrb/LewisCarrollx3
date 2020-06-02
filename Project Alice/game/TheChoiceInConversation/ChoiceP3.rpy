@@ -3,11 +3,11 @@ label TheChoiceInPart3(numberp3):
         menu:
             "Do some cleaning work here":
                 call screen DoTheClean
-                W "I already do my best, Alice will feel happy about it."
+                W "\"I hope that makes Alice feel happy.\""
                 $ ResponceAlice = True
                 return
             "Go straight to get the ingredients you need":
-                W "I don't want to waste my time on those rats"
+                W "\"I don't want to waste my time with those rats.\""
                 return
 
     if numberp3==2:
@@ -19,7 +19,7 @@ label TheChoiceInPart3(numberp3):
                 $ AliceInPain += 1
                 return
             "I don't know":
-                "Alice smiled"
+                "Alice smiled."
                 return
 
     if numberp3==3:
@@ -42,23 +42,25 @@ label TheChoiceInPart3(numberp3):
             "No":
                 $ AliceInPain += 1
                 return
-            "How do think about this question?":
+            "How about I ask you a question?":
                 $ AliceInPain += 2
-                A "I refuse to answer since I asked this question first"
-                "It looks like Alice is not happy with your rhetorical question"
+                "Alice gave me a sour look."
+                A "\"That's not fair! I asked a question first.\""
+                "It looks like Alice wasn't happy about that."
                 call checkThePain
                 return
 
     if numberp3 == 5:
         menu:
             "Break the silence and ask Alice something":
-                W "Can I ask you some quesions? Alice"
-                "Alice stares at you, it looks like she was surprised by your sudden problem"
-                A "Sure, honey, as long as I known"
-                "She recovers fast and put her signal smile on the face again."
+                W "\"Can I ask you some quesions, Alice?\""
+                "Alice blinked at me, as if she was surprised I still had some left in me."
+                "To be honest, I was surprised too. But even after everything, I needed to at least try to get something out of Alice."
+                A "\"Sure, Ms. Whitley! As long as I know it!"
+                "She recovered fast and plastered her signature smile back on."
                 jump QuestionForAlice
 
-            "Just finish the dinner and over this boring day":
+            "Just finish the dinner and get this day over with":
                     $ FinishThisBoringDay= True
                     return
 
@@ -66,143 +68,133 @@ label TheChoiceInPart3(numberp3):
 label QuestionForAlice:
     menu:
         "Ask about Aiden":
-            W "Can you tell me more about Aiden?"
-            A "Aiden?"
-            "Alice's eyes are full of doubts"
-            A "Who is Aiden?"
-            W "??!!"
+            W "\"Can you tell me more about Aiden?\""
+            A "\"Aiden?\""
+            "Alice's eyes become full of doubt."
+            A "\"Who is Aiden?\""
+            W "\"??!!\""
             with vpunch
-            A "Haha, got you"
-            "Alice suddenly burst out laughing"
-            A "Sorry, honey, but your face was funny"
-            "After a while, Alice stop her laughing"
-            A "Aiden is our homekeeper"
-            A "He worked here lond before I was born"
-            A "He works very seriously and he only has one style of clothes."
-            A "which is very old-fashioned"
-            "Alice put down the cutlery in her hand and hold her chin with her hands"
-            A "Aiden works hard but his memory was too bad."
-            A "So he has one small notebook to record the thing he usually forget, like he usually lost his key."
+            "Alice suddenly burst out laughing."
+            A "\"Haha, got you!\""
+            A "Sorry, but you should've seen you face! Haha!"
+            "After a while, Alice finally stopped laughing."
+            A "\"Aiden was our housekeeper\""
+            A "\"He worked here long before I was born.\""
+            A "\"He took his work very seriously and he only had one style of clothes!\""
+            A "\"He's so very old-fashioned!"
+            "Alice put down the cutlery then propped up her chin with her hands."
+            A "\"Aiden worked hard but his memory wasn't good. He was always losing things.\""
+            A "\"So he had a notebook to where he wrote things down so he could remember!\""
             jump AskAliceround2
         "Ask about Luke":
-            W "Can you tell me more about Luke?"
-            A "Sorry, I don't want to talk about this."
+            W "\"Can you tell me more about Luke?\""
+            "Alice didn't even bother looking up from her food."
+            A "\"No thank you, Ms. Whitley. I don't want to talk about that.\""
             $ AliceFeltPain +=1
-            "Luke is the minefield"
+            "Looks like Luke is a minefield with her."
             call checkThePain
             jump AskAliceround2
         "Ask about Miffy":
-            W "Can you tell me more about Miffy"
-            "Alice seems very sad"
-            A "Oh, my miffy, my sweetyy"
-            A "She was the gift from my parents to my sixth birthday"
-            A "She is amazing pet, which could react to my words"
-            A "It was like she can understand me"
-            A "I hate Luke"
+            W "\"Can you tell me more about Miffy?\""
+            "Alice paused with a sudden sadness."
+            A "\"Oh, my miffy.... She was such a good rabbit.\""
+            A "\"She was a gift from my parents for my sixth birthday!\""
+            A "\"She was an amazing pet, sometimes it was like she would react to what I said.\""
+            A "\"It was like she understood me...\""
+            "\"Her sad smile faded away and she shifted her focus back to her food, viciously cutting into it.\""
+            A "\"I hate Luke.\""
             jump AskAliceround2
 
 label AskAliceround2:
     if AliceFeltPain:
         jump ToTheDay5
-    W "Maybe I could ask more question"
+    "Maybe I could try asking one more question."
     menu:
-        "Who is the Mr.V":
-            W "So who is the Mr.V?"
-            "Alice smiled at me"
-            A "You still confused about it?"
-            A "Well, actually it just one of my crazy idea"
-            A "I can't say who is it, because it never exist"
-            A "Or"
-            "Alice picked up the tableware again"
-            A "Mr. V is created by me, and Mr. V is myself."
-            A "And I was tried to speak and comfort myself."
-            jump AskAliceround3
-        "Ask question about the fire":
-            W "Can you tell me more about the fire?"
+        "Ask about the fire":
+            W "\"Can you tell me more about the fire?\""
             $ AliceFeltPain +=1
             call checkThePain
             if HelpAlice:
-                A "........"
-                A "Okey, I already tould you that fire was an accident"
-                "Alice's mood became a little emotional"
-                A "I mean, I did, I did something bad, I knew"
-                A "I curse Luke, but I didn't curse his family"
-                A "I never... thought of hurting anyone"
-                A "What I did was.... I..I want he will receive ten times more pain than I did"
-                A "And... his body start burning in that night"
-                A "And everything... everthing start burning"
-                "Alice covered her face with her hand and sighed deeply"
-                A "It seems you really like to hear the memory to make me feel pain."
+                A "\"........\""
+                A "\"I already told you, it was an accident.\""
+                "Alice became a little moody, fidgeting in her chair."
+                A "\"I mean, I did, I did something bad, I know that.\""
+                A "\"I cursed Luke, but I didn't curse his whole family.\""
+                A "\"I only wanted to hurt him. I didn't actually want EVERYONE to get hurt like that.\""
+                A "\"But it doesn't matter. It's not like it's my fault. Everyone said it was an accident.\""
+                A "\"It's not my fault he got what he deserved. That he... he...\""
+                "That quaint, casual smile of hers was breaking. There was something more to her than wishing violence upon others in her. I'm sure of it."
+                "Alice covered her face with her hand and sighed deeply."
+                A "\"Do you like making me deal with the stuff again? I don't want to talk about it anymore.\""
                 jump AskAliceround3
             else:
-                A "Sorry, I don't want to talk about this topic"
-                "This topic is the minefield"
+                A "\"Sorry, I don't want to talk about that.\""
+                "Sounds like this topic is a minefield."
                 jump AskAliceround3
         "Ask about Luke's family":
-            W "Can you tell me more about the family of Luke?"
+            W "\"Can you tell me more about the Adams family?"
             $ AliceFeltPain +=1
             if ResponceAlice:
-                "You can see that Alice slow down her chewing speed"
-                "She is thinking something"
-                "And she smiles like always"
-                A "They are some kind of relatives of my mother."
-                A "But my mother don't even know them at all"
-                A "They appear suddenly, my parents didn't want them to stay at here"
-                A "But they got goods on my parents"
-                A "which is this magic power"
-                "Alice use her slender finger drawa a circle in the air and the circle become a bird"
-                "Alice caress the bird slowly and she let the bird fly away"
+                "I could see Alice slowing down her chewing speed."
+                "She was thinking of something."
+                "Then she smiled, like always."
+                A "\"They were just some rich people who knew us.\""
+                A "\"But my parents don't know them at all.\""
+                A "\"They appeared suddenly and uninvited. Very rude!\""
+                A "\"But they knew about our secret.\""
+                A "\"They knew about our magic power.\""
+                "\"Alice used her slender finger to draw a circle in the air, circle become a bird\""
+                "\"Alice caressed the bird slowly before letting the bird fly away.\""
+                A "\"So, my parents had to be nice to them. I thought Luke was different...\""
+                A "\"But, he wasn't.\""
                 jump AskAliceround3
             else:
-                "Alice continued to eat as if she didn’t hear you"
-                "When you was about to ask questions again"
-                A "I don't know them well"
+                "\"Alice continued to eat as if she didn't hear you\""
+                "\"Just when I was about to try again, she gave me a curt answer."
+                A "\"I don't know them well.\""
                 jump AskAliceround3
 
 label AskAliceround3:
-    "The dinner is almost finished"
-    "You still one question need to ask"
+    "Dinner is almost done."
+    "I have time to ask one more question."
     if AliceAngry<2 and AliceUnhappy<2 and HelpAlice and AliceFeltPain<4:
-        "Alice is in a good mood"
-        W "The last question"
-        "Alice's eyes back to you again"
-        "She is waiting the final question"
-        W "Where happened after that fire and where is your parents now?"
-        "You clearly see that the movement of Alice was freezing in that moment"
-        "After a while, Alice finally move a little bit"
-        "She put down the tableware"
-        A "Do you still remeber the questions I asked you before?"
-        A "the connection between power and the violence"
-        "Alice is using her finger hit the table"
-        A "My parents got killed"
-        W "But how? They have the magic power like you did"
-        A "Yes, they did. But their power destoyed them"
-        W "I don't understand"
-        A "After the fire burned Luke's family"
-        A "I thought my life would back to track again"
-        A "But some people came, I don't know why they came"
-        A "They came with violence, with fire"
-        A "They annoyceed that they would purify me and my family for this world"
-        "The smiles on Alice's face become defference, become more horror"
-        A "They caught Aiden, and hang him immidiately with no defend"
-        A "They called Aiden is, the servant of devil"
-        A "But Aiden just a housekeeper with bad memory"
-        "Alice's tone was full of anger."
-        A "They burned his body in front of house"
-        A "And the fire started to burn our house"
-        A "Why we were called the devil?"
-        "Alice stand up and start to walk around in front of you"
-        "Suddenly, she stopped in front of you"
-        A "Because they don't have this power"
-        A "So they want to destoy this power that we born with"
-        A "My parents used all their power to protect me in the fire, but they burned to death"
-        "You find tears spinning in Alice's eyes"
-        "She sat down slowly and buried her face between her arms"
-        "You seem to see the little girl crying in the closet"
+        "Alice seems to be in a good mood."
+        W "\"The last question-\""
+        "Alice's eyes were back on me again."
+        "She was patiently waiting the final question."
+        W "\"What happened after that fire and where are your parents now?\""
+        "Alice froze in that moment. I waited."
+        "After a while, she finally move a little bit."
+        "She put down the tableware."
+        A "\"Do you still remember the questions I asked you before?\""
+        A "\"About...the connection between power and hurting people?\""
+        "Alice traced her finger on the rim of her glass."
+        A "\"My parents got killed.\""
+        W "\"But how? They have the magic power like you did. Couldn't they protect themselves?\""
+        A "\"...Not against themselves.\""
+        W "\"I don't understand.\""
+        A "\"After the fire...I thought everything would go back to normal.\""
+        A "\"But then some people came., I don't know why.\""
+        A "\"They came with anger, with fire.\""
+        A "\"They blamed my parents for what happened. They wanted to do the same thing to us.\""
+        "Slowly, Alice's signature smile vanished. And she looked in the distance, at a scene invisible to me."
+        A "\"Aiden tried to protect us, he gave us time to get away. But it wasn't enough...not before they... they....\""
+        "Alice couldn't finish. She sucked in a deep breath and skipped over the morbid part."
+        A "\"They called him a \'servant of the Devil\'.\""
+        A "\"Why were we called the Devil?\""
+        "Alice suddenly stood up and started to walk around the table to my side."
+        "She stopped in front of me."
+        A "\"Because they're jealous. That's what is, isn't it, Ms. Whitley?\""
+        A "\"It's because they don't have this power.\""
+        A "\"So they want it gone. Just because we were born with it.\""
+        A "\"My parents used all their power to protect me in the fire, but there wasn't any left to protect themselves.\""
+        "Alice's eyes brimmed with tears."
+        "\"She sat down slowly on a dining chair and buried her face between her arms.\""
+        "\"Just like the little girl crying in the closet.\""
         $ AliceFeltPain = True
         return
     else:
-        "Maybe next time"
-        "It looks like Alice is in a bad mood"
+        "I started to ask a question, but Alice's expression stopped me."
+        "It looks like she's in a bad mood. Maybe next time."
         $ AliceFeltPain=True
         return

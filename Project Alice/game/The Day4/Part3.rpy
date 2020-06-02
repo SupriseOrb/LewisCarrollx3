@@ -1,43 +1,45 @@
 label Part3Start:
     scene basement night
     with fade
-    "You came to the basement"
-    "Alice was right, there is indeed some confusion in the environment here"
-    "There are rats everywhere"
+    "I went down to the basement, still trying to parse through that crazy dream Alice put me through."
+    "I heard a loud squeak and abruptly realized that she was right. There were some critters down here!"
+    "But they weren't cute little mice, they were rats. And they were rats everywhere"
     call TheChoiceInPart3(1)
 
-    "You come to the pile of ingredients, there are many ingredients here, but most of them are rotten"
-    W "Let me see what I can find at here"
-    W "Wait, let me think what Alice want me to bring her"
+    "I walked over to a pile of ingredients, but upon closer inspection, it looked like most of them were rotten."
+    W "\"Let me see what I can find over here...\""
+    W "\"Wait, what was it Alice wanted me to bring her again?\""
     call SelectVeg
 
-    W "Okey, everything is here, it's time back to give to Alice"
-    "You go to find Alice with the ingredients"
+    W "\"Okay, everything looks like it's here. Time to go back and give it to Alice.\""
+    "I went back upstairs with the ingredients to find Alice."
 
     scene diningroom night
     show Alice
     with dissolve
 
-    A "Hey, welcome back my sweetyy"
-    W "I find the thing you ask me to find"
-    "You hand all the ingredients to Alice"
-    "Alice is checking every single item carefully"
+    A "\"Hey, welcome back, Ms. Whitley!\""
+    W "\"I found the stuff you asked me to find.\""
+    "I handed all the ingredients over to Alice."
+    "\"Alice checked every single item carefully.\""
     if finishedMission:
-        A "Good job Honey, everthing is perfect"
-        "Alice smiled at you"
-        A "And now I can cook a perfect dinner for you"
+        "Finally, she nodded in satisfaction."
+        A "\"Good job! Everything is perfect.\""
+        "Alice smiled at me."
+        A "\"And now I can cook a perfect dinner, just for you!\""
+    
     else:
-        "Alice frowned and shook her head"
-        A "It looks like something was taken wrong"
+        "Alice frowned and shook her head."
+        A "\"No, something isn't right here... These ingredients are wrong.\""
         $ AliceInPain += 1
-        "But no wory, Honey. I will try my best to figue out what I can do"
-        "The smile back to Alice's face just in a second"
+        A "\"But no worries! I'll just have to try my best and figure out what I can do!\""
+        "In just a second, a smile was back on Alice's face."
 
     hide Alice
     with dissolve
-    "Alice turned and left with the ingredients "
-    "You sit wearily on the sofa"
-    "With the sound of cooking, you gradually fell asleep"
+    "Alice turned and left with the ingredients."
+    "I wearily sat down on the sofa."
+    "With the sound of cooking, I gradually fell asleep."
 
     scene black
     with dissolve
@@ -48,34 +50,36 @@ label Part3Start:
     show Alice
     with dissolve
 
-    "When you woke up, Alice had already prepared dinner"
-    "The sumptuousness of dinner exceeds your original imagination"
-    "At the dining table, Alice said to me with a smile"
-    A "It looks like you are really tired today, honey"
-    "You nodded your head"
-    A "Let's just stop my dull story, let's talk about something else"
-    A "So...How do you think about.. um.... How do you think about the magical power"
-    A "Do you think having magic is great for people?"
+    "When I woke up, Alice had already finished preparing dinner."
+    "The sumptuousness of dinner exceeded my original imagination."
+    "At the dining table, Alice said to me with a smile -"
+    A "\"It looks like you are really tired today, Ms. Whitley.\""
+    "I can't do anything but nod. I really am exhausted."
+    A "\"Then let's just stop my story, it's dull anyway. Let's talk about something else!\""
+    A "\"So...um... Oh! What do you think about my magic!\""
+    A "\"You've been here long enough now! Tell me what you think!\""
+    A "\"Don't you think it's just the best?\""
     call TheChoiceInPart3(2)
 
-    "Alice become silence after she heard your answer"
-    "After a couple of second"
+    "Alice grew silent after she heard my answer."
+    "After a pause of a couple of seconds, she spoke again."
 
-    A "Your answer is great for me"
-    "Alice suddenly said"
-    A "How do you think about the violence"
-    A "Do you agree that....some violence is unevitable?"
+    A "\"That's a great answer.\""
+    "Alice suddenly leaned in and grinned wide at me."
+    A "\"And what about hurting people?\""
+    A "\"Do you think that....sometimes, you just can't avoid it?\""
     call TheChoiceInPart3(3)
 
-    "Again, Alice become silence after she heard your answer"
-    "For a time, only the sound of knives and forks hitting plates and chewing echoed in the restaurant"
-    "The depressed atmosphere makes you feel uncomfortable "
-    "you try to eat the food as soon as possible to leave this silent table"
+    "Again, Alice was silent after my answer."
+    "For a time, only the sound of chewing and knives and forks hitting plates echoed in the dining room."
+    "I felt uncomfortable in my chair as a depressive air loomed over us."
+    "I tried to eat the food as fast as possible just to leave this silent table."
+    "To my dismay, Alice spoke again before I could finish."
 
-    A "One more question,honey"
-    A "The last one for today, I swear"
-    "Alice suddenly spoke again"
-    A "Do you think that there is a particular connection between power and the violence?"
+    A "\"One more question, Ms. Whitley.\""
+    A "\"The last one for today, I promise.\""
+    "Before I could say anything, she jumped right into it."
+    A "\"Do you think that power and hurting people are connected somehow?.\""
     call TheChoiceInPart3(4)
 
 
