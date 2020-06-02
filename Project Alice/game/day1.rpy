@@ -17,10 +17,13 @@ label day1:
     "The Hearts were a prosperous family, with two loving parents and an adorable child."
     "However, in this time of civil unrest, the parents disappeared without a trace. Some said it was because they dabbled in black magic, others said they were killed in the protests at night."
     "My job was to go through these rumours and find which one is true."
-    #Adding day 4 memory content
+    "The most prolific rumor though, has been that they burned in a house fire. When the firemen arrived...the house was untouched."
+    "A huge ornate mansion...with a single little girl inside."
+    "After that night, multiple others were counted as missing."
     "The police had already declared the case cold. It happened back in May, but something about it just didn't feel right."
+    "Where did all those people go? Did the parents have something to do with it? None of the people seemed to have much in common, aside from living in the same area..."
 
-    "That is why, on December 7th, 1968, I was on my way to the heart of this mess: to the Hearts' Paris Mansion."
+    "So today, on December 7th, 1968, I was on my way to the heart of this mess: to the Hearts' Paris Mansion."
 
     "I was almost there, but before I arrived, I decided to review the details of the case first."
     "I took out the familiar letter."

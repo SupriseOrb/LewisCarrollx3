@@ -11,7 +11,8 @@ label day5:
     with Dissolve(.5)
 
 
-    "Well, Alice is certainly acting strange. Maybe today I can learn more about her or that rabbit of hers. Better get ready then."
+    "Well, Alice is certainly acting strange. 
+    "Maybe today I can learn more about her or that rabbit of hers. Better get ready then."
 
     scene bg dining room
 
