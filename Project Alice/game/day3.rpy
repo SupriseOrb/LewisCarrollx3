@@ -31,7 +31,7 @@ label day3:
     
     play sound "audio/soundeffects/Alice_scream.wav"
     stop music
-    "{i}A sudden, high pitched voice ripped through the air!{/i}
+    "{i}A sudden, high pitched voice ripped through the air!{/i}"
     "{i}Quickly recovering from the initial shock, I swiftly grabbed a coat and ran up to the second floor, to Alice's room.{/i}"
 
     scene bg room
@@ -46,7 +46,7 @@ label day3:
     a "\"What if he's lost! Or-or hurt!\""
     w "\"Shh, shh... crying won't help with anything.\""
     w "\"Let's just sit down and think this through.\""
-    "At first, Alice just stood there, catching her breath between sobs, but eventually, she dropped herself back on her bed. I sighed in relief.
+    "{i}At first, Alice just stood there, catching her breath between sobs, but eventually, she dropped herself back on her bed. I sighed in relief.{/i}"
     w "\"You know... when I was a kid, I had a little cat toy that I cherished just as much as you cherish Mr. Rabbit.\""
     "{i}I seated myself next to her and gently touched her head.{/i}"
     w "\"We'd play together all the time. I do understand how much it must hurt you to lose something so important.\""
@@ -99,7 +99,7 @@ label d3_choice1_A:
     play music "audio/day3 music/tea party.wav" fadeout 1
     "{i}Alice took out her vessels of beautifully decorated tea set pieces adorned with a pattern of flowers and rabbits.{/i}"
     "{i}As she set the table, she described our roles in the game.{/i}"
-    a "\"I'm your godmother, Countess Le Cœur! We have been invited to a royal tea party to meet the queen. But our mission is to assassinate the queen to save your parents! 
+    a "\"I'm your godmother, Countess Le Cœur! We have been invited to a royal tea party to meet the queen. But our mission is to assassinate the queen to save your parents!"
     a "\"But remember, we're hiding our {i}real{/i} selves! So you have to behave gracefully and normally.\""
     "{i}I couldn't help but chuckle at that. With my training, I should hope I know how to be undercover.{/i}"
     "{i}The game sounded childish, but interesting. I'll follow her anyway since she is just a child. Maybe I could learn more about her this way?{/i}"
@@ -227,7 +227,7 @@ label d3_lunch:
 
     "{i}Alice returned to her bedroom with Mr.Rabbit in her arms.{/i}"
     
-    "{i}What an eccentric girl. I didn't like the oppressive atmosphere during the tea party, though Alice is just a child. 
+    "{i}What an eccentric girl. I didn't like the oppressive atmosphere during the tea party, though Alice is just a child."
     "{i}But I can't think of her antics right now. I have some time for myself now.{/i}"
     stop music fadeout 2
     menu:
@@ -310,7 +310,7 @@ label d3_wonderland:
     nvlp "Maybe this will surprise you. The world of your beloved Wonderland is real. Mr. Rabbit is a gift from the White Queen. It gives us the power to protect you."
     nvlp "Now, we want to give it to you, so that we will always stay by your side. When you are in danger, use Mr. Rabbit to protect yourself."
     nvl clear
-    nvlp "You can even wake Mr. Rabbit, should you ever require his companionship!
+    nvlp "You can even wake Mr. Rabbit, should you ever require his companionship!"
     nvlp "However, you need a spell to wake him. The spell is ......"
     nvl clear
     nvl hide dissolve
