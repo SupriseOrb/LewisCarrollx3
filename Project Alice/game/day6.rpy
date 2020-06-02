@@ -419,6 +419,14 @@ label day6:
 
             $ win = True
 
+            if hr == 6:
+
+                $ timetakentowin = minute - 20
+
+            else:
+
+                $ timetakentowin = minute + 40
+
             "Time is passing..."
 
             play sound "audio/soundeffects/clock_ticking.wav" fadein 1.0
@@ -708,11 +716,11 @@ label day6:
 
             "Back to bedroom (+5min)":
 
-                $ addmin(5)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
 
                 "I went back to the bedroom."
+
+                $ addmin(5)
 
                 jump day6_option2
 
@@ -816,10 +824,6 @@ label day6:
 
                 show white with Dissolve(2)
 
-                scene bg hallway with Dissolve(2)
-
-                hide white with Dissolve(2)
-
                 $ addmin(5)
 
                 "I went to the road chosen and soon came to the end of the hallway."
@@ -836,21 +840,23 @@ label day6:
 
             "Back to bedroom (+10min)":
 
-                $ addmin(10)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
 
                 "I went back to the bedroom."
+
+                $ addmin(10)
 
                 jump day6_option2
 
     label day6_option5_over:
 
+        "There was only one room there, so I opened the door and walked in."
+
         play sound "audio/soundeffects/open_bedroom_door.wav"
 
-        scene bg empty room
+        scene bg empty room with Dissolve(2)
 
-        "There was only one room there, so I opened the door and walked in."
+        hide white with Dissolve(2)
 
         "After entering the room, I immediately saw Mr. Rabbit."
 
@@ -910,11 +916,11 @@ label day6:
 
             "Back to bedroom (+15min)":
 
-                $ addmin(15)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
 
                 "I went back to the bedroom."
+
+                $ addmin(15)
 
                 jump day6_option2
 
@@ -1013,13 +1019,13 @@ label day6:
 
                 $ option7readingclue = True
 
-                $ addmin(15)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
 
                 r angry "Where do you go! Ms. Whitley! Come back! There's no time left!"
 
                 "I went back to the bedroom."
+
+                $ addmin(15)
 
                 jump day6_option2
 
@@ -1075,16 +1081,6 @@ label day6:
         stop sound
 
         play sound "audio/soundeffects/clock_gong.wav" fadein 10.0
-
-        if win == True:
-
-            if hr == 6:
-
-                $ timetakentowin = minute - 20
-
-            else:
-
-                $ timetakentowin = minute + 40
 
         $ hr = 7
 

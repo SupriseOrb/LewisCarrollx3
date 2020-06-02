@@ -11,37 +11,31 @@ label day2:
 
     scene bg hallway
 
-    "\"Hi Whitley!\""
+    a happy "\"Hi Whitley!\""
 
     "I was met with a cheery voice."
 
-    show alice happy
+    a normal "\"How did you sleep last night? You didn't get any nightmares did you?\""
 
-    a "\"How did you sleep last night? You didn't get any nightmares did you?\""
+    w "\"I‒\""
 
-    "\"I‒\""
-
-    a "\"Come with me, Whitley! We're going to play again!\""
-
-    hide alice
+    a happy "\"Come with me, Whitley! We're going to play again!\""
 
     "She dragged me by the hand through the hallway, down the stairs, and outside into the mansion's backyard."
 
     scene bg backyard
 
-    a "\"Here we go!\""
+    a normal "\"Here we go!\""
 
     "On the ground right outside the backyard doors lay a bucket full of white chalk. A very sizeable bucket, I may add. There was enough chalk to draw lines on a new road."
 
     "Fittingly, there was a large area of concrete in the backyard."
 
-    a "\"Huff huff..\""
+    a smile "\"Huff huff..\""
 
     "Alice heaved the bucket, which was half her size, towards the center of the concrete."
 
-    show alice happy
-
-    a "\"Are you ready to play? We are going to have loooooots of fun today too!\""
+    a happy "\"Are you ready to play? We are going to have loooooots of fun today too!\""
 
 menu:
 
@@ -54,17 +48,15 @@ menu:
 
 label day2play:
 
-    "\"I'm ready!\""
+    w "\"I'm ready!\""
 
     "Before I even spoke, Alice was already on the ground, tracing boxes and boundaries."
 
-    a "\"Un, deux, trois…\""
+    a normal "\"Un, deux, trois…\""
 
     "She was numbering the boxes, and I came to realize that we were about to play hopscotch."
 
-    show alice happy
-
-    a "\"Have you ever played Marelle before, Whitley?\""
+    a happy "\"Have you ever played Marelle before, Whitley?\""
 
 menu:
 
@@ -78,27 +70,25 @@ menu:
 
 label day2c1a1:
 
-    a "\"You don't know what Marelle is?\""
+    a nervous "\"You don't know what Marelle is?\""
 
 label day2c1a2:
 
-    "\"Marelle? In my country, we call this hopscotch.\""
+    w "\"Marelle? In my country, we call this hopscotch.\""
 
-    a "\"Oh that's interesting! Where are you from? I thought your accent sounded funny!\""
+    a happy "\"Oh that's interesting! Where are you from? I thought your accent sounded funny!\""
 
-    "\"Well, that's not the most polite way to ask, but I'm British.\""
+    w "\"Well, that's not the most polite way to ask, but I'm British.\""
 
-    "\"Then today you learn how we play in France!\""
+    a happy closeopen "\"Then today you learn how we play in France!\""
 
     "She beamed."
 
-    a "\"The last time I played Marelle was when my parents were alive.\""
+    a guilty "\"The last time I played Marelle was when my parents were alive.\""
 
     "She seemed to shake away the sudden, sad memory."
 
-    a "\"Anyways, this is going to be fun! Here we go!\""
-
-    hide alice
+    a happy closeopen "\"Anyways, this is going to be fun! Here we go!\""
 
     "I held my breath, anticipating the unknown."
 
@@ -106,7 +96,7 @@ label day2c1a2:
 
     scene black
 
-    a "\"We're here!\""
+    a happy "\"We're here!\""
 
     "I opened my eyes."
 
@@ -116,15 +106,11 @@ label day2c1a2:
 
     "There was another concrete square a few meters in front of us, but that was the only other thing existing in this realm besides us and the ground we were standing on."
 
-    show alice happy
-
-    a "\"Are you ready to play?\""
+    a normal "\"Are you ready to play?\""
 
     "She looked straight through my eyes. I chuckled."
 
-    "\"You've asked me this before. I'm ready.\""
-
-    hide alice
+    w "\"You've asked me this before. I'm ready.\""
 
     "Curious, I walked forward to inspect the other squares. I took a step forward, putting my foot where half of it was on the concrete and half of it was not."
 
@@ -132,11 +118,11 @@ label day2c1a2:
 
     "The front of my feet lacked any form of surface contact. I lurched backwards on reaction, realizing that anywhere that was not part of the squares dropped into the everlasting black abyss."
 
-    a "\"I'm ready too!\""
+    a happy closeopen "\"I'm ready too!\""
 
     "As soon as she said that she did a running start, ready to make the jump over the divide!"
 
-    "\"ALICE NO!\""
+    w "\"ALICE NO!\""
 
     "I desperately called after her, but it was too late. She had jumped."
 
@@ -146,15 +132,11 @@ label day2c1a2:
 
     "She turned around."
 
-    show alice happy
-
-    a "\"Easy! Your turn, Whiteley!\""
+    a happy "\"Easy! Your turn, Whiteley!\""
 
     "She looked at me expectantly."
 
     "I don't think this is actually how they did it in France."
-
-    hide alice
 
 menu:
 
@@ -170,7 +152,7 @@ label day2jump1:
 
     "I got off the ground and steadied my breath."
 
-    "\"Here goes nothing.\""
+    w "\"Here goes nothing.\""
 
     "I ran as fast as I could and leapt to the next square."
 
@@ -180,29 +162,23 @@ label day2jump1:
 
     "I desperately flailed my arms to grab onto anything to stop my momentum. I did not expect anything to grab onto me."
 
-    a "\"Up we go.\""
+    a normal "\"Up we go.\""
 
     "Alice pulled me up by the forearm with ease and dropped me onto the new platform."
 
-    show alice happy
-
     "I looked at her, wide-eyed. How did this girl gain monstrous strength all of a sudden?"
-
-    hide alice
 
     "That's right. I'm in a different world. I have to suspend my beliefs here."
 
-    show alice happy
-
-    a "\"Wasn't that fun?\""
+    a smile "\"Wasn't that fun?\""
 
     "Breathless, I nodded."
 
-    "\"Y-Yeah, I guess.\""
+    w "\"Y-Yeah, I guess.\""
 
     "Alice laughed."
 
-    a "\"Hee-hee! I knew you would enjoy this. Let's keep on going.\""
+    a happy closeopen "\"Hee-hee! I knew you would enjoy this. Let's keep on going.\""
 
     "There was another platform in front of us. Oh, not again."
 
@@ -218,17 +194,15 @@ menu:
 
 label day2jump2:
 
-    a "\"Why don't you try going first this time.\""
+    a sad "\"Why don't you try going first this time.\""
 
     "No way. I'm not going to do that."
 
     "Alice looked at me with big, pitiful eyes. I sighed."
 
-    "\"Just for you.\""
+    w "\"Just for you.\""
 
-    a "\"Yay! Good luck and don't die!\""
-
-    hide alice
+    a happy closeopen "\"Yay! Good luck and don't die!\""
 
     "I braced myself and made the jump again."
 
@@ -238,13 +212,11 @@ label day2jump2:
 
     "I'm once again hanging on for dear life."
 
-    a "\"Awww Whitley. Do I have to help you every time?\""
+    a annoyed openeyes "\"Awww Whitley. Do I have to help you every time?\""
 
     "Once again, I am saved by this little girl."
 
-    show alice happy
-
-    a "\"This time, there's two choices ahead! Maybe you could go on one, and I could go on the other.\""
+    a happy "\"This time, there's two choices ahead! Maybe you could go on one, and I could go on the other.\""
 
     "This is getting ridiculous."
 
@@ -262,15 +234,13 @@ label day2jump3:
 
     "I was breathing heavily at this point."
 
-    "\"I'll do it, as long as you promise to go to bed early tonight Alice.\""
+    w "\"I'll do it, as long as you promise to go to bed early tonight Alice.\""
 
-    a "\"Don't be such a stick in the mud! Though, I guess we'll {i}have{/i} to go together this time.\""
+    a normal "\"Don't be such a stick in the mud! Though, I guess we'll {i}have{/i} to go together this time.\""
 
-    "\"Thanks... Huh? Did something happen?\""
+    w "\"Thanks... Huh? Did something happen?\""
 
-    a "\"Something is about to.\""
-
-    hide alice
+    a smile "\"Something is about to.\""
 
     "She pointed towards one of the two platforms in front of us."
 
@@ -278,23 +248,21 @@ label day2jump3:
 
     "A meteor was about to crash into the platform."
 
-    show alice happy
+    w "\"Alice we need to get out of here before that meteor comes!\""
 
-    "\"Alice we need to get out of here before that meteor comes!\""
+    a normal "\"Oh don't worry about it. It won't hit us.\""
 
-    a "\"Oh don't worry about it. It won't hit us.\""
+    w "\"Even if it didn't, the impact would blast us away!\""
 
-    "\"Even if it didn't, the impact would blast us away!\""
-
-    a "\"We're in my world! I'll decide whether or not it will.\""
+    a happy "\"We're in my world! I'll decide whether or not it will.\""
 
     scene bg floating_islands with Shake(None, 5.0, dist=20)
 
     "And just like that, the meteor landed, shattering the entire platform. And just as she said, there was no effect of the impact on us."
 
-    a "\"See?\""
+    a happy closeeyes "\"See?\""
 
-    a "\"Now, are you ready to move on to the next platform?\""
+    a happy "\"Now, are you ready to move on to the next platform?\""
 
 menu:
 
@@ -314,17 +282,13 @@ label day2jump4:
 
     "Another round of me struggling and Alice making it cleanly to the other side."
 
-    show alice happy
-
-    a "\"We made it! We're here!\""
+    a happy closeopen "\"We made it! We're here!\""
 
     "I looked around."
 
-    "\"There's nothing here. Why did we come here?\""
+    w "\"There's nothing here. Why did we come here?\""
 
-    a "\"Because here is the secret base where me and my parents used to play.\""
-
-    hide alice
+    a normal "\"Because here is the secret base where me and my parents used to play.\""
 
     "I looked around again and saw nothing."
 
@@ -338,31 +302,23 @@ label day2jump4:
 
     "Curiously, one of the books was one I recognized in the mansion's library."
 
-    a "\"Over here!\""
+    a happy "\"Over here!\""
 
     "Alice beckoned me to a hole within the sea of books."
 
-    show alice happy
+    a normal "\"I used to hide here when my parents and I played hide and seek here. I hid with Mr. Rabbit to keep me safe.\""
 
-    a "I used to hide here when my parents and I played hide and seek here. I hid with Mr. Rabbit to keep me safe."
-
-    "\"I'm sure a friend like him would keep some nice company.\""
+    w "\"I'm sure a friend like him would keep some nice company.\""
 
     "Alice smiled."
 
-    a "\"He sure does! Here, do you want to hold him?\""
+    a smile "\"He sure does! Here, do you want to hold him?\""
 
-    "\"I would love to.\""
-
-    hide alice
+    w "\"I would love to.\""
 
     "Alice handed me the bunny she had carried with her the entire time."
 
-    show alice happy
-
-    a "\"Make sure you take good care of him! I'm going to go look for a book for us to read.\""
-
-    hide alice
+    a happy "\"Make sure you take good care of him! I'm going to go look for a book for us to read.\""
 
     "Alice ran away while I held Mr. Rabbit."
 
@@ -374,7 +330,7 @@ label day2jump4:
 
     "\"{i}How Charming.{/i}\""
 
-    "\"Huh? Who said that?\""
+    w "\"Huh? Who said that?\""
 
     "\"{i}You Don't Belong Here.{/i}\""
 
@@ -384,7 +340,7 @@ label day2jump4:
 
     "I held onto the bunny, trying to keep it safe for Alice."
 
-    "\"Alice!? ALICE?!\""
+    w "\"Alice!? ALICE?!\""
 
     "I called for Alice."
 
@@ -398,27 +354,23 @@ label day2jump4:
 
 label day2stand:
 
-    "\"Alice it's too dangerous!\""
+    w "\"Alice it's too dangerous!\""
 
     "I yelled at her while beckoning her back. She gave me another pout, but this time, I wasn't having it."
 
-    "\"Please, come back. This is getting out of hand!\""
+    w "\"Please, come back. This is getting out of hand!\""
 
     "Her innocent pout screwed into a dark glare."
 
-    a "\"You're no fun. This game is over.\""
+    a smile "\"You're no fun. This game is over.\""
 
     scene bg floating_islands with Shake(None, 30.0, dist=20)
 
     "All of a sudden the realm started rumbling. The ground I was on began shaking and cracking apart."
 
-    "\"Alice? What is going on?\""
+    w "\"Alice? What is going on?\""
 
-    show alice happy
-
-    a "..."
-
-    hide alice
+    a happy strange "..."
 
     scene black
 
