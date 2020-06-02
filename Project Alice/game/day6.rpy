@@ -66,7 +66,11 @@ label day6:
 
     default hr = 6
 
+    default ohr = 0
+
     default minute = 20
+    
+    default omin = 0
 
     default timetakentowin = 0
 
@@ -77,15 +81,29 @@ label day6:
 
             global minute,hr
 
+            ohr = hr
+            omin = minute
+
             if minute + value >= 60:
 
-                hr += 1
+                while hr!=ohr+1 or minute!= omin + value - 60:
 
-                minute = minute + value - 60
+                    minute += 1
+
+                    if minute == 60:
+                    
+                        hr += 1
+                        minute = 0
+                
+                    renpy.pause(0.05)
 
             else:
 
-                minute += value
+                while minute!= omin + value:
+
+                    minute += 1
+                
+                    renpy.pause(0.05)
 
             if hr == 7 and minute >= 30:
 
@@ -476,9 +494,25 @@ label day6:
 
             "Road with \"LEFT\" sign (+5min)":
 
-                $ addmin(5)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
+
+                scene bg hallway:
+                    subpixel True
+                    truecenter
+                    zoom 1.0
+                    ease 5.0 zoom 3.8
+                    linear 0.5 xalign 0.0
+                    ease 3.0
+
+                $ renpy.pause(4)
+
+                show white with Dissolve(2)
+
+                scene bg hallway with Dissolve(2)
+
+                hide white with Dissolve(2)
+
+                $ addmin(5)
 
                 if firstfirstforkright == False:
 
@@ -504,7 +538,7 @@ label day6:
 
                 if firstfirstforkleft == True and translated == True and firstfirstforkright == True:
 
-                    "Seemed like I was right."
+                    "Seemed like this was not a bad choice."
 
                 $ firstfirstforkleft = False
 
@@ -512,9 +546,25 @@ label day6:
 
             "Road with \"RIGHT\" sign (+5min)":
 
-                $ addmin(5)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
+
+                scene bg hallway:
+                    subpixel True
+                    truecenter
+                    zoom 1.0
+                    ease 5.0 zoom 3.8
+                    linear 0.5 xalign 1.0
+                    ease 3.0
+
+                $ renpy.pause(4)
+
+                show white with Dissolve(2)
+
+                scene bg hallway with Dissolve(2)
+
+                hide white with Dissolve(2)
+
+                $ addmin(5)
 
                 if translated == False:
 
@@ -568,9 +618,25 @@ label day6:
 
             "Road on left side with \"RIGHT\" sign (+5min)":
 
-                $ addmin(5)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
+
+                scene bg hallway:
+                    subpixel True
+                    truecenter
+                    zoom 1.0
+                    ease 5.0 zoom 3.8
+                    linear 0.5 xalign 0.0
+                    ease 3.0
+
+                $ renpy.pause(4)
+
+                show white with Dissolve(2)
+
+                scene bg hallway with Dissolve(2)
+
+                hide white with Dissolve(2)
+
+                $ addmin(5)
 
                 "I went to the road chosen and soon came to a dead end."
 
@@ -592,9 +658,25 @@ label day6:
 
             "Road on right side with \"LEFT\" sign (+5min)":
 
-                $ addmin(5)
-
                 play sound "audio/soundeffects/whitley_walk.wav"
+
+                scene bg hallway:
+                    subpixel True
+                    truecenter
+                    zoom 1.0
+                    ease 5.0 zoom 3.8
+                    linear 0.5 xalign 1.0
+                    ease 3.0
+
+                $ renpy.pause(4)
+
+                show white with Dissolve(2)
+
+                scene bg hallway with Dissolve(2)
+
+                hide white with Dissolve(2)
+
+                $ addmin(5)
 
                 "I went to the road chosen and soon came to another fork in the road."
 
@@ -646,8 +728,6 @@ label day6:
 
             "Road with \"TꟻƎ⅃\" sign (+5min)":
 
-                $ addmin(5)
-
                 if firstfirstforkright == False and firstsecondforkright == False and translated == False:
 
                     "This was a mirrored text for word \"LEFT.\" I'd chosen right way for twice, but they both led me to the dead end."
@@ -662,6 +742,24 @@ label day6:
 
                 play sound "audio/soundeffects/whitley_walk.wav"
 
+                scene bg hallway:
+                    subpixel True
+                    truecenter
+                    zoom 1.0
+                    ease 5.0 zoom 3.8
+                    linear 0.5 xalign 0
+                    ease 3.0
+
+                $ renpy.pause(4)
+
+                show white with Dissolve(2)
+
+                scene bg hallway with Dissolve(2)
+
+                hide white with Dissolve(2)
+
+                $ addmin(5)
+
                 "I went to the road chosen, but soon came to a dead end."
 
                 "I could only go back to the last fork."
@@ -671,8 +769,6 @@ label day6:
                 jump day6_option5
 
             "Road with \"THӘIЯ\" sign (+5min)":
-
-                $ addmin(5)
 
                 if firstfirstforkright == True and firstsecondforkright == True and firstthirdforkleft == True:
 
@@ -707,6 +803,24 @@ label day6:
                         "It's [hr]:[minute] right now. No much time left."
 
                 play sound "audio/soundeffects/whitley_walk.wav"
+
+                scene bg hallway:
+                    subpixel True
+                    truecenter
+                    zoom 1.0
+                    ease 5.0 zoom 3.8
+                    linear 0.5 xalign 1.0
+                    ease 3.0
+
+                $ renpy.pause(4)
+
+                show white with Dissolve(2)
+
+                scene bg hallway with Dissolve(2)
+
+                hide white with Dissolve(2)
+
+                $ addmin(5)
 
                 "I went to the road chosen and soon came to the end of the hallway."
 
