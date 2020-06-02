@@ -51,15 +51,15 @@ label day3:
     "{i}I seated myself next to her and gently touched her head.{/i}"
     w "\"We'd play together all the time. I do understand how much it must hurt you to lose something so important.\""
     "{i}Alice sniffed and nodded.{/i}"
-    a sad "\"I can't lose him...\""
+    a sad closeeyes "\"I can't lose him...\""
     w "\"Do you remember the last place you played with him?\""
     "{i}Alice shook her head fervently.{/i}"
-    a annoyed "\"I don't know, and I don't remember!\""
+    a unhappy "\"I don't know, and I don't remember!\""
     "{i}She was clearly not in a good mood to talk about it.{/i}"
     w "\"Okay, fine, fine. We don't have to think about it.\""
     "{i}I directed her to the window, hoping to cheer her up.{/i}"
     w "\"Look outside, what a beautiful day! Do you want to join me for a little breakfast in the sunlight?\""
-    a sad "\"But I want to have breakfast with my Mr. Rabbit.\""
+    a sorrow "\"But I want to have breakfast with my Mr. Rabbit.\""
     "{i}She had calmed down a bit, but there was still the threat of tears in her eyes.{i}"
     w "\"Maybe Mr. Rabbit is waiting for you in the dining room. Why don't you get ready, and we'll take a look.\""
     "{i}Alice seemed to reluctantly take my suggestion and dragged her feet to the bathroom.{/i}"
@@ -78,7 +78,7 @@ label day3:
     "{i}Alice repeated my words in a weird tone, with a smile that gave me a strange sense of aversion.{/i}"
     "{i}I couldn't describe it...but something about it made me want to run away.{/i}"
     "{i}I blinked and suddenly Alice seemed perfectly normal, with a genuine, beaming expression.{/i}"
-    a "\"Do you want to join the tea party with me and Mr. Rabbit?\""
+    a normal "\"Do you want to join the tea party with me and Mr. Rabbit?\""
 
     menu:
         "The wonderful weather makes it hard to refuse":
@@ -99,13 +99,13 @@ label d3_choice1_A:
     play music "audio/day3 music/tea party.wav" fadeout 1
     "{i}Alice took out her vessels of beautifully decorated tea set pieces adorned with a pattern of flowers and rabbits.{/i}"
     "{i}As she set the table, she described our roles in the game.{/i}"
-    a happy strange "\"I'm your godmother, Countess Le Cœur! We have been invited to a royal tea party to meet the queen. But our mission is to assassinate the queen to save your parents!"
+    a normal "\"I'm your godmother, Countess Le Cœur! We have been invited to a royal tea party to meet the queen. But our mission is to assassinate the queen to save your parents!"
     a happy strange "\"But remember, we're hiding our {i}real{/i} selves! So you have to behave gracefully and normally.\""
     "{i}I couldn't help but chuckle at that. With my training, I should hope I know how to be undercover.{/i}"
     "{i}The game sounded childish, but interesting. I'll follow her anyway since she is just a child. Maybe I could learn more about her this way?{/i}"
     w "\"You got it, godmother.\""
     "{i}Alice settled into her \"Countess\" character.{/i}"
-    a happy strange "\"Dear Whitley, what would you like to have? We have sea salt caramel puffs, Pomelo raspberry macaron, Pistachio mousse, and my favorite Lychee Rose Raspberry Tart.\""
+    a normal "\"Dear Whitley, what would you like to have? We have sea salt caramel puffs, Pomelo raspberry macaron, Pistachio mousse, and my favorite Lychee Rose Raspberry Tart.\""
     w "\"I thought your favorite food was Lapin a La Cocotte?\""
     a "\"Not Countess Le Cœur's!\""
     w "\"Ah, right, right. Then I'll have...\""
@@ -121,7 +121,7 @@ label d3_choice1_A:
 label d3_not_tart:
     a confused "\"Are you sure? Why not take your godmother's choice? Oh, dear, godmother's choice is the best. And it's for your own good!\""
     a "\"Mr. Rabbit, I know Whitley will have the same taste as me, right? You know that, for sure.\""
-    a "\"Here's what I'll do! My dear, I'm so generous to give you another chance. What would you like to have? Pomelo raspberry macaron or Lychee Rose Raspberry Tart?\""
+    a annoyed "\"Here's what I'll do! My dear, I'm so generous to give you another chance. What would you like to have? Pomelo raspberry macaron or Lychee Rose Raspberry Tart?\""
     menu:
         "A. Pomelo raspberry macaron":
             jump d3_macaron
@@ -130,7 +130,7 @@ label d3_not_tart:
 label d3_macaron:
     "{i}I knew I was spoiling her fun, but I wanted to see her reaction. I'm still a detective after all.{/i}"
     "{i}This time, Alice looked annoyed with me indeed.{/i}"
-    a annoyed "\"Oh, Whitley, why are you so stubborn? Can't you see that I'm asking you to take the Lychee Rose Raspberry Tart? I'm really disappointed. You're not listening to me, you're not caring about me!\""
+    a angry "\"Oh, Whitley, why are you so stubborn? Can't you see that I'm asking you to take the Lychee Rose Raspberry Tart? I'm really disappointed. You're not listening to me, you're not caring about me!\""
     $Alice_affinity = Alice_affinity- 1
     jump question_alice
 label d3_tartt:
@@ -148,7 +148,7 @@ label question_alice:
     "{i}I was a bit curious about what Alice is thinking. The way she was acting surprised me. I wondered if Alice really is just role-playing, or if she believes this is the right thing.{/i}"
     w "\"Alice, isn't that a little too extreme to control your child's thoughts as a godmother?\""
     a asleep "\"What are you talking about? I'm not harming you, and isn't Lychee Rose Raspberry Tart tasty? {i}My{/i} mother's choice were always the best!\""
-    a sad "\"My mother...my mother...\""
+    a sad closeeyes "\"My mother...my mother...\""
     "{i}Alice started to break character. She set her tea cup down as her eyes brimmed with tears.{/i}"
     a sad "\"I wish she was here.\""
     "{i}I instantly felt guilty.{/i}"
@@ -176,13 +176,13 @@ label d3_tea:
 
 label d3_kill_queen:
     "{i}Alice gracefully lifted the tea cup with her back straight. Her nose slowly neared the tea cup as she pretended to smell the fragrance from the tea. Then, she passed the tea cup to me. I unconsciously started to smell the tea cup as well.{/i}"
-    a "\"Mr.Rabbit tells me that the queen is coming in this way. There is a good chance that we can finally save your parents!\""
+    a normal "\"Mr.Rabbit tells me that the queen is coming in this way. There is a good chance that we can finally save your parents!\""
     a "\"Don't you miss your parents? Don't you want to be together with them again?\""
     "{i}Alice lowered her head. I got the feeling she wasn't talking to her make-believe goddaughter anymore.{/i}"
-    a "Maybe...you'll never have to know what it feels like to lose the comfort and protection from parents."
+    a unhappy "Maybe...you'll never have to know what it feels like to lose the comfort and protection from parents."
     stop music
     play music "audio/day3 music/queen.wav" fadeout 1
-    a "\"Listen! The queen is comming! Mr.Rabbit says that the ugly queen has locked your parents in the attic. The only way you can save them is to kill her. Would you be willing to help me do that?\""
+    a normal "\"Listen! The queen is comming! Mr.Rabbit says that the ugly queen has locked your parents in the attic. The only way you can save them is to kill her. Would you be willing to help me do that?\""
     menu:
         "A. Kill the queen":
             jump d3_kill
@@ -207,7 +207,7 @@ label d3_not_kill:
     w "\"But maybe if we talk with her-?\""
     a annoyed "\"You can't!\""
     "{i}Alice jumped up in a rage. Now I'd done it.{/i}"
-    a annoyed "\"You really ruin the game Whitley. I'm done with it!\""
+    a angry "\"You really ruin the game Whitley. I'm done with it!\""
     "{i}She huffed at me. She snatched Mr. Rabbit from his place before stomping away.{/i}"
 
 label d3_lunch:
@@ -221,10 +221,10 @@ label d3_lunch:
         "{i}I scratched my head. What was that about? Nothing more to say to me? Was she hiding something?{/i}"
     if Alice_affinity < 10 and beatqueen == True:
         $heart += 1
-        a "\"Although you didn't listen to me and make the same choice, you did help me beat the queen. I want to tell you that...Alice's Adventure in Wonderland really {i}is{/i} a good book.\""
+        a normal "\"Although you didn't listen to me and make the same choice, you did help me beat the queen. I want to tell you that...Alice's Adventure in Wonderland really {i}is{/i} a good book.\""
     if Alice_affinity > 10 and beatqueen == False:
         $heart += 1
-        a "\"Although you didn't help me kill the queen, I'm glad that you are willing to play with me. There's a book called \"Alice's Adventure in Wonderland\", and it's my favorite! You should read it if you have time.\""
+        a normal "\"Although you didn't help me kill the queen, I'm glad that you are willing to play with me. There's a book called \"Alice's Adventure in Wonderland\", and it's my favorite! You should read it if you have time.\""
     if Alice_affinity > 10 and beatqueen == True:
         $heart += 5
         a happy "\"I hope I can have another tea party with you again. You're really a good partner! For playing with me so well, I let you have a little secret! There's a letter in \"Alice's Adventure in Wonderland\" from my parents.\""
@@ -242,7 +242,7 @@ label d3_lunch:
         "C. Check on Alice":
             jump d3_check_alice_1
 label d3_attic:
-    scene bg day3 attic
+    scene bg whitley_bedroom
     $time -= 1
     "{i}I climbed up to the attic. It was cozy and looked like a comfortable spot to take a short rest.{/i}"
     "{i}The mansion was grand, but sometimes the sheer openness of its rooms almost felt exposing. I felt a little safer in here.{/i}"
@@ -256,6 +256,7 @@ label d3_attic:
             jump d3_check_alice_2
 
 label d3_check_alice_2:
+    scene bg alice_bedroom
     $time -= 1
     "{i}I gently pushed on Alice's door and slowly opened it, peeking inside to see if she was up.{/i}"
     a confused "\"Whiteley? Is that you?\""
@@ -374,10 +375,10 @@ label d3_wonderland:
         a "\"Whitley~ Whitley~Where are you? I can't find you.\""
         w "\"I'm here, honey. On the first floor.\""
         "{i}She appeared in the hall's entrance, hands on her hips.{/i}"
-        a "\"Where have you been?\""
+        a awkward "\"Where have you been?\""
         w "\"I...I just came back. I went outside to enjoy the sunshine.\""
         "{i}I hitched a thumb over my shoulder, towards the patio where the sun was starting to set.{/i}"
-        a "\"Oh, really? Fine. I'm hungry now. Can you make dinner for me?\""
+        a normal "\"Oh, really? Fine. I'm hungry now. Can you make dinner for me?\""
 
         scene black
         "{i}After dinner, Alice retreated up to the second floor as usual. As I watched her go, I couldn't help but think of what I found in the study room.{/i}"
