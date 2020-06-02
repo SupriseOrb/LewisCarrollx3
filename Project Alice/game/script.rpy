@@ -7,6 +7,9 @@ define r = Character("Mr. Rabbit", image="bunny",window_left_padding=150)
 
 # The game starts here.
 
+# Alice's Heart
+default heart = 0
+
 # Day 3 variables
 default Alice_affinity = 10
 default beatqueen = False

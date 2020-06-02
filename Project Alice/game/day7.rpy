@@ -5,23 +5,23 @@ label day7:
     
     #show Alice
     
-    a "\"Whitley, wake up, wake up!!!\""
+    a happy "\"Whitley, wake up, wake up!!!\""
     
     "I was still trying to see through stars, but it was clear she was excited about something."
     
     "I sat up and yawned."
     
-    "\"I'm up, I'm up!\""
+    w "\"I'm up, I'm up!\""
     
     "I'm a little slow to get up, though."
     
     "To be perfectly honest, I wasn't ready for whatever new game awaited me for today."
 
-    a "\"Today's the big surprise!\""
+    a normal "\"Today's the big surprise!\""
 
     "Oh boy. What did THAT mean?"
 
-    "\"Big surprise?\""
+    w "\"Big surprise?\""
 
     "Wait a second..."
 
