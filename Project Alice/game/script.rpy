@@ -7,6 +7,9 @@ define r = Character("Mr. Rabbit",color="#32A85D", image="bunny",window_left_pad
 define q = Character("???",color="#C2A60A")
 define l = Character("Luke",color="#90A81A")
 define b = Character("Boy",color="#3B3E6B")
+define c = Character("Cheshire Cat", color="#C2BC1E", image="cat",window_left_padding=150)
+
+
 
 # The game starts here.
 
@@ -68,6 +71,10 @@ image side bunny sad = Image(im.FactorScale("/bunny/bunny_sad.png",1.2,1.2))
 image side bunny satisfied = Image(im.FactorScale("/bunny/bunny_satisfied.png",1.2,1.2))
 image side bunny winning = Image(im.FactorScale("/bunny/bunny_winning.png",1.2,1.2))
 image side bunny ok = Image(im.FactorScale("/bunny/bunny_ok.png",1.2,1.2))
+
+image side cat = Image(im.FactorScale("/cat/cat_closemouth.png",0.8,0.8))
+image side cat normal= Image(im.FactorScale("/cat/cat_closemouth.png",0.8,0.8))
+image side cat openmouth = Image(im.FactorScale("/cat/cat_openmouth.png",0.8,0.8))
 
 # BGM definition
 
@@ -134,7 +141,7 @@ label start:
 
     stop music
 
-    jump day1
+    jump day5
 
 label ending:
 

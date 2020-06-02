@@ -1,9 +1,3 @@
-define w = Character("Whitney")
-define a = Character("Alice")
-define c = Character("Cheshire Cat")
-
-
-
 label day5:
     default ending_points = 0
 
@@ -22,24 +16,18 @@ label day5:
 
     scene bg dining room
 
-    show alice_happy_closemouth
+    ##show alice_happy_closemouth
 
     w "\"So, Alice what do you want to do today?\""
 
-    hide alice_happy_closemouth
-    show alice_happy_openmouth
+    ##hide alice_happy_closemouth
 
-    a "\"Let's play a game of tag!\""
-
-    hide alice_happy_openmouth
-    show alice_happy_closemouth
+    a happy "\"Let's play a game of tag!\""
 
     w "\"I don't know Alice, I was hoping we could take a break today.\""
     "A nice slow day would make it easier to talk to her..."
 
-    hide alice_happy_closemouth
-    show alice_sad
-    a "\"You don't want to play with me?\""
+    a sad "\"You don't want to play with me?\""
 
     default tag_choice = False
     menu:
@@ -59,12 +47,7 @@ label day5:
 
         w "\"Ok, if you insist. Tag sounds like it could be fun...\""
 
-        hide alice_sad
-        show alice_happy_openmouth
-
-        a "\"I'm so happy you think so. Let's go now, I can't wait! It's been so long since I've had a good game of tag.\""
-
-        hide alice_happy_openmouth
+        a happy "\"I'm so happy you think so. Let's go now, I can't wait! It's been so long since I've had a good game of tag.\""
 
         scene black
         with Dissolve(.5)
@@ -75,7 +58,7 @@ label day5:
 
         w "\"Yeah, these last few days have been a lot. What if we don't play a game today? Maybe just...\""
 
-        a "\"NO, I WANT TO PLAY TAG!\""
+        a sad "\"NO, I WANT TO PLAY TAG!\""
 
         "I threw my hands up to calm her down. After what happened yesterday...I don't think I want Alice mad."
 
@@ -83,15 +66,11 @@ label day5:
 
         "Who knows what she's capable of when she's upset."
 
-        a "\"Okay, I'm sorry, I shouldn't have yelled. I just want to have fun with you. I really enjoy having you around. Please don't Leave me. I get so lonely.\""
+        a sad closeeyes "\"Okay, I'm sorry, I shouldn't have yelled. I just want to have fun with you. I really enjoy having you around. Please don't Leave me. I get so lonely.\""
 
         w "\"It's ok, I'm not going anywhere. Let's play your game after you finish eating.\""
 
-        hide alice_sad
-        show alice_happy_openmouth
-
-        a "Yayyy! I can't wait."
-        hide alice_happy_openmouth
+        a happy "\"Yayyy! I can't wait.\""
 
         scene black
         with Dissolve(.5)
@@ -104,12 +83,9 @@ label day5:
 
         #visual of rabbit moving
 
-        a "\"No, I think I want to play tag. My parents used to play with me before...\""
+        a sad "\"No, I think I want to play tag. My parents used to play with me before...\""
 
-        hide alice_sad
-        show alice_happy_openmouth
-
-        a "\"Well, anyways we should get going. I can't wait to play again.\""
+        a happy "\"Well, anyways we should get going. I can't wait to play again.\""
 
         w "\"Okay...\""
 
@@ -118,7 +94,6 @@ label day5:
 
         "I'm sure she doesn't want to talk about the fire. But I would like to know more about her relationship with her parents."
         "They seem like they were all very close, but Alice also mentioned them hiding her away...I wonder if that has anything to do with how she's been acting."
-        hide alice__happy_openmouth
 
         jump done_tag_intro
 
@@ -131,40 +106,35 @@ label day5:
     label wonderland_tag:
 
         scene wonderland
-        show  alice_happy_closemouth
+        ##show  alice_happy_closemouth
 
         "Again, we were in Wonderland. This time we weren't playing a crazy game of hopscotch, but I couldn't imagine the level of crazy would be any different."
         w "\"This place amazes me everytime.\""
 
-        hide alice_happy_closemouth
-        show alice_happy_openmouth
+        ##hide alice_happy_closemouth
 
-        a "\"I know it's brilliant, isn't it. So are you ready to play?\""
+        a happy "\"I know it's brilliant, isn't it. So are you ready to play?\""
 
-        hide alice_happy_openmouth
-        show alice_happy_closemouth
+        ##show alice_happy_closemouth
 
         w "\"Uhh...sure.\""
 
-        hide alice_happy_closemouth
-        show alice_happy_openmouth
-        a "\"The rules are easy: Whoever's it gets turned into a wolf, and whoevers not it, gets turned into a little rabbit.\""
+        ##hide alice_happy_closemouth
+        a normal "\"The rules are easy: Whoever's it gets turned into a wolf, and whoevers not it, gets turned into a little rabbit.\""
 
-        a "\"You have to catch the rabbit before you turn white. With each minute you don't find the rabbit, you will become more white.\""
+        a happy "\"You have to catch the rabbit before you turn white. With each minute you don't find the rabbit, you will become more white.\""
 
-        a "\"Luckily the wolf is much bigger than the rabbit and can smell really well. All you have to do is catch the rabbit in your mouth and tag there it.\""
+        a happy closeopen "\"Luckily the wolf is much bigger than the rabbit and can smell really well. All you have to do is catch the rabbit in your mouth and tag there it.\""
 
-        a "\"But if you turn full white, you'll stay a wolf and you won't be able to leave wonderland. Are you ready?\""
+        a normal "\"But if you turn full white, you'll stay a wolf and you won't be able to leave wonderland. Are you ready?\""
 
-        hide alice_happy_openmouth
-        show alice_happy_closemouth
+        ##show alice_happy_closemouth
 
         w "\"Wait, what do you mean stay a wolf and never leave wonderland?\""
 
-        hide alice_happy_closemouth
-        show alice_happy_openmouth
+        ##hide alice_happy_closemouth
 
-        a "\"Oh, It's only a game silly, people just say that. I've never seen anyone stay it long enough to become a wolf. It'll be fun. You ready?\""
+        a smile "\"Oh, It's only a game silly, people just say that. I've never seen anyone stay it long enough to become a wolf. It'll be fun. You ready?\""
 
         default rabbit_first = False
         default is_rabbit = False
@@ -173,10 +143,9 @@ label day5:
         default wolf_side_won = False
 
         if tag_choice:
-            a "\"So, do you want to be the wolf or the rabbit?\""
+            a happy "\"So, do you want to be the wolf or the rabbit?\""
 
-            hide alice_happy_openmouth
-            show alice_happy_closemouth
+            ##show alice_happy_closemouth
 
             w "\"Ummm...\""
 
@@ -192,26 +161,21 @@ label day5:
         else:
             "\"You go to speak, but before the words can come out-\""
 
-            hide alice_happy_closemouth
-            show alice_happy_openmouth
+            ##hide alice_happy_closemouth
 
-            a "\"Let's play. You'll be it first!\""
+            a happy "\"Let's play. You'll be it first!\""
 
-            hide alice_happy_openmouth
-            show alice_happy_closemouth
+            ##show alice_happy_closemouth
 
             jump wolf
 
     label wolf_choice:
         w "\"I'll be the wolf first.\""
-        hide alice_happy_closemouth
 
         jump wolf
 
     label rabbit_choice:
         w "\"I'll be the rabbit first.\""
-
-        hide alice_happy_closemouth
 
         $ rabbit_first = True
         $ is_rabbit = True
@@ -229,7 +193,7 @@ label wolf:
     with Dissolve(.5)
 
     w "\"Alice?\""
-    a "\"Catch me if you can!\""
+    a happy closeopen "\"Catch me if you can!\""
     "Alice's voice fades off into the distance"
     jump game_instructions
 
@@ -243,15 +207,15 @@ label rabbit:
     with Dissolve(.5)
 
     show wolf
-    a "\"Well, Ms. Whitley, how was that?\""
+    a happy "\"Well, Ms. Whitley, how was that?\""
 
     "I was in a daze."
 
     w "\"Why did it hurt so much? Why are your teeth so big?\""
 
-    a "\"The game's started, silly! You better start hopping away now, little rabbit.\""
+    a happy strange "\"The game's started, silly! You better start hopping away now, little rabbit.\""
 
-    a "\"The big bad wolf is on the prowl!\""
+    a happy "\"The big bad wolf is on the prowl!\""
 
     hide wolf
 
@@ -728,42 +692,38 @@ label cat1:
 label wolf_ending:
     "Time is up."
     "Alice popped up in front of me."
-    show rabbit1
-    a "\"Wow, you aren't very good at this, are you? You do realize the point is to tag me, silly! Well luckily, Mr. Rabbit can stop the curse."
+    show bunny_satisfied
+    a annoyed openeyes "\"Wow, you aren't very good at this, are you? You do realize the point is to tag me, silly! Well luckily, Mr. Rabbit can stop the curse."
     w "\"Curse?! Tht was real?\""
-    a "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
-    "\"Alice grabbed Mr. Rabbit and touched the both of us."
+    a happy closeopen "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
+    "Alice grabbed Mr. Rabbit and touched the both of us."
+    hide bunny_satisfied
     "Poof!"
-    "\"We both returned to our human states.\""
-    show alice_happy_openmouth
-    a "What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time."
-    hide alice_happy_openmouth
+    "We both returned to our human states."
+    a happy strange "What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time."
 
     jump tag_end
 
 label wolf_tag_ending:
     $ ending_points += 1
-    show rabbit1
+    show bunny
     "I spotted a small white rabbit. Alice! I sprinted forward and grabbed it in my mouth."
     scene black
+    hide bunny
     "Poof!"
     scene wonderland
     "I felt my body return to normal, much less painful this time."
     "I saw Alice standing in front of me."
 
-    show alice_happy_openmouth
+    a happy "Shoot! Now I'm it. You ready?"
 
-    a "Shoot! Now I'm it. You ready?"
-
-    hide alice_happy_openmouth
-    show alice_happy_closemouth
+    ##show alice_happy_closemouth
 
     w "\"Gimmie a minute, I am still recovering from being a wolf.\""
 
-    hide alice_happy_closemouth
-    show alice_happy_openmouth
+    ####hide alice_happy_closemouth
 
-    a "\"Well, now you're a rabbit!\""
+    a smile "\"Well, now you're a rabbit!\""
     "Alice grabbed Mr. rabbit and touched me."
     scene black
     "Can I please get a break..."
@@ -789,43 +749,35 @@ label rabbit_ending:
     with Dissolve(.3)
     "I felt my body begin morphing back to normal, my limbs growing, stretching out."
     scene wonderland
-    show alice_happy_openmouth
-    a "\"Yay! I caught ya!\""
+    a happy closeopen "\"Yay! I caught ya!\""
 
     if rabbit_first:
-        a "\"That was fun. I do like being the wolf, but now you get to be it!\""
-        hide alice_happy_openmouth
+        a happy "\"That was fun. I do like being the wolf, but now you get to be it!\""
         $ is_rabbit = False
         jump wolf
 
     if wolf_side_won:
-        a "\"That was fun. Looks like we both won as the wolf. It's a lot more fun being the ferocious predator right?\""
-        hide alice_happy_openmouth
-        show alice_happy_closemouth
+        a normal "\"That was fun. Looks like we both won as the wolf. It's a lot more fun being the ferocious predator right?\""
+        ##show alice_happy_closemouth
         w "\"Uh yeah sure. But I don't think I liked those deep cravings I felt. I might be a vegaterian now, to be honest.\""
-        hide alice_happy_closemouth
-        show alice_happy_openmouth
-        a "\"Wolves are so cute, though. They just have to eat, that's all! I do love how big and strong I feel as a wolf.\""
-        a "\"Mr. Rabbit makes me strong too, don't you?\""
+        ##hide alice_happy_closemouth
+        a happy closeeyes "\"Wolves are so cute, though. They just have to eat, that's all! I do love how big and strong I feel as a wolf.\""
+        a happy "\"Mr. Rabbit makes me strong too, don't you?\""
         "She snuggled her plush happily. Something tells me there's more to Mr. Rabbit than meets the eyes..."
-        a "\"Well? What did you think of the game?\""
-        hide alice_happy_openmouth
-        show alice_happy_closemouth
+        a normal "\"Well? What did you think of the game?\""
+        ##show alice_happy_closemouth
         w "\"Uh...it was fun? Exciting to say the least.\""
-        hide alice_happy_closemouth
+        ##hide alice_happy_closemouth
         jump tag_end
 
-    hide alice_happy_openmouth
-    show alice_happy_closemouth
+    ##show alice_happy_closemouth
 
     w "\"Darn, you're much better than me at this game.\""
 
-    hide alice_happy_closemouth
-    show alice_happy_openmouth
+    ##hide alice_happy_closemouth
 
-    a "\"Well, I have played it more and this was your first time. I am sure you'll do better next time!\""
-    hide alice_happy_openmouth
-    show alice_happy_closemouth
+    a happy "\"Well, I have played it more and this was your first time. I am sure you'll do better next time!\""
+    ##show alice_happy_closemouth
 
     w "\"Yeah, next time.\""
 
@@ -842,16 +794,16 @@ label write_texts:
 
 label tag_end:
     w "\"Well, that was something wasn't it.\""
-    a "\"Yup! I'm tired.\""
+    a happy closeopen "\"Yup! I'm tired.\""
     w "\"Then let's head back. How about I make you dinner?\""
-    a "\"Okay! I've got a strange craving for meat, probably just a side effect of the game.\""
+    a smile "\"Okay! I've got a strange craving for meat, probably just a side effect of the game.\""
     w "\"Don't tell me there are side effects?!\""
-    a "\"Home we go!\""
+    a happy closeopen "\"Home we go!\""
     scene black
     with Dissolve(.5)
 
     scene bg dinning room
-    a "\"Wow, thanks so much for dinner. That steak was yummy.\""
+    a happy "\"Wow, thanks so much for dinner. That steak was yummy.\""
     w "\"Well I'm glad you liked it. It's been a long day, we should get some rest.\""
 
     if visit house:
