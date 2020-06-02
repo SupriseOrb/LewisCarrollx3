@@ -39,7 +39,7 @@ label SelectVeg:
                     $ VegRight = True
                     jump CheckIngre1
         label CheckIngre1:
-            "Are you really sure about it?"
+            "Are you really sure?"
             menu:
                 "Yes":
                     jump SelectMeat
@@ -67,7 +67,7 @@ label SelectMeat:
                     $ MeatRight = True
                     jump CheckIngre2
         label CheckIngre2:
-            "Are you really sure about it?"
+            "Are you really sure?"
             menu:
                 "Yes":
                     jump SelectSauce
@@ -95,7 +95,7 @@ label SelectSauce:
                     $ SauceRight = True
                     jump CheckIngre3
         label CheckIngre3:
-            "Are you really sure about it?"
+            "Are you really sure?"
             menu:
                 "Yes":
                     jump FinishedIngre

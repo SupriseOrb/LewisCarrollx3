@@ -1,26 +1,26 @@
 label ToTheDay5:
     if AliceFeltPain:
-        a awkward "Sorry honey, I really felt tried now"
+        a awkward "\"Sorry Ms. Whitley, I really feel tired right now...\""
         "Alice's eyes were full of exhaustion."
-        a guilty "I'm afraid we have to stop our conversation today now"
-        "Alice stood up slowly"
-        "She looked up at the sky in the night, a bright moon hung in the air, accompanied by twinkling stars, radiating holy light."
-        "Alice looks at you again"
-        a smile "Good night Honey, have a nice dream"
-        "After Alice finished with a smile, she left the dining table and went up the stairs"
+        a guilty "\"I think I'm done for today...\""
+        "Alice stood up slowly."
+        "She looked up at the night sky where a bright moon hung in the air, accompanied by twinkling stars, radiating a holy light."
+        "Alice looked at me again."
+        a smile "\"Good night Ms. Whitley, sweet dreams.\""
+        "Alice finished with a smile, then she left the dining table and went upstairs."
         "..."
         scene playerroom night
-        "You returned to your room and fell into sleep."
+        "I returned to my room and instantly fell asleep."
         "...zzz"
         scene black
         jump day5
 
     if FinishThisBoringDay:
-        "You quickly finished dinner and returned to your room"
+        "I quickly finished dinner and returned to my room, without so much as glancing back at Alice. I really needed a break."
         scene playerroom night
         with fade
-        w "What a terrible day"
-        "You lay in bed and fell asleep quickly"
+        w "\"What a day.\""
+        "As soon as my head hit the pillow, I fell asleep."
         scene black
         jump day5
 
