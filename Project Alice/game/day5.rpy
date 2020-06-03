@@ -257,11 +257,12 @@ label game_instructions:
     default path_open = False
     default smell_enabled = False
     
-    menu:
-        "Enable":
-            jump enable_smell
-        "Keep Disabled":
-            jump game_start
+    if is_rabbit == False:
+        menu:
+            "Enable":
+                jump enable_smell
+            "Keep Disabled":
+                jump game_start
 
 label enable_smell:
     $ smell_enabled = True
@@ -959,7 +960,7 @@ label wolf_tag_ending:
     $ wolf_side_won = True
 
     $ is_rabbit = True
-    jump game_start
+    jump game_instructions
 
 label wolf_dist:
     if (turns_left - turn_find) == 1:
@@ -982,6 +983,7 @@ label rabbit_ending:
     if rabbit_first:
         a happy "\"That was fun. I do like being the wolf, but now you get to be it!\""
         $ is_rabbit = False
+        rabbit_first = False
         jump wolf
 
     if wolf_side_won:
