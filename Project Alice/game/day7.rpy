@@ -607,7 +607,7 @@ label day7scavengerStart:
     
     "I collapsed to the floor."
     
-    "Alice squeezed her bunny but then suddenly noticed something wrong. 
+    "Alice squeezed her bunny but then suddenly noticed something wrong."
     
     "Mr. Rabbit was burning up in her arms. The magical vortex surrounding her and the cauldron was out of control."
     
