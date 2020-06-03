@@ -1,7 +1,7 @@
 label day3:
     scene bg whitley_bedroom
     
-    play music "audio/day3 music/morning.wav" fadeout 1
+    play music "audio/day3 music/morning.wav" fadein 1
     
     "{i}This will be the third day since I've been in Alice's house. And something is definitely wrong with this place, there was no way I could deny that.{/i}"
     

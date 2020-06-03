@@ -115,7 +115,7 @@ label day1c2a1:
     w "\"Closing my eyes.\""
     a happy "\"Hehe, it'll only take a minute!\""
     "I heard a little twinkling and a whooshing wind. My luggage was next to me, but I couldn't feel it anymore. Instead I felt a large wall by my side. I didn't move around, and I couldn't hear Alice moving my luggage away. Something's not right…"
-    a normal "\"Are your eyes closed, Whitley?\""
+    a normal "\"Are your eyes closed, Ms. Whitley?\""
     w "\"Pfft, yes they are. Don't you trust me Alice?\""
     a happy "\"I do! I do!\""
     "What a cute kid."
@@ -192,7 +192,7 @@ label day1c3a2:
     "Before I could wonder how I was going to catch it, the metal piece mysteriously shrunk to its original size in my palm."
     "I turned around towards Alice and handed her the metal piece. She looked up at me with surprise and awe."
     w "\"Looks like it's my win.\""
-    a "\"Wow, you're so fast Whitley!\""
+    a "\"Wow, you're so fast Ms. Whitley!\""
     a happy strange "\"But can you win in the next round?\""
 
 label day1playr2:
@@ -200,7 +200,7 @@ label day1playr2:
     "There was another metal piece a little farther away...when did it get there?"
     "I eyed the red metal piece, ready for the second round to start."
     "Alice tapped my shoulder, but I only glanced at her. I was too focused on the game itself."
-    a happy "\"Whitley, it's question time! What's your favorite food?\""
+    a happy "\"Ms. Whitley, it's question time! What's your favorite food?\""
     $ time = 2
     $ timer_range = 2
     $ timer_jump = 'day1c4a1'
@@ -254,7 +254,7 @@ label day1playr3:
     "I was so absorbed in the game that I forgot I was here to recover the truth. Curse my competitive streak, or maybe it was something about Alice's nature that enticed me to play? Well, she did {i}force{/i} me to play."
     "But now let's see if I can get some information out of her."
     w "\"Since you asked me a question, why don't you answer a question of mine?\""
-    a normal "\"Hmm, I don't know~ After all, Whitley didn't answer my question properly.\""
+    a sorrow "\"Hmm, I don't know~ After all, Ms. Whitley didn't answer my question properly.\""
     "Alice tried to appear casual, but her eyes were trained on the now three metal pieces on the floor as well as the red piece that was about to be thrown upwards."
     "She was distracted from me. Time to ask a crucial question now while her emotional guard is down."
     menu:
@@ -310,7 +310,7 @@ label day1end:
     stop music fadeout 2.0
     "Well, all in all, I was glad we were done with the game. I don't think I could have handled it any more."
     play music lunch fadein 2.0
-    a normal "\"Whitley, I'm tired, carry me to bed!\""
+    a normal "\"Ms. Whitley, I'm tired, carry me to bed!\""
     w "\"Okay, okay. Whatever you wish for your highness.\""
     a happy "\"Hehe~\""
     "I picked up Alice and froze. There were two uncertainties: 1)  I didn't know where Alice's bedroom was and 2) how were we going to move around if we were still tiny compared to the house."
@@ -343,17 +343,19 @@ label day1c6a1:
     w "\"I guess Alice is sleeping talking.\""
     a "\"...stay...meet my parents...zzz.\""
     "Well that doesn't make sense. Alice's parents are gone, so there's no way I can meet them. Poor kid, she probably misses them very much."
-    stop music fadeout 2.0
     "Mhmm, seems like I'm tuckered out for the day. I hope the next few days will be just as peaceful and playful as today."
+    stop music fadeout 3.0
+    show black with Dissolve(2)
+    pause(3)
     jump day2
 
 label day1c6a2:
     w "\"I'm sorry Alice. I still have to unpack. Besides, you're a big kid now, you should be able to sleep by yourself.\""
     a sad "\"...okay.\""
     "Alice retracted her hand and slumped back into her bed. I'm sorry Alice, but I need some time to myself...to figure out what's going on."
-    a normal "\"Before you go, take that with you.\""
+    a happy "\"Before you go, take that with you.\""
     "Alice points to a red envelope on the dresser."
-    a "\"A thank-you for playing with me today. I hope you like it...zzz\""
+    a asleep openmouth "\"A thank-you for playing with me today. I hope you like it...zzz\""
     "I took the red envelope, investigating it to make sure there was nothing harmful."
     w "\"Thank you Ali-- Oh, it looks like you're asleep already. Well, good night Alice. Sweet dreams.\""
     play sound "/audio/soundeffects/open_bedroom_door.wav" fadein 1
@@ -362,8 +364,12 @@ label day1c6a2:
     hide black with Dissolve(1)
     play sound "/audio/soundeffects/page_turn.wav"
     "I closed the door behind me and opened up the envelope. Inside was a drawing of Alice...me and to other figures who appear to be her parents."
+    show home at truecenter with Dissolve(1)
     "A cute drawing if only it wasn't for the red string. Alice was holding onto it while it wrapped all around her parents and me."
+    hide home with Dissolve(1)
     "I folded the drawing and placed it into my coat pocket."
-    stop music fadeout 2.0
     "Hopefully the next six days will be less eventful so I can do some actual work."
+    stop music fadeout 3.0
+    show black with Dissolve(2)
+    pause(3)
     jump day2
