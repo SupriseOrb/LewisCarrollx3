@@ -231,7 +231,7 @@ label game_instructions:
     #implement a smell feature
 
     default turns_left = 10
-    default path_open = True
+    default path_open = False
 
     jump game_start
 
