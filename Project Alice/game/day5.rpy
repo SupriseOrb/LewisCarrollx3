@@ -915,7 +915,7 @@ label wolf_ending:
     transform imgcenter:
         xalign 0.5 yalign 0.5
     a annoyed openeyes "\"Wow, you aren't very good at this, are you? You do realize the point is to tag me, silly! Well luckily, Mr. Rabbit can stop the curse."
-    w "\"Curse?! Tht was real?\""
+    w "\"Curse?! That was real?\""
     a happy closeopen "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
     show bunny_satisfied at imgcenter
     with Dissolve(1)
