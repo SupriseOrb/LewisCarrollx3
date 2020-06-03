@@ -1,5 +1,7 @@
 label day7:
 
+    play music lunch fadein 1.0
+
     scene bg whitley_bedroom
 
     "The next morning, I was awakened by Alice pouncing on top of me."
@@ -7,7 +9,7 @@ label day7:
     a happy "\"Whitley, wake up, wake up!!!\""
     
     "I was still trying to see through stars, but it was clear she was excited about something."
-    
+
     "I sat up and yawned."
     
     w "\"I'm up, I'm up!\""
@@ -196,6 +198,8 @@ label day7leaveAttempt:
 
 
 label day7stay:
+
+    $ heart += 1
 
     "No, I set a goal this morning."
 
@@ -455,9 +459,10 @@ label day7scavengerStart:
 
     a sorrow closeeyes "\"THEY hurt ME!\""
     
-    "A spark of ethereal lights flickered at her fight, growing sharper with every second."
+    "A spark of ethereal lights flickered at her feet, growing sharper with every second."
 
-    label day7BadEnd:
+    if heart < 5:
+        jump day7BadEnd 
 
     label day7GoodEnd:
     
@@ -631,9 +636,10 @@ label day7scavengerStart:
 
     "I put my hand on Alice's shoulder and leaned my head against hers. We'll be okay."
 
-    #Fade out
+    scene black
+    with Dissolve(.5)
 
-    #(Scene: living room)
+    scene bg living room
 
     "That afternoon, I had my belongings packed and set by the front door. I was going over my mental checklist when I felt a tiny hand tug on my coat."
     
@@ -685,7 +691,7 @@ label day7scavengerStart:
 
     "The boy paused and threw his gaze downwards, shuffling his feet." 
 
-    "\"...I-I'm sorry. I'm sorry for making fun of you. It was wrong.\""
+    l "\"...I-I'm sorry. I'm sorry for making fun of you. It was wrong.\""
 
     "Alice opened her mouth ever so slightly, then looked up at me. I gave her a reassuring nod."
 
@@ -697,11 +703,11 @@ label day7scavengerStart:
 
     "The boy scratched at his burn mark and bit his lip, but didn't step away."
 
-    "\"Yeah.\""
+    l "\"Yeah.\""
 
     "Alice looked at him with wide eyes."
 
-    "\"But only if you let me talk to you about my rock collection again.\""
+    l "\"But only if you let me talk to you about my rock collection again.\""
 
     "He give her a small, innocent smirk. Alice had the biggest grin on her face."
 
@@ -725,17 +731,17 @@ label day7scavengerStart:
 
     "One of the women boisterously laughed."
 
-    "\"Oh shouldn't be too much of a problem. We've got four hands between us!\""
+    "Godparent 1" "\"Oh shouldn't be too much of a problem. We've got four hands between us!\""
 
     "The other woman, who seemed to be the more down-to-earth of the two patted my hand."
 
-    "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled\""
+    "Godparent 2" "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled\""
 
-    "\"THIS one over here wouldn't stop yammering on about all the things she wanted to give her.\""
+    "Godparent 2" "\"THIS one over here wouldn't stop yammering on about all the things she wanted to give her.\""
 
     "The other woman grinned and crossed her arms."
 
-    "\"I'd give her the world if I could!\""
+    "Godparent 1" "\"I'd give her the world if I could!\""
 
     "I smiled. Yeah. Alice will be okay."
 
@@ -752,3 +758,19 @@ label day7scavengerStart:
     "Then, Alice returned to her game with Luke."
 
     "It looks like they had been playing Osellets. Or as I like to call it, Jacks."
+
+    jump day7finaldone
+
+    label day7BadEnd:
+
+    "I tried to tear away from the banister, but Alice's magic was too powerful. Under a loud, sonorous noise, I watched Alice complete spell."
+
+    "Immediately I felt my very lifeforce began to sap towards the cauldron. Alice looked at me with a pitiful smile and glazed eyes."
+
+    a happy strange "\"It's such a shame you won't get to meet them.\""
+
+    label day7finaldone:
+
+    scene black
+
+   
