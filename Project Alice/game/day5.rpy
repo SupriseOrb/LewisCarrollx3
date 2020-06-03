@@ -2,7 +2,16 @@ label day5:
     default ending_points = 0
 
     scene bg whitley_bedroom
-    with Dissolve(.5)
+    with fade
+    with Dissolve(2)
+
+    play music morning fadein 2.0
+
+    $ day = 5
+
+    show screen Day with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
 
     "After everything that happened yesterday, the truth was undeniable."
     "Magic killed those people that night. And magic killed Alice's parents."
