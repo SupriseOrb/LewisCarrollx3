@@ -352,8 +352,6 @@ label day6:
 
                     "I sighed. If I had found this piece of paper at the beginning, it could've been very useful."
 
-                "I noticed something else in the mirror, so I reached out and took it."
-
                 jump day6_clue
 
 
@@ -421,14 +419,6 @@ label day6:
         return
 
         label day6_clue:
-
-            "It was a music box, seemed a little old."
-
-            "I remembered Alice mentioned it once as her favorite \"treasure,\" but she forgot to take it with her after moving here."
-
-            "This must be the \"candy\" for winning the game with Mr. Rabbit."
-
-            "I put the music box on my bedside table."
 
             if hr < 7 or hr ==7 and minute <=10:
 
@@ -905,7 +895,7 @@ label day6:
 
         w "\"Say...what?\""
 
-        r confused "\"Nononono, say ɿoɿɿimɘʜɈʜƨɒmƨ!\"
+        r confused "\"Nononono, say ɿoɿɿimɘʜɈʜƨɒmƨ!\""
         
         w "\"Uh, I guess I'll try?\""
         
@@ -1167,9 +1157,9 @@ label day6:
 
             a smile "\"Congratulations! Hope you have a wonderful time with Mr. Rabbit, Ms. Whitley.\""
 
-            w "\"Like what you said, it's a tricky bunny who always tell lies.\""
+            w "\"Like what you said, he's a tricky bunny who always tell lies.\""
 
-            w "\"But it's fun to have a friend like it, isn't it?\""
+            w "\"But it's fun to have a friend like him, isn't it?\""
 
             a annoyed openeyes "..."
 
@@ -1198,13 +1188,13 @@ label day6:
 
                     a sad "..."
 
-                    a smile "You're a really good adult, Ms. Whitley"
+                    a smile "You're a really good adult, Ms. Whitley."
 
                     a guilty "I sometimes hope I could meet you earlier."
 
                     a happy closeopen "But now it's Breakfast time! Let's go to the dinning room!"
 
-                    heart += 1
+                    $ heart += 1
 
             play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
