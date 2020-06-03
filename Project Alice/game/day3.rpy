@@ -1,7 +1,13 @@
 label day3:
-    scene bg whitley_bedroom
+    scene bg whitley_bedroom with Dissolve(2)
     
     play music "audio/day3 music/morning.wav" fadein 1
+
+    $ day += 1
+
+    show screen Day with Dissolve(2)
+    pause(3)
+    hide screen Day with Dissolve(2)
     
     "{i}This will be the third day since I've been in Alice's house. And something is definitely wrong with this place, there was no way I could deny that.{/i}"
     

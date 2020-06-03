@@ -4,6 +4,12 @@ label day2:
 
     play music morning fadein 1.0
 
+    $ day += 1
+
+    show screen Day with Dissolve(2)
+    pause(3)
+    hide screen Day with Dissolve(2)
+
     "The warm sunlight greeted me for the new day."
 
     w "\"Urghh\""

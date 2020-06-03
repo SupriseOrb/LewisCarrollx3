@@ -13,6 +13,20 @@ define c = Character("Cheshire Cat", color="#C2BC1E", image="cat",window_left_pa
 
 # The game starts here.
 
+# Day reminder
+screen Day:
+
+    frame at alpha_dissolve:
+
+        xmaximum 600
+        ymaximum 600
+        xalign 0.5
+        yalign 0.5
+        background "transparent"
+        text "{size=+200}{font=fonts/Fairy Tales.ttf}Day [day]{/font}{/size}"
+
+default day = 1
+
 # Alice's Heart
 default heart = 0
 

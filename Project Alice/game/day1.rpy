@@ -42,6 +42,9 @@ label day1:
 
     scene bg front with Dissolve(2)
     play sound_little "/audio/soundeffects/morning_bird.wav" fadein 3.0
+    show screen Day with Dissolve(2)
+    pause(3)
+    hide screen Day with Dissolve(2)
     ##play sound_little "/audio/soundeffects/morning_bird.wav" fadein 3.0 fadeout 3
     "The mansion was a very grand mansion in the middle of Grigny, a small town in the suburbs of Paris. A blooming flower in a field full of weeds."
     "Near the mansion gates was a young girl dressed in a simple blue dress and holding onto an overstuffed life-sized white rabbit."
