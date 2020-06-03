@@ -1075,7 +1075,7 @@ label day6:
 
         r depressed "\"Mr. Rabbit is suprised you reached this room without noticing it!\""
 
-        r happy "\"Oh well! Mr. Rabbit is always right! No one will know Mr. Rabbit's big secret now!\""
+        r happy "\"Oh well! Mr. Rabbit is always right! No one will see through Mr. Rabbit's lies now!\""
 
         "I tried to talk to Mr. Rabbit, but it seemed to be in a state of madness and refused to respond. It was like I wasn't even there."
 
@@ -1121,11 +1121,11 @@ label day6:
 
             a happy strange "\"You cunning bunny. Every single clue you left in that mirror was a lie, wasn't it!\""
 
-            r satisfied "\"Mr. Rabbit only wants to keep its big secret!\""
+            r satisfied "\"Mr. Rabbit only wants to keep his words sincere!\""
 
         else:
 
-            r confused "\"No, no, no! Mr. Rabbit's mirror! Mr. Rabbit's biggest secret has been discovered!\""
+            r confused "\"No, no, no! Mr. Rabbit's mirror! Mr. Rabbit's secret has been discovered!\""
 
             r sad "\"Ms. Whitley, how could you possibly do that?\""
             
@@ -1139,29 +1139,84 @@ label day6:
 
             elif timetakentowin < 60:
 
-                r depressed "\"[timetakentowin] minutes! You only used [timetakentowin] minutes to find out Mr. Rabbit's biggest secret?!\""
+                r depressed "\"[timetakentowin] minutes! You only used [timetakentowin] minutes to see through Mr. Rabbit's trap?!\""
 
                 if timetakentowin == 35:
 
                     r depressed "\"No one can find Mr. Rabbit's secret faster than you! No one! Did you play a trick with the time?\""
 
-            r depressed "\"Don't tell Alice, please! Let it be the secret only for you and Mr. Rabbit.\""
+            ##r depressed "\"Don't tell Alice, please! Let it be the secret only for you and Mr. Rabbit.\""
             
             w "\"Hey Mr. Rabbit, calm down. Let's go for breakfast, alright?\""
 
             r confused "\"Oh dear! Ms. Whitley is right! It's time for breakfast. Mr. Rabbit shall leave! Mr. Rabbit shall leave!\""
 
-            "\"Mr. Rabbit bounced away nervously.\""
+            "Mr. Rabbit bounced away nervously."
+
+            "But he soon turned back."
+
+            r depressed "\"Mr. Rabbit almost forget it! Here's your prize for winning the game!\""
+
+            "That's a candy wrapped in blue."
+
+            r depressed "\"Mr. Rabbit must leave now!\""
+
+            "He bounced away soon."
+
+            "*clap*"
+
+            a smile "\"Congratulations! Hope you have a wonderful time with Mr. Rabbit, Ms. Whitley.\""
+
+            w "\"Like what you said, it's a tricky bunny who always tell lies.\""
+
+            w "\"But it's fun to have a friend like it, isn't it?\""
+
+            a annoyed openeyes "..."
+
+            a annoyed openeyes "Don't you think lying is a sin?"
+
+            a angry "Misery always accompanies with lies and misery would only bring pain to our lives."
+
+            a confused "Isn't lying a really, really bad thing to do?"
+
+            menu:
+                "Yes, you're right":
+                
+                    a smile "I know you always stand by me, Ms. Whitley."
+
+                    a happy "Now it's Breakfast time! Let's go to the dinning room!"
+
+                "No, it's not":
+
+                    w "Alice, not only misery would accompany with lies."
+
+                    "I stretched forth my hand and showed Alice the candy I won."
+
+                    w "See, this is the happiness I gain from Mr. Rabbit's lie."
+
+                    w "Now I'm sharing this happiness with you."
+
+                    a sad "..."
+
+                    a smile "You're a really good adult, Ms. Whitley"
+
+                    a guilty "I sometimes hope I could meet you earlier."
+
+                    a happy closeopen "But now it's Breakfast time! Let's go to the dinning room!"
+
+                    heart += 1
 
             play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 
-            "\"I pushed the door open and went out.\""
+            "Alice pushed the door open and went out of my room."
+
+            "I followed her and went out."
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
         scene bg dining room
 
-        "\"I went to the dinning room.\""
+        "I went to the dinning room."
 
         stop sound fadeout 2
 
