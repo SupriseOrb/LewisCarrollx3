@@ -379,7 +379,7 @@ label day7scavengerStart:
 
     "No tricks. No riddles. No games. Just...\"We Love You.\""
 
-    "Just reading those words gave me the courage to hold the paper firm and ward off it's evil energies."
+    "Just reading those words gave me the courage to hold the paper firm and ward off its evil energies."
 
     "I took a closer look at the black lettering."
 
@@ -437,7 +437,7 @@ label day7scavengerStart:
 
     w "\"They're impossible without a....!\""
 
-    "A realization hammered my heart down to my stomach. I felt the hairs on the back of my neck spring up as I looked at my now free hands."
+    "A realization hammered my heart down to my stomach. I felt the hairs on the back of my neck spring up as I slowly looked down at myself."
 
     w "\"...without a sacrifice.\""
 
@@ -449,7 +449,7 @@ label day7scavengerStart:
 
     a happy "\"Look, Mama! Mr. Rabbit's got all the ingredients!\""
 
-    "She held out her stuffed toy, and there in her Mr. Rabbit's plush arms, she had placed her \"schoolbag\". Filled to the brim with every ingredient needed for the spell."
+    "She held out her stuffed toy, and there in Mr. Rabbit's plush arms, she had placed her \"schoolbag\". Filled to the brim with every ingredient needed for the spell."
 
     a smile "\"Bunnies are quick quick quick~!\""
 
@@ -612,7 +612,7 @@ label day7scavengerStart:
 
     w "\"He loved you, Alice.\""
 
-    w "\"He loved you. He played with you, He would tell you the most brilliant stories, and he took care of you. And when the time came, he protected you.\""
+    w "\"He loved you. He played with you, he would tell you the most brilliant stories, and he took care of you. And when the time came, he protected you.\""
 
     w "\"You know what this spell is, you know what it does. And you don't want to hurt him.\""
     
@@ -634,7 +634,7 @@ label day7scavengerStart:
 
     stop music fadeout 1.0
     
-    "Alice's gaze was now locked on my, but my sight was wavering. The magic thread that bound me loosened just enough for me to drop to my knees."
+    "Alice's gaze was now locked on me, but my sight was wavering. The magic thread that bound me loosened just enough for me to drop to my knees."
     
     "Alice looked at me with the most desperate eyes."
 
@@ -670,7 +670,7 @@ label day7scavengerStart:
 
     "The vortex was instantly extinguished and the cauldron vanished in puff of smoke. Then the foyer was silent."
 
-    "I felt my strength start to return. When I finally pushed myself off the floor to stand, I realized Alice was now on the floor."
+    "I felt my strength start to return. When I finally pushed myself up to stand, I realized Alice was now on the floor."
 
     stop sound
     
@@ -795,7 +795,7 @@ label day7scavengerStart:
 
     "The other woman, who seemed to be the more down-to-earth of the two patted my hand."
 
-    "Godparent One" "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled\""
+    "Godparent One" "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled.\""
 
     "Godparent One" "\"THIS one over here wouldn't stop yammering on about all the things she wanted to give her.\""
 
