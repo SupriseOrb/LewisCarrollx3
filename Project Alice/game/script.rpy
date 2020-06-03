@@ -141,7 +141,7 @@ label start:
 
     stop music
 
-    jump day5
+    jump day1
 
 label ending:
 
