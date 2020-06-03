@@ -4,11 +4,11 @@ label day2:
 
     play music morning fadein 1.0
 
-    $ day += 1
+    $ day = 2
 
     show screen Day with Dissolve(2)
-    pause(3)
-    hide screen Day with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
 
     "The warm sunlight greeted me for the new day."
 

@@ -3,12 +3,12 @@ label day3:
     
     play music "audio/day3 music/morning.wav" fadein 1
 
-    $ day += 1
+    $ day = 3
 
     show screen Day with Dissolve(2)
-    pause(3)
-    hide screen Day with Dissolve(2)
-    
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
+
     "{i}This will be the third day since I've been in Alice's house. And something is definitely wrong with this place, there was no way I could deny that.{/i}"
     
     "{i}I had heard of magic before, but this...this was something on an entirely new level.{/i}"
@@ -454,7 +454,7 @@ label d3_wonderland:
         "{i}What a tough day.{/i}"
 
         stop music fadeout 3
-        show black with Dissolve(3)
+        show black with Dissolve(2)
         pause(3)
         
         jump day4 
