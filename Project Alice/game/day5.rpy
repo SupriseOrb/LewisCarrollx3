@@ -1,5 +1,4 @@
 label day5:
-    default ending_points = 0
 
     scene bg whitley_bedroom
     with fade
@@ -159,6 +158,11 @@ label day5:
         default visit_house = False
         default visit_cat = False
         default wolf_side_won = False
+        default x_val = 0
+        default y_val = 0
+        default x_path_val = 0
+        default y_path_val = 0
+        default path_dist_val = 0
 
         if tag_choice:
             a happy "\"So, do you want to be the wolf or the rabbit?\""
@@ -247,13 +251,22 @@ label game_instructions:
     play music "audio/BGM/Chasing_BGM.wav" fadein 1.0
     "As the rabbit, your goal is to run away from the wolf. As the wolf your goal is to catch the rabbit before you turn full wolf."
     "Choose paths to achieve your goal. As the wolf, you have 10 turns before you turn full wolf. So as the rabbit hop away for as long as you can and you just might survive."
-    #implement a smell feature
-
+    "Option: (Wolf Only) Enable Smell Feature. Use each round to determine how far away Alice is."
+    
     default turns_left = 10
     default path_open = False
+    default smell_enabled = False
+    
+    menu:
+        "Enable":
+            jump enable_smell
+         "Keep Disabled":
+            jump game_start
 
+label enable_smell:
+    $ smell_enabled = True
     jump game_start
-
+    
 label game_start:
     if is_rabbit:
         "You have 1 turn before the wolf comes chasing you, better go fast."
@@ -264,6 +277,28 @@ label game_start:
 
     if is_rabbit:
         $ rand_path = 8
+    else:
+        if rand_path == 1:
+            $ x_path_val = 0
+            $ y_path_val = 2
+        if rand_path == 2:
+            $ x_path_val = 1
+            $ y_path_val = 2
+        if rand_path == 3:
+            $ x_path_val = 2
+            $ y_path_val = 2
+        if rand_path == 4:
+            $ x_path_val = 2
+            $ y_path_val = 3
+        if rand_path == 5:
+            $ x_path_val = 1
+            $ y_path_val = 3
+        if rand_path == 6:
+            $ x_path_val = 1
+            $ y_path_val = 4
+        if rand_path == 7:
+            $ x_path_val = 0
+            $ y_path_val = 3
 
     "Choose your path."
 
@@ -274,6 +309,19 @@ label game_start:
             jump path
         "Creek":
             jump creek
+
+label path_dist:
+    $ path_dist_val = 0
+    if x_path_val > x_val:
+        $ path_dist_val += (x_path_val - x_val)
+    else:
+        $ path_dist_val += (x_val - x_path_val)
+    if y_path_val > y_val:
+        $ path_dist_val += (y_path_val - y_val)
+    else:
+        $ path_dist_val += (y_val - y_path_val)
+    "Alice is [path_dist_val] minutes away."
+    return
 
 
 
@@ -294,6 +342,13 @@ label woods:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 0
+        menu:
+            "Track scent":
+                call path_dist
 
     if path_open:
         "Path is [rand_path]"
@@ -322,6 +377,13 @@ label woods1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+        
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 1
+        menu:
+            "Track scent":
+                call path_dist
 
     if is_rabbit:
         "Turns left: [turns_left] \nAt this point, I was surrounded by trees. I could still make out a small path to my left, but I could also see a clearing coming up on my right. Choose:"
@@ -362,6 +424,13 @@ label woods2:
 
     if rand_path == 1:
         jump wolf_tag_ending
+        
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 2
+        menu:
+            "Track scent":
+                call path_dist
 
     if is_rabbit:
         "Turns left: [turns_left] \nThe woods seemed like they might end soon, but they continued on. I saw a clearing on my right, but something told me not to go there. I could still make out a small path to my left, but barely. Choose:"
@@ -403,6 +472,13 @@ label woods3:
 
     if rand_path == 7:
         jump wolf_tag_ending
+        
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 3
+        menu:
+            "Track scent":
+                call path_dist
     "Turns left: [turns_left] \nI reached the end of the woods where I noticed a warning sign posted above the path foward. The path to my left was out of sight, but a nearby sign suggested its presence. Choose:"
 
     menu:
@@ -425,6 +501,13 @@ label path:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 0
+        menu:
+            "Track scent":
+                call path_dist
 
     "Turns left: [turns_left] \nI walked onto a forest path. There was an area of thicker woods on my right, and a creek on my left. Choose:"
 
@@ -453,6 +536,13 @@ label path1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 1
+        menu:
+            "Track scent":
+                call path_dist
 
     "Turns left: [turns_left] \nI went down the path and was met by a crossroads. A path to a creek was on my left, and an area lined with trees to the right. Choose:"
 
@@ -484,6 +574,14 @@ label path2:
 
     if rand_path == 2:
         jump wolf_tag_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 2
+        menu:
+            "Track scent":
+                call path_dist
+                
     "Turns left: [turns_left] \nI was halfway down the path when I was met with another divide. I saw what seemed to be a house not too far to the left, and another covered path that led into the woods. Choose:"
 
     menu:
@@ -514,6 +612,14 @@ label path3:
 
     if rand_path == 5:
         jump wolf_tag_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 3
+        menu:
+            "Track scent":
+                call path_dist
+                
     "Turns left: [turns_left] \nI was almost at the end of the path. I saw a river to my left, but the area was covered in mist. Yet again, there was a path to the woods. Choose:"
 
     menu:
@@ -546,6 +652,14 @@ label path4:
 
     if rand_path == 6:
         jump wolf_tag_ending
+        
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 4
+        menu:
+            "Track scent":
+                call path_dist
+                
     "Turns left: [turns_left] \nI was almost to the end of the path when something didn't feel right. Choose:"
 
     menu:
@@ -570,6 +684,13 @@ label creek:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 0
+        menu:
+            "Track scent":
+                call path_dist
 
     "Turns left: [turns_left] \nI walked into a creek and noticed there was an open path on my right. Choose:"
 
@@ -598,6 +719,13 @@ label creek1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+        
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 1
+        menu:
+            "Track scent":
+                call path_dist
 
     "Turns left: [turns_left] \nI continued further into the creek and saw a house coming up. There was an open path on your right, but it was harder to make out. I also saw a river coming up on my left. Choose:"
 
@@ -630,6 +758,13 @@ label house:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 2
+        menu:
+            "Track scent":
+                call path_dist
 
     if visit_house:
         menu:
@@ -676,6 +811,9 @@ label river:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+        
+    if is_rabbit == False and smell_enabled == True:
+        "Can't find scent."
 
     "Turns left: [turns_left] \nThe current looked weak. However, something prevented me from turning around."
     menu:
@@ -702,6 +840,14 @@ label river2:
 
     if rand_path == 4:
         jump wolf_tag_ending
+    
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 3
+        menu:
+            "Track scent":
+                call path_dist
+        
 
     "Turns left: [turns_left] \nI arrived at the end of the river. I saw a path on my left and a trail leading back to a house. Choose:"
     menu:
@@ -783,7 +929,7 @@ label wolf_ending:
 
 label wolf_tag_ending:
     stop music fadeout 2
-    $ ending_points += 1
+    $ heart += 1
     show bunny_depressed at imgcenter
     with Dissolve(1)
     "I spotted a small white rabbit. Alice! I sprinted forward and grabbed it in my mouth."
