@@ -13,6 +13,20 @@ define c = Character("Cheshire Cat", color="#C2BC1E", image="cat",window_left_pa
 
 # The game starts here.
 
+# Day reminder
+screen Day:
+
+    frame at alpha_dissolve:
+
+        xmaximum 600
+        ymaximum 600
+        xalign 0.5
+        yalign 0.5
+        background "transparent"
+        text "{size=+200}{font=fonts/Fairy Tales.ttf}Day [day]{/font}{/size}"
+
+default day = 1
+
 # Alice's Heart
 default heart = 0
 
@@ -43,6 +57,7 @@ image side alice happy strange= Image(im.FactorScale("/alice/alice_happy_strange
 image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed.png",0.8,0.8))
 image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed_openeyes.png",0.8,0.8))
 image side alice asleep = Image(im.FactorScale("/alice/alice_asleep.png",0.8,0.8))
+image side alice asleep openmouth = Image(im.FactorScale("/alice/alice_asleep_openmouth.png",0.8,0.8))
 image side alice confused = Image(im.FactorScale("/alice/alice_confused.png",0.8,0.8))
 image side alice sad = Image(im.FactorScale("/alice/alice_sad.png",0.8,0.8))
 image side alice awkward = Image(im.FactorScale("/alice/alice_awkward.png",0.8,0.8))
@@ -78,10 +93,12 @@ image side cat openmouth = Image(im.FactorScale("/cat/cat_openmouth.png",0.8,0.8
 
 # BGM definition
 
-$ renpy.music.set_volume(2, delay=0, channel='music')
+$ renpy.music.set_volume(1, delay=0, channel='music')
+$ renpy.music.set_volume(0.1, 0, delay=0, channel='sound_little')
 
 # bg definitions
 image black = "#000"
+image red = "#ff0000"
 
 init python:
 
@@ -141,7 +158,7 @@ label start:
 
     stop music
 
-    jump day1
+    jump day2
 
 label ending:
 

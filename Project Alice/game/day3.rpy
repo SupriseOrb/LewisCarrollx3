@@ -1,7 +1,14 @@
 label day3:
-    scene bg whitley_bedroom
 
-    play music "audio/day3 music/morning.wav" fadeout 1
+    scene bg whitley_bedroom with Dissolve(2)
+
+    play music "audio/day3 music/morning.wav" fadein 1
+
+    $ day = 3
+
+    show screen Day with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
 
     "This is the third day since I've came to Alice's house."
 
@@ -33,10 +40,17 @@ label day3:
 
     play sound "audio/soundeffects/Alice_scream.wav"
     stop music
+
     "Alice?!"
+
+    play sound "/audio/soundeffects/whitley_run.wav" fadein 1
     "Quickly recovering from the initial shock, I swiftly grabbed a coat and ran up to the second floor, to Alice's room."
 
-    scene bg alice_bedroom
+    stop sound fadeout 1.5
+    play sound "/audio/soundeffects/open_bedroom_door.wav" fadein 1
+    show black with Dissolve(1)
+    scene bg alice_bedroom with Dissolve(1)
+    hide black with Dissolve(1)
     "There stood Alice looking wildly around the room in a state of panic."
     w "\"Alice! What happened? Are you hurt?\""
     a sad "\"Mr. Rabbit is gone, and I can't find him!\""
@@ -44,6 +58,7 @@ label day3:
     a annoyed "\"No, you don't understand, and you never will. Mr. Rabbit is the last gift that my parents gave me. You don't know how important he is!\""
     "She was absolutely hysterical and hyperventilating."
     "I approached her slowly, arms lowered in front of me."
+
     w "\"Okay, okay, calm down. It's going to be fine, everything will be alright.\""
     a sad "\"What if he's lost! Or-or hurt!\""
     w "\"Shh, shh... crying won't help with anything.\""
@@ -64,17 +79,30 @@ label day3:
     a sorrow "\"But I want to have breakfast with my Mr. Rabbit.\""
     "She had calmed down a bit, but there was still the threat of tears in her eyes."
     w "\"Maybe Mr. Rabbit is waiting for you in the dining room. Why don't you get ready, and we'll take a look.\""
+
     "Alice reluctantly took my suggestion and dragged her feet to the bathroom."
     "While she washed her face and brushed her teeth, I searched Alice's room until..."
-    "I found Mr. Rabbit! He was stuffed inside a rare, huge tea pot in Alice's toy set. I carefully took him out then put the fluffy toy on a chair in the dining room."
 
-    scene bg dining room
-    with Dissolve(.5)
+    transform imgcenter:
+        xalign 0.5 yalign 0.5
+    show bunny at imgcenter
+    with Dissolve(0.5)
+
+    "I found Mr. Rabbit! He was stuffed inside a rare, huge tea pot in Alice's toy set. I carefully took him out then put the fluffy toy on a chair in the dining room."
+    hide bunny with Dissolve(0.5)
+
+    show black with Dissolve(1)
+    scene bg dining_room with Dissolve(1)
+    hide black with Dissolve(1)
 
     "As I placed the last dish on the table, Alice walked in."
     "Her smile once she spotted her bunny was absolutely priceless."
     a happy "\"Oh, you were right! Mr. Rabbit is waiting for me! Good morning, Mr.Rabbit!"
+
+    play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 1.0
     "She ran to Mr. Rabbit and scooped him up into her arms."
+    stop sound fadeout 1.0
+
     w "\"Actually, I found him in a huge tea pot in your room. Maybe he wants to have a cup of tea!\""
     a happy strange "You're right! Maybe Mr. Rabbit wants to have a cup of tea."
     "Alice repeated my words in a weird tone, accompanied by an unsettling, wide smile."
@@ -88,18 +116,23 @@ label day3:
             jump d3_choice1_B
 
 label d3_choice1_B:
-    scene bg dining room
     a confused "\"Why can't you play with with me? I never have a chance to go outside and have a tea party. Don't you like the sunshine?\""
     "I just couldn't refuse Alice's request."
     w "\"Fine, let's go outside.\""
     a happy "\"Yay! I'll bring out my tea set!\""
+    play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 1.0
+    pause(1.5)
+    stop sound fadeout 2.0
+    pause(2.0)
 
 label d3_choice1_A:
-    scene bg day3_tea party
-    with Dissolve(.5)
-    play music "audio/day3 music/tea party.wav" fadeout 1
+    show black with Dissolve(1)
+    scene bg day3_tea party with Dissolve(1)
+    hide black with Dissolve(1)
+    play music "audio/day3 music/tea party.wav" fadein 1
     "Alice took out her vessels of beautifully decorated tea set pieces adorned with a pattern of flowers and rabbits."
     "As she set the table, she described our roles in the game."
+
     a normal "\"I'm your godmother, Countess Le Cœur! We have been invited to a royal tea party to meet the queen. But our mission is to assassinate the queen to save your parents!"
     a happy strange "\"But remember, we're hiding our real selves! So you have to behave gracefully and normally.\""
     "I couldn't help but chuckle at that. With my undercover experience, I should hope I know how to play a role."
@@ -217,8 +250,12 @@ label d3_not_kill:
 label d3_lunch:
     stop music fadeout 1
     play music "audio/day3 music/lunch.wav" fadeout 1
-    scene bg kitchen
+
+    show black with Dissolve(1)
+    scene bg kitchen with Dissolve(1)
+    hide black with Dissolve(1)
     "I made lunch for Alice. After eating the lunch, Alice wanted to have a break. Before she walked back to her room, though, she had something to tell me."
+
     if Alice_affinity < 10 and beatqueen == False:
         $heart -= 5
         a annoyed "\"Today was the worst tea party ever in my life. I didn't have any fun at all so I don't have anymore to say to you, indeed!\""
@@ -242,11 +279,18 @@ label d3_lunch:
         "A. Have a break in the attic":
             jump d3_attic
         "B. Search the study room in the house":
+            play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+            pause(1.0)
             jump d3_study_room
         "C. Check on Alice":
             jump d3_check_alice_1
+
 label d3_attic:
-    scene bg whitley_bedroom
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+    show black with Dissolve(1)
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+    scene bg whitley_bedroom with Dissolve(1)
+    hide black with Dissolve(1)
     $time -= 1
     "I climbed up to the attic. It was cozy and looked like a comfortable spot to take a short rest."
     "The mansion was grand, but sometimes the sheer openness of its rooms almost felt exposing. I felt a little safer in here."
@@ -255,31 +299,56 @@ label d3_attic:
     "Where should I start?"
     menu:
         "A. Search the study room in the house":
+            play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+            pause(1.5)
+            play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+            pause(1.0)
             jump d3_study_room
         "B. Check on Alice":
             jump d3_check_alice_2
 
 label d3_check_alice_2:
-    scene bg alice_bedroom
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+    show black with Dissolve(1)
     $time -= 1
+<<<<<<< HEAD
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+    scene bg alice_bedroom with Dissolve(1)
+    hide black with Dissolve(1)
     "I gently pushed on Alice's door and slowly opened it, peeking inside to see if she was up."
     a confused "\"Whiteley? Is that you?\""
     "I threw one hand over my mouth and held my breath."
     "Alice groaned then rolled over and continued sleeping."
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
     "I gingerly closed the door, and rushed off to the study room."
+    play sound "audio/soundeffects/whitley_run.wav" fadein 1.0
     "Alice might wake up in a few minutes, but I still have time to find something for today."
     jump d3_study_room
+
 label d3_check_alice_1:
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+    show black with Dissolve(1)
     $time -= 1
+<<<<<<< HEAD
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+    scene bg alice_bedroom with Dissolve(1)
+    hide black with Dissolve(1)
     "I gently pushed on Alice's door and slowly opened it, peeking inside to see if she was up."
     "It looked like Alice was already asleep. I think I still have some time to search for clues in the study room."
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+
 
 label d3_study_room:
-    scene bg library
-    with Dissolve(0.5)
+    stop sound fadeout 1.0
+    show black with Dissolve(1)
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+    play music "audio/BGM/Library.wav" fadein 5.0
+    scene bg library with Dissolve(1)
+    hide black with Dissolve(1)
     "I don't know what I was expecting entering the study room, but as soon as I opened its doors, I was in absolute awe."
     "The study room was like a private museum, where you could experience different cultures and histories, know the warm stories in a small family, and learn all kinds of knowledge in different fields."
     "I didn't know where to start, but, strangely, several books stacked on a nearby table caught my eye."
+
 label d3_library_choice:
     menu:
         "A. Alice's Adventure in Wonderland":
@@ -290,10 +359,12 @@ label d3_library_choice:
             jump d3_prince
         "D. Alice's diary":
             jump d3_diary
+
 label d3_wonderland:
     $watchbook = True
-    show hollow book
+    show hollow book at truecenter with Dissolve(1)
     "I opened the book but surprisingly, the pages inside the book were hollow! A small box sat inside the square hole. There was an alpabetical lock on the box."
+
     python:
         name = renpy.input("It asks \"what is my favorite tea?\"(ALL UPPERCASELETTER)")
         name.upper()
@@ -304,15 +375,19 @@ label d3_wonderland:
             name = renpy.input("It asks \"what is my favorite tea?\"(ALL UPPERCASELETTER)")
             name.upper()
 
+    play sound "audio/soundeffects/unlock.wav"
     "The box unlocked!"
-    hide hollow book
+    hide hollow book at truecenter with Dissolve(1)
+    play sound "audio/soundeffects/page_turn.wav"
     "After opening the box, I found several pictures of various desserts. I picked up a note that read, \"My mother always baked desserts for me. I really miss the taste.\""
-    show lychee:
+
+    show lychee with Dissolve(1):
         xalign 0.5
         yalign 0.5
 
     "On the back of the picture of Lychee rose raspberry tart, I found there were words written by Alice's parents."
-    hide lychee
+    hide lychee with Dissolve(1)
+
     define nvlp = Character("Alice's parents", kind = nvl)
     nvl show dissolve
     nvlp "Dear Alice,"
@@ -329,7 +404,10 @@ label d3_wonderland:
     jump d3_end
 
     label d3_diary:
+
+    play sound "audio/soundeffects/page_turn.wav"
     "I picked up the journal with Alice's name embellished across the top. I flipped to a random page and started skimming."
+
     $watchdiary = True
     define nvld = Character("Alice", kind = nvl)
     nvl show dissolve
@@ -349,6 +427,7 @@ label d3_wonderland:
     jump d3_end
 
     label d3_war:
+    play sound "audio/soundeffects/page_turn.wav"
     define nvlwar = Character("Introduction",kind = nvl)
     nvl show
     nvlwar "War and Peace broadly focuses on Napoleon's invasion of Russia in 1812 and follows three of the most well-known characters in literature: Pierre Bezukhov, the illegitimate son of a count who is"
@@ -361,6 +440,7 @@ label d3_wonderland:
     jump d3_library_choice
 
     label d3_prince:
+    play sound "audio/soundeffects/page_turn.wav"
     define nvlprince = Character("Introduction",kind = nvl)
     nvl show
     nvlprince "The Little Prince, French Le Petit Prince, fable and modern classic by French aviator and writer Antoine de Saint-Exupéry that was published with his own illustrations in French as Le Petit Prince in 1943."
@@ -371,21 +451,36 @@ label d3_wonderland:
     jump d3_library_choice
 
     label d3_end:
-        scene bg living room
-        with Dissolve(0.5)
+        stop music fadeout 2.0
+        play sound "audio/soundeffects/open_bedroom_door.wav"
+        show black with Dissolve(1)
+        pause(0.5)
+        play sound "audio/soundeffects/chain_lock.wav"
+        pause(1.0)
+        play sound "audio/soundeffects/whitley_run.wav"
+        scene bg living room with Dissolve(1)
+        hide black with Dissolve(1)
         "As I scoured the books, I heard Alice's voice. I hurriedly put everything back in place and locked the door behind me."
+        stop sound fadeout 1.0
         "I glanced down at my pocket watch. It was already 5pm!"
         "Alice's singsongy voice chimed through the hallways."
         a "\"Whitley~ Whitley~ Where are you? I can't find you.\""
+
         w "\"I'm here, honey. On the first floor.\""
         "She appeared in the hall's entrance, hands on her hips."
         a awkward "\"Where have you been?\""
         w "\"I...I just came back. I went outside for a bit.\""
         a normal "\"Oh, really? Fine. I'm hungry now. Can you make dinner for me?\""
 
-        scene black
+        show black with Dissolve(1)
+        scene bg dining_room with Dissolve(1)
+        hide black with Dissolve(1)
         "After dinner, Alice retreated up to the second floor as usual. As I watched her go, I couldn't help but think of what I found in the study room."
         "I wanted to say something to her, but the way she used magic made her dangerous."
         "She's keeping her emotions bottled up. I wonder if I'll ever be able to get through to her."
+
+        stop music fadeout 3
+        show black with Dissolve(2)
+        pause(3)
 
         jump day4

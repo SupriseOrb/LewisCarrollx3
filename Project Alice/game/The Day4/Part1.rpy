@@ -1,8 +1,14 @@
 label day4:
+    scene black
     scene playerroom noon
     with fade
+    with Dissolve(2)
 
-    with dissolve
+    $ day = 4
+
+    show screen Day with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
 
     "The next day, I was in the playroom. Alice had instructed me to wait here for her. She seemed off today. Even more off than usual."
     "..."
