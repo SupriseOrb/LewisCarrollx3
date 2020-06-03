@@ -12,7 +12,7 @@ label day2:
 
     "The warm sunlight greeted me for the new day."
 
-    "\"Urghh...\""
+    w "\"Urghh\""
 
     "A soft groan escaped my lips. I wasn't expecting to be so tired, but I guess that game of magical Jacks was both mentally and physically draining."
 
@@ -50,7 +50,7 @@ label day2:
 
     a normal "\"Here we go!\""
 
-    "On the ground right outside the backyard doors lay a bucket full of white chalk. A very sizeable bucket, enough to last a lifetime."
+    "On the ground right outside the backyard doors lay a bucket full of white chalk. A very sizeable bucket, I may add. There was enough chalk to draw lines on a new road."
 
     "Fittingly, there was a large area of concrete in the backyard."
 
@@ -58,7 +58,7 @@ label day2:
 
     "Alice heaved the bucket, which was half her size, towards the center of the concrete."
 
-    a happy "\"Are you ready to play? We're going to have loooooots of fun today too!\""
+    a happy "\"Are you ready to play? We are going to have loooooots of fun today too!\""
 
 menu:
 
@@ -117,6 +117,8 @@ label day2c1a2:
 
     stop music fadeout 3
 
+    #(Transition to dream world)
+
     show black with Dissolve(1)
 
     a happy "\"We're here!\""
@@ -139,7 +141,7 @@ label day2c1a2:
 
     "She looked straight through my eyes. I chuckled."
 
-    w "\"Mhmm. I'm ready.\""
+    w "\"You've asked me this before. I'm ready.\""
 
     play sound "audio/soundeffects/walk_concrete.wav" fadein 1.0
 
@@ -169,7 +171,7 @@ label day2c1a2:
 
     "She looked at me expectantly."
 
-    "I don't think this is actually how they play this in France."
+    "I don't think this is actually how they did it in France."
 
 menu:
 
@@ -283,7 +285,7 @@ label day2jump2:
 
     play sound "audio/soundeffects/body_fall.wav"
 
-    "{i}Thud!{/i}"
+    "*Thud!*"
 
     "I'm once again hanging on for dear life."
 
@@ -389,7 +391,7 @@ label day2jump4:
     pause(2)
 
     hide black
-
+    
     play sound "audio/soundeffects/body_fall.wav"
 
     scene bg floating_squares at center, Shake(None, 1.0, dist=20)
@@ -431,6 +433,8 @@ label day2jump4:
 
     w "\"I'm sure a friend like him would keep some nice company.\""
 
+    "Alice smiled."
+
     a smile "\"He sure does! Here, do you want to hold him?\""
 
     w "\"I would love to.\""
@@ -454,11 +458,11 @@ label day2jump4:
 
     hide bunny with Dissolve(0.5)
 
-    "\"{i}How Charming.{/i}\""
+    qb "\"{i}How Charming.{/i}\""
 
     w "\"Huh? Who said that?\""
 
-    "\"{i}You Don't Belong Here.{/i}\""
+    qb "\"{i}You Don't Belong Here.{/i}\""
 
     show red at glimmer_grew(0, 0.3)
 
@@ -508,7 +512,7 @@ label day2stand:
 
     "Her innocent pout screwed into a dark glare."
 
-    a smile "\"You're no fun.\""
+    a smile "\"You're no fun. This game is over.\""
 
     scene bg floating_squares at center, Shake(None, 100, dist=20)
 

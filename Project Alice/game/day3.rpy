@@ -311,7 +311,7 @@ label d3_check_alice_2:
     play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
     show black with Dissolve(1)
     $time -= 1
-<<<<<<< HEAD
+##<<<<<<< HEAD
     play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
     scene bg alice_bedroom with Dissolve(1)
     hide black with Dissolve(1)
@@ -329,7 +329,7 @@ label d3_check_alice_1:
     play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
     show black with Dissolve(1)
     $time -= 1
-<<<<<<< HEAD
+##<<<<<<< HEAD
     play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
     scene bg alice_bedroom with Dissolve(1)
     hide black with Dissolve(1)

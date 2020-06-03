@@ -1,8 +1,11 @@
 label Part2Start:
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
     "When I opened the door and took my first step outside it, to my horror, my feet didn't find ground!"
     "I tried to regain my balance, but quickly found myself reeling back and falling into an abyss."
     with vpunch
+    play sound "audio/soundeffects/body_fall.wav"
     scene black
+    stop music
     w "\"Ugh... Where am I?\""
     w "\"Why is it so dark?\""
     "Suddenly my eyes caught a girl in the darkness, squatting right in front of me. But she was focused on something else..."
@@ -20,6 +23,7 @@ label Part2Start:
 
     w "\"Luke? The boy Alice mentioned before?\""
     w "\"So this girl.....\""
+    play music "audio/BGM/Sad_Piano.mp3" fadein 1.0
     "I looked at the girl hiding in the closet." 
     w "\"Alice?\""
     "I tried to get a closer look, but this closet was pitch black."
@@ -49,11 +53,17 @@ label Part2Start:
 
     call TheChoiceInPart2(2)
 
-    with vpunch
+    stop music
+
     scene playerroom night
     with fade
+    with vpunch
+    play sound "audio/soundeffects/body_fall.wav"
+
+
     "I looked up to see Alice standing in front of me. It was nighttime already? When did it get so late?"
     a smile "\"...I guess you already saw the part of the story that's next, hm Ms. Whitley?\""
+    play music "audio/BGM/Scary_BGM.wav" fadein 1.0
     call TheChoiceInPart2(3)
 
     a happy strange "\"Luke was tricking me. The whole time. I thought he was my only real friend, but this whole time..."
@@ -74,8 +84,12 @@ label Part2Start:
     a happy strange "\"Sillies. They got kicked out that night.\""
     call TheChoiceInPart2(5)
 
-    a smile "\"Anyway, let's get dinner started!\""
-    a normal "\"There are some things in the basement we need first, though.\""
+    stop music fadeout 2
+    a happy closeopen "\"Anyway, let's get dinner started!\""
+
+    $ renpy.music.set_volume(0.6, delay=0, channel='music')
+    play music "audio/BGM/Game_music.mp3" fadein 1
+    a smile "\"There are some things in the basement we need first, though.\""
     call setTheIngre
     a sad closeeyes "\"But there are some critters down there, like mice.\""
     a normal "\"I hope it's okay that I stay up here and you go get those things for me! Oh and you could do some cleaning while you're at it!\""

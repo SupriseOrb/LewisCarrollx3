@@ -5,6 +5,7 @@ define w = Character("Whitley", color="#2399A8")
 define a = Character("Alice", color="#C25926", image="alice",window_left_padding=150)
 define r = Character("Mr. Rabbit",color="#32A85D", image="bunny",window_left_padding=150)
 define q = Character("???",color="#C2A60A")
+define qb = Character("???",color="#32A85D")
 define l = Character("Luke",color="#90A81A")
 define b = Character("Boy",color="#3B3E6B")
 define c = Character("Cheshire Cat", color="#C2BC1E", image="cat",window_left_padding=150)
@@ -26,6 +27,18 @@ screen Day:
         text "{size=+200}{font=fonts/Fairy Tales.ttf}Day [day]{/font}{/size}"
 
 default day = 1
+
+# Ending title
+screen Ending(title):
+
+    frame at alpha_dissolve:
+
+        xmaximum 1200
+        ymaximum 800
+        xalign 0.5
+        yalign 0.5
+        background "transparent"
+        text "[title]"
 
 # Alice's Heart
 default heart = 0
@@ -55,7 +68,7 @@ image side alice normal = Image(im.FactorScale("/alice/alice_happy_closemouth.pn
 image side alice happy = Image(im.FactorScale("/alice/alice_happy_openmouth.png",0.8,0.8))
 image side alice happy strange= Image(im.FactorScale("/alice/alice_happy_strange.png",0.8,0.8))
 image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed.png",0.8,0.8))
-image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed_openeyes.png",0.8,0.8))
+image side alice annoyed openeyes = Image(im.FactorScale("/alice/alice_annoyed_openeyes.png",0.8,0.8))
 image side alice asleep = Image(im.FactorScale("/alice/alice_asleep.png",0.8,0.8))
 image side alice asleep openmouth = Image(im.FactorScale("/alice/alice_asleep_openmouth.png",0.8,0.8))
 image side alice confused = Image(im.FactorScale("/alice/alice_confused.png",0.8,0.8))
@@ -158,7 +171,7 @@ label start:
 
     stop music
 
-    jump day2
+    jump day4
 
 label ending:
 

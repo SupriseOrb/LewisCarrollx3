@@ -9,19 +9,34 @@ label ToTheDay5:
         a smile "\"Good night Ms. Whitley, sweet dreams.\""
         "Alice finished with a smile, then she left the dining table and went upstairs."
         "..."
-        scene playerroom night
+        play sound "audio/soundeffects/whitley_walk.wav" fadein 1
+        show black with Dissolve(1)
+        scene playerroom night with Dissolve(1)
+        hide black with Dissolve(1)
+        stop sound fadeout 2
         "I returned to my room and instantly fell asleep."
         "...zzz"
-        scene black
+
+        stop music fadeout(3)
+        show black with Dissolve(3)
+        pause(3)
+        $ renpy.music.set_volume(1, delay=0, channel='music')
         jump day5
 
     if FinishThisBoringDay:
         "I quickly finished dinner and returned to my room, without so much as glancing back at Alice. I really needed a break."
-        scene playerroom night
-        with fade
+        play sound "audio/soundeffects/whitley_walk.wav" fadein 1
+        show black with Dissolve(1)
+        scene playerroom night with Dissolve(1)
+        hide black with Dissolve(1)
+        stop sound fadeout 2
         w "\"What a day.\""
         "As soon as my head hit the pillow, I fell asleep."
-        scene black
+
+        stop music fadeout(3)
+        show black with Dissolve(3)
+        pause(3)
+        $ renpy.music.set_volume(1, delay=0, channel='music')
         jump day5
 
         ###for the test
