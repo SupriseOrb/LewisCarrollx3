@@ -79,6 +79,7 @@ image side cat openmouth = Image(im.FactorScale("/cat/cat_openmouth.png",0.8,0.8
 # BGM definition
 
 $ renpy.music.set_volume(2, delay=0, channel='music')
+$ renpy.music.set_volume(0.1, 0, delay=0, channel='sound_little')
 
 # bg definitions
 image black = "#000"
