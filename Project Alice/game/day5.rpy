@@ -260,7 +260,7 @@ label game_instructions:
     menu:
         "Enable":
             jump enable_smell
-         "Keep Disabled":
+        "Keep Disabled":
             jump game_start
 
 label enable_smell:
