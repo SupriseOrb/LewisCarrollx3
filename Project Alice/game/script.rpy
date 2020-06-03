@@ -65,6 +65,7 @@ default FinishThisBoringDay = False # for the ending
 # image definition
 image side alice = Image(im.FactorScale("/alice/alice_happy_closemouth.png",0.8,0.8))
 image side alice normal = Image(im.FactorScale("/alice/alice_happy_closemouth.png",0.8,0.8))
+image side alice crazy = Image(im.FactorScale("/alice/alice_crazy.png",0.8,0.8))
 image side alice happy = Image(im.FactorScale("/alice/alice_happy_openmouth.png",0.8,0.8))
 image side alice happy strange= Image(im.FactorScale("/alice/alice_happy_strange.png",0.8,0.8))
 image side alice annoyed = Image(im.FactorScale("/alice/alice_annoyed.png",0.8,0.8))
@@ -171,7 +172,7 @@ label start:
 
     stop music
 
-    jump day4
+    jump day5
 
 label ending:
 

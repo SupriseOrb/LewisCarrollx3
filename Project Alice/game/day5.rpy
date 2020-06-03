@@ -22,8 +22,15 @@ label day5:
     "I know there's more to this case than magic." 
     "Maybe today I can learn more about her. That rabbit of hers certainly seems special to her. Maybe there's something there?"
     "I'd better get ready then."
-
-    scene bg dining room
+    
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+    show black with Dissolve(1)
+    pause(1)
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+    pause(1)
+    scene bg dining_room with Dissolve(1)
+    stop sound fadeout 1.0
+    hide black with Dissolve(1)
 
     ##show alice_happy_closemouth
 
@@ -58,8 +65,7 @@ label day5:
 
         a happy "\"I'm so happy you think so. Let's go now, I can't wait! It's been so long since I've had a good game of tag.\""
 
-        scene black
-        with Dissolve(.5)
+        show black with Dissolve(1.5)
 
         jump done_tag_intro
 
@@ -79,14 +85,9 @@ label day5:
 
         w "\"It's ok, I'm not going anywhere. Let's play your game after you finish eating.\""
 
-        hide alice_sad
-        show alice_happy_openmouth
-
         a happy "\"Yayyy! I can't wait.\""
-        hide alice_happy_openmouth
 
-        scene black
-        with Dissolve(.5)
+        show black with Dissolve(1.5)
 
         jump done_tag_intro
 
@@ -102,8 +103,7 @@ label day5:
 
         w "\"Okay...\""
 
-        scene black
-        with Dissolve(.5)
+        show black with Dissolve(1.5)
 
         "I'm sure she doesn't want to talk about the fire. But I would like to know more about her relationship with her parents."
         "They seem like they were all very close, but Alice also mentioned them hiding her away...I wonder if that has anything to do with how she's been acting."
@@ -112,14 +112,19 @@ label day5:
 
     label done_tag_intro:
 
+        stop music fadeout 2
+
         "Well, this should be interesting."
 
         jump wonderland_tag
 
     label wonderland_tag:
 
-        scene wonderland
+        show black with Dissolve(1)
+        scene wonderland with Dissolve(1)
+        hide black with Dissolve(1)
         ##show  alice_happy_closemouth
+        play music "audio/BGM/Daily_BGM.wav" fadein 1.0
 
         "Again, we were in Wonderland. This time we weren't playing a crazy game of hopscotch, but I couldn't imagine the level of crazy would be any different."
         w "\"This place amazes me everytime.\""
@@ -196,14 +201,16 @@ label day5:
         jump rabbit
 
 label wolf:
-    scene black
+    show black with Dissolve(2)
+    stop music fadeout 2
+
     "Alice tagged me and I felt my body start to shift, bones breaking, morphing. The pain was excruciating, the worst I've felt in my life!"
     "I went to scream, but my voice was muffled. I tried again, and this time, I heard a loud growl. I looked around and everything seemed taller than it was."
     "I tried to find Alice, but I turned to see only the trail of a rabbit hopping away."
     "The game has started."
 
-    scene wonderland
-    with Dissolve(.5)
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
 
     w "\"Alice?\""
     a happy closeopen "\"Catch me if you can!\""
@@ -211,16 +218,18 @@ label wolf:
     jump game_instructions
 
 label rabbit:
-    scene black
+    show black with Dissolve(2)
+    stop music fadeout 2
+
     "Alice tagged me and I felt my body start to shift, bones breaking, morphing. The pain was excruciating, the worst I've felt in my life!"
     "I felt myself getting smaller, shrinking. I felt a strong urge to hop around and eat carrots. The urge grew stronger the smaller I got."
     "Finally, the pain eased and I looked up to see a ferocious wolf staring back at me. My instincts told me to run."
 
-    scene wonderland
-    with Dissolve(.5)
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
 
-    show wolf
-    a happy "\"Well, Ms. Whitley, how was that?\""
+    ##show wolf
+    a smile "\"Well, Ms. Whitley, how was that?\""
 
     "I was in a daze."
 
@@ -228,13 +237,14 @@ label rabbit:
 
     a happy strange "\"The game's started, silly! You better start hopping away now, little rabbit.\""
 
-    a happy "\"The big bad wolf is on the prowl!\""
+    a crazy "\"The big bad wolf is on the prowl!\""
 
-    hide wolf
+    ##hide wolf
 
     jump game_instructions
 
 label game_instructions:
+    play music "audio/BGM/Chasing_BGM.wav" fadein 1.0
     "As the rabbit, your goal is to run away from the wolf. As the wolf your goal is to catch the rabbit before you turn full wolf."
     "Choose paths to achieve your goal. As the wolf, you have 10 turns before you turn full wolf. So as the rabbit hop away for as long as you can and you just might survive."
     #implement a smell feature
@@ -268,8 +278,11 @@ label game_start:
 
 
 label woods:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -293,8 +306,11 @@ label woods:
             jump path
 
 label woods1:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -327,8 +343,11 @@ label woods1:
             jump cat
 
 label woods2:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -365,8 +384,11 @@ label woods2:
 
 
 label woods3:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -390,8 +412,11 @@ label woods3:
             jump path2
 
 label path:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -412,8 +437,11 @@ label path:
             jump creek
 
 label path1:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -437,8 +465,11 @@ label path1:
             jump woods1
 
 label path2:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -464,8 +495,11 @@ label path2:
             jump woods2
 
 label path3:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -493,8 +527,11 @@ label path3:
             jump river2
 
 label path4:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -520,8 +557,11 @@ label path4:
             jump path3
 
 label creek:
-    scene creek
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene creek with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -542,8 +582,11 @@ label creek:
 
 
 label creek1:
-    scene creek
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene creek with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -568,8 +611,11 @@ label creek1:
 
 
 label house:
-    scene house
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene house with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -602,9 +648,10 @@ label house:
             jump river
 
 label house2:
-    scene inside house
-    with Dissolve(.5)
-
+    play sound "audio/soundeffects/open_bedroom_door.wav"
+    show black with Dissolve(1)
+    scene house_inner with Dissolve(1)
+    hide black with Dissolve(1)
     "I approached the house. I walked up to the door, but found it was stuck. I noticed an open window nearby and hopped through. Inside, there was a broken table among other debris. Looked like it had been ransacked."
     "In the far corner I saw what looked to be a small piece of paper. I approached it. It had ancient text written all over it. Instantly you felt something come over me."
     "I'm not sure how...but I felt like the ancient text had somehow inscribed itself in my mind."
@@ -613,8 +660,11 @@ label house2:
     jump house
 
 label river:
-    scene river
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene river with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -633,8 +683,11 @@ label river:
             jump river2
 
 label river2:
-    scene river
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene river with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -658,8 +711,11 @@ label river2:
             jump path3
 
 label cat:
-    scene cat
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     if visit_cat:
         menu:
@@ -685,17 +741,21 @@ label cat:
             jump woods3
 
 label cat1:
-    scene cat
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
+
     $ visit_cat = True
 
     c "\"Hello there, wolf.\""
     w "\"Did you see a bunny run by here?\""
-    c "\"Hmm, perhaps. You should find Alice, and you better find her quick. Don't want to end up stuck here. We are all mad here.\""
+    c openmouth "\"Hmm, perhaps. You should find Alice, and you better find her quick. Don't want to end up stuck here. We are all mad here.\""
     w "\"Mad?\""
     c "\"Alice is especially mad, all the time she's spent her. Well, with what happened to her parents, who wouldn't be?\""
     w "\"What do you know about that?\""
-    c "\"Oh, no one knows the WHOLE truth except that it was horrible. No one except Alice and that rabbit of hers. That dreaded rabbit should've stayed in his home.\""
+    c normal "\"Oh, no one knows the WHOLE truth except that it was horrible. No one except Alice and that rabbit of hers. That dreaded rabbit should've stayed in his home.\""
     w "\"What are talking about, what do you mean?\""
     c "\"Time's running out you know. Go find Alice and maybe her little friend Mr. Rabbit will lead you to the answers you are searching for.\""
 
@@ -703,36 +763,39 @@ label cat1:
 
 
 label wolf_ending:
+    stop music fadeout 2
     "Time is up."
     "Alice popped up in front of me."
-    show bunny_satisfied
+    transform imgcenter:
+        xalign 0.5 yalign 0.5
     a annoyed openeyes "\"Wow, you aren't very good at this, are you? You do realize the point is to tag me, silly! Well luckily, Mr. Rabbit can stop the curse."
     w "\"Curse?! Tht was real?\""
     a happy closeopen "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
+    show bunny_satisfied at imgcenter
+    with Dissolve(1)
     "Alice grabbed Mr. Rabbit and touched the both of us."
-    hide bunny_satisfied
+    hide bunny_satisfied with Dissolve(1)
     "Poof!"
     "We both returned to our human states."
-    show alice_happy_openmouth
-    a "\"What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time.\""
-    hide alice_happy_openmouth
+    a happy strange "\"What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time.\""
 
     jump tag_end
 
 label wolf_tag_ending:
+    stop music fadeout 2
     $ ending_points += 1
-    show bunny
+    show bunny_depressed at imgcenter
+    with Dissolve(1)
     "I spotted a small white rabbit. Alice! I sprinted forward and grabbed it in my mouth."
-    scene black
-    hide bunny
+    show black with Dissolve(2)
+    hide bunny_depressed
     "Poof!"
-    scene wonderland
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
     "I felt my body return to normal, much less painful this time."
     "I saw Alice standing in front of me."
 
-    show alice_happy_openmouth
-
-    a "\"Shoot! Now I'm it. You ready?\""
+    a happy "\"Shoot! Now I'm it. You ready?\""
 
     ##show alice_happy_closemouth
 
@@ -742,9 +805,10 @@ label wolf_tag_ending:
 
     a smile "\"Well, now you're a rabbit!\""
     "Alice grabbed Mr. rabbit and touched me."
-    scene black
+    scene black with Dissolve(2)
     "Can I please get a break..."
-    scene wonderland
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
 
     $ wolf_side_won = True
 
@@ -761,11 +825,12 @@ label wolf_dist:
     return
 
 label rabbit_ending:
+    stop music fadeout 2
     "I felt fear creep over my shoulder. I hopped to the side slightly to spot the drool of a ferocious wolf pooling up beside me. Then I felt a drop plop on my head."
-    scene black
-    with Dissolve(.3)
+    show black with Dissolve(1)
     "I felt my body begin morphing back to normal, my limbs growing, stretching out."
-    scene wonderland
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
     a happy closeopen "\"Yay! I caught ya!\""
 
     if rabbit_first:
@@ -803,38 +868,50 @@ label rabbit_ending:
     jump tag_end
 
 label write_texts:
+    play sound "audio/soundeffects/write.wav"
     "I wrote down the texts. The symbols were foreign to me, but something about it felt...dark. Very dark. Suddenly, the words began to shift on the paper."
+    stop sound fadeout 1
     "I watched in amazement and dread. Something bad is happening."
     "I jumped up to run and grab a lighter. I ignited the paper and tossed it away."
     "The way those words warped and the meaning behind them felt so demonic. Why was something so evil in Wonderland?"
     return
 
 label tag_end:
+    stop music fadeout 2
+    play music lunch fadein 1
     w "\"Well, that was something wasn't it.\""
     a happy closeopen "\"Yup! I'm tired.\""
     w "\"Then let's head back. How about I make you dinner?\""
     a smile "\"Okay! I've got a strange craving for meat, probably just a side effect of the game.\""
     w "\"Don't tell me there are side effects?!\""
     a happy closeopen "\"Home we go!\""
-    scene black
-    with Dissolve(.5)
-
-    scene bg dinning room
+    show black with Dissolve(1)
+    scene bg dining_room with Dissolve(1)
+    hide black with Dissolve(1)
     a happy "\"Wow, thanks so much for dinner. That steak was yummy.\""
     w "\"Well I'm glad you liked it. It's been a long day, we should get some rest.\""
 
-    if visit house:
+    if visit_house:
         menu:
             "Write down texts.":
                 call write_texts
 
-    scene bg whitley_bedroom
-    with Dissolve(.5)
+    show black with Dissolve(1)
+    play sound "audio/soundeffects/whitley_walk.wav"
+    pause(1)
+    play sound "audio/soundeffects/open_bedroom_door.wav"
+    scene bg whitley_bedroom with Dissolve(1)
+    hide black with Dissolve(1)
 
     if wolf_side_won:
         "\"Well, today was certainly interesting. All this magic and chaos is taking it's toll, but after succeeding in a wolf's body...I think I can manage.\""
     else:
         "\"Oh god, Alice is really scaring me. I need to find a way... out? But I can't leave her all alone. Right?\""
+
+
+    stop music fadeout 3.0
+    show black with Dissolve(2)
+    pause(3)
 
     jump day6
 
@@ -844,4 +921,4 @@ label tag_end:
 
     # This ends the game.
 
-    return
+    ##return
