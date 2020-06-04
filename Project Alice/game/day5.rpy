@@ -18,10 +18,10 @@ label day5:
     "And aside from that...how am I going to leave this mansion? I think I understand why that last nanny left. I'm surprised she didn't leave sooner."
     "Even though I know the truth now...I don't think this is the end of the matter."
     "Alice is certainly acting strange, she's obviously dangerous but...there's a different storm inside her."
-    "I know there's more to this case than magic." 
+    "I know there's more to this case than magic."
     "Maybe today I can learn more about her. That rabbit of hers certainly seems special to her. Maybe there's something there?"
     "I'd better get ready then."
-    
+
     play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
     show black with Dissolve(1)
     pause(1)
@@ -252,11 +252,11 @@ label game_instructions:
     "As the rabbit, your goal is to run away from the wolf. As the wolf your goal is to catch the rabbit before you turn full wolf."
     "Choose paths to achieve your goal. As the wolf, you have 10 turns before you turn full wolf. So as the rabbit hop away for as long as you can and you just might survive."
     "Option: (Wolf Only) Enable Smell Feature. Use each round to determine how far away Alice is."
-    
+
     default turns_left = 10
     default path_open = False
     default smell_enabled = False
-    
+
     if is_rabbit == False:
         menu:
             "Enable":
@@ -267,12 +267,13 @@ label game_instructions:
 label enable_smell:
     $ smell_enabled = True
     jump game_start
-    
+
 label game_start:
     if is_rabbit:
         "You have 1 turn before the wolf comes chasing you, better go fast."
-        $ turns_left = 10
         $ turn_find = renpy.random.randint(4,7)
+
+    $ turns_left = 10
 
     $ rand_path = renpy.random.randint(1,7)
 
@@ -343,7 +344,7 @@ label woods:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 0
         $ y_val = 0
@@ -378,7 +379,7 @@ label woods1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-        
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 0
         $ y_val = 1
@@ -425,7 +426,7 @@ label woods2:
 
     if rand_path == 1:
         jump wolf_tag_ending
-        
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 0
         $ y_val = 2
@@ -473,7 +474,7 @@ label woods3:
 
     if rand_path == 7:
         jump wolf_tag_ending
-        
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 0
         $ y_val = 3
@@ -502,7 +503,7 @@ label path:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 1
         $ y_val = 0
@@ -537,7 +538,7 @@ label path1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 1
         $ y_val = 1
@@ -575,14 +576,14 @@ label path2:
 
     if rand_path == 2:
         jump wolf_tag_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 1
         $ y_val = 2
         menu:
             "Track scent":
                 call path_dist
-                
+
     "Turns left: [turns_left] \nI was halfway down the path when I was met with another divide. I saw what seemed to be a house not too far to the left, and another covered path that led into the woods. Choose:"
 
     menu:
@@ -613,14 +614,14 @@ label path3:
 
     if rand_path == 5:
         jump wolf_tag_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 1
         $ y_val = 3
         menu:
             "Track scent":
                 call path_dist
-                
+
     "Turns left: [turns_left] \nI was almost at the end of the path. I saw a river to my left, but the area was covered in mist. Yet again, there was a path to the woods. Choose:"
 
     menu:
@@ -653,14 +654,14 @@ label path4:
 
     if rand_path == 6:
         jump wolf_tag_ending
-        
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 1
         $ y_val = 4
         menu:
             "Track scent":
                 call path_dist
-                
+
     "Turns left: [turns_left] \nI was almost to the end of the path when something didn't feel right. Choose:"
 
     menu:
@@ -685,7 +686,7 @@ label creek:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 2
         $ y_val = 0
@@ -720,7 +721,7 @@ label creek1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-        
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 2
         $ y_val = 1
@@ -759,7 +760,7 @@ label house:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 2
         $ y_val = 2
@@ -812,7 +813,7 @@ label river:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
-        
+
     if is_rabbit == False and smell_enabled == True:
         "Can't find scent."
 
@@ -841,14 +842,14 @@ label river2:
 
     if rand_path == 4:
         jump wolf_tag_ending
-    
+
     if is_rabbit == False and smell_enabled == True:
         $ x_val = 2
         $ y_val = 3
         menu:
             "Track scent":
                 call path_dist
-        
+
 
     "Turns left: [turns_left] \nI arrived at the end of the river. I saw a path on my left and a trail leading back to a house. Choose:"
     menu:
@@ -916,7 +917,7 @@ label wolf_ending:
     transform imgcenter:
         xalign 0.5 yalign 0.5
     a annoyed openeyes "\"Wow, you aren't very good at this, are you? You do realize the point is to tag me, silly! Well luckily, Mr. Rabbit can stop the curse."
-    w "\"Curse?! That was real?\""
+    w "\"Curse?! Tht was real?\""
     a happy closeopen "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
     show bunny_satisfied at imgcenter
     with Dissolve(1)
@@ -941,6 +942,9 @@ label wolf_tag_ending:
     hide black with Dissolve(2)
     "I felt my body return to normal, much less painful this time."
     "I saw Alice standing in front of me."
+
+    if rabbit_first:
+        jump wolf_wins
 
     a happy "\"Shoot! Now I'm it. You ready?\""
 
@@ -983,22 +987,10 @@ label rabbit_ending:
     if rabbit_first:
         a happy "\"That was fun. I do like being the wolf, but now you get to be it!\""
         $ is_rabbit = False
-        $ rabbit_first = False
         jump wolf
 
     if wolf_side_won:
-        a normal "\"That was fun. Looks like we both won as the wolf. It's a lot more fun being the ferocious predator right?\""
-        ##show alice_happy_closemouth
-        w "\"Uh yeah sure. But I don't think I liked those deep cravings I felt. I might be a vegaterian now, to be honest.\""
-        ##hide alice_happy_closemouth
-        a happy closeeyes "\"Wolves are so cute, though. They just have to eat, that's all! I do love how big and strong I feel as a wolf.\""
-        a happy "\"Mr. Rabbit makes me strong too, don't you?\""
-        "She snuggled her plush happily. Something tells me there's more to Mr. Rabbit than meets the eyes..."
-        a normal "\"Well? What did you think of the game?\""
-        ##show alice_happy_closemouth
-        w "\"Uh...it was fun? Exciting to say the least.\""
-        ##hide alice_happy_closemouth
-        jump tag_end
+        jump wolf_wins
 
     ##show alice_happy_closemouth
 
@@ -1012,7 +1004,21 @@ label rabbit_ending:
     w "\"Yeah, next time.\""
 
     "I did not care for the prospect of that."
-    
+
+    jump tag_end
+
+label wolf_wins:
+    a normal "\"That was fun. Looks like we both won as the wolf. It's a lot more fun being the ferocious predator right?\""
+    ##show alice_happy_closemouth
+    w "\"Uh yeah sure. But I don't think I liked those deep cravings I felt. I might be a vegaterian now, to be honest.\""
+    ##hide alice_happy_closemouth
+    a happy closeeyes "\"Wolves are so cute, though. They just have to eat, that's all! I do love how big and strong I feel as a wolf.\""
+    a happy "\"Mr. Rabbit makes me strong too, don't you?\""
+    "She snuggled her plush happily. Something tells me there's more to Mr. Rabbit than meets the eyes..."
+    a normal "\"Well? What did you think of the game?\""
+    ##show alice_happy_closemouth
+    w "\"Uh...it was fun? Exciting to say the least.\""
+    ##hide alice_happy_closemouth
     jump tag_end
 
 label write_texts:
