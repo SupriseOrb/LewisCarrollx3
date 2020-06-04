@@ -66,7 +66,9 @@ menu:
         jump day2play
 
     "Don't play with Alice":
-        jump exploring
+        a happy "\"That's too bad! You're going to play with me anyways!\""
+
+        "I guess I'm going to play with her regardless of choice."
 
 
 label day2play:
@@ -391,7 +393,7 @@ label day2jump4:
     pause(2)
 
     hide black
-    
+
     play sound "audio/soundeffects/body_fall.wav"
 
     scene bg floating_squares at center, Shake(None, 1.0, dist=20)
