@@ -423,7 +423,7 @@ label day2jump4:
 
     "But when I blinked, the gray concrete and black sky had changed."
 
-    "Replacing it was a clear summer sky and a flowing grass field. Towers upon towers of books lay upon this field, many clearly read through and torn apart, but many more unscathed and unopened."
+    "Replacing it was a clear sunny sky and a flowing grass field. Towers upon towers of books lay upon this field, many clearly read through and torn apart, but many more unscathed and unopened."
 
     "Curiously, one of the books was one I recognized in the mansion's library."
 
