@@ -16,10 +16,20 @@ label TheChoiceInPart2(numberp2):
     if numberp2==2:
         menu:
             "Rush out":
+                stop music
                 "I couldn't take it anymore. I slammed open the wardrobe."
+                play sound "audio/soundeffects/kick_wardrobe.wav"
                 w "\"Now that's enough, you two!\""
                 "Upon opening the wardrobe door, an intense light from outside came in."
+                image meteor = im.Alpha("white.png",1)
+
+                transform glimmer_grew(start, end):
+                    alpha start
+                    linear 1.0 alpha end
+
+                show meteor at glimmer_grew(0, 0.4)
                 "At that moment, I saw Alice with tears in her eyes, curled up in the closet, and the surprised faces of the two boys outside."
+                show meteor at glimmer_grew(0.4, 1)
                 "But in the next second, everything went white."
                 $ HelpAlice = True
                 return
@@ -68,9 +78,11 @@ label TheChoiceInPart2(numberp2):
                     "I waited for an answer, but she said nothing, only stared. She looked like she was calculating something."
                     "Then, she just raised her head slowly and let out a deep sigh."
                     "Finally, her gaze returned to you, and she matter-of-factly said-"
+                    play sound_little "audio/soundeffects/fire_burning.wav" fadein 1.0
                     a happy strange "\"I burned it.\""
                     "Alice looked back out at the ruin of the charred house."
                     a unhappy "\"I cursed Luke with the magic I have. The magic Mom and Dad had too.\""
+                    stop sound_little fadeout 3.0
                     a "\"And their house burned that night in accident.\""
                     w "\"Did...they...?\""
                     "She shrugged her shoulders."
@@ -79,7 +91,7 @@ label TheChoiceInPart2(numberp2):
                     "Alice suddenly smiled at me."
                     a happy strange "\"They're out of my life for good!\""
                     "She cocked her head and looked me up and down with that eerie smile."
-                    a "\"Are you starting to regret coming here?\""
+                    a normal "\"Are you starting to regret coming here?\""
                     "I just stared back at her. Here was this sweet, innocent-looking child. And I was absolutely terrified."
                     "She brushed off my lack of response."
                     return

@@ -1,20 +1,29 @@
 label Part3Start:
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1
     scene basement night
     with fade
+    with Dissolve(2)
+    stop sound fadeout 2
     "I went down to the basement, still trying to parse through that crazy dream Alice put me through."
+    play sound "audio/soundeffects/rat_squeak.wav" fadein 2
     "I heard a loud squeak and abruptly realized that she was right. There were some critters down here!"
     "But they weren't cute little mice, they were rats. And they were rats everywhere"
+    stop sound fadeout 2
     call TheChoiceInPart3(1)
 
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1
     "I walked over to a pile of ingredients, but upon closer inspection, it looked like most of them were rotten."
+    stop sound fadeout 2
     w "\"Let me see what I can find over here...\""
     w "\"Wait, what was it Alice wanted me to bring her again?\""
     call SelectVeg
 
     w "\"Okay, everything looks like it's here. Time to go back and give it to Alice.\""
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1
     "I went back upstairs with the ingredients to find Alice."
+    stop sound fadeout 2
 
-    scene diningroom night
+    scene diningroom night with Dissolve(2)
 
     a normal "\"Hey, welcome back, Ms. Whitley!\""
     w "\"I found the stuff you asked me to find.\""
@@ -34,15 +43,24 @@ label Part3Start:
         "In just a second, a smile was back on Alice's face."
 
     "Alice turned and left with the ingredients."
+    play sound "audio/soundeffects/sit_soft.wav"
     "I wearily sat down on the sofa."
+    play sound "audio/soundeffects/cooking.wav" fadein 3
     "With the sound of cooking, I gradually fell asleep."
 
-    scene black
-    with dissolve
+    show black with Dissolve(1)
+
+    hide black with Dissolve(0.8)
+
+    show black with Dissolve(2)
 
     "..."
 
-    scene table night
+    stop sound fadeout 1
+
+    scene table night with Dissolve(3)
+
+    hide black with Dissolve(3)
 
     "When I woke up, Alice had already finished preparing dinner."
     "The sumptuousness of dinner exceeded my original imagination."
@@ -78,6 +96,7 @@ label Part3Start:
 
     "The atmosphere became cold again."
     if AliceFeltPain:
+
         jump ToTheDay5
 
     call TheChoiceInPart3(5)

@@ -1,5 +1,7 @@
 label day7:
 
+    play music "audio/bgm/Daily_BGM.wav" fadein 1.0
+
     scene bg whitley_bedroom
 
     "The next morning, I was awakened by Alice pouncing on top of me."
@@ -7,7 +9,7 @@ label day7:
     a happy "\"Whitley, wake up, wake up!!!\""
     
     "I was still trying to see through stars, but it was clear she was excited about something."
-    
+
     "I sat up and yawned."
     
     w "\"I'm up, I'm up!\""
@@ -64,10 +66,16 @@ label day7:
 
     "I finally started to get up while Alice skipped away, back into the main hall."
 
+    show black with Dissolve(1)
+    
+    play sound "audio/soundeffects/whitley_walk.wav"
+
     "Once I'd gotten dressed, I left my room and found her downstairs, sitting at the kitchen table."
 
-    scene bg kitchen
+    stop sound fadeout 1.0
     
+    scene bg kitchen
+
     "Alice's Mr. Rabbit was seated with her as usual, but another object accompanied her as well."
 
     "A leather bag, placed primly at her side." 
@@ -131,6 +139,8 @@ menu:
 
 label day7lunch:
 
+    stop music fadeout 1.0
+
     a happy "\"Oooo, that smells sooo good! I can't wait for lunch!\""
 
     "As I packed the stew into her thermis, I noticed my hands quivering against the cold metal."
@@ -166,6 +176,8 @@ label day7leaveAttempt:
 
     a confused "\"Mama? What are you doing?\""
 
+    play music "audio/bgm/Scary_BGM.wav" fadein 1.0
+
     "I froze, nails barely brushing the door frame."
 
     w "\"I thought I'd take a look outside.\""
@@ -197,7 +209,11 @@ label day7leaveAttempt:
 
 label day7stay:
 
+    $ heart += 1
+
     "No, I set a goal this morning."
+
+    play music "audio/bgm/Sad_Dark.mp3" fadein 1.0
 
     "I'm not leaving without knowing what I can. I can find a way out after I deal with Alice."
 
@@ -239,6 +255,8 @@ label day7stay:
 
 label day7scavengerStart:
 
+    stop music fadeout 1.0
+
     "Alice let out an abrupt gasp!"
 
     "She fished through her pockets, but whatever she was looking for was nowhere to be found."
@@ -268,6 +286,8 @@ label day7scavengerStart:
     "Just as she requested, I went to the foyer. Where this all began. Part of me wished I had never set my dumb, unsuspecting foot in this place."
 
     "But the part of me that made me become a detective still hungered for answers. Let's see what this spell is all about."
+
+    play music "audio/bgm/Scary_BGM.wav" fadein 1.0
 
     menu:
         "Check bottom of staircase":
@@ -310,9 +330,7 @@ label day7scavengerStart:
     "Looks like there's only one other place to check..."
 
     label foundPiece:
-    # Because of the violent protests going on at the time, no one would've batted an eye at the house fire
-    # Whitley putting everything together
-
+    
     "I climbed the stairs to the balcony overlooking the immaculate foyer of the Hearts' mansion."
 
     "I searched for the spell, flipping up the blood-red carpets that lined the reflective tile and checking between ornate railings and window frames."
@@ -331,13 +349,17 @@ label day7scavengerStart:
 
     "Could it be the spell?"
 
+    stop music fadeout 1.0
+
     "I wasted no time in finding out. Hastily, I worked the gears by the window to pull the chandelier towards me, along a pulley system fixed to the high ceiling."
 
     "As soon as it was within arm's reach, I snatched the envelope from its extravagant roost."
 
     "On the front of the envelope was Alice's name, written out in a handwriting I'd seen before."
 
-    "I opened the letter and pulled out what I was hoping for. The torn piece of paper."
+    play sound "audio/soundeffects/page_turn.wav"
+    
+    "I opened the envelope and pulled out what I was hoping for. The torn piece of paper."
 
     "But suddenly, I felt a coldness squeeze my heart in place. The words on the page were just that, words, but they oozed a darkness I couldn't comprehend."
 
@@ -349,19 +371,23 @@ label day7scavengerStart:
 
     "It was a letter to Alice...from Aiden."
 
+    play music "audio/bgm/Sad_Piano.mp3" fadein 1.0
+    
     "It was short, but reassuring. I had never met the man, but the words spoke succinctly enough for me to understand why Alice was so attached to him."
 
     "It read: \"My little Alice - \nI know events have been troubling recently. But know that despite whatever happens,\nWe Love You.\""
 
     "No tricks. No riddles. No games. Just...\"We Love You.\""
 
-    "Just reading those words gave me the courage to hold the paper firm and ward off it's evil energies."
+    "Just reading those words gave me the courage to hold the paper firm and ward off its evil energies."
 
     "I took a closer look at the black lettering."
 
     "It wasn't an incantation, it looked more like a recipe?"
 
     "A recipe that makes...."
+
+    stop music fadeout 1.0
 
     "The courage Aiden's old words gave to me was swept away in an instant. For in my hands, I held-"
 
@@ -381,9 +407,13 @@ label day7scavengerStart:
 
     "Perforce, I sprinted to the staircase opposite her, maybe I could escape through-"
 
-    "Suddenly, a step on the stairs fell away, and I was falling."
+    "Suddenly, a step on the stairs fell away, and I was falling!"
+
+    play sound "audio/soundeffects/body_fall.wav"
 
     "With no time to break my fall, My back slammed against the merciless stone stairs, knocking the wind right out of me."
+
+    play sound "audio/soundeffects/page_turn.wav"
 
     "Alice skipped up to me and happily plucked the torn sheet from my fingers."
 
@@ -395,6 +425,8 @@ label day7scavengerStart:
     
     "She gave me a huge grin."
 
+    play music "audio/bgm/Scary_BGM2.wav" fadein 1.0
+
     a smile "\"Now we can have some real playtime!\""
 
     w "\"Alice, wait!\""
@@ -405,7 +437,7 @@ label day7scavengerStart:
 
     w "\"They're impossible without a....!\""
 
-    "A realization hammered my heart down to my stomach. I felt the hairs on the back of my neck spring up as I looked at my now free hands."
+    "A realization hammered my heart down to my stomach. I felt the hairs on the back of my neck spring up as I slowly looked down at myself."
 
     w "\"...without a sacrifice.\""
 
@@ -417,7 +449,7 @@ label day7scavengerStart:
 
     a happy "\"Look, Mama! Mr. Rabbit's got all the ingredients!\""
 
-    "She held out her stuffed toy, and there in her Mr. Rabbit's plush arms, she had placed her \"schoolbag\". Filled to the brim with every ingredient needed for the spell."
+    "She held out her stuffed toy, and there in Mr. Rabbit's plush arms, she had placed her \"schoolbag\". Filled to the brim with every ingredient needed for the spell."
 
     a smile "\"Bunnies are quick quick quick~!\""
 
@@ -455,9 +487,10 @@ label day7scavengerStart:
 
     a sorrow closeeyes "\"THEY hurt ME!\""
     
-    "A spark of ethereal lights flickered at her fight, growing sharper with every second."
+    "A spark of ethereal lights flickered at her feet, growing sharper with every second."
 
-    label day7BadEnd:
+    if heart < 5:
+        jump day7BadEnd 
 
     label day7GoodEnd:
     
@@ -494,10 +527,14 @@ label day7scavengerStart:
     w "\"It's okay, Alice. It's normal. I know it's hard to think about, but something in you keeps asking.\""
 
     w "\"But you never get a response. Not even Mr. Rabbit can answer your questions.\""
+
+    stop music fadeout 1.0
     
     "Tears crept into her eyes and she sniffed and rubbed her nose."
 
     "Then she turned to me with clenched fists and a set jaw." 
+
+    play music "audio/BGM/Sad_Dark.mp3"
     
     a sad "\"Why?\""
 
@@ -510,7 +547,7 @@ label day7scavengerStart:
     a sorrow openmouth "\"I just want them to tell me WHY!?\""
 
     w "\"Alice, I'm sorry, I don't have the answers you're looking for.\"" 
-    
+
     "Alice spun away from me, weeping into her hands. Her magic started building around her again, a vortex that fed off her immense pain." 
     
     "I tried to thwart it, calling out to her."
@@ -532,6 +569,10 @@ label day7scavengerStart:
     a sorrow closeeyes "\"He LEFT ME! He was only friends with me because of his-his stupid FAMILY!\""
 
     w "\"-because of his PARENTS.\""
+
+    #stop music
+
+    #play music "audio/BGM/Sad_Music_Box.mp3"
     
     w "\"Alice, sometimes parents...don't really know what's best. Sometimes they're bad, and they hurt their family.\"" 
     
@@ -561,13 +602,17 @@ label day7scavengerStart:
 
     "That set her off. Blue sparks exploded around her body and she shattered the tiled floor with a deafening stomp!"
 
+    #stop music
+
+    #play music "audio/BGM/Sad_Piano.mp3"
+
     a sad "\"DON'T SAY HIS NAME!\""
     
     "Still, I carried on."
 
     w "\"He loved you, Alice.\""
 
-    w "\"He loved you. He played with you, He would tell you the most brilliant stories, and he took care of you. And when the time came, he protected you.\""
+    w "\"He loved you. He played with you, he would tell you the most brilliant stories, and he took care of you. And when the time came, he protected you.\""
 
     w "\"You know what this spell is, you know what it does. And you don't want to hurt him.\""
     
@@ -579,15 +624,17 @@ label day7scavengerStart:
 
     "The spell was nearing completion. I started to feel its power begin to enervate me. But I needed to say more."
 
-    w "\"Alice, Aiden wanted you to be better than your parents. AIDEN wanted you to be better than them!\""
+    w "\"Alice, your parents wanted you to be better than them. AIDEN wanted you to be better than them!\""
     
     w "\"I'm sorry they don't get to come back. I'm sorry they don't get to change.\""
     
-    w "\" But even if they aren't here. Even if they won't get to watch you, they still love you so much.\""
+    w "\"But even if they aren't here. Even if they won't get to watch you, they still love you so much.\""
     
     w "\"And I know it's scary, but they wanted you to have this choice! To make the decision...to be - better.\""
 
-    "Alice's gaze was now locked on my, but my sight was wavering. The magic thread that bound me loosened just enough for me to drop to my knees."
+    stop music fadeout 1.0
+    
+    "Alice's gaze was now locked on me, but my sight was wavering. The magic thread that bound me loosened just enough for me to drop to my knees."
     
     "Alice looked at me with the most desperate eyes."
 
@@ -611,29 +658,40 @@ label day7scavengerStart:
     
     "Mr. Rabbit was burning up in her arms. The magical vortex surrounding her and the cauldron was out of control."
     
+    play sound "audio/BGM/2.mp3"
+
     a sad "\"M-Mr. Rabbit?\""
     
     "He gave her no answer while his right ear continued to scorch."
 
     "Alice looked at the spell, sitting flipped over on the plush, with Aiden's words face up."
-
-    "She sucked in a huge shakey breath, squeezed her eyes shut, then let out a long, piercing wail."
+    
+    "She sucked in a huge shaky breath, squeezed her eyes shut, then let out a long, piercing wail."
 
     "The vortex was instantly extinguished and the cauldron vanished in puff of smoke. Then the foyer was silent."
 
-    "I felt my strength start to return. When I finally pushed myself off the floor to stand, I realized Alice was now on the floor."
+    "I felt my strength start to return. When I finally pushed myself up to stand, I realized Alice was now on the floor."
 
+    stop sound
+    
+    play music "audio/BGM/Sad_Music_Box.mp3" fadein 1.0
+    
     "She was sitting down, hugging a singed Mr. Rabbit." 
     
     "I walked over and quietly knelt beside her. She didn't look up from her bunny. Instead she sighed and spoke with a candid rasp."
 
     a awkward "\"You were right. I want to be a good girl, Mom.\""
 
-    "I put my hand on Alice's shoulder and leaned my head against hers. We'll be okay."
+    stop music fadeout 1.0
 
-    #Fade out
+    "I put my hand on Alice's shoulder and leaned my head against hers. We sat together as she quietly wept."
 
-    #(Scene: living room)
+    scene black
+    with Dissolve(.5)
+
+    play music "audio/BGM/Bittersweet_Ending.mp3" fadein 1.0
+
+    scene bg living room
 
     "That afternoon, I had my belongings packed and set by the front door. I was going over my mental checklist when I felt a tiny hand tug on my coat."
     
@@ -665,6 +723,8 @@ label day7scavengerStart:
 
     w "\"It looks like someone wants to see you!\""
     
+    play sound "audio/soundeffects/open_bedroom_door.wav"
+    
     "I pulled open the door to reveal -"
 
     "Luke!"
@@ -685,7 +745,7 @@ label day7scavengerStart:
 
     "The boy paused and threw his gaze downwards, shuffling his feet." 
 
-    "\"...I-I'm sorry. I'm sorry for making fun of you. It was wrong.\""
+    l "\"...I-I'm sorry. I'm sorry for making fun of you. It was wrong.\""
 
     "Alice opened her mouth ever so slightly, then looked up at me. I gave her a reassuring nod."
 
@@ -697,25 +757,31 @@ label day7scavengerStart:
 
     "The boy scratched at his burn mark and bit his lip, but didn't step away."
 
-    "\"Yeah.\""
+    l "\"Yeah.\""
 
     "Alice looked at him with wide eyes."
 
-    "\"But only if you let me talk to you about my rock collection again.\""
+    l "\"But only if you let me talk to you about my rock collection again.\""
 
     "He give her a small, innocent smirk. Alice had the biggest grin on her face."
 
     a happy closeopen "\"Of course!!!\""
 
+    play sound "audio/soundeffects/Fast_Footsteps.wav"
+
     "Together they ran off to the playroom."
+
+    stop sound fadeout 1.0
 
     "At that moment, there was a knock at the door. That must be..."
     
+    play sound "audio/soundeffects/open_bedroom_door.wav"
+
     "I opened the door to greet two older-looking women. These must be Alice's godparents."
 
     "One asked-"
 
-    "\"Are you the nanny?\""
+    "Godparent One" "\"Are you the nanny?\""
 
     w "\"Yes, that's me. I suppose Alice is all yours now?\""
 
@@ -725,23 +791,27 @@ label day7scavengerStart:
 
     "One of the women boisterously laughed."
 
-    "\"Oh shouldn't be too much of a problem. We've got four hands between us!\""
+    "Godparent Two" "\"Oh shouldn't be too much of a problem. We've got four hands between us!\""
 
     "The other woman, who seemed to be the more down-to-earth of the two patted my hand."
 
-    "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled\""
+    "Godparent One" "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled.\""
 
-    "\"THIS one over here wouldn't stop yammering on about all the things she wanted to give her.\""
+    "Godparent One" "\"THIS one over here wouldn't stop yammering on about all the things she wanted to give her.\""
 
     "The other woman grinned and crossed her arms."
 
-    "\"I'd give her the world if I could!\""
+    "Godparent Two" "\"I'd give her the world if I could!\""
 
     "I smiled. Yeah. Alice will be okay."
 
-    "I bid my farewell, gathered my things, and finally stepped foot outside the mansion. The air out here felt unreal."
+    show black with Dissolve(1)
 
-    "I took a deep breath."
+    "I bid my farewell, gathered my things, and finally stepped foot outside the mansion."
+    
+    scene bg front
+
+    "The air out here felt unreal. I took a deep breath."
 
     "Then I turned around to see Alice meeting her new godparents through the window."
 
@@ -752,3 +822,23 @@ label day7scavengerStart:
     "Then, Alice returned to her game with Luke."
 
     "It looks like they had been playing Osellets. Or as I like to call it, Jacks."
+
+    jump day7finaldone
+
+    label day7BadEnd:
+
+    "I tried to tear away from the banister, but Alice's magic was too powerful. Under a loud, sonorous noise, I watched Alice complete spell."
+
+    "Immediately I felt my very lifeforce began to sap towards the cauldron. Alice looked at me with a pitiful smile and glazed eyes."
+
+    a happy strange "\"It's such a shame you won't get to meet them.\""
+
+    label day7finaldone:
+
+    scene black
+
+    stop music
+
+    jump ending
+
+   

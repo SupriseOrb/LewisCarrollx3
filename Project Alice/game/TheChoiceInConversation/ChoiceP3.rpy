@@ -90,8 +90,9 @@ label QuestionForAlice:
             w "\"Can you tell me more about Luke?\""
             "Alice didn't even bother looking up from her food."
             a guilty "\"No thank you, Ms. Whitley. I don't want to talk about that.\""
-            $ AliceFeltPain +=1
+            $ AliceInPain +=1
             "Looks like discussing Luke is a minefield with her."
+
             call checkThePain
             jump AskAliceround2
         "Ask about Miffy":
@@ -112,7 +113,7 @@ label AskAliceround2:
     menu:
         "Ask about the fire":
             w "\"Can you tell me more about the fire?\""
-            $ AliceFeltPain +=1
+            $ AliceInPain +=1
             call checkThePain
             if HelpAlice:
                 a confused "\"...\""
@@ -133,7 +134,7 @@ label AskAliceround2:
                 jump AskAliceround3
         "Ask about Luke's family":
             w "\"Can you tell me more about the Adams family?"
-            $ AliceFeltPain +=1
+            $ AliceInPain +=1
             if ResponceAlice:
                 "Alice slowed down her chewing."
                 "She was thinking about something."
@@ -169,7 +170,7 @@ label AskAliceround3:
         a smile "\"Do you still remember the questions I asked you before?\""
         a normal "\"About the connection between power and hurting people?\""
         "Alice traced her finger on the rim of her glass."
-        a smile "\"My parents got killed.\""
+        a awkward "\"My parents got killed.\""
         w "\"But how? They have the magic power like you did. Couldn't they protect themselves?\""
         a unhappy "\"Not against themselves.\""
         w "\"I don't understand.\""

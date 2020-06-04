@@ -1,8 +1,16 @@
 label day5:
-    default ending_points = 0
 
     scene bg whitley_bedroom
-    with Dissolve(.5)
+    with fade
+    with Dissolve(2)
+
+    play music morning fadein 2.0
+
+    $ day = 5
+
+    show screen Day with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
 
     "After everything that happened yesterday, the truth was undeniable."
     "Magic killed those people that night. And magic killed Alice's parents."
@@ -14,7 +22,14 @@ label day5:
     "I know there's more to this case than magic."
     "Maybe today I can learn more about her. That rabbit of hers certainly seems special to her. Maybe there's something there?"
 
-    scene bg dining room
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
+    show black with Dissolve(1)
+    pause(1)
+    play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
+    pause(1)
+    scene bg dining_room with Dissolve(1)
+    stop sound fadeout 1.0
+    hide black with Dissolve(1)
 
     ##show alice_happy_closemouth
 
@@ -49,8 +64,7 @@ label day5:
 
         a happy "\"I'm so happy you think so. Let's go now, I can't wait! It's been so long since I've had a good game of tag.\""
 
-        scene black
-        with Dissolve(.5)
+        show black with Dissolve(1.5)
 
         jump done_tag_intro
 
@@ -70,14 +84,9 @@ label day5:
 
         w "\"It's okay, I'm not going anywhere. Let's play your game after you finish eating.\""
 
-        hide alice_sad
-        show alice_happy_openmouth
-
         a happy "\"Yay! I can't wait.\""
-        hide alice_happy_openmouth
 
-        scene black
-        with Dissolve(.5)
+        show black with Dissolve(1.5)
 
         jump done_tag_intro
 
@@ -91,8 +100,7 @@ label day5:
 
         a happy "\"So I can't wait to play again.\""
 
-        scene black
-        with Dissolve(.5)
+        show black with Dissolve(1.5)
 
         "I'm sure she didn't want to talk about the fire. But I'd like to know more about her relationship with her parents."
         "They seemed like they were all very close, but Alice also mentioned them hiding her away."
@@ -102,14 +110,19 @@ label day5:
 
     label done_tag_intro:
 
+        stop music fadeout 2
+
         "Well, this should be interesting."
 
         jump wonderland_tag
 
     label wonderland_tag:
 
-        scene wonderland
+        show black with Dissolve(1)
+        scene wonderland with Dissolve(1)
+        hide black with Dissolve(1)
         ##show  alice_happy_closemouth
+        play music "audio/BGM/Daily_BGM.wav" fadein 1.0
 
         "Again, we were in Wonderland. This time we weren't playing a crazy game of hopscotch, but I couldn't imagine the level of crazy being any different."
         w "\"This place amazes me everytime.\""
@@ -144,6 +157,11 @@ label day5:
         default visit_house = False
         default visit_cat = False
         default wolf_side_won = False
+        default x_val = 0
+        default y_val = 0
+        default x_path_val = 0
+        default y_path_val = 0
+        default path_dist_val = 0
 
         if tag_choice:
             a happy "\"So, do you want to be the wolf or the rabbit?\""
@@ -186,14 +204,15 @@ label day5:
         jump rabbit
 
 label wolf:
-    scene black
+    show black with Dissolve(2)
+    stop music fadeout 2
     "Alice touched me and I felt my body start to shift, my bones breaking and morphing. The pain was excruciating, the worst I've felt in my life."
     "I tried to scream, but my voice was muffled. I tried again, and this time, I heard a loud shriek. I looked around and everything seemed taller than it was."
     "I looked for Alice, but I turned to see only the trail of a rabbit."
     "The game had started."
 
-    scene wonderland
-    with Dissolve(.5)
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
 
     w "\"Alice?\""
     a happy closeopen "\"Catch me if you can!\""
@@ -201,16 +220,17 @@ label wolf:
     jump game_instructions
 
 label rabbit:
-    scene black
+    show black with Dissolve(2)
+    stop music fadeout 2
     "Alice touched me and I felt my body start to shift, my bones breaking and morphing. The pain was excruciating."
     "I felt myself getting smaller. I had a strong urge to hop around and run away. The urge grew stronger as I shrunk."
     "Finally, the pain eased and I looked up to see a ferocious wolf staring back at me. My instincts told me to run for my life."
 
-    scene wonderland
-    with Dissolve(.5)
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
 
-    show wolf
-    a happy "\"Well, Ms. Whitley, how was that?\""
+    ##show wolf
+    a smile "\"Well, Ms. Whitley, how was that?\""
 
     "I was in a daze."
 
@@ -218,34 +238,68 @@ label rabbit:
 
     a happy strange "\"The game's started, silly! You better start hopping away now, little rabbit.\""
 
-    a happy "\"The big bad wolf is on the prowl!\""
+    a crazy "\"The big bad wolf is on the prowl!\""
 
-    hide wolf
+    ##hide wolf
 
     jump game_instructions
 
 label game_instructions:
+    play music "audio/BGM/Chasing_BGM.wav" fadein 1.0
     "As the rabbit, your goal is to run away from the wolf. As the wolf your goal is to catch the rabbit before you turn full wolf."
+
     "Choose paths to achieve your goal."
     "As the wolf, you have 10 turns to catch the rabbit before you turn fully into a wolf."
     "As the rabbit, hop away for as long as you can and you just might survive."
-    #implement a smell feature
 
     default turns_left = 10
     default path_open = False
+    default smell_enabled = False
 
+    if is_rabbit == False:
+        menu:
+            "Enable":
+                jump enable_smell
+            "Keep Disabled":
+                jump game_start
+
+label enable_smell:
+    $ smell_enabled = True
     jump game_start
 
 label game_start:
     if is_rabbit:
         "You have 1 turn before the wolf comes chasing you, better go fast."
-        $ turns_left = 10
         $ turn_find = renpy.random.randint(4,7)
+
+    $ turns_left = 10
 
     $ rand_path = renpy.random.randint(1,7)
 
     if is_rabbit:
         $ rand_path = 8
+    else:
+        if rand_path == 1:
+            $ x_path_val = 0
+            $ y_path_val = 2
+        if rand_path == 2:
+            $ x_path_val = 1
+            $ y_path_val = 2
+        if rand_path == 3:
+            $ x_path_val = 2
+            $ y_path_val = 2
+        if rand_path == 4:
+            $ x_path_val = 2
+            $ y_path_val = 3
+        if rand_path == 5:
+            $ x_path_val = 1
+            $ y_path_val = 3
+        if rand_path == 6:
+            $ x_path_val = 1
+            $ y_path_val = 4
+        if rand_path == 7:
+            $ x_path_val = 0
+            $ y_path_val = 3
 
     "Choose your path."
 
@@ -257,11 +311,27 @@ label game_start:
         "Creek":
             jump creek
 
+label path_dist:
+    $ path_dist_val = 0
+    if x_path_val > x_val:
+        $ path_dist_val += (x_path_val - x_val)
+    else:
+        $ path_dist_val += (x_val - x_path_val)
+    if y_path_val > y_val:
+        $ path_dist_val += (y_path_val - y_val)
+    else:
+        $ path_dist_val += (y_val - y_path_val)
+    "Alice is [path_dist_val] minutes away."
+    return
+
 
 
 label woods:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -273,6 +343,13 @@ label woods:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 0
+        menu:
+            "Track scent":
+                call path_dist
 
     if path_open:
         "Path is [rand_path]"
@@ -285,8 +362,11 @@ label woods:
             jump path
 
 label woods1:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -298,6 +378,13 @@ label woods1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 1
+        menu:
+            "Track scent":
+                call path_dist
 
     if is_rabbit:
         "Turns left: [turns_left] \nAt this point, I was surrounded by trees. I could still make out a small path to my left, but I could also see a clearing coming up on my right. Choose:"
@@ -319,8 +406,11 @@ label woods1:
             jump cat
 
 label woods2:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -335,6 +425,13 @@ label woods2:
 
     if rand_path == 1:
         jump wolf_tag_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 2
+        menu:
+            "Track scent":
+                call path_dist
 
     if is_rabbit:
         "Turns left: [turns_left] \nThe woods seemed like they might end soon, but they continued on. I saw a clearing on my right, but something told me not to go there. I could still make out a small path to my left, but barely. Choose:"
@@ -357,8 +454,11 @@ label woods2:
 
 
 label woods3:
-    scene woods
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -373,6 +473,13 @@ label woods3:
 
     if rand_path == 7:
         jump wolf_tag_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 0
+        $ y_val = 3
+        menu:
+            "Track scent":
+                call path_dist
     "Turns left: [turns_left] \nI reached the end of the woods where I noticed a warning sign posted above the path foward. The path to my left was out of sight, but a nearby sign suggested its presence. Choose:"
 
     menu:
@@ -382,8 +489,11 @@ label woods3:
             jump path2
 
 label path:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -392,6 +502,13 @@ label path:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 0
+        menu:
+            "Track scent":
+                call path_dist
 
     "Turns left: [turns_left] \nI walked onto a forest path. There was an area of thicker woods on my right, and a creek on my left. Choose:"
 
@@ -404,8 +521,11 @@ label path:
             jump creek
 
 label path1:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -418,6 +538,13 @@ label path1:
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
 
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 1
+        menu:
+            "Track scent":
+                call path_dist
+
     "Turns left: [turns_left] \nI went down the path and was met by a crossroads. A path to a creek was on my left, and an area lined with trees to the right. Choose:"
 
     menu:
@@ -429,8 +556,11 @@ label path1:
             jump woods1
 
 label path2:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -445,6 +575,14 @@ label path2:
 
     if rand_path == 2:
         jump wolf_tag_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 2
+        menu:
+            "Track scent":
+                call path_dist
+
     "Turns left: [turns_left] \nI was halfway down the path when I was met with another divide. I saw what seemed to be a house not too far to the left, and another covered path that led into the woods. Choose:"
 
     menu:
@@ -456,8 +594,11 @@ label path2:
             jump woods2
 
 label path3:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -472,6 +613,14 @@ label path3:
 
     if rand_path == 5:
         jump wolf_tag_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 3
+        menu:
+            "Track scent":
+                call path_dist
+
     "Turns left: [turns_left] \nI was almost at the end of the path. I saw a river to my left, but the area was covered in mist. Yet again, there was a path to the woods. Choose:"
 
     menu:
@@ -485,8 +634,11 @@ label path3:
             jump river2
 
 label path4:
-    scene path
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene path with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -501,6 +653,14 @@ label path4:
 
     if rand_path == 6:
         jump wolf_tag_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 1
+        $ y_val = 4
+        menu:
+            "Track scent":
+                call path_dist
+
     "Turns left: [turns_left] \nI was almost to the end of the path when something didn't feel right. Choose:"
 
     menu:
@@ -512,8 +672,11 @@ label path4:
             jump path3
 
 label creek:
-    scene creek
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene creek with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -522,6 +685,13 @@ label creek:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 0
+        menu:
+            "Track scent":
+                call path_dist
 
     "Turns left: [turns_left] \nI walked into a creek and noticed there was an open path on my right. Choose:"
 
@@ -534,8 +704,11 @@ label creek:
 
 
 label creek1:
-    scene creek
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene creek with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -547,6 +720,13 @@ label creek1:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 1
+        menu:
+            "Track scent":
+                call path_dist
 
     "Turns left: [turns_left] \nI continued further into the creek and saw a house coming up. There was an open path on your right, but it was harder to make out. I also saw a river coming up on my left. Choose:"
 
@@ -560,8 +740,11 @@ label creek1:
 
 
 label house:
-    scene house
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_path.mp3"
+    show black with Dissolve(1)
+    scene house with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -576,6 +759,13 @@ label house:
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
+
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 2
+        menu:
+            "Track scent":
+                call path_dist
 
     if visit_house:
         menu:
@@ -594,8 +784,10 @@ label house:
             jump river
 
 label house2:
-    scene inside house
-    with Dissolve(.5)
+    play sound "audio/soundeffects/open_bedroom_door.wav"
+    show black with Dissolve(1)
+    scene house_inner with Dissolve(1)
+    hide black with Dissolve(1)
 
     "I approached the house. I walked up to the door and tried to open it, but it was stuck."
     "I noticed an open window nearby and hopped through. Inside, there was a broken table among other debris."
@@ -608,8 +800,11 @@ label house2:
     jump house
 
 label river:
-    scene river
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene river with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -622,14 +817,20 @@ label river:
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
 
+    if is_rabbit == False and smell_enabled == True:
+        "Can't find scent."
+
     "Turns left: [turns_left] \nThe current looked weak. However, something prevented me from turning around."
     menu:
         "Continue foward":
             jump river2
 
 label river2:
-    scene river
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene river with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     $ turns_left -= 1
 
@@ -645,6 +846,14 @@ label river2:
     if rand_path == 4:
         jump wolf_tag_ending
 
+    if is_rabbit == False and smell_enabled == True:
+        $ x_val = 2
+        $ y_val = 3
+        menu:
+            "Track scent":
+                call path_dist
+
+
     "Turns left: [turns_left] \nI arrived at the end of the river. I saw a path on my left and a trail leading back to a house. Choose:"
     menu:
         "Head back towards the house.":
@@ -653,8 +862,11 @@ label river2:
             jump path3
 
 label cat:
-    scene cat
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
 
     if visit_cat:
         menu:
@@ -680,13 +892,17 @@ label cat:
             jump woods3
 
 label cat1:
-    scene cat
-    with Dissolve(.5)
+    play sound "audio/soundeffects/run_forest.wav"
+    show black with Dissolve(1)
+    scene woods with Dissolve(1)
+    hide black with Dissolve(1)
+    stop sound fadeout 2.0
+
     $ visit_cat = True
 
     c "\"Hello there, wolf.\""
     w "\"Did you see a bunny run by here?\""
-    c "\"Hmm, perhaps. You should find Alice, and you better find her quick. Don't want to end up stuck here. We are all mad here.\""
+    c openmouth "\"Hmm, perhaps. You should find Alice, and you better find her quick. Don't want to end up stuck here. We are all mad here.\""
     w "\"Mad?\""
     c "\"Alice is especially mad, with all the time she's spent here. Well, with what happened to her parents, who wouldn't be?\""
     w "\"What do you know about that?\""
@@ -698,36 +914,43 @@ label cat1:
 
 
 label wolf_ending:
+    stop music fadeout 2
     "Time is up."
     "Alice popped up in front of me."
-    show bunny_satisfied
+    transform imgcenter:
+        xalign 0.5 yalign 0.5
     a annoyed openeyes "\"Wow, you aren't very good at this, are you? You do realize the point is to tag me, silly! Well luckily, Mr. Rabbit can stop the curse."
     w "\"Curse?! Tht was real?!\""
     a happy closeopen "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
+    show bunny_satisfied at imgcenter
+    with Dissolve(1)
     "Alice grabbed Mr. Rabbit and touched the both of us."
-    hide bunny_satisfied
+
+    hide bunny_satisfied with Dissolve(1)
     "{i}Poof!{/i}"
     "We both returned to our human states."
-    show alice_happy_openmouth
-    a "\"What a shame. If you had tagged me you could've been the rabbit too! But I guess you'll have to wait until next time.\""
-    hide alice_happy_openmouth
+    a happy strange "\"What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time.\""
 
     jump tag_end
 
 label wolf_tag_ending:
-    $ ending_points += 1
-    show bunny
+    stop music fadeout 2
+    $ heart += 1
+    show bunny_depressed at imgcenter
+    with Dissolve(1)
     "I spotted a small white rabbit. Alice! I sprinted forward and grabbed it in my mouth."
-    scene black
-    hide bunny
+    show black with Dissolve(2)
+    hide bunny_depressed
     "Poof!"
-    scene wonderland
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
     "I felt my body return to normal, much less painful this time."
     "I saw Alice standing in front of me."
 
-    show alice_happy_openmouth
+    if rabbit_first:
+        jump wolf_wins
 
-    a "\"Shoot! Now I'm it. You ready?\""
+    a happy "\"Shoot! Now I'm it. You ready?\""
 
     ##show alice_happy_closemouth
 
@@ -738,14 +961,15 @@ label wolf_tag_ending:
 
     a smile "\"Well, now you're a rabbit!\""
     "Alice grabbed Mr. rabbit and touched me."
-    scene black
+    scene black with Dissolve(2)
     "Can I please get a break..."
-    scene wonderland
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
 
     $ wolf_side_won = True
 
     $ is_rabbit = True
-    jump game_start
+    jump game_instructions
 
 label wolf_dist:
     if (turns_left - turn_find) == 1:
@@ -757,11 +981,12 @@ label wolf_dist:
     return
 
 label rabbit_ending:
+    stop music fadeout 2
     "I felt fear creep over my shoulder. I hopped to the side slightly to spot the drool of a ferocious wolf pooling up beside me. Then I felt a drop plop on my head."
-    scene black
-    with Dissolve(.3)
+    show black with Dissolve(1)
     "I felt my body begin morphing back to normal, my limbs growing, stretching out."
-    scene wonderland
+    scene wonderland with Dissolve(2)
+    hide black with Dissolve(2)
     a happy closeopen "\"Yay! I caught ya!\""
 
     if rabbit_first:
@@ -770,18 +995,7 @@ label rabbit_ending:
         jump wolf
 
     if wolf_side_won:
-        a normal "\"That was fun. Looks like we both won as the wolf. It's a lot more fun being the ferocious predator right?\""
-        ##show alice_happy_closemouth
-        w "\"Uh yeah sure. But I don't think I liked those deep cravings I felt. I might be a vegetarian now, to be honest.\""
-        ##hide alice_happy_closemouth
-        a happy closeeyes "\"Wolves are so cute, though. They just have to eat, that's all! I do love how big and strong I feel as a wolf.\""
-        a happy "\"Mr. Rabbit makes me strong too, don't you?\""
-        "She snuggled her plush happily. Something tells me there's more to Mr. Rabbit than meets the eye..."
-        a normal "\"Well? What did you think of the game?\""
-        ##show alice_happy_closemouth
-        w "\"Uh, it was fun? Exciting to say the least.\""
-        ##hide alice_happy_closemouth
-        jump tag_end
+        jump wolf_wins
 
     ##show alice_happy_closemouth
 
@@ -795,42 +1009,67 @@ label rabbit_ending:
     w "\"Yeah, next time.\""
 
     "I did not care for the prospect of that."
+    jump tag_end
 
+label wolf_wins:
+    a normal "\"That was fun. Looks like we both won as the wolf. It's a lot more fun being the ferocious predator right?\""
+    ##show alice_happy_closemouth
+    w "\"Uh yeah sure. But I don't think I liked those deep cravings I felt. I might be a vegetarian now, to be honest.\""
+    ##hide alice_happy_closemouth
+    a happy closeeyes "\"Wolves are so cute, though. They just have to eat, that's all! I do love how big and strong I feel as a wolf.\""
+    a happy "\"Mr. Rabbit makes me strong too, don't you?\""
+    "She snuggled her plush happily. Something tells me there's more to Mr. Rabbit than meets the eye..."
+    a normal "\"Well? What did you think of the game?\""
+    ##show alice_happy_closemouth
+    w "\"Uh, it was fun? Exciting to say the least.\""
+    ##hide alice_happy_closemouth
     jump tag_end
 
 label write_texts:
+    play sound "audio/soundeffects/write.wav"
     "I wrote down the texts. The symbols were foreign to me, but something about it felt dark. Very dark."
     "Suddenly, the words began to shift on the paper."
+    stop sound fadeout 1
     "I watched in amazement and dread. I could tell something bad was happening."
     "I jumped up to run and grab a lighter. I ignited the paper and tossed it away."
     "The way those words warped and the meaning behind them felt so demonic. Why was something so evil in Wonderland?"
     return
 
 label tag_end:
+    stop music fadeout 2
+    play music lunch fadein 1
     w "\"Well, that was something wasn't it.\""
     a happy closeopen "\"Yup! I'm tired.\""
     w "\"Then let's head back. How about I make you dinner?\""
     a smile "\"Okay! I've got a strange craving for meat, probably just a side effect of the game.\""
     w "\"Don't tell me there are side effects?!\""
     a happy closeopen "\"Home we go!\""
-    scene black
-    with Dissolve(.5)
-
-    scene bg dinning room
+    show black with Dissolve(1)
+    scene bg dining_room with Dissolve(1)
+    hide black with Dissolve(1)
     a happy "\"Wow, thanks so much for dinner. That steak was yummy.\""
     w "\"Well I'm glad you liked it. It's been a long day, we should get some rest.\""
 
-    if visit house:
+    if visit_house:
         menu:
             "Write down texts.":
                 call write_texts
 
-    scene bg whitley_bedroom
-    with Dissolve(.5)
+    show black with Dissolve(1)
+    play sound "audio/soundeffects/whitley_walk.wav"
+    pause(1)
+    play sound "audio/soundeffects/open_bedroom_door.wav"
+    scene bg whitley_bedroom with Dissolve(1)
+    hide black with Dissolve(1)
 
     if wolf_side_won:
         "\"Well, today was certainly interesting. All this magic and chaos is taking its toll, but I think I can manage.\""
     else:
         "\"Oh god, Alice is really scaring me. I need to find a way out. But I can't leave her all alone. Right?\""
+
+
+    stop music fadeout 3.0
+    show black with Dissolve(2)
+    pause(3)
 
     jump day6

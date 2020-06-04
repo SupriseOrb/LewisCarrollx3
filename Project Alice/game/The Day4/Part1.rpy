@@ -1,8 +1,10 @@
 label day4:
     scene black
-    scene playerroom noon
+    scene playerroom morning
     with fade
     with Dissolve(2)
+
+    play music morning fadein 2.0
 
     $ day = 4
 
@@ -11,7 +13,7 @@ label day4:
     hide screen Day with Dissolve(4)
 
     "The next day, I was in the playroom. Alice had instructed me to wait here for her. She seemed off today, even more than usual."
-
+    play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
     "The door to the playroom opened."
 
     a happy "\"Good Morning, Ms. Whitley!\""
@@ -32,11 +34,13 @@ label day4:
     "Maybe her loneliness must be getting to her."
     "I should extract any information I can from Alice while being careful not to make her mad."
 
+    stop music fadeout 3
+
     call TheChoiceInPart1(1)
     if AliceHateU:
         jump End
 
-    with dissolve
+    play music "audio/BGM/Sad_Music_Box.mp3" fadein 3
     a awkward "\"My family used to be the richest in this town. Other families didn't like us much.\""
     a guilty "\"Maybe because my parents didn't really like talking with other people. Why else would they build a house all the way out here?"
     a awkward "\"Because of that...I didn't really make any friends. My parents never allowed me to outside.\""
@@ -46,7 +50,9 @@ label day4:
     a smile "\"And she was my best friend.\""
     "..."
     "Alice seemed caught up in her own world now. I was afraid even the smallest word from me would bring her out of this trance."
+    play sound "audio/soundeffects/sit_soft.wav" fadein 1.0
     "She sat beside me and continued."
+
     a guilty "\"Even so... my life was so boring. It was the same thing everytime! Good things! But...same things...\""
     a "\"I would play with Mr. Rabbit all day, and sometimes Aiden would tell me a good crazy story.\""
 
@@ -114,8 +120,8 @@ label day4:
     a guilty "\"But you know, Ms. Whitley, Miffy actually helped me and Luke actually meet. We buried Miffy together.\""
     a awkward "\"It was sad, but Luke was really nice. He was kind and gentle, just like I thought! He knew about lots of things, like animals and flowers and sorts of rocks.\""
     a normal "\"It sounds boring...but the way he talked it about it made it so fun!\""
-    a smile "\"I have never felt as happy talking to anyone.\""
-    a happy strange "\"We became really good friends, you know.\""
+    a smile "\"I never felt so happy talking to someone.\""
+    a unhappy closemouth "\"We became really good friends, you know, the inseparable kind.\""
     "It seemed like a happy memory, but there was something behind Alice's eyes. It was something sad...but it was something angry too."
     a normal "\"One day I was telling my parents about a time I played with Luke, and they got really upset.\""
     a guilty "\"They told me to stay away from Luke. They told me he was bad.\""
@@ -128,8 +134,9 @@ label day4:
     a awkward "\"If I had another chance, I would've listened to my parents'.\""
     w "What do you-"
     with vpunch
+    play sound "audio/soundeffects/wood_bang.wav"
+    stop music
     "Suddenly, there was a loud bang from upstairs. I jumped to my feet."
     "Alice was only slightly irritated."
     a unhappy "\"Can you stay here? Give me a couple of minutes, I'll be right back.\""
-
     jump ExploreRoom
