@@ -30,7 +30,7 @@ screen Day:
 
 default day = 1
 
-# Ending title
+# Ending
 screen Ending(title):
 
     frame at alpha_dissolve:
@@ -41,6 +41,11 @@ screen Ending(title):
         yalign 0.5
         background "transparent"
         text "[title]"
+
+default persistent.goodend = False
+default persistent.badendsilent = False
+default persistent.badendmad = False
+default persistent.badenddied = False
 
 # Alice's Heart
 default heart = 0
@@ -175,7 +180,7 @@ label start:
 
     stop music
 
-    jump day1
+    jump day4
 
 label ending:
 

@@ -313,6 +313,8 @@ screen navigation():
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
+        textbutton _("Achievement") action ShowMenu("Achievement")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
@@ -591,6 +593,45 @@ style return_button:
     yalign 1.0
     yoffset -45
 
+## Achievement screen ################################################################
+screen Achievement():
+    tag menu
+    use game_menu(_("Achievement"), scroll="viewport"):
+        hbox:
+            vbox xalign 0.1 yalign 0.1:
+                box_wrap True
+                if persistent.goodend == True:
+                    image "HE.png"
+                else:
+                    image "ending_locked.png"
+
+            null width (6 * gui.pref_spacing)
+
+            vbox xalign 0 yalign 0.1:
+                box_wrap True
+                if persistent.badendsilent == True:
+                    image "BE1.png"
+                else:
+                    image "ending_locked.png"
+
+        null height (4 * gui.pref_spacing)
+
+        hbox:
+            vbox xalign 0.1 yalign 0.1:
+                box_wrap True
+                if persistent.badendmad == True:
+                    image "BE2.png"
+                else:
+                    image "ending_locked.png"
+
+            null width (6 * gui.pref_spacing)
+
+            vbox xalign 0 yalign 0.1:
+                box_wrap True
+                if persistent.badenddied == True:
+                    image "BE3.png"
+                else:
+                    image "ending_locked.png"
 
 ## About screen ################################################################
 ##

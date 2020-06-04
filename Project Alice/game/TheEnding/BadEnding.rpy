@@ -7,6 +7,7 @@ label badEndingSilence:
     scene black with Dissolve(2)
     with hpunch
     scene badending blood with Dissolve(2)
+    $ persistent.badendsilent = True
     show screen Ending("{font=fonts/TheAncient.ttf}{size=+15}{size=+60}Bad Ending{/size}\n\n{space=300}{font=fonts/Cageworld.ttf}- Silent Wonderland{/font}{/size}{/font}") with Dissolve(2)
     $ renpy.pause(3, hard=True)
     pause(5)
@@ -23,10 +24,12 @@ label badEndingUnhappy:
     scene black with Dissolve(2)
     with hpunch
     scene badending blood with Dissolve(2)
+    $ persistent.badendmad = True
     show screen Ending("{font=fonts/TheAncient.ttf}{size=+15}{size=+60}Bad Ending{/size}\n\n{space=300}{font=fonts/Cageworld.ttf}- Painful Princess{/font}{/size}{/font}") with Dissolve(2)
     $ renpy.pause(3, hard=True)
     hide screen Ending with Dissolve(4)
     pause(5)
+
     return
 
 label End:

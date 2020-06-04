@@ -901,6 +901,7 @@ label badEndingDeath:
     with hpunch
     play music "audio/BGM/3.mp3" fadein 1
     scene badending blood with Dissolve(2)
+    $ persistent.badenddied = True
     show screen Ending("{font=fonts/TheAncient.ttf}{size=+15}{size=+60}Bad Ending{/size}\n\n{space=300}{font=fonts/Cageworld.ttf}- Eternal Dream{/font}{/size}{/font}") with Dissolve(2)
     $ renpy.pause(3, hard=True)
     pause(5)
@@ -910,6 +911,7 @@ label badEndingDeath:
 label goodending:
     stop music fadeout 3
     scene white with Dissolve(2)
+    $ persistent.goodend = True
     show screen Ending("{color=#E86F05}{font=fonts/TheAncient.ttf}{size=+15}{size=+60}Good Ending{/size}\n\n{space=300}{font=fonts/Cageworld.ttf}- New Wonderland{/font}{/size}{/font}{/color}") with Dissolve(2)
     $ renpy.pause(3, hard=True)
     pause(5)
