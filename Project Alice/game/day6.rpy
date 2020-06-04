@@ -115,6 +115,8 @@ label day6:
 
     scene bg whitley_bedroom
 
+    play music morning fadein 2.0
+
     show black
 
     play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 2.0
@@ -126,6 +128,12 @@ label day6:
     "I sat up to see the room was dark and the curtains were drawn."
 
     hide black with Dissolve(2)
+
+    $ day = 6
+
+    show screen Day with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
 
     "My head was hurting... Did I draw the curtains last night?"
 
@@ -204,13 +212,15 @@ label day6:
 
     label day6_option1_over:
 
-        hide alice
+        stop music  fadeout 2
 
         w "\"Wait, what do you mean? Alice? Alice!\""
 
         play sound "audio/soundeffects/Fast_Footsteps.wav" fadein 2.0
 
         "Alice left as soon as she finished speaking, and her rapid footsteps faded away."
+
+        play music "audio/BGM/Scary_BGM.wav" fadein 1
 
         stop sound fadeout 2.5
 
@@ -323,6 +333,8 @@ label day6:
                 w "\"ɿoɿɿimɘʜɈʜƨɒmƨ!\""
 
                 $renpy.sound.set_volume(0.1, 0, channel = 'sound')
+
+                stop music
 
                 play sound "audio/soundeffects/mirror_crash.wav"
 
@@ -1051,7 +1063,11 @@ label day6:
 
     label lose:
 
+        stop music fadeout 2
+
         r winning "\"Mr. Rabbit caught ya!\""
+
+        play music "audio/BGM/Game_music.wav"
 
         if translated == True:
 
@@ -1094,6 +1110,8 @@ label day6:
         jump breakfast
 
     label breakfast:
+
+        stop music fadeout 2
 
         stop sound
 
@@ -1153,7 +1171,11 @@ label day6:
 
             "He bounced away soon."
 
+            play sound "audio/soundeffects/slow_clap.wav"
+
             "*clap*"
+
+            stop sound fadeout 3
 
             a smile "\"Congratulations! Hope you have a wonderful time with Mr. Rabbit, Ms. Whitley.\""
 
@@ -1177,6 +1199,8 @@ label day6:
                     a happy "Now it's Breakfast time! Let's go to the dinning room!"
 
                 "No, it's not":
+
+                    play music "audio/BGM/Sad_Music_Box.mp3" fadein 1
 
                     w "Alice, not only misery would accompany with lies."
 
@@ -1204,9 +1228,13 @@ label day6:
 
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1.0
 
-        scene bg dining room
+        stop music fadeout 1
+
+        scene bg dining_room
 
         "I went to the dinning room."
+
+        play music lunch fadein 2
 
         stop sound fadeout 2
 
