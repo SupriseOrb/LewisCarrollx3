@@ -89,7 +89,7 @@ image side alice guilty = Image(im.FactorScale("/alice/alice_guilty.png",0.8,0.8
 image side alice angry = Image(im.FactorScale("/alice/alice_angry.png",0.8,0.8))
 image side alice little angry = Image(im.FactorScale("/alice/alice_little_angry.png",0.8,0.8))
 image side alice angry closeeyes = Image(im.FactorScale("/alice/alice_angry_closeeyes.png",0.8,0.8))
-image side alice happy closeyes = Image(im.FactorScale("/alice/alice_happy_closeeyes.png",0.8,0.8))
+image side alice happy closeeyes = Image(im.FactorScale("/alice/alice_happy_closeeyes.png",0.8,0.8))
 image side alice happy closeopen = Image(im.FactorScale("/alice/alice_happy_closeopen.png",0.8,0.8))
 
 image side bunny = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))

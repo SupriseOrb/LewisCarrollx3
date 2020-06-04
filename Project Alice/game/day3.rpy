@@ -238,9 +238,9 @@ label d3_not_kill:
     $Alice_affinity = Alice_affinity- 1
     w "\"I know it's hard to live without parents aside. But I still have the hope to live because I'm staying with you, godmother! I can't just kill someone to save our parents. I couldn't live with myself! Why can't we try to negotiate with the queen?\""
     "Alice lifted her hand to her chin and let out a dainty laugh."
-    a asleep "\"Ho, what a joke! Do you think the queen is that easy to talk with? She only knows the joy of locking someone in the attic then abandoning them!\""
+    a happy strange "\"Ho, what a joke! Do you think the queen is that easy to talk with? She only knows the joy of locking someone in the attic then abandoning them!\""
     "Alice's character was starting to break again."
-    a annoyed "\"She says that she wants them to accompany her and and that she won't leave them alone. But she always does in the end. She always goes back on her word.\""
+    a happy closeeyes "\"She says that she wants them to accompany her and and that she won't leave them alone. But she always does in the end. She always goes back on her word.\""
     w "\"But maybe if we talk with her-?\""
     a annoyed "\"You can't!\""
     "Alice jumped up in a rage. Now I'd done it."
