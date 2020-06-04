@@ -855,12 +855,15 @@ label day7scavengerStart:
     stop sound fadeout 2
     
     scene bg front with Dissolve(1)
+    play music "/audio/soundeffects/morning_bird.wav" fadein 3.0
 
     "The air out here felt unreal. I took a deep breath."
 
     "Then I turned around to see Alice meeting her new godparents through the window."
 
     "They both were bent down, telling her something."
+
+    stop music fadeout 5.0
 
     "Suddenly Alice beamed then sprinted towards them and hugged them both tight. A warm smile graced my lips."
 
@@ -887,9 +890,6 @@ label day7scavengerStart:
     label day7finaldone:
     stop music fadeout 3
     stop sound fadeout 3
-    stop sound_little fadeout 3
-
-    scene black
 
     jump goodending
 
@@ -908,6 +908,7 @@ label badEndingDeath:
     return
 
 label goodending:
+    stop music fadeout 3
     scene white with Dissolve(2)
     show screen Ending("{color=#E86F05}{font=fonts/TheAncient.ttf}{size=+15}{size=+60}Good Ending{/size}\n\n{space=300}{font=fonts/Cageworld.ttf}- New Wonderland{/font}{/size}{/font}{/color}") with Dissolve(2)
     $ renpy.pause(3, hard=True)
