@@ -1053,7 +1053,7 @@ label day6:
 
         r winning "\"Mr. Rabbit caught ya!\""
 
-        play music "audio/BGM/Game_music.wav"
+        play music "audio/BGM/Game_music.mp3"
 
         if translated == True:
 
