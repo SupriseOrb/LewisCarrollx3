@@ -221,7 +221,8 @@ label day7leaveAttempt:
 
 label day7stay:
 
-    $ heart += 1
+    ## HEART PIECE
+    $ persistent.heart += 1
 
     "No, I set a goal this morning."
 

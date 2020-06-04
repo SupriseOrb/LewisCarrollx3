@@ -374,6 +374,8 @@ label day1c6a2:
     hide home with Dissolve(1)
     "I folded the drawing and placed it into my coat pocket."
     "Hopefully the next six days will be less eventful so I can do some actual work."
+    ## HEART PIECE
+    $ persistent.heart += 1
     stop music fadeout 3.0
     show black with Dissolve(2)
     pause(3)

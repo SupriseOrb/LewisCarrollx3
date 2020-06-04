@@ -262,17 +262,19 @@ label d3_lunch:
     "I made lunch for Alice. After eating the lunch, Alice wanted to have a break. Before she walked back to her room, though, she had something to tell me."
 
     if Alice_affinity < 10 and beatqueen == False:
-        $heart -= 5
         a annoyed "\"Today was the worst tea party ever in my life. I didn't have any fun at all so I don't have anymore to say to you, indeed!\""
         "I scratched my head. What was that about? Nothing more to say to me? Was she hiding something?"
     if Alice_affinity < 10 and beatqueen == True:
-        $heart += 1
+        ## HEART PIECE
+        $ persistent.heart += 1
         a normal "\"Although you didn't listen to me and make the same choice, you did help me beat the queen. I want to tell you that...Alice's Adventure in Wonderland really is a good book.\""
     if Alice_affinity > 10 and beatqueen == False:
-        $heart += 1
+        ## HEART PIECE
+        $ persistent.heart += 1
         a normal "\"Although you didn't help me kill the queen, I'm glad that you are willing to play with me. There's a book called \"Alice's Adventure in Wonderland\", and it's my favorite! You should read it if you have time.\""
     if Alice_affinity > 10 and beatqueen == True:
-        $heart += 5
+        ## HEART PIECE
+        $ persistent.heart += 2
         a happy "\"I hope I can have another tea party with you again. You're really a good partner! For playing with me so well, I let you have a little secret! There's a letter in \"Alice's Adventure in Wonderland\" from my parents.\""
 
     "Alice returned to her bedroom with Mr.Rabbit in her arms."

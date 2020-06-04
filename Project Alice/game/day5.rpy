@@ -935,7 +935,8 @@ label wolf_ending:
 
 label wolf_tag_ending:
     stop music fadeout 2
-    $ heart += 1
+    ## HEART PIECE
+    $ persistent.heart += 1
     show bunny_depressed at imgcenter
     with Dissolve(1)
     "I spotted a small white rabbit. Alice! I sprinted forward and grabbed it in my mouth."

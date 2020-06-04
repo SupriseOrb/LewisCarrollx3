@@ -1204,7 +1204,8 @@ label day6:
 
                     a happy closeopen "But now it's breakfast time! Let's go to the dinning room!"
 
-                    $ heart += 1
+                    ## HEART PIECE
+                    $ persistent.heart += 2
 
             play sound "audio/soundeffects/open_bedroom_door.wav" fadein 1.0
 

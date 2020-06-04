@@ -173,7 +173,7 @@ label start:
 
     stop music
 
-    jump day4
+    jump day1
 
 label ending:
 
