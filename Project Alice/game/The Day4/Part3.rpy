@@ -9,14 +9,14 @@ label Part3Start:
     "I heard a loud squeak and abruptly realized that she was right. There were some critters down here!"
     "But they weren't cute little mice, they were rats. And they were rats everywhere"
     stop sound fadeout 2
-    call TheChoiceInPart3(1)
+    call TheChoiceInPart3(1) from _call_TheChoiceInPart3
 
     play sound "audio/soundeffects/whitley_walk.wav" fadein 1
     "I walked over to a pile of ingredients, but upon closer inspection, it looked like most of them were rotten."
     stop sound fadeout 2
     w "\"Let me see what I can find over here...\""
     w "\"Wait, what was it Alice wanted me to bring her again?\""
-    call SelectVeg
+    call SelectVeg from _call_SelectVeg
 
     w "\"Okay, everything looks like it's here. Time to go back and give it to Alice.\""
     play sound "audio/soundeffects/whitley_walk.wav" fadein 1
@@ -70,7 +70,7 @@ label Part3Start:
     a happy "\"So...um... Oh! What do you think about my magic!\""
     a normal "\"You've been here long enough now! Tell me what you think!\""
     a smile "\"Don't you think it's just the best?\""
-    call TheChoiceInPart3(2)
+    call TheChoiceInPart3(2) from _call_TheChoiceInPart3_1
 
     "Alice grew silent once she heard my answer."
     "After a pause of a couple of seconds, she spoke again."
@@ -79,7 +79,7 @@ label Part3Start:
     "Alice suddenly leaned in and grinned wide at me."
     a normal "\"And what about hurting people?\""
     a guilty "\"Do you think that sometimes, you just can't avoid it?\""
-    call TheChoiceInPart3(3)
+    call TheChoiceInPart3(3) from _call_TheChoiceInPart3_2
 
     "Again, Alice was silent after my answer."
     "For a time, only the sound of chewing and knives and forks hitting plates echoed in the dining room."
@@ -91,7 +91,7 @@ label Part3Start:
     a normal "\"The last one for today, I promise.\""
     "Before I could say anything, she jumped right into it."
     a confused "\"Do you think that power and hurting people are connected somehow?\""
-    call TheChoiceInPart3(4)
+    call TheChoiceInPart3(4) from _call_TheChoiceInPart3_3
 
 
     "The atmosphere became cold again."
@@ -99,6 +99,6 @@ label Part3Start:
 
         jump ToTheDay5
 
-    call TheChoiceInPart3(5)
+    call TheChoiceInPart3(5) from _call_TheChoiceInPart3_4
 
     jump day5

@@ -9,6 +9,7 @@ label ToTheDay5:
         a smile "\"Good night Ms. Whitley, sweet dreams.\""
         "Alice finished with a smile, then she left the dining table and went upstairs."
         "..."
+        $ persistent.heart +=1
         play sound "audio/soundeffects/whitley_walk.wav" fadein 1
         show black with Dissolve(1)
         scene playerroom night with Dissolve(1)

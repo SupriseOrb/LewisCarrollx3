@@ -339,7 +339,7 @@ label woods:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -349,7 +349,7 @@ label woods:
         $ y_val = 0
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist
 
     if path_open:
         "Path is [rand_path]"
@@ -374,7 +374,7 @@ label woods1:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_1
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -384,7 +384,7 @@ label woods1:
         $ y_val = 1
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_1
 
     if is_rabbit:
         "Turns left: [turns_left] \nAt this point, I was surrounded by trees. I could still make out a small path to my left, but I could also see a clearing coming up on my right. Choose:"
@@ -418,7 +418,7 @@ label woods2:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_2
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -431,7 +431,7 @@ label woods2:
         $ y_val = 2
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_2
 
     if is_rabbit:
         "Turns left: [turns_left] \nThe woods seemed like they might end soon, but they continued on. I saw a clearing on my right, but something told me not to go there. I could still make out a small path to my left, but barely. Choose:"
@@ -466,7 +466,7 @@ label woods3:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_3
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -479,7 +479,7 @@ label woods3:
         $ y_val = 3
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_3
     "Turns left: [turns_left] \nI reached the end of the woods where I noticed a warning sign posted above the path foward. The path to my left was out of sight, but a nearby sign suggested its presence. Choose:"
 
     menu:
@@ -498,7 +498,7 @@ label path:
     $ turns_left -= 1
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_4
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -508,7 +508,7 @@ label path:
         $ y_val = 0
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_4
 
     "Turns left: [turns_left] \nI walked onto a forest path. There was an area of thicker woods on my right, and a creek on my left. Choose:"
 
@@ -533,7 +533,7 @@ label path1:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_5
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -543,7 +543,7 @@ label path1:
         $ y_val = 1
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_5
 
     "Turns left: [turns_left] \nI went down the path and was met by a crossroads. A path to a creek was on my left, and an area lined with trees to the right. Choose:"
 
@@ -568,7 +568,7 @@ label path2:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_6
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -581,7 +581,7 @@ label path2:
         $ y_val = 2
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_6
 
     "Turns left: [turns_left] \nI was halfway down the path when I was met with another divide. I saw what seemed to be a house not too far to the left, and another covered path that led into the woods. Choose:"
 
@@ -606,7 +606,7 @@ label path3:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_7
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -619,7 +619,7 @@ label path3:
         $ y_val = 3
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_7
 
     "Turns left: [turns_left] \nI was almost at the end of the path. I saw a river to my left, but the area was covered in mist. Yet again, there was a path to the woods. Choose:"
 
@@ -646,7 +646,7 @@ label path4:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_8
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -659,7 +659,7 @@ label path4:
         $ y_val = 4
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_8
 
     "Turns left: [turns_left] \nI was almost to the end of the path when something didn't feel right. Choose:"
 
@@ -681,7 +681,7 @@ label creek:
     $ turns_left -= 1
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_9
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -691,7 +691,7 @@ label creek:
         $ y_val = 0
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_9
 
     "Turns left: [turns_left] \nI walked into a creek and noticed there was an open path on my right. Choose:"
 
@@ -716,7 +716,7 @@ label creek1:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_10
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -726,7 +726,7 @@ label creek1:
         $ y_val = 1
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_10
 
     "Turns left: [turns_left] \nI continued further into the creek and saw a house coming up. There was an open path on your right, but it was harder to make out. I also saw a river coming up on my left. Choose:"
 
@@ -755,7 +755,7 @@ label house:
         jump wolf_tag_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_11
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -765,7 +765,7 @@ label house:
         $ y_val = 2
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_11
 
     if visit_house:
         menu:
@@ -812,7 +812,7 @@ label river:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_12
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -838,7 +838,7 @@ label river2:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_13
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -851,7 +851,7 @@ label river2:
         $ y_val = 3
         menu:
             "Track scent":
-                call path_dist
+                call path_dist from _call_path_dist_12
 
 
     "Turns left: [turns_left] \nI arrived at the end of the river. I saw a path on my left and a trail leading back to a house. Choose:"
@@ -879,7 +879,7 @@ label cat:
         jump wolf_ending
 
     if is_rabbit:
-        call wolf_dist
+        call wolf_dist from _call_wolf_dist_14
 
     if is_rabbit and (turn_find == turns_left):
         jump rabbit_ending
@@ -1054,7 +1054,7 @@ label tag_end:
     if visit_house:
         menu:
             "Write down texts.":
-                call write_texts
+                call write_texts from _call_write_texts
 
     show black with Dissolve(1)
     play sound "audio/soundeffects/whitley_walk.wav"

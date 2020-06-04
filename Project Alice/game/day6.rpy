@@ -258,7 +258,7 @@ label day6:
 
             "Read the clues" if translated == True:
 
-                call clues
+                call clues from _call_clues
 
                 $ scenechange = False
 
@@ -344,7 +344,7 @@ label day6:
 
                     "Alice was right, this is a tricky rabbit for sure."
 
-                call real_clues
+                call real_clues from _call_real_clues
 
                 if translated == True:
 
@@ -380,13 +380,13 @@ label day6:
 
                 $ translated = True
 
-                call clues
+                call clues from _call_clues_1
 
                 jump day6_option2b
 
             "Read the clues" if translated == True:
 
-                call clues
+                call clues from _call_clues_2
 
                 jump day6_option2b
 
@@ -609,7 +609,7 @@ label day6:
 
             "Read the clues" if translated == True:
 
-                call clues
+                call clues from _call_clues_3
 
                 jump day6_option3
 
@@ -723,7 +723,7 @@ label day6:
 
             "Read the clues" if translated == True:
 
-                call clues
+                call clues from _call_clues_4
 
                 jump day6_option4
 
@@ -845,7 +845,7 @@ label day6:
 
             "Read the clues" if translated == True:
 
-                call clues
+                call clues from _call_clues_5
 
                 jump day6_option5
 
@@ -927,7 +927,7 @@ label day6:
 
             "Read the clues" if translated == True:
 
-                call clues
+                call clues from _call_clues_6
 
                 jump day6_option6
 
@@ -1026,7 +1026,7 @@ label day6:
 
                 $ yalign_var = 0.85
 
-                call clues
+                call clues from _call_clues_7
 
                 jump day6_option7
 

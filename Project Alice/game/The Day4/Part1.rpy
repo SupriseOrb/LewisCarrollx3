@@ -36,7 +36,7 @@ label day4:
 
     stop music fadeout 3
 
-    call TheChoiceInPart1(1)
+    call TheChoiceInPart1(1) from _call_TheChoiceInPart1
     if AliceHateU:
         jump End
 
@@ -56,7 +56,7 @@ label day4:
     a guilty "\"Even so... my life was so boring. It was the same thing everytime! Good things! But...same things...\""
     a "\"I would play with Mr. Rabbit all day, and sometimes Aiden would tell me a good crazy story.\""
 
-    call TheChoiceInPart1(2)
+    call TheChoiceInPart1(2) from _call_TheChoiceInPart1_1
     if AliceHateU:
         jump End
 
@@ -76,7 +76,7 @@ label day4:
 
     "Alice brought her knees up to her chest and buried her face behind them."
 
-    call TheChoiceInPart1(3)
+    call TheChoiceInPart1(3) from _call_TheChoiceInPart1_2
 
     if AliceHateU:
         jump End
@@ -89,7 +89,7 @@ label day4:
     "Alice shook her head. There was a regretful tone in her voice."
     a guilty "\"And that was the first time I wanted to be friends with someone other than Miffy.\""
 
-    call TheChoiceInPart1(4)
+    call TheChoiceInPart1(4) from _call_TheChoiceInPart1_3
 
     if AliceHateU:
         jump End
@@ -112,7 +112,7 @@ label day4:
     a "\"No matter how many times I think about it, I don't understand how she got all the way over there.\""
     "She paused."
 
-    call TheChoiceInPart1(5)
+    call TheChoiceInPart1(5) from _call_TheChoiceInPart1_4
 
     if AliceHateU:
         jump End
@@ -126,7 +126,7 @@ label day4:
     a normal "\"One day I was telling my parents about a time I played with Luke, and they got really upset.\""
     a guilty "\"They told me to stay away from Luke. They told me he was bad.\""
     "Alice smiled and raised her head slightly, as if trying to remember something."
-    call TheChoiceInPart1(6)
+    call TheChoiceInPart1(6) from _call_TheChoiceInPart1_5
 
     if AliceHateU:
         jump End

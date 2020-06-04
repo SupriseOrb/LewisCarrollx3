@@ -54,7 +54,7 @@ label TheChoiceInPart2(numberp2):
                 "Alice gave me an eerie grin. There was no lying to her."
                 a happy strange "\"Why would you lie to me, Ms. Whitley? Didn't I already tell you? What I say in this house, goes.\""
                 $ AliceUnhappy += 1
-                call checkTheFeeling
+                call checkTheFeeling from _call_checkTheFeeling
                 return
 
     if numberp2==4:
@@ -65,7 +65,7 @@ label TheChoiceInPart2(numberp2):
             "I think you should think about what Luke was saying.":
                 a angry "\"Think about his words!? The harshest words in the world? You really don't understand, do you, Ms. Whitley?\""
                 $ AliceUnhappy += 1
-                call checkTheFeeling
+                call checkTheFeeling from _call_checkTheFeeling_1
                 return
     if numberp2==5:
         menu:
@@ -98,12 +98,12 @@ label TheChoiceInPart2(numberp2):
                 else:
                     a confused "\"I'm sorry you don't believe me.\""
                     $ AliceUnhappy += 1
-                    call checkTheFeeling
+                    call checkTheFeeling from _call_checkTheFeeling_2
                     return
             "I'm glad they left.":
                 a angry "\"But {i}you{/i} won't! You don't want to leave, do you?\""
                 $ AliceUnhappy += 1
-                call checkTheFeeling
+                call checkTheFeeling from _call_checkTheFeeling_3
                 return
 
     if numberp2==6:
@@ -111,7 +111,7 @@ label TheChoiceInPart2(numberp2):
             "I'd rather you do it yourself":
                 a angry "Oh, I wish I could too! But I have to get dinner all set!"
                 $ AliceUnhappy += 1
-                call checkTheFeeling
+                call checkTheFeeling from _call_checkTheFeeling_4
                 return
             "Okay, I'll do it":
                 a smile "Oh, thank you Ms. Whitley! You are so kind!"

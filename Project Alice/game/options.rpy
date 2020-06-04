@@ -40,8 +40,8 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Escape from Wonderland"
-
+define build.name = "Escape_from_Wonderland"
+define build.directory_name = "Escape_from_Wonderland"
 
 ## Sounds and music ############################################################
 

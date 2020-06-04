@@ -16,7 +16,7 @@ label TheChoiceInPart1(numberP1):
                 return
             "This seems painful for you to talk about, maybe you shouldn't...":
                 $ AliceAngry +=1
-                call checkTheSilenceP1
+                call checkTheSilenceP1 from _call_checkTheSilenceP1
                 return
     elif numberP1==3:
         menu:
@@ -26,7 +26,7 @@ label TheChoiceInPart1(numberP1):
                 return
             "Oh, Alice. I told you, crying won't solve anything.":
                 $ AliceAngry +=1
-                call checkTheSilenceP1
+                call checkTheSilenceP1 from _call_checkTheSilenceP1_1
                 return
     elif numberP1==4:
         menu:
@@ -37,7 +37,7 @@ label TheChoiceInPart1(numberP1):
                 return
             "It sounds like you were really lonely, even before your parents passed.":
                 $ AliceAngry +=1
-                call checkTheSilenceP1
+                call checkTheSilenceP1 from _call_checkTheSilenceP1_2
                 return
     elif numberP1==5:
         menu:
@@ -49,7 +49,7 @@ label TheChoiceInPart1(numberP1):
                 return
             "You can't do anything about now.":
                 $ AliceAngry +=1
-                call checkTheSilenceP1
+                call checkTheSilenceP1 from _call_checkTheSilenceP1_3
                 return
     else:
         menu:
@@ -61,5 +61,5 @@ label TheChoiceInPart1(numberP1):
                 return
             "You shouldn't trust strangers.":
                 $ AliceAngry +=1
-                call checkTheSilenceP1
+                call checkTheSilenceP1 from _call_checkTheSilenceP1_4
                 return

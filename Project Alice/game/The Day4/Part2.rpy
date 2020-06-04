@@ -14,7 +14,7 @@ label Part2Start:
     w "\"Uhh hello, what are we doing down here? What is this place?\""
     "She didn't respond to me."
 
-    call TheChoiceInPart2(1)
+    call TheChoiceInPart2(1) from _call_TheChoiceInPart2
     "As my eyes slowly adapted to the dark environment, I realized I was in a closet."
     "The little girl in front of me was peeking outside through a small gap between the closet doors."
     "Suddenly, there was a voice from outside, two people talking with their feet shuffling over the wooden floor"
@@ -53,7 +53,7 @@ label Part2Start:
     "But the tears soon overflowed, streaking over her cupped hands before dripping to the floor."
     "The two people outside continued on their chat, laughing loudly from time to time."
 
-    call TheChoiceInPart2(2)
+    call TheChoiceInPart2(2) from _call_TheChoiceInPart2_1
 
     stop music
 
@@ -66,13 +66,13 @@ label Part2Start:
     "I looked up to see Alice standing in front of me. It was nighttime already? When did it get so late?"
     a smile "\"...I guess you already saw the part of the story that's next, hm Ms. Whitley?\""
     play music "audio/BGM/Scary_BGM.wav" fadein 1.0
-    call TheChoiceInPart2(3)
+    call TheChoiceInPart2(3) from _call_TheChoiceInPart2_2
 
     a happy strange "\"Luke was tricking me. The whole time. I thought he was my only real friend, but this whole time..."
     a smile "\"He thought I was annoying. I never really mattered to him.\""
     a guilty "\"I'm sorry for showing you the story like that...\""
     a awkward "\"But these memories are always hard to say.\""
-    call TheChoiceInPart2(4)
+    call TheChoiceInPart2(4) from _call_TheChoiceInPart2_3
 
     a unhappy "\"After that, I ran back to my parents crying. They took care of me that day.\""
     a unhappy closemouth "\"I knew Mom and Dad were the only people who cared about me.\""
@@ -84,7 +84,7 @@ label Part2Start:
     a confused "\"But my parents kept turning them away, so they thought maybe they could get through to them... through me.\""
     "Alice giggled to herself."
     a happy strange "\"Sillies. They got kicked out that night.\""
-    call TheChoiceInPart2(5)
+    call TheChoiceInPart2(5) from _call_TheChoiceInPart2_4
 
     stop music fadeout 2
     a happy closeopen "\"Anyway, let's get dinner started!\""
@@ -92,9 +92,9 @@ label Part2Start:
     $ renpy.music.set_volume(0.6, delay=0, channel='music')
     play music "audio/BGM/Game_music.mp3" fadein 1
     a smile "\"There are some things in the basement we need first, though.\""
-    call setTheIngre
+    call setTheIngre from _call_setTheIngre
     a sad closeeyes "\"But there are some critters down there, like mice.\""
     a normal "\"I hope it's okay that I stay up here and you go get those things for me! Oh and you could do some cleaning while you're at it!\""
-    call TheChoiceInPart2(6)
+    call TheChoiceInPart2(6) from _call_TheChoiceInPart2_5
 
     jump Part3Start

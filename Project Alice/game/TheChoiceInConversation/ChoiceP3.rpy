@@ -47,7 +47,7 @@ label TheChoiceInPart3(numberp3):
                 "Alice gave me a sour look."
                 a angry "\"That's not fair! I asked a question first.\""
                 "It looks like Alice wasn't happy about that."
-                call checkThePain
+                call checkThePain from _call_checkThePain
                 return
 
     if numberp3 == 5:
@@ -93,7 +93,7 @@ label QuestionForAlice:
             $ AliceInPain +=1
             "Looks like discussing Luke is a minefield with her."
 
-            call checkThePain
+            call checkThePain from _call_checkThePain_1
             jump AskAliceround2
         "Ask about Miffy":
             w "\"Can you tell me more about Miffy?\""
@@ -114,7 +114,7 @@ label AskAliceround2:
         "Ask about the fire":
             w "\"Can you tell me more about the fire?\""
             $ AliceInPain +=1
-            call checkThePain
+            call checkThePain from _call_checkThePain_2
             if HelpAlice:
                 a confused "\"...\""
                 a angry "\"I already told you, it was an accident.\""
@@ -159,6 +159,7 @@ label AskAliceround3:
     "Dinner is almost done."
     "I have time to ask one more question."
     if AliceAngry<2 and AliceUnhappy<2 and HelpAlice and AliceFeltPain<4:
+        $ persistent.heart+=1
         "Alice seems to be in a good mood."
         w "\"The last question-\""
         "Alice's eyes were back on me again."
