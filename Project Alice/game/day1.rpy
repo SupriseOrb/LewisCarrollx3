@@ -272,7 +272,7 @@ label day1playr3:
 
 label day1c5a1:
     "She really likes to play, so maybe I should ask what's her favorite game. It might give me insight into what she's like or how life was with her parents."
-    w "\"You seem to enjoy plaing, so do you have a favorite game?\""
+    w "\"You seem to enjoy playing, so do you have a favorite game?\""
     "Alice turned eerily and smiled at me."
     a happy strange "\"It's a surprise for the seventh day.\""
     "The seventh day? That's the day I leave and her godparents arrive. But that doesn't give me much else. Maybe it has something to do with food?"
