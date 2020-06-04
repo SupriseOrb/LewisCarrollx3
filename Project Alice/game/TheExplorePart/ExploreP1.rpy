@@ -21,7 +21,7 @@ label FirstCheck:
                 "The door is locked."
                 w "\"The door is locked, maybe I can find a key somewhere.\""
                 jump FirstCheck
-            "Check the widow":
+            "Check the window":
                 $ CheckTheWindow = True
                 play sound "audio/soundeffects/handle_shake.wav"
                 "The window is locked."

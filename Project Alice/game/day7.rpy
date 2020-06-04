@@ -520,7 +520,7 @@ label day7scavengerStart:
     
     "A spark of ethereal lights flickered at her feet, growing sharper with every second."
 
-    if heart < 5:
+    if persistent.heart < 5:
         jump day7BadEnd 
 
     label day7GoodEnd:
