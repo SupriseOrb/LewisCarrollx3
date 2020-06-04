@@ -502,6 +502,8 @@ label day2jump4:
 
     scene black with Dissolve(0.2)
 
+    $heart += 1;
+
     jump day2end
 
 label day2stand:
@@ -535,6 +537,8 @@ label day2stand:
     scene black with Dissolve(1)
 
     "I looked at her for answers, but I received nothing but the same glare as I fell into the pit of despair."
+
+    $heart -= 1;
 
 label day2end:
 
