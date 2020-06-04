@@ -983,7 +983,7 @@ label rabbit_ending:
     if rabbit_first:
         a happy "\"That was fun. I do like being the wolf, but now you get to be it!\""
         $ is_rabbit = False
-        rabbit_first = False
+        $ rabbit_first = False
         jump wolf
 
     if wolf_side_won:
