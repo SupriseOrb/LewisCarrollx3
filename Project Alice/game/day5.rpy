@@ -7,12 +7,12 @@ label day5:
     "After everything that happened yesterday, the truth was undeniable."
     "Magic killed those people that night. And magic killed Alice's parents."
     "How in the world was I going to put that in an official police report?"
-    "And aside from that...how am I going to leave this mansion? I think I understand why that last nanny left. I'm surprised she didn't leave sooner."
-    "Even though I know the truth now...I don't think this is the end of the matter."
-    "Alice is certainly acting strange, she's obviously dangerous but...there's a different storm inside her."
-    "I know there's more to this case than magic." 
+    "And aside from that, how am I going to leave this mansion? I think I understand why that last nanny left. I'm surprised she didn't leave sooner."
+    "Even though I know the truth now, I don't think this is the end of the matter."
+    "Alice is certainly acting strange, she's obviously dangerous but..."
+    "There's a different storm inside her."
+    "I know there's more to this case than magic."
     "Maybe today I can learn more about her. That rabbit of hers certainly seems special to her. Maybe there's something there?"
-    "I'd better get ready then."
 
     scene bg dining room
 
@@ -38,7 +38,7 @@ label day5:
         "What if we don't play a game today?":
             jump no_tag
 
-        "What if we went for a walk around wonderland instead?":
+        "What if we went for a walk around Wonderland instead?":
             jump neut_tag
 
 
@@ -58,22 +58,22 @@ label day5:
 
         w "\"Yeah, these last few days have been a lot. What if we don't play a game today? Maybe just...\""
 
-        a sad "\"NO, I WANT TO PLAY TAG!\""
+        a angry "\"NO, I WANT TO PLAY TAG!\""
 
-        "I threw my hands up to calm her down. After what happened yesterday...I don't think I want Alice mad."
+        "I threw my hands up to calm her down. After what happened yesterday, I don't think I want Alice mad."
 
-        w "\"I'm sorry, we can play. Please don't get upset with me. I don't want you to be upset.\""
+        w "\"I'm sorry. We can play. Please don't be upset with me.\""
 
         "Who knows what she's capable of when she's upset."
 
-        a sad closeeyes "\"Okay, I'm sorry, I shouldn't have yelled. I just want to have fun with you. I really enjoy having you around. Please don't Leave me. I get so lonely.\""
+        a sad closeeyes "\"Okay, I'm sorry, I shouldn't have yelled. I just want to have fun with you. Please don't leave me. I get so lonely.\""
 
-        w "\"It's ok, I'm not going anywhere. Let's play your game after you finish eating.\""
+        w "\"It's okay, I'm not going anywhere. Let's play your game after you finish eating.\""
 
         hide alice_sad
         show alice_happy_openmouth
 
-        a happy "\"Yayyy! I can't wait.\""
+        a happy "\"Yay! I can't wait.\""
         hide alice_happy_openmouth
 
         scene black
@@ -87,17 +87,16 @@ label day5:
 
         #visual of rabbit moving
 
-        a sad "\"No, I think I want to play tag. My parents used to play with me before...\""
+        a sad "\"No, I think I want to play tag. My parents used to play tag with me before...\""
 
-        a happy "\"Well, anyways we should get going. I can't wait to play again.\""
-
-        w "\"Okay...\""
+        a happy "\"So I can't wait to play again.\""
 
         scene black
         with Dissolve(.5)
 
-        "I'm sure she doesn't want to talk about the fire. But I would like to know more about her relationship with her parents."
-        "They seem like they were all very close, but Alice also mentioned them hiding her away...I wonder if that has anything to do with how she's been acting."
+        "I'm sure she didn't want to talk about the fire. But I'd like to know more about her relationship with her parents."
+        "They seemed like they were all very close, but Alice also mentioned them hiding her away."
+        "I wonder if that has anything to do with how she's been acting."
 
         jump done_tag_intro
 
@@ -112,7 +111,7 @@ label day5:
         scene wonderland
         ##show  alice_happy_closemouth
 
-        "Again, we were in Wonderland. This time we weren't playing a crazy game of hopscotch, but I couldn't imagine the level of crazy would be any different."
+        "Again, we were in Wonderland. This time we weren't playing a crazy game of hopscotch, but I couldn't imagine the level of crazy being any different."
         w "\"This place amazes me everytime.\""
 
         ##hide alice_happy_closemouth
@@ -124,21 +123,21 @@ label day5:
         w "\"Uhh...sure.\""
 
         ##hide alice_happy_closemouth
-        a normal "\"The rules are easy: Whoever's it gets turned into a wolf, and whoevers not it, gets turned into a little rabbit.\""
+        a normal "\"The rules are easy: Whoever's \"it\" gets turned into a wolf, and whoever's not \"it\", gets turned into a rabbit.\""
 
-        a happy "\"You have to catch the rabbit before you turn white. With each minute you don't find the rabbit, you will become more white.\""
+        a happy "\"Each minute you don't find the rabbit, you will become more white. You have to catch the rabbit before you turn completely white.\""
 
-        a happy closeopen "\"Luckily the wolf is much bigger than the rabbit and can smell really well. All you have to do is catch the rabbit in your mouth and tag there it.\""
+        a happy closeopen "\"The wolf is much bigger than the rabbit and can smell really well. All you have to do is catch the rabbit in your mouth.\""
 
-        a normal "\"But if you turn full white, you'll stay a wolf and you won't be able to leave wonderland. Are you ready?\""
+        a normal "\"But if you turn full white, you'll stay a wolf and you won't be able to leave Wonderland. Are you ready?\""
 
         ##show alice_happy_closemouth
 
-        w "\"Wait, what do you mean stay a wolf and never leave wonderland?\""
+        w "\"Wait, what do you mean stay a wolf and never leave Wonderland?\""
 
         ##hide alice_happy_closemouth
 
-        a smile "\"Oh, It's only a game silly, people just say that. I've never seen anyone stay it long enough to become a wolf. It'll be fun. You ready?\""
+        a smile "\"Oh, it's only a game silly, people just say that. I've never seen anyone take long enough to become a wolf. It'll be fun! Are you ready?\""
 
         default rabbit_first = False
         default is_rabbit = False
@@ -167,7 +166,7 @@ label day5:
 
             ##hide alice_happy_closemouth
 
-            a happy "\"Let's play. You'll be it first!\""
+            a happy "\"You'll be it first!\""
 
             ##show alice_happy_closemouth
 
@@ -188,24 +187,24 @@ label day5:
 
 label wolf:
     scene black
-    "Alice tagged me and I felt my body start to shift, bones breaking, morphing. The pain was excruciating, the worst I've felt in my life!"
-    "I went to scream, but my voice was muffled. I tried again, and this time, I heard a loud growl. I looked around and everything seemed taller than it was."
-    "I tried to find Alice, but I turned to see only the trail of a rabbit hopping away."
-    "The game has started."
+    "Alice touched me and I felt my body start to shift, my bones breaking and morphing. The pain was excruciating, the worst I've felt in my life."
+    "I tried to scream, but my voice was muffled. I tried again, and this time, I heard a loud shriek. I looked around and everything seemed taller than it was."
+    "I looked for Alice, but I turned to see only the trail of a rabbit."
+    "The game had started."
 
     scene wonderland
     with Dissolve(.5)
 
     w "\"Alice?\""
     a happy closeopen "\"Catch me if you can!\""
-    "Alice's voice fades off into the distance"
+    "Alice's voice faded off into the distance."
     jump game_instructions
 
 label rabbit:
     scene black
-    "Alice tagged me and I felt my body start to shift, bones breaking, morphing. The pain was excruciating, the worst I've felt in my life!"
-    "I felt myself getting smaller, shrinking. I felt a strong urge to hop around and eat carrots. The urge grew stronger the smaller I got."
-    "Finally, the pain eased and I looked up to see a ferocious wolf staring back at me. My instincts told me to run."
+    "Alice touched me and I felt my body start to shift, my bones breaking and morphing. The pain was excruciating."
+    "I felt myself getting smaller. I had a strong urge to hop around and run away. The urge grew stronger as I shrunk."
+    "Finally, the pain eased and I looked up to see a ferocious wolf staring back at me. My instincts told me to run for my life."
 
     scene wonderland
     with Dissolve(.5)
@@ -227,7 +226,9 @@ label rabbit:
 
 label game_instructions:
     "As the rabbit, your goal is to run away from the wolf. As the wolf your goal is to catch the rabbit before you turn full wolf."
-    "Choose paths to achieve your goal. As the wolf, you have 10 turns before you turn full wolf. So as the rabbit hop away for as long as you can and you just might survive."
+    "Choose paths to achieve your goal."
+    "As the wolf, you have 10 turns to catch the rabbit before you turn fully into a wolf."
+    "As the rabbit, hop away for as long as you can and you just might survive."
     #implement a smell feature
 
     default turns_left = 10
@@ -596,9 +597,12 @@ label house2:
     scene inside house
     with Dissolve(.5)
 
-    "I approached the house. I walked up to the door, but found it was stuck. I noticed an open window nearby and hopped through. Inside, there was a broken table among other debris. Looked like it had been ransacked."
-    "In the far corner I saw what looked to be a small piece of paper. I approached it. It had ancient text written all over it. Instantly you felt something come over me."
-    "I'm not sure how...but I felt like the ancient text had somehow inscribed itself in my mind."
+    "I approached the house. I walked up to the door and tried to open it, but it was stuck."
+    "I noticed an open window nearby and hopped through. Inside, there was a broken table among other debris."
+    "Looked like it had been ransacked."
+    "In the far corner I saw what looked to be a small piece of paper. I picked it up."
+    "It had ancient text written all over it. Instantly I felt something come over me."
+    "I'm not sure how, but I felt like the ancient text had somehow inscribed itself in my mind."
 
     $ visit_house = True
     jump house
@@ -684,10 +688,10 @@ label cat1:
     w "\"Did you see a bunny run by here?\""
     c "\"Hmm, perhaps. You should find Alice, and you better find her quick. Don't want to end up stuck here. We are all mad here.\""
     w "\"Mad?\""
-    c "\"Alice is especially mad, all the time she's spent her. Well, with what happened to her parents, who wouldn't be?\""
+    c "\"Alice is especially mad, with all the time she's spent here. Well, with what happened to her parents, who wouldn't be?\""
     w "\"What do you know about that?\""
-    c "\"Oh, no one knows the WHOLE truth except that it was horrible. No one except Alice and that rabbit of hers. That dreaded rabbit should've stayed in his home.\""
-    w "\"What are talking about, what do you mean?\""
+    c "\"Oh, no one knows the {i}whole{/i} truth except that it was horrible. No one except Alice and that rabbit of hers. That dreaded rabbit should've stayed in his home.\""
+    w "\"What do you mean?\""
     c "\"Time's running out you know. Go find Alice and maybe her little friend Mr. Rabbit will lead you to the answers you are searching for.\""
 
     jump cat
@@ -698,14 +702,14 @@ label wolf_ending:
     "Alice popped up in front of me."
     show bunny_satisfied
     a annoyed openeyes "\"Wow, you aren't very good at this, are you? You do realize the point is to tag me, silly! Well luckily, Mr. Rabbit can stop the curse."
-    w "\"Curse?! Tht was real?\""
+    w "\"Curse?! Tht was real?!\""
     a happy closeopen "\"Yes, of course! I didn't want to scare you off, but the game is cursed indeed. It's more fun that way! But thanks to Mr. Rabbit here, all is well."
     "Alice grabbed Mr. Rabbit and touched the both of us."
     hide bunny_satisfied
-    "Poof!"
+    "{i}Poof!{/i}"
     "We both returned to our human states."
     show alice_happy_openmouth
-    a "\"What a shame, if you had tagged me you could've been the rabbit too! But I guess you'll have to wait 'til next time.\""
+    a "\"What a shame. If you had tagged me you could've been the rabbit too! But I guess you'll have to wait until next time.\""
     hide alice_happy_openmouth
 
     jump tag_end
@@ -727,7 +731,8 @@ label wolf_tag_ending:
 
     ##show alice_happy_closemouth
 
-    w "\"Gimmie a minute, I am still recovering from being a wolf.\""
+    "I was completely breathless."
+    w "\"Give me a minute, I am still recovering from being a wolf.\""
 
     ####hide alice_happy_closemouth
 
@@ -767,14 +772,14 @@ label rabbit_ending:
     if wolf_side_won:
         a normal "\"That was fun. Looks like we both won as the wolf. It's a lot more fun being the ferocious predator right?\""
         ##show alice_happy_closemouth
-        w "\"Uh yeah sure. But I don't think I liked those deep cravings I felt. I might be a vegaterian now, to be honest.\""
+        w "\"Uh yeah sure. But I don't think I liked those deep cravings I felt. I might be a vegetarian now, to be honest.\""
         ##hide alice_happy_closemouth
         a happy closeeyes "\"Wolves are so cute, though. They just have to eat, that's all! I do love how big and strong I feel as a wolf.\""
         a happy "\"Mr. Rabbit makes me strong too, don't you?\""
-        "She snuggled her plush happily. Something tells me there's more to Mr. Rabbit than meets the eyes..."
+        "She snuggled her plush happily. Something tells me there's more to Mr. Rabbit than meets the eye..."
         a normal "\"Well? What did you think of the game?\""
         ##show alice_happy_closemouth
-        w "\"Uh...it was fun? Exciting to say the least.\""
+        w "\"Uh, it was fun? Exciting to say the least.\""
         ##hide alice_happy_closemouth
         jump tag_end
 
@@ -790,12 +795,13 @@ label rabbit_ending:
     w "\"Yeah, next time.\""
 
     "I did not care for the prospect of that."
-    
+
     jump tag_end
 
 label write_texts:
-    "I wrote down the texts. The symbols were foreign to me, but something about it felt...dark. Very dark. Suddenly, the words began to shift on the paper."
-    "I watched in amazement and dread. Something bad is happening."
+    "I wrote down the texts. The symbols were foreign to me, but something about it felt dark. Very dark."
+    "Suddenly, the words began to shift on the paper."
+    "I watched in amazement and dread. I could tell something bad was happening."
     "I jumped up to run and grab a lighter. I ignited the paper and tossed it away."
     "The way those words warped and the meaning behind them felt so demonic. Why was something so evil in Wonderland?"
     return
@@ -823,16 +829,8 @@ label tag_end:
     with Dissolve(.5)
 
     if wolf_side_won:
-        "\"Well, today was certainly interesting. All this magic and chaos is taking it's toll, but after succeeding in a wolf's body...I think I can manage.\""
+        "\"Well, today was certainly interesting. All this magic and chaos is taking its toll, but I think I can manage.\""
     else:
-        "\"Oh god, Alice is really scaring me. I need to find a way... out? But I can't leave her all alone. Right?\""
+        "\"Oh god, Alice is really scaring me. I need to find a way out. But I can't leave her all alone. Right?\""
 
     jump day6
-
-
-
-
-
-    # This ends the game.
-
-    return

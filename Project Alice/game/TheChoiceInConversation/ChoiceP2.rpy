@@ -75,7 +75,7 @@ label TheChoiceInPart2(numberp2):
                     w "\"Did...they...?\""
                     "She shrugged her shoulders."
                     a happy closeeyes "\"Oh, they got out. Just like in those fairy tales! Very exciting.\""
-                    a smile "\"But one things for sure-\""
+                    a smile "\"But one thing's for sure-\""
                     "Alice suddenly smiled at me."
                     a happy strange "\"They're out of my life for good!\""
                     "She cocked her head and looked me up and down with that eerie smile."

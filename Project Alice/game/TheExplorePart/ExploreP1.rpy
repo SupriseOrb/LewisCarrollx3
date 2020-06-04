@@ -1,6 +1,6 @@
 label ExploreRoom:
     scene playerroom noon
-    "I was worried about what that bang was, but this gave me a chance to explore more of the house."
+    "I was worried about what that bang was, but this gives me a chance to explore more of the house."
     w "\"Let's see what I can find.\""
 
 $ CheckTheWayOut = True
@@ -24,7 +24,7 @@ label FirstCheck:
                 w "\"No way out.\""
                 jump FirstCheck
 
-    w "\"All the ways out are locked, maybe I can find something from this room to get me out this room.\""
+    w "\"All the ways out are locked. Maybe I can find something from this room to help get me out.\""
 
 $ TheTimesCheckWardrobe=0
 $ ExploreNotDone=True
@@ -77,7 +77,7 @@ label SecondCheck:
                     jump SecondCheck
             "Check the Bedstand":
                 "There's a notebook on the end table."
-                "It doesn't look like Alice's...maybe someone else?"
+                "It doesn't look like Alice's... maybe someone else's?"
                 "Upon inspection, I found one page had been torn off."
                 w "\"I bet the missing page is still in this room somewhere.\""
                 jump SecondCheck

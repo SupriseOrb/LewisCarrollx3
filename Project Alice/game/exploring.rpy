@@ -1,2 +1,0 @@
-label exploring:
-    jump ending

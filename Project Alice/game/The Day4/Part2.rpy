@@ -3,12 +3,12 @@ label Part2Start:
     "I tried to regain my balance, but quickly found myself reeling back and falling into an abyss."
     with vpunch
     scene black
-    w "\"Ugh... Where am I?\""
+    w "\"Ughh... Where am I?\""
     w "\"Why is it so dark?\""
     "Suddenly my eyes caught a girl in the darkness, squatting right in front of me. But she was focused on something else..."
-    "I couldn't see her face clearly, but she looked as though she was expecting something"
+    "I couldn't see her face clearly, but she looked as though she was expecting something."
     w "\"Uhh hello, what are we doing down here? What is this place?\""
-    "She didn't respond to me. She didn't even seem to care that I spoke."
+    "She didn't respond to me."
 
     call TheChoiceInPart2(1)
     "As my eyes slowly adapted to the dark environment, I realized I was in a closet."
@@ -20,9 +20,9 @@ label Part2Start:
 
     w "\"Luke? The boy Alice mentioned before?\""
     w "\"So this girl.....\""
-    "I looked at the girl hiding in the closet." 
+    "I looked at the girl hiding in the closet."
     w "\"Alice?\""
-    "I tried to get a closer look, but this closet was pitch black."
+    "I tried to get a closer look, but the closet was pitch black."
 
     l "\"Not right now. It's her nap time, thank God.\""
     q "\"I thought you enjoyed playing with the Hearts' little princess.\""
@@ -30,19 +30,19 @@ label Part2Start:
     "The other, older boy let out a hearty laugh."
     q "\"But I thought you {i}liked{/i} her! You're always talking and laughing when you're with her.\""
     "Luke wasn't amused by the boy's mocking tone."
-    l "\"Leave me alone! I'm already tired of Dad making me smile at her every day, I don't need you making fun of me.\""
+    l "\"Leave me alone! I'm already tired of Dad making me smile at her every day. I don't need you making fun of me.\""
 
     "I watched the little girl sink down, shoulders slackened, head bowed."
 
     l "\"You wouldn't believe how stupid she is. She always asks the silliest questions.\""
     l "\"There are better things to talk about than dumb tea parties and rabbits.\""
     l "\"And she'll get angry at you for no reason, just because you aren't playing her game right or something ridiculous like that.\""
-    q "\"Hey, Dad said you have to be friends with her, be careful how much you badmouth her.\""
-    l "\"Friends? I'm like her {i}babysitter.{/i}\""
+    q "\"Hey, Dad said you have to be friends with her. Be careful how much you badmouth her.\""
+    l "\"Friends? I'm like her {i}babysitter{/i}.\""
     l "\"All she wants is attention.\""
     l "\"Anyone could be her \'friend\', as long as you can put up with her stupid stories.\""
 
-    "I heard the girl begin to softly cry."
+    "The girl began to softly cry."
     "Her shoulders trembled slightly as she tried to cover her mouth to stifle the sobs."
     "But the tears soon overflowed, streaking over her cupped hands before dripping to the floor."
     "The two people outside continued on their chat, laughing loudly from time to time."
@@ -63,13 +63,13 @@ label Part2Start:
     call TheChoiceInPart2(4)
 
     a unhappy "\"After that, I ran back to my parents crying. They took care of me that day.\""
-    a unhappy closemouth "\"After that...I knew Mom and Dad were the only people who cared about.\""
+    a unhappy closemouth "\"I knew Mom and Dad were the only people who cared about me.\""
     "Alice gave me a vacant grin."
-    a smile "\"and I don't need anyone else to be my friends.\""
+    a smile "\"And I don't need anyone else.\""
     "She said it so casually, as if it was the only truth in the world."
     "Alice..."
-    a angry "\"The Adams family were asking my parents for money, you know.\""
-    a confused "\"But my parents kept turning them away, so they thought maybe they could get through to them...from me.\""
+    a angry "\"The Adams family were constantly asking my parents for money, you know.\""
+    a confused "\"But my parents kept turning them away, so they thought maybe they could get through to them... through me.\""
     "Alice giggled to herself."
     a happy strange "\"Sillies. They got kicked out that night.\""
     call TheChoiceInPart2(5)

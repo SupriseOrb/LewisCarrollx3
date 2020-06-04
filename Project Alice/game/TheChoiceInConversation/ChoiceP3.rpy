@@ -91,13 +91,13 @@ label QuestionForAlice:
             "Alice didn't even bother looking up from her food."
             a guilty "\"No thank you, Ms. Whitley. I don't want to talk about that.\""
             $ AliceFeltPain +=1
-            "Looks like Luke is a minefield with her."
+            "Looks like discussing Luke is a minefield with her."
             call checkThePain
             jump AskAliceround2
         "Ask about Miffy":
             w "\"Can you tell me more about Miffy?\""
             "Alice paused with a sudden sadness."
-            a sad closeeyes "\"Oh, my miffy.... She was such a good rabbit.\""
+            a sad closeeyes "\"Oh, my Miffy.... She was such a good rabbit.\""
             a guilty "\"She was a gift from my parents for my sixth birthday!\""
             a "\"She was an amazing pet, sometimes it was like she would react to what I said.\""
             a awkward "\"It was like she understood me...\""
@@ -115,12 +115,12 @@ label AskAliceround2:
             $ AliceFeltPain +=1
             call checkThePain
             if HelpAlice:
-                a confused "\"........\""
+                a confused "\"...\""
                 a angry "\"I already told you, it was an accident.\""
                 "Alice became a little moody, fidgeting in her chair."
                 a sorrow closeeyes "\"I mean, I did, I did something bad, I know that.\""
                 a sorrow openmouth "\"I cursed Luke, but I didn't curse his whole family.\""
-                a "\"I only wanted to hurt him. I didn't actually want EVERYONE to get hurt like that.\""
+                a "\"I only wanted to hurt him. I didn't actually want {i}everyone{/i} to get hurt like that.\""
                 a "\"But it doesn't matter. It's not like it's my fault. Everyone said it was an accident.\""
                 a sorrow closeeyes "\"It's not my fault he got what he deserved. That he... he...\""
                 "That quaint, casual smile of hers was breaking. There was something more to her than wishing violence upon others in her. I'm sure of it."
@@ -135,8 +135,8 @@ label AskAliceround2:
             w "\"Can you tell me more about the Adams family?"
             $ AliceFeltPain +=1
             if ResponceAlice:
-                "I could see Alice slowing down her chewing speed."
-                "She was thinking of something."
+                "Alice slowed down her chewing."
+                "She was thinking about something."
                 "Then she smiled, like always."
                 a normal "\"They were just some rich people who knew us.\""
                 a "\"But my parents don't know them at all.\""
@@ -167,18 +167,18 @@ label AskAliceround3:
         "After a while, she finally move a little bit."
         "She put down the tableware."
         a smile "\"Do you still remember the questions I asked you before?\""
-        a normal "\"About...the connection between power and hurting people?\""
+        a normal "\"About the connection between power and hurting people?\""
         "Alice traced her finger on the rim of her glass."
         a smile "\"My parents got killed.\""
         w "\"But how? They have the magic power like you did. Couldn't they protect themselves?\""
-        a unhappy "\"...Not against themselves.\""
+        a unhappy "\"Not against themselves.\""
         w "\"I don't understand.\""
-        a guilty "\"After the fire...I thought everything would go back to normal.\""
-        a confused "\"But then some people came., I don't know why.\""
+        a guilty "\"After the fire, I thought everything would go back to normal.\""
+        a confused "\"But then some people came. I don't know why.\""
         a unhappy "\"They came with anger, with fire.\""
         a "\"They blamed my parents for what happened. They wanted to do the same thing to us.\""
-        "Slowly, Alice's signature smile vanished. And she looked in the distance, at a scene invisible to me."
-        a angry "\"Aiden tried to protect us, he gave us time to get away. But it wasn't enough...not before they... they....\""
+        "Slowly, Alice's signature smile vanished. And she looked out into the distance, seemingly at a scene invisible to me."
+        a angry "\"Aiden tried to protect us, he gave us time to get away. But it wasn't enough, not before they... they....\""
         "Alice couldn't finish. She sucked in a deep breath and skipped over the morbid part."
         a "\"They called him a \'servant of the Devil\'.\""
         a little angry "\"Why were we called the Devil?\""

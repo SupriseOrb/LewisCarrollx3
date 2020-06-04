@@ -25,7 +25,7 @@ label Part3Start:
         a happy "\"Good job! Everything is perfect.\""
         "Alice smiled at me."
         a happy closemouth "\"And now I can cook a perfect dinner, just for you!\""
-    
+
     else:
         "Alice frowned and shook her head."
         a awkward "\"No, something isn't right here... These ingredients are wrong.\""
@@ -40,28 +40,27 @@ label Part3Start:
     scene black
     with dissolve
 
-    "...zzz"
+    "..."
 
     scene table night
 
     "When I woke up, Alice had already finished preparing dinner."
     "The sumptuousness of dinner exceeded my original imagination."
-    "At the dining table, Alice said to me with a smile -"
     a smile "\"It looks like you are really tired today, Ms. Whitley.\""
-    "I can't do anything but nod. I really am exhausted."
+    "I can't do anything but nod. I was exhausted."
     a normal "\"Then let's just stop my story, it's dull anyway. Let's talk about something else!\""
     a happy "\"So...um... Oh! What do you think about my magic!\""
     a normal "\"You've been here long enough now! Tell me what you think!\""
     a smile "\"Don't you think it's just the best?\""
     call TheChoiceInPart3(2)
 
-    "Alice grew silent after she heard my answer."
+    "Alice grew silent once she heard my answer."
     "After a pause of a couple of seconds, she spoke again."
 
     a normal "\"That's a great answer.\""
     "Alice suddenly leaned in and grinned wide at me."
     a normal "\"And what about hurting people?\""
-    a guilty "\"Do you think that....sometimes, you just can't avoid it?\""
+    a guilty "\"Do you think that sometimes, you just can't avoid it?\""
     call TheChoiceInPart3(3)
 
     "Again, Alice was silent after my answer."
@@ -73,7 +72,7 @@ label Part3Start:
     a smile "\"One more question, Ms. Whitley.\""
     a normal "\"The last one for today, I promise.\""
     "Before I could say anything, she jumped right into it."
-    a confused "\"Do you think that power and hurting people are connected somehow?.\""
+    a confused "\"Do you think that power and hurting people are connected somehow?\""
     call TheChoiceInPart3(4)
 
 
@@ -83,4 +82,4 @@ label Part3Start:
 
     call TheChoiceInPart3(5)
 
-    jump ToTheDay5
+    jump day5
