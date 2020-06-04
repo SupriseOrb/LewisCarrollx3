@@ -48,14 +48,7 @@ default persistent.badendmad = False
 default persistent.badenddied = False
 
 # Alice's Heart
-default heart = 0
-
-# Day 3 variables
-default Alice_affinity = 10
-default beatqueen = False
-default time = 5
-default watchbook = False
-default watchdiary = False
+default persistent.heart = 0
 
 # Day 4 variables
 default AliceAngry=0    #for the part1 Conversation

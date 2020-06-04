@@ -1,4 +1,9 @@
 label day3:
+    default Alice_affinity = 10
+    default beatqueen = False
+    default time = 5
+    default watchbook = False
+    default watchdiary = False
 
     scene bg whitley_bedroom with Dissolve(2)
 
