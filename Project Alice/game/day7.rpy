@@ -2,7 +2,13 @@ label day7:
 
     play music "audio/bgm/Daily_BGM.wav" fadein 1.0
 
-    scene bg whitley_bedroom
+    scene bg whitley_bedroom with Dissolve(2)
+
+    $ day = 7
+
+    show screen Day with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    hide screen Day with Dissolve(4)
 
     "The next morning, I was awakened by Alice pouncing on top of me."
     
@@ -73,8 +79,10 @@ label day7:
     "Once I'd gotten dressed, I left my room and found her downstairs, sitting at the kitchen table."
 
     stop sound fadeout 1.0
-    
-    scene bg kitchen
+   
+    show black with Dissolve(1)
+    scene bg kitchen with Dissolve(1)
+    hide black with Dissolve(1)
 
     "Alice's Mr. Rabbit was seated with her as usual, but another object accompanied her as well."
 
@@ -192,7 +200,11 @@ label day7leaveAttempt:
     
     a angry "\"She didn't come back. But I'm going to make things different this time.\""
 
+    play sound "audio/soundeffects/magic_one.wav"
+
     "With a pop of her familiar magic, the doorknob vanished, swallowed away into the wood."
+
+    play sound "audio/soundeffects/magic_one.wav"
 
     " *Pop* *Pop* *Pop* "
     
@@ -281,7 +293,12 @@ label day7scavengerStart:
 
     a happy "\"Yay, thank you so much! You look in the foyer and I'll look in the kitchen!\""
 
-    scene bg foyer
+    show black with Dissolve(1)
+    play sound "audio/soundeffects/whitley_walk.wav"
+    pause(1)
+    stop sound fadeout 2
+    scene bg foyer with Dissolve(1)
+    hide black with Dissolve(1)
 
     "Just as she requested, I went to the foyer. Where this all began. Part of me wished I had never set my dumb, unsuspecting foot in this place."
 
@@ -291,12 +308,16 @@ label day7scavengerStart:
 
     menu:
         "Check bottom of staircase":
+            play sound "audio/soundeffects/whitley_walk.wav"
             "I walked over to the foot of both staircases and checked the polished floor around them."
+            stop sound fadeout 2
             "Nothing."
             jump searchFoyerUnder
 
         "Check under stairs":
+            play sound "audio/soundeffects/whitley_walk.wav"
             "I looked to the curled corners of the staircases. Maybe a paper could've slipped through the cracks?"
+            stop sound fadeout 2
             "After searching every crevice I could find, I came up empty."
             "Nothing here."
             jump searchFoyerBottom
@@ -307,7 +328,9 @@ label day7scavengerStart:
     label searchFoyerBottom:
     menu:
         "Check bottom of staircase":
+            play sound "audio/soundeffects/whitley_walk.wav"
             "I walked over to the foot of both staircases and checked the polished floor around them."
+            stop sound fadeout 2
             "Nothing."
             jump searchBalcony
     
@@ -317,7 +340,9 @@ label day7scavengerStart:
     label searchFoyerUnder:
     menu:
         "Check under stairs":
+            play sound "audio/soundeffects/whitley_walk.wav"
             "I looked to the curled corners of the staircases. Maybe a paper could've slipped through the cracks?"
+            stop sound fadeout 2
             "After searching every crevice I could find, I came up empty."
             "Nothing here."
             jump searchBalcony
@@ -330,8 +355,11 @@ label day7scavengerStart:
     "Looks like there's only one other place to check..."
 
     label foundPiece:
+     play sound "audio/soundeffects/whitley_walk.wav"
     
     "I climbed the stairs to the balcony overlooking the immaculate foyer of the Hearts' mansion."
+
+    stop sound fadeout 2
 
     "I searched for the spell, flipping up the blood-red carpets that lined the reflective tile and checking between ornate railings and window frames."
 
@@ -430,6 +458,8 @@ label day7scavengerStart:
     a smile "\"Now we can have some real playtime!\""
 
     w "\"Alice, wait!\""
+
+    play sound "audio/soundeffects/magic_one.wav"
 
     "With another *pop*, Alice was gone."
 
@@ -655,14 +685,25 @@ label day7scavengerStart:
     "I collapsed to the floor."
     
     "Alice squeezed her bunny but then suddenly noticed something wrong."
+
+    transform imgcenter:
+        xalign 0.5 yalign 0.5
+    show bunny_serious at imgcenter
+    with Dissolve(1)
+
+    play sound_little "audio/soundeffects/fire_burning.wav" fadein 1
     
     "Mr. Rabbit was burning up in her arms. The magical vortex surrounding her and the cauldron was out of control."
+
+    hide bunny_serious with Dissolve(1)
     
     play sound "audio/BGM/2.mp3"
 
     a sad "\"M-Mr. Rabbit?\""
     
     "He gave her no answer while his right ear continued to scorch."
+
+    stop sound_little fadeout 2
 
     "Alice looked at the spell, sitting flipped over on the plush, with Aiden's words face up."
     
@@ -686,12 +727,12 @@ label day7scavengerStart:
 
     "I put my hand on Alice's shoulder and leaned my head against hers. We sat together as she quietly wept."
 
-    scene black
+    show black
     with Dissolve(.5)
 
-    play music "audio/BGM/Bittersweet_Ending.mp3" fadein 1.0
+    play sound_little "audio/BGM/Bittersweet_Ending.mp3" fadein 1.0
 
-    scene bg living room
+    scene bg living room with Dissolve(1)
 
     "That afternoon, I had my belongings packed and set by the front door. I was going over my mental checklist when I felt a tiny hand tug on my coat."
     
@@ -781,7 +822,7 @@ label day7scavengerStart:
 
     "One asked-"
 
-    "Godparent One" "\"Are you the nanny?\""
+    go "\"Are you the nanny?\""
 
     w "\"Yes, that's me. I suppose Alice is all yours now?\""
 
@@ -791,25 +832,29 @@ label day7scavengerStart:
 
     "One of the women boisterously laughed."
 
-    "Godparent Two" "\"Oh shouldn't be too much of a problem. We've got four hands between us!\""
+    gt "\"Oh shouldn't be too much of a problem. We've got four hands between us!\""
 
     "The other woman, who seemed to be the more down-to-earth of the two patted my hand."
 
-    "Godparent One" "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled.\""
+    go "\"What she means to say, is we'll take good care of her. Although, I do hope she's used to getting spoiled.\""
 
-    "Godparent One" "\"THIS one over here wouldn't stop yammering on about all the things she wanted to give her.\""
+    go "\"THIS one over here wouldn't stop yammering on about all the things she wanted to give her.\""
 
     "The other woman grinned and crossed her arms."
 
-    "Godparent Two" "\"I'd give her the world if I could!\""
+    gt "\"I'd give her the world if I could!\""
 
     "I smiled. Yeah. Alice will be okay."
 
     show black with Dissolve(1)
 
+    play sound "audio/soundeffects/outside_footsteps.wav"
+
     "I bid my farewell, gathered my things, and finally stepped foot outside the mansion."
+
+    stop sound fadeout 2
     
-    scene bg front
+    scene bg front with Dissolve(1)
 
     "The air out here felt unreal. I took a deep breath."
 
@@ -827,18 +872,46 @@ label day7scavengerStart:
 
     label day7BadEnd:
 
+    $ renpy.sound.set_volume(0.4, delay=0, channel='sound')
+
+    play sound "audio/soundeffects/complete_spell.wav"
+
     "I tried to tear away from the banister, but Alice's magic was too powerful. Under a loud, sonorous noise, I watched Alice complete spell."
 
     "Immediately I felt my very lifeforce began to sap towards the cauldron. Alice looked at me with a pitiful smile and glazed eyes."
 
     a happy strange "\"It's such a shame you won't get to meet them.\""
 
+    jump badEndingDeath
+
     label day7finaldone:
+    stop music fadeout 3
+    stop sound fadeout 3
+    stop sound_little fadeout 3
 
     scene black
 
-    stop music
+    jump goodending
 
-    jump ending
+label badEndingDeath:
+    stop music fadeout 3
+    stop sound fadeout 3
+    stop sound_little fadeout 3
+    scene black with Dissolve(2)
+    with hpunch
+    play music "audio/BGM/3.mp3" fadein 1
+    scene badending blood with Dissolve(2)
+    show screen Ending("{font=fonts/TheAncient.ttf}{size=+15}{size=+60}Bad Ending{/size}\n\n{space=300}{font=fonts/Cageworld.ttf}- Eternal Dream{/font}{/size}{/font}") with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    pause(5)
+    $ renpy.sound.set_volume(1, delay=0, channel='sound')
+    return
 
+label goodending:
+    scene white with Dissolve(2)
+    show screen Ending("{color=#E86F05}{font=fonts/TheAncient.ttf}{size=+15}{size=+60}Good Ending{/size}\n\n{space=300}{font=fonts/Cageworld.ttf}- New Wonderland{/font}{/size}{/font}{/color}") with Dissolve(2)
+    $ renpy.pause(3, hard=True)
+    pause(5)
+    $ renpy.sound.set_volume(1, delay=0, channel='sound')
+    return
    

@@ -9,6 +9,8 @@ define qb = Character("???",color="#32A85D")
 define l = Character("Luke",color="#90A81A")
 define b = Character("Boy",color="#3B3E6B")
 define c = Character("Cheshire Cat", color="#C2BC1E", image="cat",window_left_padding=150)
+define go = Character("Godparent One",color="#D5C1FF")
+define gt = Character("Godparent two",color="#D1B198")
 
 
 
@@ -92,6 +94,7 @@ image side alice happy closeopen = Image(im.FactorScale("/alice/alice_happy_clos
 
 image side bunny = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
 image side bunny normal = Image(im.FactorScale("/bunny/bunny.png",1.2,1.2))
+image side bunny serious = Image(im.FactorScale("/bunny/bunny_serious.png",1.2,1.2))
 image side bunny angry = Image(im.FactorScale("/bunny/bunny_angry.png",1.2,1.2))
 image side bunny confused = Image(im.FactorScale("/bunny/bunny_confused.png",1.2,1.2))
 image side bunny depressed = Image(im.FactorScale("/bunny/bunny_depressed.png",1.2,1.2))
@@ -172,7 +175,7 @@ label start:
 
     stop music
 
-    jump day5
+    jump day7
 
 label ending:
 
