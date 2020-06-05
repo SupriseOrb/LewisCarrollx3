@@ -893,11 +893,9 @@ label day6:
 
         w "\"Say...what?\""
 
-        r confused "\"No no no, say ɿoɿɿimɘʜɈʜƨɒmƨ!\""
+        r confused "\"Oh no no no wait wait, wrong spell! Say the spell FREIGABE! That was close, Mr. Rabbit almost made a mistake again!\""
 
         w "\"Uh, I guess I'll try?\""
-
-        r confused "\"Oh no no no wait wait, wrong spell! Say the spell FREIGABE! That was close, Mr. Rabbit almost made a mistake again!\""
 
     label day6_option6:
 
